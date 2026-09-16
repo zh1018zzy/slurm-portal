@@ -1,4 +1,4 @@
-# Contributing to my-hpcapp
+# Contributing to slurm-portal
 
 感谢关注本项目。欢迎 Issue 与 Pull Request。
 

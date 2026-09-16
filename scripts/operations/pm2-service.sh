@@ -9,7 +9,7 @@ set -e
 SERVICE_NAME="pm2-hpcapp"
 PM2_USER="hpcapp"
 PM2_HOME="/home/$PM2_USER/.pm2"
-APP_DIR="/opt/my-hpcapp"
+APP_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
 
 # 颜色定义
 GREEN='\033[0;32m'

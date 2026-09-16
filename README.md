@@ -1,4 +1,4 @@
-# my-hpcapp
+# slurm-portal
 
 **HPC 集群 Web 管理平台** — 基于 Next.js 14 + Slurm + LDAP/NIS + WebShell 的全栈集群管理工具。
 

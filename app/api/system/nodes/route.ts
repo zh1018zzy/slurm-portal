@@ -1,6 +1,7 @@
 import { NextRequest } from 'next/server'
 import { verifyJwt } from '@/lib/jwt'
 import { exec } from 'child_process'
+import path from 'path'
 import { promisify } from 'util'
 export const dynamic = 'force-dynamic'
 
@@ -179,7 +180,7 @@ export async function GET(req: NextRequest) {
     }
     
     // 执行节点监控脚本
-    const scriptPath = '/opt/my-hpcapp/scripts/slurm-node-monitor.sh'
+    const scriptPath = path.join(process.cwd(), 'scripts/slurm-node-monitor.sh')
     const command = `${scriptPath} ${format} ${detailed}`
     
     console.debug('[节点API] 执行命令:', { command })

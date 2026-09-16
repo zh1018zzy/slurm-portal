@@ -12,7 +12,7 @@
 
 ## 项目是什么
 
-`my-hpcapp` 是一个 HPC 管理平台，提供作业提交与监控、用户与权限管理、通知系统、WebShell/VNC 访问、License 管理与系统运维能力。
+`slurm-portal` 是一个 HPC 管理平台，提供作业提交与监控、用户与权限管理、通知系统、WebShell/VNC 访问与系统运维能力。
 
 ## 主要技术栈
 

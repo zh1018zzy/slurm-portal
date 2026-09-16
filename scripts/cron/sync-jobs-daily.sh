@@ -1,6 +1,6 @@
 #!/bin/bash
 # 每日作业状态同步脚本
-# 用于 crontab: 30 23 * * * /opt/my-hpcapp/scripts/sync-jobs-daily.sh
+# 用于 crontab: 30 23 * * * /path/to/slurm-portal/scripts/cron/sync-jobs-daily.sh
 
 # 设置日志目录
 LOG_DIR="/var/log/hpcapp"

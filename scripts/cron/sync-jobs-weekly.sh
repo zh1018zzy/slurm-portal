@@ -1,6 +1,6 @@
 #!/bin/bash
 # 每周作业状态同步脚本
-# 用于 crontab: 0 22 * * 6 /opt/my-hpcapp/scripts/sync-jobs-weekly.sh
+# 用于 crontab: 0 22 * * 6 /path/to/slurm-portal/scripts/cron/sync-jobs-weekly.sh
 
 # 设置日志目录
 LOG_DIR="/var/log/hpcapp"

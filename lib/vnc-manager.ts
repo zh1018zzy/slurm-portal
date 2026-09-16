@@ -224,6 +224,7 @@ export function generateVncScript(options: {
 # 日志路径由 sbatch -o/-e 参数指定，脚本内不再写 #SBATCH --output/--error
 
 # 设置环境变量
+export APP_ROOT="${process.cwd()}"
 export PATH=$PATH:${VNC_CONFIG.TURBO_VNC_PATH}
 export DISPLAY=:${display}
 export VNC_PORT=$((5900 + ${display}))
@@ -402,9 +403,9 @@ get_node_ip() {
     done
   fi
   
-  # 方法4: 从配置文件获取
-  if [ -f "/opt/my-hpcapp/config/node-ip-map.json" ]; then
-    local node_ip=$(grep -o '"default"[[:space:]]*:[[:space:]]*"[^"]*"' /opt/my-hpcapp/config/node-ip-map.json | cut -d'"' -f4)
+  # 方法4: 从配置文件获取（路径由 Node 侧注入项目根目录）
+  if [ -f "${APP_ROOT}/config/node-ip-map.json" ]; then
+    local node_ip=$(grep -o '"default"[[:space:]]*:[[:space:]]*"[^"]*"' "${APP_ROOT}/config/node-ip-map.json" | cut -d'"' -f4)
     if [ -n "$node_ip" ] && [ "$node_ip" != "null" ]; then
       echo "$node_ip"
       return

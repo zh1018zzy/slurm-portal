@@ -49,6 +49,6 @@ scripts/
 
 所有脚本应在项目根目录执行：
 ```bash
-cd /opt/my-hpcapp
+cd /opt/slurm-portal   # 或你的实际部署目录
 ./scripts/deployment/create-deployment-package.sh
 ```

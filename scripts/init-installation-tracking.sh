@@ -31,8 +31,11 @@ else
     USE_PSQL=false
 fi
 
+# 项目根目录（脚本位于 scripts/）
+APP_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+
 # SQL 脚本路径
-SQL_FILE="/opt/my-hpcapp/scripts/migrations/create-installation-table.sql"
+SQL_FILE="$APP_DIR/scripts/migrations/create-installation-table.sql"
 
 # 执行 SQL
 echo "执行数据库迁移..."
@@ -60,7 +63,7 @@ else
 fi
 
 # 检查是否存在 installation.json
-INSTALL_FILE="/opt/my-hpcapp/config/installation.json"
+INSTALL_FILE="$APP_DIR/config/installation.json"
 
 if [ -f "$INSTALL_FILE" ]; then
     echo -e "${GREEN}✓${NC} 找到现有安装文件: $INSTALL_FILE"

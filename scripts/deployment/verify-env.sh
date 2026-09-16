@@ -110,7 +110,7 @@ echo ""
 
 # 检查 JWT_SECRET 是否为默认值
 JWT_SECRET=$(grep "^JWT_SECRET=" "$ENV_FILE" 2>/dev/null | cut -d'=' -f2- || echo "")
-if [ "$JWT_SECRET" == "your-jwt-secret-here" ] || [ "$JWT_SECRET" == "your-super-secret-jwt-key-here" ]; then
+if [ "$JWT_SECRET" == "your-jwt-secret-here" ] || [ "$JWT_SECRET" == "slurm-portal-dev-secret" ] || [ "$JWT_SECRET" == "your-super-secret-jwt-key-here" ]; then
     log_warning "JWT_SECRET 使用的是默认值，强烈建议修改为随机字符串"
     log_info "生成随机密钥: openssl rand -base64 32"
     echo ""

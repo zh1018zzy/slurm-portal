@@ -4,6 +4,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server'
+import path from 'path'
 import { supabase } from '@/lib/supabase'
 import { logger } from '@/lib/logger'
 export const dynamic = 'force-dynamic'
@@ -51,7 +52,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({
           success: false,
           error: '需要手动执行迁移 SQL',
-          sql: '/opt/my-hpcapp/scripts/migrations/create-installation-table.sql'
+          sql: path.join(process.cwd(), 'scripts/migrations/create-installation-table.sql')
         }, { status: 500 })
       }
     }

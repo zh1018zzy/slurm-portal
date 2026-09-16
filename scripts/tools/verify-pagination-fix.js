@@ -5,7 +5,7 @@ const path = require('path')
 
 console.log('🔍 验证通知页面分页功能修改...\n')
 
-const filePath = '/opt/my-hpcapp/app/dashboard/notifications/page.tsx'
+const filePath = path.join(process.cwd(), 'app/[locale]/dashboard/notifications/page.tsx')
 
 try {
   const content = fs.readFileSync(filePath, 'utf8')

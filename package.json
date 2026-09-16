@@ -1,5 +1,5 @@
 {
-  "name": "my-hpcapp",
+  "name": "slurm-portal",
   "version": "0.1.0",
   "private": true,
   "description": "HPC cluster web management platform (Next.js + Slurm + LDAP/NIS + WebShell)",

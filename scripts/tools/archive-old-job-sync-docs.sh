@@ -6,8 +6,8 @@
 
 set -e
 
-ARCHIVE_DIR="/opt/my-hpcapp/docs/archive/job-sync-legacy-2025"
-BASE_DIR="/opt/my-hpcapp"
+BASE_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
+ARCHIVE_DIR="$BASE_DIR/docs/archive/job-sync-legacy-2025"
 
 echo "🗂️  HPC 文档归档工具"
 echo "================================"

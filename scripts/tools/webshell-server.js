@@ -12,7 +12,7 @@ const jwt = require('jsonwebtoken')
 
 // 配置
 const PORT = process.env.WEBSHELL_PORT || 3001
-const JWT_SECRET = process.env.JWT_SECRET || 'your-jwt-secret-here'
+const JWT_SECRET = process.env.JWT_SECRET || 'slurm-portal-dev-secret'
 
 // 存储活跃会话
 const activeSessions = new Map()

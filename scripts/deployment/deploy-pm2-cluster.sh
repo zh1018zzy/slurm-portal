@@ -15,7 +15,7 @@ NC='\033[0m' # No Color
 
 # 配置变量
 APP_NAME="hpc-management-platform"
-APP_DIR="/opt/my-hpcapp"
+APP_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
 PM2_USER="hpcapp"
 LOG_DIR="$APP_DIR/logs"
 
