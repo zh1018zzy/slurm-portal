@@ -45,7 +45,7 @@
     "@radix-ui/react-switch": "^1.2.5",
     "@radix-ui/react-tabs": "^1.1.12",
     "@radix-ui/react-toast": "^1.2.1",
-    "@radix-ui/react-tooltip": "^1.2.7",
+    "@radix-ui/react-tooltip": "^1.2.16",
     "@supabase/supabase-js": "^2.50.2",
     "@types/archiver": "^6.0.3",
     "@types/prismjs": "^1.26.5",
