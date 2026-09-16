@@ -1,0 +1,20 @@
+{
+  "comment": "节点IP映射配置文件示例",
+  "description": "将节点主机名映射到对应的IP地址，用于VNC连接",
+  "nodes": {
+    "compute-node-01": "192.168.1.10",
+    "login-node": "192.168.1.11",
+    "compute-01": "192.168.1.10",
+    "compute-02": "192.168.1.11",
+    "gpu-01": "192.168.1.20",
+    "gpu-02": "192.168.1.21",
+    "login": "192.168.1.1",
+    "localhost": "127.0.0.1"
+  },
+  "default": "192.168.1.100",
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2024-01-01",
+    "environment": "production"
+  }
+} 

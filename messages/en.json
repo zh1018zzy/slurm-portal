@@ -1,0 +1,4171 @@
+{
+  "common": {
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "save": "Save",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Info",
+    "refresh": "Refresh",
+    "export": "Export",
+    "import": "Import",
+    "download": "Download",
+    "upload": "Upload",
+    "copy": "Copy",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "finish": "Finish",
+    "actions": "Actions",
+    "status": "Status",
+    "name": "Name",
+    "description": "Description",
+    "createTime": "Created",
+    "updateTime": "Updated",
+    "select": "Please select...",
+    "submitting": "Submitting..."
+  },
+  "login": {
+    "title": "HPC Management Platform",
+    "subtitle": "High Performance Computing Cluster Management System",
+    "username": "Username",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "login": "Login",
+    "loading": "Logging in...",
+    "loginSuccess": "Login successful",
+    "loginFailed": "Login failed",
+    "invalidCredentials": "Invalid username or password",
+    "systemOnline": "System Online",
+    "clusterNormal": "Cluster Normal",
+    "realtimeMonitoring": "Real-time Monitoring"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "overview": "Overview",
+    "submitJob": "Submit Job",
+    "jobs": "Jobs",
+    "compute": "Compute Nodes",
+    "storage": "Storage",
+    "applications": "Applications",
+    "files": "File Manager",
+    "system": "System",
+    "systemDesktop": "System Desktop",
+    "nodeMonitor": "Node Monitor",
+    "userManagement": "User Management",
+    "profile": "Profile",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "logout": "Logout",
+    "welcome": "Welcome back",
+    "pageTitle": "HPC System Dashboard",
+    "pageSubtitle": "Real-time monitoring of system resources, job status, and cluster performance",
+    "loadingData": "Loading system data...",
+    "dataError": "Data loading error",
+    "retry": "Retry",
+    "quickActions": "Quick Actions",
+    "submitNewJob": "Submit New Job",
+    "viewAllJobs": "View All Jobs",
+    "fileManagement": "File Manager",
+    "jobTrend": "Job Trend (Last 30 Days)",
+    "loadingChart": "Loading trend chart...",
+    "jobStats": {
+      "title": "Job Statistics",
+      "clusterAllJobs": "(All Cluster Jobs)",
+      "yourAllJobs": "(All Your Jobs)",
+      "totalJobs": "Total Jobs",
+      "pending": "Pending",
+      "running": "Running",
+      "completed": "Completed",
+      "failed": "Failed",
+      "cancelled": "Cancelled",
+      "successRate": "Success Rate",
+      "viewAllJobs": "View All Jobs →"
+    },
+    "partitionStatus": {
+      "title": "Partition Status Monitoring",
+      "updatedAt": "Updated at",
+      "retryIn": "Retry in {seconds}s",
+      "cancel": "Cancel",
+      "refreshing": "Refreshing...",
+      "refresh": "Refresh",
+      "totalPartitions": "Total Partitions",
+      "totalNodes": "Total Nodes",
+      "runningJobs": "Running Jobs",
+      "avgCpuUtilization": "Avg CPU Usage",
+      "connectionFailed": "Connection Failed",
+      "temporarilyUnavailable": "Temporarily Unavailable",
+      "retryAttempt": "Retry {current}/{max}",
+      "autoRetryIn": "Auto retry in {seconds}s",
+      "retryNow": "Retry Now",
+      "loadingPartitionInfo": "Loading partition information...",
+      "noPartitionData": "No partition data",
+      "partitionName": "Partition Name",
+      "status": "Status",
+      "nodeUsage": "Node Usage",
+      "cpuUtilization": "CPU Usage",
+      "runningJobsCount": "Running Jobs",
+      "timeLimit": "Time Limit",
+      "nodeList": "Node List",
+      "defaultPartition": "Default",
+      "partitionState": "Partition Status",
+      "availability": "Availability",
+      "allocated": "Allocated",
+      "idle": "Idle",
+      "total": "Total",
+      "nodes": "nodes",
+      "statusLabels": {
+        "up": "Normal",
+        "idle": "Idle",
+        "down": "Down",
+        "drain": "Drain",
+        "mixed": "Mixed",
+        "unknown": "Unknown",
+        "mix": "Mixed",
+        "alloc": "Allocated",
+        "allocated": "Allocated"
+      }
+    },
+    "noAlerts": "No alerts",
+    "sampleAlert": "Sample alert",
+    "resourceCard": {
+      "totalCores": "Total CPU cores",
+      "freeCores": "Free cores"
+    },
+    "systemResource": {
+      "cpuInfo": "CPU Information",
+      "memoryInfo": "Memory Information",
+      "totalCores": "Total Cores",
+      "usedCores": "Cores in Use",
+      "usageRate": "Usage Rate",
+      "totalMemory": "Total Memory",
+      "usedMemory": "Memory in Use"
+    },
+    "jobStatusCard": {
+      "title": "Job Status",
+      "running": "Running",
+      "queued": "Queued",
+      "paused": "Paused",
+      "error": "Error"
+    },
+    "storageInfo": {
+      "title": "Storage Information",
+      "retry": "Retry",
+      "noData": "No storage information",
+      "lastUpdated": "Last updated",
+      "totalCapacity": "Total Capacity",
+      "used": "Used",
+      "available": "Available",
+      "directory": "Directory",
+      "quotaLimit": "Quota Limit",
+      "softLimit": "Soft Limit",
+      "usageRate": "Usage",
+      "unavailable": "Unavailable",
+      "pathInaccessible": "Storage path inaccessible",
+      "userDirInaccessible": "User directory inaccessible",
+      "statusSufficient": "Sufficient storage",
+      "statusNormal": "Normal storage",
+      "statusTight": "Storage tight",
+      "statusLow": "Low storage",
+      "fetchFailed": "Failed to fetch storage information",
+      "sharedStorageName": "Cluster Shared Storage",
+      "sharedStorageDesc": "Shared storage space for all users",
+      "userStorageName": "User Personal Storage",
+      "userStorageDesc": "Personal storage space",
+      "scratchStorageName": "Temporary Storage",
+      "scratchStorageDesc": "High-performance temporary storage space"
+    },
+    "announcement": {
+      "title": "System Announcements",
+      "loading": "Loading announcements...",
+      "noAnnouncements": "No announcements",
+      "count": "items",
+      "close": "Close",
+      "pinned": "Pinned",
+      "typeMaintenance": "Maintenance",
+      "typeWarning": "Warning",
+      "typeSuccess": "Success",
+      "typeError": "Error",
+      "typeInfo": "Info"
+    },
+    "jobTrendChart": {
+      "title": "Job Submission Trend",
+      "trendTab": "Trend Chart",
+      "distributionTab": "Status Distribution",
+      "summaryTab": "Summary Statistics",
+      "loading": "Loading trend data...",
+      "loadFailed": "Load failed",
+      "noData": "No trend data",
+      "last7Days": "Last 7 Days",
+      "last30Days": "Last 30 Days",
+      "last90Days": "Last 90 Days",
+      "last180Days": "Last 180 Days",
+      "lastYear": "Last Year",
+      "days": "Days",
+      "lineChart": "Line Chart",
+      "barChart": "Bar Chart",
+      "areaChart": "Area Chart",
+      "submitted": "Submitted",
+      "completed": "Completed",
+      "failed": "Failed",
+      "cancelled": "Cancelled",
+      "distributionDetails": "Status Distribution Details",
+      "totalJobs": "Total Jobs",
+      "successRate": "Success Rate",
+      "failureRate": "Failure Rate",
+      "timeRange": "Time Range",
+      "networkError": "Network error",
+      "dataFetchFailed": "Failed to fetch data"
+    }
+  },
+  "jobs": {
+    "title": "Job Management",
+    "submit": "Submit Job",
+    "list": "Active Jobs",
+    "details": "Job Details",
+    "history": "Job Query",
+    "historyDescription": "Query jobs (all states) with time range and filters",
+    "resetFilters": "Reset filters",
+    "forceSync": "Force Sync",
+    "syncing": "Syncing...",
+    "syncComplete": "Force sync completed",
+    "syncDescription": "Updated {updated} job statuses (Total: {totalJobs})",
+    "syncFailed": "Sync failed",
+    "syncError": "Error occurred during sync",
+    "networkRequestFailed": "Network request failed",
+    "backToJobList": "Back to Job List",
+    "searchPlaceholder": "Search job name or ID...",
+    "allStatus": "All Status",
+    "allTypes": "All Types",
+    "allPartitions": "All Partitions",
+    "computeJob": "Compute Job",
+    "graphicsJob": "Graphics Job",
+    "interactiveJob": "Interactive Job",
+    "last7Days": "Last 7 Days",
+    "last30Days": "Last 30 Days",
+    "last90Days": "Last 90 Days",
+    "allHistory": "All History",
+    "itemsPerPage": "items/page",
+    "queryResults": "Query Results",
+    "noHistoryRecords": "No historical job records",
+    "jobId": "Job ID",
+    "jobName": "Job Name",
+    "user": "User",
+    "partition": "Partition",
+    "submitTime": "Submit Time",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "runTime": "Run Time",
+    "nodes": "Nodes",
+    "actions": "Actions",
+    "viewDetails": "View Details",
+    "viewWorkDir": "View Work Directory",
+    "viewLogs": "View Logs",
+    "showing": "Showing {from} - {to} of {total} records",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "status": "Status",
+    "statusOptions": {
+      "pending": "Pending",
+      "running": "Running",
+      "completed": "Completed",
+      "failed": "Failed",
+      "cancelled": "Cancelled"
+    },
+    "id": "Job ID",
+    "name": "Job Name",
+    "queue": "Queue",
+    "cores": "Cores",
+    "walltime": "Walltime",
+    "output": "Output",
+    "error": "Error Output",
+    "cancel": "Cancel Job",
+    "delete": "Delete Job",
+    "resubmit": "Resubmit",
+    "refreshComplete": "Refresh completed",
+    "refreshDescription": "Updated {updated} job statuses (Total: {total})",
+    "refreshFailed": "Refresh failed",
+    "networkError": "Network error, please retry",
+    "fetchFailed": "Failed to fetch job list",
+    "selectJobsToCancel": "Please select jobs to cancel",
+    "batchCancelSuccess": "Successfully cancelled {count} jobs",
+    "batchCancelFailed": "Batch cancel failed",
+    "jobNotFound": "Job not found",
+    "jobNotFoundDesc": "The specified job was not found, it may have been deleted or the ID is incorrect",
+    "backToList": "← Back to List",
+    "cancelling": "Cancelling...",
+    "efficiency": "Job Efficiency",
+    "jobInfo": "Job Information",
+    "jobLogs": "Job Logs",
+    "jobFiles": "Job Files",
+    "jobHistorySameName": "Job History (Same Name)",
+    "detailsTitle": "Job Details",
+    "timeInfo": "Time Information",
+    "failureReason": "Failure Reason",
+    "scontrolInfo": "scontrol show job Raw Info",
+    "scriptPath": "Script Path",
+    "stdoutPath": "Standard Output Path",
+    "stderrPath": "Error Output Path",
+    "nodesSyncing": "Node information syncing, please refresh later",
+    "stdout": "Standard Output",
+    "stderr": "Error Output",
+    "noOutput": "No output yet",
+    "noErrorOutput": "No error output yet",
+    "filesSelected": "{count} files selected",
+    "downloading": "Downloading...",
+    "selectAll": "Select All",
+    "deselectAll": "Deselect All",
+    "backToParent": "Back to Parent",
+    "noFiles": "No files",
+    "directory": "Directory",
+    "downloadFile": "Download {name}",
+    "jobCancelled": "Job cancelled",
+    "cancelJobFailed": "Failed to cancel job",
+    "fetchJobDetailFailed": "Failed to fetch job details",
+    "noSameNameHistory": "No job history with same name",
+    "viewJob": "View",
+    "submittedAt": "Submitted",
+    "runningFor": "Running",
+    "downloadSuccess": "Download successful",
+    "downloadedFile": "Downloaded {name}",
+    "downloadedFiles": "Downloaded {count} files",
+    "selectedJobsCount": "Selected {count} jobs",
+    "batchCancel": "Batch Cancel",
+    "pause": "Pause",
+    "resume": "Resume",
+    "pausing": "Pausing...",
+    "resuming": "Resuming...",
+    "jobPaused": "Job paused",
+    "jobResumed": "Job resumed",
+    "pauseFailed": "Failed to pause job",
+    "resumeFailed": "Failed to resume job",
+    "batchPause": "Batch Pause",
+    "batchResume": "Batch Resume",
+    "selectJobsToPause": "Please select running or pending jobs to pause",
+    "selectJobsToResume": "Please select suspended jobs to resume",
+    "batchPauseSuccess": "Successfully paused {count} jobs",
+    "batchResumeSuccess": "Successfully resumed {count} jobs",
+    "batchPauseFailed": "Batch pause failed",
+    "batchResumeFailed": "Batch resume failed",
+    "totalRecords": "Total {count} records",
+    "statusTypes": {
+      "pending": "Pending",
+      "running": "Running",
+      "completed": "Completed",
+      "failed": "Failed",
+      "cancelled": "Cancelled",
+      "timeout": "Timeout",
+      "nodeFail": "Node Fail",
+      "preempted": "Preempted",
+      "suspended": "Suspended",
+      "stopped": "Stopped",
+      "outOfMemory": "Out of Memory",
+      "unknown": "Unknown"
+    },
+    "userPartition": "User/Partition",
+    "runtime": "Runtime",
+    "noJobs": "No jobs",
+    "loading": "Loading...",
+    "graphics": "Graphics"
+  },
+  "jobsReports": {
+    "title": "Historical Reports",
+    "subtitle": "Job statistical analysis and trend reports",
+    "licenseCheckFailed": "License check failed",
+    "fetchReportDataFailed": "Failed to fetch report data",
+    "networkError": "Network error",
+    "loading": "Loading report data...",
+    "timeRanges": {
+      "last7Days": "Last 7 Days",
+      "last30Days": "Last 30 Days",
+      "last90Days": "Last 90 Days",
+      "last180Days": "Last 180 Days",
+      "lastYear": "Last Year",
+      "allTime": "All Time",
+      "selectTimeRange": "Select time range"
+    },
+    "overview": {
+      "title": "Overview Statistics",
+      "totalJobs": "Total Jobs",
+      "successRate": "Success Rate",
+      "avgRunTime": "Avg Run Time",
+      "totalCpuHours": "Total CPU Hours"
+    },
+    "statusDistribution": {
+      "title": "Job Status Distribution",
+      "completed": "Completed",
+      "failed": "Failed",
+      "cancelled": "Cancelled",
+      "timeout": "Timeout"
+    },
+    "partitionUsage": {
+      "title": "Partition Usage Statistics",
+      "partition": "Partition",
+      "jobCount": "Job Count",
+      "cpuHours": "CPU Hours"
+    },
+    "userUsage": {
+      "title": "User Usage Statistics",
+      "username": "Username",
+      "jobCount": "Job Count",
+      "cpuHours": "CPU Hours"
+    },
+    "trendChart": {
+      "title": "Job Trend Analysis",
+      "date": "Date",
+      "submitted": "Submitted",
+      "completed": "Completed",
+      "failed": "Failed"
+    },
+    "noData": "No data available",
+    "jobs": "jobs",
+    "hours": "hours",
+    "license": {
+      "backToJobList": "Back to Job List",
+      "limitedFeature": "Limited Feature",
+      "upgradeToCommercial": "Upgrade to Commercial Version",
+      "alternativesMessage": "You can use the following alternative features:",
+      "featureDescription": "Upgrade to commercial version to unlock detailed job history analysis, trend charts, and in-depth reporting features",
+      "trendAnalysis": "• Job execution trend analysis",
+      "resourceStats": "• Resource usage statistics",
+      "userBehavior": "• User behavior analysis",
+      "dataExport": "• Data export functionality",
+      "verifyingPermissions": "Verifying feature permissions..."
+    },
+    "buttons": {
+      "exportReport": "Export Report",
+      "backToJobList": "Back to Job List"
+    },
+    "timeRangeLabel": "Report time range:",
+    "partitionNoData": "No partition data",
+    "cannotConnectToServer": "Cannot connect to server",
+    "exportSuccess": "Report exported successfully",
+    "exportFailed": "Export failed",
+    "featureTitle": "Job Reporting Feature",
+    "upgradeMessage": "to unlock detailed job history analysis, trend charts, and in-depth reporting features"
+  },
+  "jobTestSync": {
+    "title": "Job Sync Test",
+    "backButton": "Back",
+    "slurmTest": {
+      "title": "Slurm Command Test",
+      "button": "Test Slurm Commands",
+      "success": "Slurm command test successful",
+      "failed": "Slurm command test failed"
+    },
+    "jobSync": {
+      "title": "Job Synchronization",
+      "syncButton": "Sync Job Records",
+      "syncing": "Syncing...",
+      "statusButton": "Get Sync Status",
+      "syncSuccess": "Sync successful",
+      "syncFailed": "Sync failed",
+      "statusSuccess": "Status retrieved successfully",
+      "statusFailed": "Failed to retrieve status"
+    },
+    "syncResult": {
+      "title": "Sync Results"
+    },
+    "networkError": "Network error",
+    "cannotConnect": "Cannot connect to server"
+  },
+  "announcements": {
+    "title": "System Announcements",
+    "subtitle": "Manage announcements",
+    "loadingForm": "Loading form...",
+    "loadingList": "Loading announcement list...",
+    "refresh": "Refresh",
+    "create": "Create Announcement",
+    "edit": "Edit Announcement",
+    "delete": "Delete",
+    "confirmDelete": "Confirm Delete",
+    "confirmDeleteDesc": "Delete \"{title}\"? Cannot undo.",
+    "cancel": "Cancel",
+    "update": "Update",
+    "loading": "Loading...",
+    "noAnnouncements": "No announcements",
+    "announcementList": "Announcement List",
+    "announcementListCount": "Announcement List ({count})",
+    "form": {
+      "title": "Title",
+      "titlePlaceholder": "Enter announcement title",
+      "content": "Content",
+      "contentPlaceholder": "Enter announcement content",
+      "type": "Type",
+      "priority": "Priority",
+      "priorityPlaceholder": "0-100",
+      "startTime": "Start Time",
+      "endTime": "End Time (Optional)",
+      "active": "Active",
+      "pinned": "Pinned",
+      "emptyError": "Title and content cannot be empty"
+    },
+    "types": {
+      "info": "Info",
+      "warning": "Warning",
+      "success": "Success",
+      "error": "Error",
+      "maintenance": "Maintenance"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "priority": "Priority"
+    },
+    "toast": {
+      "fetchError": "Failed to get announcement list",
+      "createSuccess": "Announcement created successfully",
+      "updateSuccess": "Announcement updated successfully",
+      "deleteSuccess": "Announcement deleted successfully",
+      "operationFailed": "Operation failed"
+    }
+  },
+  "submit": {
+    "pageTitle": "Job Submission",
+    "cardTitle": "Submit New Job",
+    "templates": {
+      "label": "Templates:",
+      "singleNode": "Single Node",
+      "mpi": "MPI Parallel",
+      "aiTraining": "AI Training",
+      "gpuCompute": "GPU Compute"
+    },
+    "history": {
+      "label": "History:",
+      "clear": "Clear History",
+      "cleared": "History cleared"
+    },
+    "hints": {
+      "jobName": "Job display name in scheduler for easy identification",
+      "partition": "Slurm partition. System automatically handles * character in partition names",
+      "nodes": "Number of physical nodes required",
+      "ntasks": "Total number of tasks (e.g., MPI processes)",
+      "cpusPerTask": "Number of CPU cores per task/process",
+      "gpus": "Number of GPUs per node, 0 means no GPU",
+      "mem": "Memory per node, e.g., 4G, 16G. Set to 0 to use system default",
+      "time": "Maximum runtime, format: 01:00:00. Leave empty for system default",
+      "bodyScript": "Only fill in the business logic, system will auto-complete scheduler headers"
+    },
+    "fields": {
+      "jobName": "Job Name",
+      "partition": "Partition",
+      "nodes": "Nodes",
+      "cpusPerTask": "CPUs/Node",
+      "ntasks": "Total Tasks",
+      "gpus": "GPUs",
+      "mem": "Memory",
+      "time": "Time Limit",
+      "bodyScript": "Job Script (business logic only)"
+    },
+    "buttons": {
+      "submit": "Submit Job",
+      "submitting": "Submitting...",
+      "uploadScript": "Upload Script"
+    },
+    "preview": "Preview Full Script",
+    "selectPartition": "Select partition",
+    "loadingPartitions": "Loading partitions...",
+    "noPartitions": "No partitions available",
+    "partitionConfigError": "Cannot fetch partition info, please check Slurm configuration",
+    "memPlaceholder": "e.g., 4G or 0 (not specified)",
+    "memUseDefault": "Memory set to 0, will use system default memory limit",
+    "memRecommendation": "Recommend adjusting memory based on partition resources to avoid exceeding partition limits",
+    "timePlaceholder": "e.g., 01:00:00 or leave empty (use default)",
+    "scriptFileSupport": "Supports .sh or .bash files, automatically extracts business logic (removes Slurm headers)",
+    "resourceEstimate": {
+      "title": "Resource Estimate",
+      "totalCpu": "Total CPU",
+      "totalMem": "Total Memory",
+      "totalGpu": "Total GPU",
+      "cores": "cores",
+      "units": "units",
+      "useDefault": "Use system default",
+      "notSet": "Not set",
+      "notSpecified": "Not specified",
+      "timeDefault": "Time: Using system default limit"
+    },
+    "validation": {
+      "jobNameRequired": "Job name is required",
+      "partitionRequired": "Please select a valid partition",
+      "nodesPositive": "Nodes must be a positive integer",
+      "cpusPositive": "CPUs per node must be a positive integer",
+      "ntasksPositive": "Total tasks must be a positive integer",
+      "gpusNonNegative": "GPU count cannot be negative",
+      "memRequired": "Memory is required",
+      "memFormat": "Memory format: 4G, 16G, or 0 for not specified",
+      "memPositive": "Memory must be greater than 0 (or set to 0 for not specified)",
+      "memTooLarge": "Memory value too large, check unit (G/M)",
+      "timeFormat": "Time format: 01:00:00, or leave empty for default",
+      "bodyScriptRequired": "Script content cannot be empty",
+      "partitionPrefix": "Partition",
+      "onlyNodes": "only has",
+      "nodesSuffix": "nodes",
+      "maxCpusPerNode": "max",
+      "cpuSuffix": "CPUs per node",
+      "onlyGpus": "only has",
+      "gpuSuffix": "GPUs",
+      "ntasksExceed": "Tasks cannot exceed total CPUs"
+    },
+    "toast": {
+      "submitSuccess": "Job submitted successfully",
+      "submitFailed": "Job submission failed",
+      "networkError": "Network error or server exception",
+      "fileFormatError": "File format error",
+      "fileFormatDesc": "Please upload .sh or .bash file",
+      "fileUploadSuccess": "File uploaded successfully",
+      "fileUploadDesc": "Script content loaded"
+    },
+    "dataFiles": {
+      "title": "Job Data Files",
+      "uploadButton": "Upload Data Files",
+      "uploading": "Uploading...",
+      "hint": "Supports batch upload. Files will be saved to ~/job-data directory and can be referenced in scripts",
+      "uploadSuccess": "Data files uploaded successfully",
+      "uploadFailed": "Data file upload failed",
+      "uploaded": "Uploaded",
+      "files": "files",
+      "fileTooLarge": "File too large, 500MB limit",
+      "fileRemoved": "File removed from list"
+    }
+  },
+  "compute": {
+    "title": "Compute Nodes",
+    "nodes": "Nodes",
+    "cpuUsage": "CPU Usage",
+    "memoryUsage": "Memory Usage",
+    "gpuUsage": "GPU Usage",
+    "networkUsage": "Network Usage",
+    "diskUsage": "Disk Usage",
+    "migratedToDashboard": "Content has been migrated to dashboard homepage",
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "busy": "Busy",
+      "idle": "Idle",
+      "error": "Error"
+    }
+  },
+  "applications": {
+    "title": "Applications",
+    "installed": "Installed Apps",
+    "available": "Available Apps",
+    "install": "Install",
+    "uninstall": "Uninstall",
+    "update": "Update",
+    "version": "Version",
+    "license": "License",
+    "documentation": "Documentation",
+    "redirecting": "Redirecting...",
+    "redirectToHpcCenter": "Redirecting to HPC Application Center"
+  },
+  "files": {
+    "title": "File Manager",
+    "subtitle": "Manage your personal files",
+    "upload": "Upload File",
+    "download": "Download File",
+    "delete": "Delete File",
+    "rename": "Rename",
+    "move": "Move",
+    "copy": "Copy",
+    "newFolder": "New Folder",
+    "fileName": "File Name",
+    "fileSize": "File Size",
+    "fileType": "File Type",
+    "modifiedTime": "Modified Time",
+    "permissions": "Permissions",
+    "uploading": "Uploading...",
+    "uploadSuccess": "Upload successful",
+    "uploadFailed": "Upload failed",
+    "deleteSuccess": "Delete successful",
+    "deleteFailed": "Delete failed",
+    "renameSuccess": "Rename successful",
+    "renameFailed": "Rename failed",
+    "createFolderSuccess": "Folder created successfully",
+    "createFolderFailed": "Folder creation failed",
+    "noPermission": "No permission to perform this action",
+    "currentPath": "Current path",
+    "backToParent": "Back to parent",
+    "fileList": "File List",
+    "searchPlaceholder": "Search files...",
+    "showHidden": "Show hidden files",
+    "selectAll": "Select all",
+    "deselectAll": "Deselect all",
+    "downloadSelected": "Download selected",
+    "deleteSelected": "Delete selected",
+    "confirmDeleteSelected": "Are you sure you want to delete {count} selected files/directories?",
+    "batchDeleteComplete": "Batch deletion completed",
+    "emptyDirectory": "Directory is empty",
+    "directory": "Directory",
+    "downloadFolderZip": "Download folder (ZIP)",
+    "downloadFile": "Download file",
+    "authError": "Authentication error",
+    "authExpired": "Authentication expired",
+    "pleaseRelogin": "Please log in again",
+    "insufficientPermission": "Insufficient permission",
+    "noDownloadPermission": "You don't have permission to download files",
+    "noDeletePermission": "You don't have permission to delete files",
+    "noPreviewPermission": "You don't have permission to preview files",
+    "selectFilesFirst": "Please select files or folders to download first",
+    "downloadFailed": "Download failed",
+    "batchDownloadFailed": "Batch download failed",
+    "startDownload": "Starting download of {count} items",
+    "downloadSuccess": "File downloaded successfully",
+    "confirmDelete": "Are you sure you want to delete {name}?",
+    "pleaseLogin": "Please log in first",
+    "folderName": "Folder Name",
+    "folderNamePlaceholder": "Enter folder name",
+    "creating": "Creating...",
+    "create": "Create",
+    "fileTooLarge": "File too large to preview. Please download to view.",
+    "fetchContentFailed": "Failed to fetch file content",
+    "contentTruncated": "... (Content truncated, download to view full file)",
+    "copySuccessTitle": "Copy Successful",
+    "copySuccessDesc": "Content copied to clipboard",
+    "copyFailedTitle": "Copy Failed",
+    "copyFailedDesc": "Please manually select text to copy",
+    "copied": "Copied",
+    "retry": "Retry",
+    "preview": "Preview",
+    "rawContent": "Raw Content",
+    "uploadSuccessTitle": "Upload Successful",
+    "uploadSuccessDesc": "Successfully uploaded {count} files",
+    "uploadFailedTitle": "Upload Failed",
+    "uploadFailedDesc": "{count} files failed to upload",
+    "dragDropHere": "Drop files here...",
+    "dragDropOrClick": "Drag and drop files here, or click to select",
+    "multipleFilesSupported": "Multiple files supported",
+    "filesToUpload": "Files to Upload",
+    "pendingUpload": "Pending",
+    "uploadComplete": "Complete",
+    "startUpload": "Start Upload"
+  },
+  "system": {
+    "title": "System",
+    "users": {
+      "page": {
+        "title": "User Management",
+        "subtitle": "Manage system user accounts and permissions",
+        "loadingText": "Loading...",
+        "addUser": "Add User",
+        "syncUsers": "Sync Users",
+        "previewSync": "Preview Sync",
+        "userList": "User List",
+        "searchPlaceholder": "Search users...",
+        "totalRecords": "{total} records, page {page}/{totalPages}",
+        "previousPage": "Previous",
+        "nextPage": "Next"
+      },
+      "form": {
+        "addTitle": "Add User",
+        "editTitle": "Edit User",
+        "username": "Username",
+        "usernamePlaceholder": "Enter username",
+        "realName": "Full Name",
+        "realNamePlaceholder": "Enter full name",
+        "email": "Email",
+        "emailPlaceholder": "Enter email address",
+        "phone": "Phone",
+        "phonePlaceholder": "Enter phone number",
+        "department": "Department",
+        "departmentPlaceholder": "Enter department",
+        "role": "Role",
+        "roleUser": "User",
+        "roleAdmin": "Administrator",
+        "password": "Password",
+        "passwordPlaceholder": "Enter initial password (optional)",
+        "loginShell": "Login Shell",
+        "selectShell": "Select login shell",
+        "cancel": "Cancel",
+        "update": "Update",
+        "add": "Add",
+        "processing": "Processing...",
+        "requiredFields": "Please fill in all required fields",
+        "invalidEmail": "Invalid email format"
+      },
+      "table": {
+        "select": "Select",
+        "username": "Username",
+        "name": "Name",
+        "email": "Email",
+        "department": "Department",
+        "role": "Role",
+        "userGroup": "User Group",
+        "shell": "Login Shell",
+        "webshell": "WebShell",
+        "lastLogin": "Last Login",
+        "status": "Status",
+        "actions": "Actions",
+        "admin": "Administrator",
+        "user": "User",
+        "gidUnassigned": "Unassigned",
+        "gidLabel": "GID: {gid}",
+        "webshellEnabled": "Enabled",
+        "webshellDisabled": "Disabled",
+        "online": "Online",
+        "offline": "Offline",
+        "noUsers": "No users",
+        "edit": "Edit",
+        "resetPassword": "Reset Password",
+        "setAsUser": "Set as User",
+        "setAsAdmin": "Set as Administrator",
+        "enableWebShell": "Enable WebShell",
+        "disableWebShell": "Disable WebShell",
+         "delete": "Delete",
+         "shellMissing": "Not set"
+      },
+      "passwordReset": {
+        "title": "Reset Password",
+        "userLabel": "For user",
+        "resetPasswordFor": "reset password",
+        "newPassword": "New Password",
+        "newPasswordPlaceholder": "Enter new password",
+        "confirmPassword": "Confirm Password",
+        "confirmPasswordPlaceholder": "Enter new password again",
+        "cancel": "Cancel",
+        "reset": "Reset Password",
+        "resetting": "Resetting...",
+        "enterNewPassword": "Please enter new password",
+        "minLength": "Password must be at least 6 characters",
+        "passwordMismatch": "Passwords do not match"
+      },
+      "validation": {
+        "requiredFields": "Please fill in all required fields",
+        "invalidEmail": "Invalid email format",
+        "enterNewPassword": "Please enter new password",
+        "minLength": "Password must be at least 6 characters",
+        "passwordMismatch": "Passwords do not match"
+      },
+      "actions": {
+        "getUsersFailed": "Failed to fetch user list",
+        "addSuccess": "Added successfully",
+        "addSuccessDesc": "User {username} has been added",
+        "updateSuccess": "Updated successfully",
+        "updateSuccessDesc": "User {username} has been updated",
+        "operationFailed": "Operation failed",
+        "confirmDelete": "Delete {username}?",
+        "deleteSuccess": "Deleted successfully",
+        "deleteSuccessDesc": "User {username} has been deleted",
+        "deleteFailed": "Delete failed",
+        "confirmRoleChange": "Set {username} as {role}?",
+        "roleAdmin": "Administrator",
+        "roleUser": "User",
+        "roleUpdateSuccess": "Role updated successfully",
+        "roleUpdateFailed": "Role update failed",
+        "confirmWebShellChange": "{action} WebShell for {username}?",
+        "enable": "enable",
+        "disable": "disable",
+        "webshellUpdateSuccess": "WebShell permission updated successfully",
+        "webshellUpdateFailed": "WebShell permission update failed",
+        "passwordResetSuccess": "Password reset successfully",
+        "passwordResetFailed": "Password reset failed"
+      },
+      "sync": {
+        "previewComplete": "Sync preview completed",
+        "syncComplete": "Sync completed",
+        "syncFailed": "Sync failed",
+        "previewSync": "Preview Sync",
+        "syncUsers": "Sync Users",
+        "syncing": "Syncing..."
+      }
+    },
+    "groups": {
+      "title": "Group Management",
+      "subtitle": "Manage system user groups and permissions",
+      "page": {
+        "createGroup": "Create Group",
+        "groupList": "Group List",
+        "searchPlaceholder": "Search groups...",
+        "previewSync": "Preview Sync",
+        "syncLdap": "Sync LDAP",
+        "totalRecords": "{total} records, page {page}/{totalPages}",
+        "previousPage": "Previous",
+        "nextPage": "Next"
+      },
+      "form": {
+        "createTitle": "Create Group",
+        "editTitle": "Edit Group",
+        "groupName": "Group Name",
+        "groupNameRequired": "Group Name *",
+        "groupNamePlaceholder": "Enter group name",
+        "description": "Description",
+        "descriptionPlaceholder": "Enter group description",
+        "members": "Group Members",
+        "searchUsers": "Search users...",
+        "loadingUsers": "Loading users...",
+        "noUsersFound": "No users found",
+        "selectedMembers": "Selected {count} members:",
+        "cancel": "Cancel",
+        "create": "Create",
+        "update": "Update",
+        "processing": "Processing..."
+      },
+      "table": {
+        "groupName": "Group Name",
+        "description": "Description",
+        "gid": "GID",
+        "memberCount": "Members",
+        "createdAt": "Created At",
+        "actions": "Actions",
+        "noDescription": "No description",
+        "noGroups": "No groups",
+        "updated": "Updated",
+        "manageAppPermissions": "Manage App Permissions",
+        "manageFilePermissions": "Manage File Permissions"
+      },
+      "sync": {
+        "syncing": "Syncing...",
+        "previewComplete": "Sync preview completed",
+        "syncComplete": "Sync completed",
+        "syncFailed": "Sync failed",
+        "willCreate": "Create {created}, update {updated}",
+        "withErrors": ", {errors} errors",
+        "successCreate": "Created {created}, updated {updated}",
+        "totalProcessed": ", processed {total} LDAP groups",
+        "unknownError": "Unknown error"
+      },
+      "actions": {
+        "fetchFailed": "Failed to fetch group list",
+        "fetchUsersFailed": "Failed to fetch user list",
+        "createSuccess": "Created successfully",
+        "createSuccessDesc": "Group has been created",
+        "updateSuccess": "Updated successfully",
+        "updateSuccessDesc": "Group has been updated",
+        "operationFailed": "Operation failed",
+        "deleteConfirm": "Delete group? Cannot undo.",
+        "deleteSuccess": "Deleted successfully",
+        "deleteSuccessDesc": "Group has been deleted",
+        "deleteFailed": "Delete failed"
+      },
+      "permissions": {
+        "title": "Manage Application Permissions",
+        "titleWithGroup": "Manage Application Permissions - {groupName}",
+        "currentTab": "Current Permissions",
+        "addTab": "Add Permissions",
+        "currentPermissions": "Current Application Permissions",
+        "currentPermissionsDesc": "Group \"{groupName}\" current permissions",
+        "addPermissions": "Add Application Permissions",
+        "addPermissionsDesc": "Add permissions for \"{groupName}\"",
+        "loading": "Loading...",
+        "noPermissions": "This group has no application permissions",
+        "permissionType": "Permission Type",
+        "accessPermission": "Access Permission",
+        "submitPermission": "Submit Permission",
+        "managePermission": "Manage Permission",
+        "appsCount": "({count} apps)",
+        "batchRemove": "Batch Remove",
+        "searchApps": "Search Applications",
+        "searchPlaceholder": "Search apps...",
+        "availableApps": "Available Applications",
+        "selected": "Selected {count}",
+        "noAvailableApps": "No applications to add",
+        "noMatchingApps": "No matching applications found",
+        "selectedApps": "Selected applications:",
+        "close": "Close",
+        "addPermissionsButton": "Add ({count})",
+        "adding": "Adding...",
+        "selectAppsFirst": "Please select applications",
+        "selectAppsFirstDesc": "Please select at least one application",
+        "addSuccess": "Added successfully",
+        "addSuccessDesc": "Added {count} for \"{groupName}\"",
+        "addFailed": "Add failed",
+        "removeSuccess": "Removed successfully",
+        "removeSuccessDesc": "Removed {count} permissions",
+        "removeFailed": "Remove failed",
+        "fetchPermissionsFailed": "Failed to fetch permissions",
+        "fetchAppsFailed": "Failed to fetch applications",
+        "unknownError": "Unknown error"
+      }
+    },
+    "queues": "Queues",
+    "licenses": "Licenses",
+    "maintenance": "Maintenance",
+    "logs": {
+      "title": "System Logs",
+      "subtitle": "View and monitor system runtime status and application logs",
+      "systemLog": "System Log",
+      "appLog": "Application Log",
+      "refresh": "Refresh",
+      "loading": "Loading logs...",
+      "noLogs": "No logs available",
+      "noLogsOrError": "Unable to retrieve log content",
+      "fetchFailed": "Failed to fetch logs",
+      "file": "File",
+      "totalLines": "Total lines",
+      "showing": "Showing latest {count} lines"
+    },
+    "settings": "Settings",
+    "subtitle": "Manage system configuration, user permissions, application settings, and system monitoring",
+    "systemSettingsCard": "System Settings",
+    "systemSettingsDesc": "Configure platform basic information, logo, theme and other system parameters",
+    "userManagementCard": "User Management",
+    "userManagementDesc": "Manage system user accounts, permission assignments, and user status",
+    "manageUsers": "Manage Users",
+    "hpcAppManagement": "HPC Application Management",
+    "hpcAppManagementDesc": "Manage HPC application configuration, form settings, and submission permissions",
+    "manageHpcApps": "Manage HPC Apps",
+    "filePermissions": {
+      "title": "File Permissions",
+      "subtitle": "Manage user file permissions",
+      "groupPermissionManagement": "Group Permission Mgmt",
+      "userPermissions": "User Permissions",
+      "groupPermissions": "Group Permissions",
+      "selectUser": "Select User",
+      "batchManagement": "Batch Manage",
+      "exitBatchMode": "Exit Batch Mode",
+      "loadingUserList": "Loading users...",
+      "selectAll": "Select All",
+      "deselectAll": "Deselect All",
+      "selectedCount": "{count} users selected",
+      "selectUserPlaceholder": "Select user to manage",
+      "permissionConfig": "File Permissions",
+      "batchManageUsers": "Batch manage {count} users",
+      "loadingPermissions": "Loading permissions...",
+      "batchOperating": "Batch operating...",
+      "applyToUsers": "Apply to {count} users",
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "groupFilePermissions": "Group File Permissions",
+      "groupPermissionHint": "Configure in group mgmt",
+      "goToGroupManagement": "Go to Groups",
+      "error": "Error",
+      "success": "Success",
+      "hint": "Hint",
+      "fetchUsersFailed": "Failed to fetch users",
+      "fetchPermissionsFailed": "Failed to fetch permissions",
+      "enableSuccess": "Permission enabled",
+      "disableSuccess": "Permission disabled",
+      "operationFailed": "Operation failed",
+      "selectUsersFirst": "Select users first",
+      "batchOperationSuccess": "{action} {permission} for {count} users",
+      "enable": "enable",
+      "disable": "disable",
+      "partialSuccess": "Partial success",
+      "batchOperationPartial": "Success: {success}, failed: {failed}",
+      "batchOperationFailed": "Batch operation failed"
+    },
+    "filePermissionsDesc": "Manage user file operation permissions including upload, download, preview, delete, share, export, and copy",
+    "manageFilePermissions": "Manage File Permissions",
+    "announcements": "Announcements",
+    "announcementsDesc": "Publish and manage system announcements and notifications",
+    "manageAnnouncements": "Manage Announcements",
+    "systemLogsCard": "System Logs",
+    "systemLogsDesc": "View system runtime logs, error messages, and audit records",
+    "viewLogs": "View Logs",
+    "quickActions": "Quick Actions",
+    "refreshPage": "Refresh Page",
+    "clearCache": "Clear Cache",
+    "securityCheck": "Security Check",
+    "systemOptimization": "System Optimization",
+    "systemMonitor": "System Monitor",
+    "settingsPage": {
+      "title": "System Settings",
+      "subtitle": "Configure platform and security",
+      "autoSaving": "Auto-saving...",
+      "saved": "Saved",
+      "basicInfo": "Basic Information",
+      "platformName": "Platform Name",
+      "platformNamePlaceholder": "Enter platform name",
+      "platformNameHint": "Platform name in page title",
+      "websiteTitle": "Website Title",
+      "websiteTitlePlaceholder": "Enter website title",
+      "websiteTitleHint": "Website title displayed in browser tab",
+      "websiteDescription": "Website Description",
+      "websiteDescriptionPlaceholder": "Enter website description",
+      "websiteDescriptionHint": "Brief description for SEO and sharing",
+      "systemLogo": "System Logo",
+      "currentLogo": "Current Logo",
+      "uploading": "Uploading...",
+      "selectNewLogo": "Select New Logo",
+      "restoreDefaultLogo": "Restore Default Logo",
+      "logoUploadSuccess": "Logo uploaded successfully",
+      "logoAutoSaved": "New logo has been auto-saved",
+      "uploadFailed": "Upload failed",
+      "uploadFailedRetry": "Upload failed, please retry",
+      "logoRestored": "Logo restored",
+      "logoRestoredDefault": "Restored to default logo",
+      "logoHintSize": "Recommended size: 120×120 pixels",
+      "logoHintFormat": "Supported formats: PNG, JPG, WebP, GIF",
+      "logoHintMaxSize": "Maximum file: 5MB",
+      "saveBasicInfo": "Save Basic Info",
+      "basicInfoHint": "Manual save required",
+      "saving": "Saving...",
+      "basicInfoSaveSuccess": "Basic info saved successfully",
+      "basicInfoSaved": "Basic info saved",
+      "basicInfoSaveSuccessShort": "Basic info saved successfully!",
+      "systemConfig": "System Configuration",
+      "systemConfigHint": "Affects all users data paths",
+      "userHomeDirectoryPrefix": "User Home Directory Prefix",
+      "userHomeDirectoryPlaceholder": "Enter user home directory prefix path",
+      "userHomeDirectoryHint": "Root path prefix for user homes",
+      "importantNotice": "Important Notice:",
+      "homeDirectoryNotice1": "This setting affects all users' home directory paths",
+      "homeDirectoryNotice2": "Manual save, syncs database",
+      "homeDirectoryNotice3": "Recommended to modify during system maintenance period",
+      "homeDirectoryNotice4": "Ensure the new path actually exists on the server",
+      "homeDirectoryHint": "User home directory prefix requires manual saving after modification",
+      "saveHomeDirectory": "Save Home Directory Settings",
+      "homeDirectorySaveSuccess": "User home directory prefix saved successfully",
+      "homeDirectorySynced": "All user home directory paths have been synchronized",
+      "securitySettings": "Security Settings",
+      "filePreviewWatermark": "File Preview Watermark",
+      "watermarkHint": "Display watermark in file preview to prevent content leakage",
+      "watermarkText": "Watermark Text",
+      "watermarkTextPlaceholder": "Leave blank to display username, or enter custom text",
+      "watermarkTextHint": "Blank = username, or custom",
+      "previewEffect": "Preview Effect",
+      "previewContent": "This is sample file preview content...",
+      "watermarkPreviewHint": "Watermark will be displayed over file content in actual preview",
+      "watermarkUsername": "Username",
+      "webshellCopyPaste": "WebShell Copy/Paste Permission",
+      "webshellCopyPasteHint": "Control copy/paste",
+      "webshellEnabled": "Enabled: Users can copy and paste text in WebShell",
+      "webshellDisabled": "Disabled: Users cannot copy/paste in WebShell for enhanced security",
+      "applicationsCenter": "Applications Center",
+      "applicationsCenterHint": "Show/hide app center",
+      "applicationsCenterEnabled": "Enabled: Display Applications Center entry in navigation bar",
+      "applicationsCenterDisabled": "Disabled: Hide Applications Center entry, users cannot access",
+      "bigScreenButton": "Big Screen Button",
+      "bigScreenButtonHint": "Show/hide big screen button",
+      "bigScreenEnabled": "Enabled: Display big screen button in navigation bar, users can enter full-screen monitoring mode",
+      "bigScreenDisabled": "Disabled: Hide big screen button, users cannot enter full-screen monitoring mode",
+      "copyrightConfig": "Copyright Configuration",
+      "companyCopyright": "Company Copyright Information",
+      "companyName": "Company Name",
+      "companyNamePlaceholder": "Enter company name",
+      "companyUrl": "Company URL",
+      "companyUrlPlaceholder": "https://yourcompany.com",
+      "copyrightText": "Copyright Text",
+      "copyrightTextPlaceholder": "© 2024 Your Company Name. All rights reserved.",
+      "poweredBy": "Powered by Text",
+      "poweredByPlaceholder": "Powered by HPC Platform",
+      "showPoweredBy": "Show Powered by",
+      "showPoweredByHint": "Display Powered by info in footer",
+      "channelInfo": "Channel Information",
+      "channelInfoHint": "Channel info, overrides company",
+      "channelName": "Channel Name",
+      "channelNamePlaceholder": "Enter channel name",
+      "channelUrl": "Channel URL",
+      "channelUrlPlaceholder": "https://channel.com",
+      "channelCopyright": "Channel Copyright",
+      "channelCopyrightPlaceholder": "© 2024 Channel Name. All rights reserved.",
+      "clientInfo": "Client Information",
+      "clientInfoHint": "Client info, highest priority",
+      "clientName": "Client Name",
+      "clientNamePlaceholder": "Enter client name",
+      "clientUrl": "Client URL",
+      "clientUrlPlaceholder": "https://client.com",
+      "clientCopyright": "Client Copyright",
+      "clientCopyrightPlaceholder": "© 2024 Client Name. All rights reserved.",
+      "brandingSettings": "Branding Display Settings",
+      "showFooter": "Show Footer",
+      "showFooterHint": "Display copyright footer at page bottom",
+      "footerAdditionalText": "Footer Additional Text",
+      "footerAdditionalTextPlaceholder": "Optional footer additional information",
+      "loginPageBranding": "Login Page Branding",
+      "loginPageBrandingHint": "Display brand information on login page",
+      "dashboardBranding": "Dashboard Branding",
+      "dashboardBrandingHint": "Display brand information on dashboard page",
+      "copyrightConfigSave": "Copyright Configuration",
+      "copyrightConfigHint": "Click save to apply",
+      "saveSettings": "Save Settings",
+      "copyrightSaveSuccess": "Copyright settings saved successfully",
+      "autoSaveNotice": "Auto-save Notice",
+      "copyrightAutoSave": "Copyright configuration auto-save",
+      "systemConfigAutoSave": "System configuration auto-save",
+      "securityAutoSave": "Security settings auto-save",
+      "autoSaveTip": "💡 Tip: All configuration items will be auto-saved within 1 second after modification. You can also use the \"Save Settings\" button to save manually.",
+      "settingsAutoSaved": "Settings auto-saved",
+      "configSavedSuccess": "Configuration saved successfully",
+      "autoSaveFailed": "Auto-save failed",
+      "autoSaveFailedHint": "Save failed, please save manually",
+      "networkErrorSaveManually": "Network error, please save manually"
+    },
+    "overview": "System Overview",
+    "usersManagement": "User Management",
+    "groupsManagement": "Group Management",
+    "hpcAppsManagement": "HPC Applications",
+    "filePermissionsManagement": "File Permissions",
+    "licenseManagement": "License Management",
+    "announcementsManagement": "Announcements",
+    "systemLogs": "System Logs",
+    "applications": {
+      "management": {
+        "title": "App Management",
+        "subtitle": "Manage HPC apps, forms, and permissions",
+        "addNewApp": "Add App",
+        "refresh": "Refresh",
+        "searchPlaceholder": "Search...",
+        "loadingApps": "Loading...",
+        "noApps": "No apps",
+        "noMatchingApps": "No matches",
+        "clearSearch": "Clear",
+        "publicApp": "Public",
+        "restrictedAccess": "Restricted",
+        "author": "Author",
+        "view": "View",
+        "edit": "Edit",
+        "permission": "Access",
+        "delete": "Delete",
+        "backToList": "← Back",
+        "versionManagement": "Versions",
+        "loadFailed": "Load failed",
+        "cannotLoadList": "Cannot load",
+        "networkError": "Network error",
+        "cannotConnect": "Cannot connect",
+        "saveFailed": "Save failed",
+        "unknownError": "Error",
+        "confirmDelete": "Delete \"{name}\"?",
+        "deleteSuccess": "Deleted",
+        "deleteSuccessDesc": "App deleted",
+        "deleteFailed": "Delete failed",
+        "saveBlocked": "Cannot save",
+        "saveBlockedDesc": "Published apps can't be edited",
+        "saveAsSuccess": "Saved as new",
+        "newAppCreated": "App created",
+        "updateSuccess": "Updated",
+        "appConfigUpdated": "App updated",
+        "createSuccess": "Created",
+        "operationFailed": "Failed",
+        "fieldEditor": {
+          "fieldName": "Field Name",
+          "displayLabel": "Label",
+          "fieldType": "Type",
+          "defaultValue": "Default",
+          "placeholder": "Placeholder",
+          "fieldDescription": "Description",
+          "required": "Required",
+          "minValue": "Min",
+          "maxValue": "Max"
+        }
+      }
+    },
+    "license": {
+      "title": "License Management",
+      "loading": "Loading license...",
+      "loadFailed": "Failed to load license",
+      "checkConfig": "Check license config",
+      "refreshStatus": "Refresh Status",
+      "licenseStatus": "License Status",
+      "trial": "Trial",
+      "commercial": "Commercial",
+      "valid": "Valid",
+      "invalid": "Invalid",
+      "remainingDays": "Days Remaining",
+      "userUsage": "User Usage",
+      "unlimited": "Unlimited",
+      "usageRate": "Usage Rate",
+      "nodeUsage": "Node Usage",
+      "availableFeatures": "Available Features",
+      "userLimitAlert": "User Limit Alert",
+      "currentUsers": "Current Users",
+      "maxUsers": "Max Users",
+      "overLimit": "Over Limit",
+      "users": "users",
+      "upgradeToCommercial": "Upgrade to Commercial",
+      "trialExpired": "Trial expired, upgrade now",
+      "trialRemaining": "{days} days left, upgrade",
+      "trialLimitation": "Trial: max {limit} users, limited",
+      "commercialBenefits": "Commercial: unlimited, full features",
+      "applyCommercial": "Apply for Commercial",
+      "licenseDetails": "License Details",
+      "licenseType": "License Type",
+      "status": "Status",
+      "userUsageInfo": "User Usage Info",
+      "currentUserCount": "Current Users",
+      "userLimit": "User Limit",
+      "nodeUsageInfo": "Node Usage Info",
+      "currentNodeCount": "Current Nodes",
+      "nodeLimit": "Node Limit",
+      "authorizationControl": "Authorization Control",
+      "trialMaxUsers": "Max {limit} users",
+      "trialMaxNodes": "Max {limit} nodes",
+      "trialAllFeaturesExceptReports": "All features except reports",
+      "trialBasicFeatures": "Job submit, files, VNC",
+      "trialMonitoringApi": "System monitoring, API",
+      "trialReportsRestricted": "Reports (commercial only)",
+      "trialAdvancedReportsRestricted": "Advanced reports (commercial)",
+      "commercialUnlimitedUsers": "Unlimited users",
+      "commercialUnlimitedNodes": "Unlimited nodes",
+      "commercialAllFeatures": "All features unlocked",
+      "commercialHistoricalReports": "Historical reports",
+      "commercialAdvancedReports": "Advanced reports",
+      "commercialEnterpriseSupport": "Enterprise support",
+      "featureAnalysis": "Feature Analysis",
+      "availableFeaturesLabel": "Available Features",
+      "trialRestrictedFeatures": "Trial Restrictions",
+      "noFeatureRestrictions": "No restrictions",
+      "requiresCommercial": "Requires commercial",
+      "allFeaturesAvailable": "All features available",
+      "featureNote1": "Trial: all basic features",
+      "featureNote2": "Commercial: full access",
+      "featureNote3": "Limits via user/node count",
+      "installationInfo": "Installation Info",
+      "installId": "Install ID",
+      "installDate": "Install Date",
+      "systemVersion": "System Version",
+      "realtimeMonitoring": "Realtime Monitoring",
+      "licenseVerification": "License Verification",
+      "normal": "Normal",
+      "abnormal": "Abnormal",
+      "userLimitCheck": "User Limit Check",
+      "warning": "Warning",
+      "exceeded": "Exceeded",
+      "nodeLimitCheck": "Node Limit Check",
+      "lastUpdate": "Last Update",
+      "monitoringStatus": "Monitoring Status",
+      "normalOperation": "Normal Operation",
+      "generateRequest": "Request License",
+      "installLicense": "Install License",
+      "generateActivationRequest": "Generate Activation Request",
+      "activationRequestDescription": "Fill in contact information and license configuration to generate activation request file",
+      "company": "Organization/Company",
+      "companyPlaceholder": "Enter organization or company name",
+      "contactPerson": "Contact Person",
+      "contactPersonPlaceholder": "Enter contact person",
+      "department": "Department",
+      "departmentPlaceholder": "Enter department",
+      "email": "Email",
+      "emailPlaceholder": "Enter email",
+      "phone": "Phone",
+      "phonePlaceholder": "Enter phone number",
+      "licenseConfiguration": "License Configuration",
+      "duration": "Duration (Days)",
+      "notes": "Notes",
+      "notesPlaceholder": "Enter any additional notes",
+      "cancel": "Cancel",
+      "generating": "Generating...",
+      "generateAndDownload": "Generate & Download",
+      "requestGenerated": "Activation request generated successfully",
+      "requestGenerateFailed": "Failed to generate activation request",
+      "installLicenseTitle": "Install License",
+      "installLicenseDescription": "Upload the license file received from authorization personnel",
+      "installing": "Installing...",
+      "install": "Install",
+      "licenseInstalled": "License installed successfully",
+      "licenseInstallFailed": "Failed to install license",
+      "selectLicenseFile": "Select License File",
+      "uploadFileHint": "Support .json file format",
+      "fileContentPreview": "File Content Preview",
+      "fileReadFailed": "Failed to read file",
+      "upgradeProcessTitle": "Commercial License Application Process",
+      "upgradeProcessDescription": "Learn how to apply for and activate a commercial license",
+      "upgradeSteps": "Application Steps",
+      "step1Title": "Generate Activation Request",
+      "step1Description": "Click 'Apply for License' button, fill in your organization information and contact details, system will generate an activation request file",
+      "step2Title": "Submit Request File",
+      "step2Description": "Send the generated request file to our sales team or technical support, we will process it within 1 business day",
+      "step3Title": "Receive License File",
+      "step3Description": "After approval, you will receive the official commercial license file",
+      "step4Title": "Install License",
+      "step4Description": "Return to this page, click 'Install License' button, upload the received license file to complete activation",
+      "commercialBenefitsTitle": "Commercial Benefits",
+      "benefit1": "Unlimited Users",
+      "benefit2": "Unlimited Compute Nodes",
+      "benefit3": "Full Feature Access",
+      "benefit4": "Historical Report Analysis",
+      "benefit5": "Advanced Analytics Reports",
+      "benefit6": "Enterprise Technical Support",
+      "contactInfo": "Contact Information",
+      "contactInfoDescription": "If you need assistance, please contact us via:",
+      "contactEmail": "Email",
+      "contactPhone": "Phone",
+      "workingHours": "Working Hours",
+      "workingHoursValue": "Monday to Friday 9:00-18:00",
+      "generateRequestNow": "Generate Request Now"
+    }
+  },
+  "assets": {
+    "title": "Cluster Asset Management",
+    "clusterStatus": "Cluster Machine Status",
+    "totalMachines": "Total Machines",
+    "onlineMachines": "Online Machines",
+    "online": "Online",
+    "offline": "Offline",
+    "alerts": "Alerts",
+    "noAlerts": "No alerts at the moment",
+    "deviceList": "Device List",
+    "ibmcIp": "iBMC IP Address",
+    "managementStatus": "Management Status",
+    "healthStatus": "Health Status",
+    "model": "Model",
+    "serialNumber": "Serial Number",
+    "vendor": "Vendor",
+    "group": "Group",
+    "scope": "Scope",
+    "deviceTags": "Device Tags",
+    "itemsPerPage": " items/page",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "pageInfo": "Page {current} of {total}",
+    "normal": "Normal",
+    "good": "Good",
+    "hardwareFailure": "Hardware Failure",
+    "networkAbnormal": "Network Abnormal",
+    "cpuOverheat": "CPU Temperature Too High",
+    "networkDisconnected": "Network Connection Interrupted"
+  },
+  "partitions": {
+    "title": "Partition Management"
+  },
+  "profile": {
+    "title": "Profile",
+    "username": "Username",
+    "email": "Email",
+    "phone": "Phone",
+    "department": "Department",
+    "role": "Role",
+    "changePassword": "Change Password",
+    "oldPassword": "Old Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "updateProfile": "Update Profile",
+    "updateSuccess": "Update successful",
+    "updateFailed": "Update failed",
+    "basicInfo": "Basic Information",
+    "realName": "Full Name",
+    "loginShell": "Login Shell",
+    "selectShell": "Select login shell",
+    "saving": "Saving...",
+    "saveSuccess": "Save successful",
+    "saveFailed": "Save failed",
+    "profileUpdated": "Profile information has been updated",
+    "retryLater": "Please try again",
+    "passwordChangeSuccess": "Password changed successfully",
+    "passwordChangeFailed": "Password change failed",
+    "reloginWithNewPassword": "Please log in again with your new password",
+    "preferences": "Interface Preferences",
+    "themeMode": "Theme Mode",
+    "selectTheme": "Select theme",
+    "lightMode": "Light",
+    "darkMode": "Dark",
+    "autoMode": "System",
+    "language": "Language",
+    "selectLanguage": "Select language",
+    "simplifiedChinese": "Simplified Chinese",
+    "english": "English",
+    "timezone": "Timezone",
+    "selectTimezone": "Select timezone",
+    "accountStatus": "Account Status",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "loginInfo": "Login Information",
+    "lastLogin": "Last Login",
+    "never": "Never",
+    "accountCreated": "Account Created",
+    "unknown": "Unknown",
+    "quickActions": "Quick Actions",
+    "saveSettings": "Save Settings",
+    "passwordChangeDescription": "Enter your old password and new password to change your login password"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAsRead": "Mark as read",
+    "markAllAsRead": "Mark all as read",
+    "deleteNotification": "Delete notification",
+    "noNotifications": "No notifications",
+    "jobCompleted": "Job completed",
+    "jobFailed": "Job failed",
+    "systemMaintenance": "System maintenance",
+    "storageWarning": "Low storage space",
+    "createTest": "Create Test Notifications",
+    "notificationSettings": "Notification Settings",
+    "totalNotifications": "Total",
+    "unread": "Unread",
+    "highPriority": "High Priority",
+    "recent24h": "Recent 24h",
+    "searchPlaceholder": "Search notifications...",
+    "allStatus": "All Status",
+    "statusRead": "Read",
+    "statusUnread": "Unread",
+    "statusArchived": "Archived",
+    "allPriority": "All Priority",
+    "priorityUrgent": "Urgent",
+    "priorityHigh": "High",
+    "priorityMedium": "Medium",
+    "priorityLow": "Low",
+    "allTypes": "All Types",
+    "typeJobStatus": "Job Status",
+    "typeSystemResource": "System Resource",
+    "typeScheduledMaintenance": "Scheduled Maintenance",
+    "typeSecurityAlert": "Security Alert",
+    "markAllRead": "Mark All Read",
+    "markAllUnread": "Mark All Unread",
+    "clearAll": "Clear All",
+    "selected": "{count} notifications selected",
+    "markRead": "Mark Read",
+    "markUnread": "Mark Unread",
+    "archive": "Archive",
+    "cancelSelection": "Cancel Selection",
+    "notificationList": "Notification List",
+    "selectAll": "Select All",
+    "shortcuts": "Shortcuts:",
+    "shortcutSelectAll": "Select All",
+    "shortcutRefresh": "Refresh",
+    "shortcutMarkAllRead": "Mark All Read",
+    "shortcutDelete": "Delete Selected",
+    "totalCount": "{count} notifications total",
+    "loading": "Loading...",
+    "emptyState": "No notifications",
+    "clickToMarkRead": "Click to mark as read",
+    "alreadyRead": "Read",
+    "daysAgo": "{days} days ago",
+    "hoursAgo": "{hours} hours ago",
+    "minutesAgo": "{minutes} minutes ago",
+    "justNow": "Just now",
+    "fetchFailed": "Failed to fetch notifications",
+    "networkError": "Network error",
+    "cannotConnect": "Cannot connect to server",
+    "fetchStatsFailed": "Failed to fetch notification stats",
+    "selectToOperate": "Please select notifications to operate",
+    "operationSuccess": "Operation successful",
+    "operationFailed": "Operation failed",
+    "markedAsRead": "Notification marked as read",
+    "noUnreadNotifications": "No unread notifications",
+    "markedCount": "Marked {count} notifications as read",
+    "noReadNotifications": "No read notifications",
+    "markedCountUnread": "Marked {count} notifications as unread",
+    "refreshSuccess": "Refresh successful",
+    "listUpdated": "Notification list updated",
+    "selectToDelete": "Please select notifications to delete",
+    "confirmDeleteMultiple": "Are you sure you want to delete {count} selected notifications? This action cannot be undone.",
+    "confirmDeleteSingle": "Are you sure you want to delete notification \"{title}\"? This action cannot be undone.",
+    "deleteSuccess": "Delete successful",
+    "deleteFailed": "Delete failed",
+    "noNotificationsToClear": "No notifications to clear",
+    "confirmClearAll": "Are you sure you want to clear all {count} notifications? This action cannot be undone.",
+    "clearSuccess": "Clear successful",
+    "clearFailed": "Clear failed",
+    "testNotificationCreated": "Test notifications created successfully",
+    "createTestFailed": "Failed to create test notifications",
+    "typeJobStatusChange": "Job Status Change",
+    "typeJobQueueUpdate": "Job Queue Update",
+    "typeJobResourceAllocated": "Resource Allocated",
+    "typeJobExecutionError": "Execution Error",
+    "typeJobTimeLimit": "Time Limit",
+    "typeSystemResourceAlert": "System Resource Alert",
+    "typeStorageQuotaWarning": "Storage Quota Warning",
+    "typeNodeStatusChange": "Node Status Change",
+    "typePartitionUnavailable": "Partition Unavailable",
+    "typeScheduledMaintenanceFull": "Scheduled Maintenance",
+    "typeEmergencyMaintenance": "Emergency Maintenance",
+    "typeSystemUpdate": "System Update",
+    "typeServiceInterruption": "Service Interruption",
+    "typeSecurityAlertFull": "Security Alert",
+    "typePolicyUpdate": "Policy Update",
+    "typeAccountWarning": "Account Warning",
+    "typePermissionChange": "Permission Change",
+    "typeProjectUpdate": "Project Update",
+    "typeFileOperation": "File Operation",
+    "typeUsageReport": "Usage Report",
+    "typeBillingNotification": "Billing Notification",
+    "typeSystemAnnouncement": "System Announcement",
+    "page": "Page {page}",
+    "totalPages": "of {total}",
+    "totalItems": "Total {total}",
+    "itemsPerPage": "Items per page",
+    "items": "items",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "deleteNotificationAction": "Delete notification"
+  },
+  "webshell": {
+    "checkingPermission": "Checking permissions...",
+    "insufficientPermission": "Insufficient permissions, redirecting...",
+    "checkAccessFailed": "Failed to check WebShell access"
+  },
+  "errors": {
+    "general": "An error occurred, please try again later",
+    "network": "Network connection error",
+    "unauthorized": "Unauthorized access",
+    "forbidden": "Access forbidden",
+    "notFound": "Resource not found",
+    "serverError": "Server error",
+    "timeout": "Request timeout",
+    "invalidInput": "Invalid input"
+  },
+  "vnc": {
+    "title": "Desktop Session Management",
+    "subtitle": "Launch and manage desktops",
+    "availableApps": "Available Apps",
+    "sessionList": "Session List",
+    "loadingApps": "Loading apps...",
+    "loadingSessions": "Loading sessions...",
+    "noSessions": "No desktop sessions",
+    "noSessionsHint": "Click app above to start",
+    "desktopSession": "Desktop Session",
+    "display": "Display",
+    "port": "Port",
+    "startTime": "Start Time",
+    "logs": "Logs",
+    "openDesktop": "Open Desktop",
+    "copyUrl": "Copy desktop session URL",
+    "urlCopied": "Copied",
+    "urlCopiedDesc": "Session URL copied",
+    "desktopStarting": "Desktop starting...",
+    "close": "Close",
+    "submitSuccess": "Desktop session submitted successfully",
+    "submitSuccessDesc": "Job ID: {jobId}, starting...",
+    "submitFailed": "Submission failed",
+    "submitFailedDesc": "You have a running session",
+    "submitFailedGeneric": "Job submission failed, please try again",
+    "networkError": "Network error",
+    "jobCancelled": "Job cancelled",
+    "sessionStopped": "Desktop session stopped",
+    "cancelFailed": "Cancellation failed",
+    "cancelFailedDesc": "Unable to cancel job",
+    "configureSession": "Configure desktop session",
+    "partition": "Partition",
+    "partitionPlaceholder": "graphics",
+    "cpusPerTask": "CPU Cores (cpusPerTask)",
+    "timeLimit": "Time Limit",
+    "selectTimeLimit": "Select time limit",
+    "timeLimitHint": "Select max runtime",
+    "oneHour": "1 hour",
+    "twoHours": "2 hours",
+    "fourHours": "4 hours",
+    "eightHours": "8 hours",
+    "twentyFourHours": "24 hours",
+    "sevenDays": "7 days",
+    "desktopConfig": "Desktop Session Configuration",
+    "startSession": "Start Desktop Session",
+    "sessionLogs": "Desktop Session Logs",
+    "sessionLogsDesc": "View session logs",
+    "stdout": "Output",
+    "stderr": "Errors",
+    "logsLoading": "Loading logs...",
+    "noOutput": "No output",
+    "noError": "No error",
+    "realtimeConnected": "Real-time connection established",
+    "connecting": "Connecting...",
+    "realtimeUpdate": "Real-time Update",
+    "manualRefresh": "Manually refresh desktop session list",
+    "user": "User",
+    "statusLabels": {
+      "PENDING": "Pending",
+      "RUNNING": "Running",
+      "COMPLETED": "Completed",
+      "FAILED": "Failed",
+      "CANCELLED": "Cancelled"
+    },
+    "apps": {
+      "vnc-desktop": {
+        "name": "VNC Desktop",
+        "description": "Full Linux desktop environment with graphical applications",
+        "category": "Desktop"
+      }
+    }
+  },
+  "nodes": {
+    "title": "Node Management",
+    "totalNodes": "Total Nodes",
+    "healthyNodes": "Healthy Nodes",
+    "nodeAvailability": "Node Availability",
+    "clusterHealth": "Cluster Health Indicator",
+    "cpuUtilization": "CPU Utilization",
+    "cores": "cores",
+    "runningJobs": "Running Jobs",
+    "usedCpuCores": "Using {count} CPU cores",
+    "refresh": "Refresh",
+    "refreshing": "Refreshing...",
+    "loadingNodes": "Loading node data...",
+    "loadFailed": "Load failed",
+    "retry": "Retry",
+    "searchPlaceholder": "Search node name...",
+    "allStatus": "All",
+    "nodeName": "Node Name",
+    "status": "Status",
+    "cpuUsage": "CPU Usage",
+    "cpuLoad": "CPU Load",
+    "memory": "Memory",
+    "features": "Features",
+    "gpu": "GPU",
+    "actions": "Actions",
+    "drain": "Drain",
+    "resume": "Resume",
+    "down": "Down",
+    "selectedNodes": "{count} nodes selected:",
+    "noMatchingNodes": "No matching nodes found",
+    "partitionOverview": "Partition Overview",
+    "partitionName": "Partition Name",
+    "nodeCount": "Node Count",
+    "cpuTotal": "Total CPUs",
+    "gpuResources": "GPU Resources",
+    "timeLimit": "Time Limit",
+    "noLimit": "No limit",
+    "dataUpdatedAt": "Data updated at: {time}",
+    "notLoggedIn": "Not logged in",
+    "fetchNodeDataFailed": "Failed to fetch node data",
+    "statusLabels": {
+      "idle": "Idle",
+      "alloc": "Allocated",
+      "mix": "Mixed",
+      "down": "Down",
+      "drain": "Drain",
+      "unknown": "Unknown"
+    },
+    "partitionStatusLabels": {
+      "up": "Normal",
+      "idle": "Idle",
+      "down": "Down",
+      "drain": "Drain",
+      "mix": "Mixed",
+      "alloc": "Allocated",
+      "allocated": "Allocated"
+    }
+  },
+  "bigScreen": {
+    "title": "HPC High Performance Computing Platform",
+    "loading": {
+      "systemData": "Loading system data...",
+      "systemDataMessage": "Please wait, fetching real-time information",
+      "auth": "Initializing authentication status...",
+      "authMessage": "Please wait, verifying user identity",
+      "data": "Loading big screen data...",
+      "dataMessage": "Please wait, fetching latest data",
+      "initializing": "Initializing...",
+      "retryData": "Retry fetching data",
+      "rankingData": "Loading ranking data..."
+    },
+    "error": {
+      "dataError": "Data loading failed",
+      "retryButton": "Retry fetching data",
+      "continueButton": "Continue displaying"
+    },
+    "system": {
+      "hostname": "Host",
+      "uptime": "Running",
+      "loadAverage": "Load",
+      "updateTime": "Updated",
+      "running": "Running"
+    },
+    "status": {
+      "systemNormal": "System Normal",
+      "systemBusy": "System Busy",
+      "systemOverload": "System Overload",
+      "running": "Running",
+      "queued": "Queued",
+      "resourceStatus": "Resource Status",
+      "good": "Sufficient Resources",
+      "warning": "Resource Pressure",
+      "critical": "Resource Critical",
+      "currentStatus": "Current Status"
+    },
+    "buttons": {
+      "refresh": "Refresh",
+      "refreshing": "Refreshing...",
+      "forceRefresh": "Force refresh data",
+      "jobData": "Job Data",
+      "forceJobRefresh": "Force refresh job data",
+      "fullscreen": "Fullscreen",
+      "fullscreenTitle": "Fullscreen display",
+      "fullscreenMode": "Fullscreen Mode - Press ESC to exit"
+    },
+    "hardware": {
+      "title": "Cluster System Resources",
+      "computeNodes": "Compute Nodes",
+      "cpuCores": "CPU Cores",
+      "totalMemory": "Total Memory",
+      "memory": "Memory",
+      "gpuCards": "GPU Cards",
+      "storage": "Storage",
+      "sharedStorage": "Shared Storage",
+      "peakPower": "Peak Computing Power"
+    },
+    "health": {
+      "title": "System Health Status"
+    },
+    "resourceUsage": {
+      "title": "System Resource Usage",
+      "cpuUsage": "CPU Usage",
+      "memoryUsage": "Memory Usage",
+      "gpuUsage": "GPU Usage",
+      "storageUsage": "Storage Usage",
+      "nodeUsage": "Node Usage"
+    },
+    "operations": {
+      "title": "Cluster Operations Status",
+      "submittedJobs": "Total Submitted Jobs",
+      "completedJobs": "Completed Jobs",
+      "cpuRunTime": "CPU Runtime",
+      "gpuRunTime": "GPU Runtime",
+      "currentStatus": "Current Status",
+      "runningJobs": "Running Jobs",
+      "queuedJobs": "Queued Jobs",
+      "avgComputeTime": "Avg Compute Time",
+      "avgQueueTime": "Avg Queue Time"
+    },
+    "jobStats": {
+      "title": "Job Statistics",
+      "running": "Running",
+      "queued": "Queued",
+      "completed": "Completed",
+      "failed": "Failed",
+      "submittedJobs": "Total Submitted",
+      "avgComputeTime": "Avg Compute Time"
+    },
+    "userDistribution": {
+      "title": "User Distribution",
+      "registeredUsers": "Registered Users",
+      "onlineUsers": "Currently Online",
+      "jobSubmitRanking": "Job Submission Ranking TOP8",
+      "totalJobs": "Total",
+      "jobsLabel": "jobs",
+      "unknownUser": "Unknown User"
+    },
+    "softwareUsage": {
+      "title": "Software Usage Statistics",
+      "sharedSoftware": "Shared Computing Software",
+      "usageRanking": "Usage Ranking TOP10",
+      "top3": "Top 3 Software"
+    },
+    "chart": {
+      "jobCount": "Jobs",
+      "userLabel": "User"
+    },
+    "button": "Big Screen",
+    "buttonTitle": "Big Screen Display",
+    "common": {
+      "times": "times",
+      "jobs": "jobs",
+      "department": "departments",
+      "noData": "No data available",
+      "noRankingData": "No ranking data",
+      "noSoftwareData": "No software usage data",
+      "noDepartmentData": "No department data",
+      "loadingRankingData": "Loading ranking data...",
+      "refreshData": "Refresh data",
+      "refresh": "Refresh",
+      "total": "Total",
+      "used": "Used",
+      "usageRate": "Usage rate",
+      "showLast7Days": "Showing last 7 days job trend data",
+      "noTrendData": "No trend data available"
+    },
+    "consoleLog": {
+      "systemDataReceived": "System data received:",
+      "systemInfoFetchFailed": "Failed to fetch system info, using defaults",
+      "systemDataFetchFailed": "Failed to fetch system data:",
+      "dataFetchFailed": "Failed to fetch data:",
+      "dataFetchFailedNetwork": "Failed to fetch data, please check network connection",
+      "fullscreenToggleFailed": "Failed to toggle fullscreen:",
+      "dataValidationSubmittedLessThanRunningQueued": "Submitted jobs less than running+queued",
+      "dataValidationResourceUsageOver100": "Resource usage exceeds 100%",
+      "dataValidationHardwareAbnormal": "Hardware resource data abnormal",
+      "dataStatusAuth": "Auth",
+      "dataStatusUser": "User",
+      "dataStatusClient": "Client",
+      "dataStatusLoading": "Loading",
+      "dataStatusError": "Error",
+      "dataStatusCompleted": "Completed",
+      "dataStatusLoading2": "ing",
+      "dataStatusNotLoggedIn": "Not logged in",
+      "dataStatusYes": "Yes",
+      "dataStatusNo": "No",
+      "dataStatusNone": "None",
+      "dataAbnormalPrefix": "Data abnormal:",
+      "dataNormal": "Data normal"
+    },
+    "labels": {
+      "cpuUsage": "CPU Usage",
+      "memoryUsage": "Memory Usage",
+      "gpuUsage": "GPU Usage",
+      "storageUsage": "Storage Usage",
+      "nodeUsage": "Node Usage",
+      "clusterResourceUsage": "Cluster Resource Usage",
+      "jobStatistics": "Job Statistics",
+      "runningJobs": "Running",
+      "queuedJobs": "Queued",
+      "submittedJobsTotal": "Total Submitted",
+      "cpuRunTime": "CPU Runtime",
+      "gpuRunTime": "GPU Runtime",
+      "completedJobs": "Completed Jobs",
+      "avgQueueTime": "Avg Queue Time",
+      "jobSuccessRate": "Job Success Rate",
+      "softwareUsageStatus": "Software Usage",
+      "sharedSoftware": "Shared Computing Software",
+      "usageRankingTop10": "Usage Ranking TOP10",
+      "last7DaysJobTrend": "Last 7 Days Job Trend",
+      "jobStatusDistribution": "Job Status Distribution",
+      "departmentDistribution": "Department Distribution",
+      "totalDepartments": "departments",
+      "departmentDetails": "Department Details",
+      "activeUsers": "Active Users",
+      "usersCount": "Users",
+      "submittedJobs": "Submitted",
+      "completedJobs2": "Completed",
+      "failedJobs": "Failed",
+      "totalSubmitted": "Total Submitted",
+      "totalCompleted": "Total Completed",
+      "totalFailed": "Total Failed",
+      "successRate": "Success Rate",
+      "running": "Running",
+      "queued": "Queued",
+      "completed": "Completed",
+      "failed": "Failed",
+      "cancelled": "Cancelled",
+      "jobsUnit": "jobs",
+      "departmentLabel": "Department:",
+      "dateLabel": "Date:",
+      "used": "Used"
+    },
+    "units": {
+      "coreHours": "core-hours",
+      "cardHours": "card-hours",
+      "hours": "hours"
+    }
+  },
+  "hpcApplications": {
+    "title": "HPC Application Center",
+    "description": "Browse and launch high-performance computing applications",
+    "loadingForm": "Loading application form...",
+    "accessDenied": "Access Denied",
+    "centerDisabled": "Application center has been disabled by administrator",
+    "submitSuccess": "Job submitted successfully",
+    "submitFailed": "Submission failed",
+    "jobId": "Job ID",
+    "redirecting": "Redirecting to job management page...",
+    "discovering": "Discovering applications...",
+    "discoverComplete": "Application discovery complete",
+    "discovered": "Discovered {count} modules",
+    "initializing": "Initializing...",
+    "initSuccess": "Application initialization complete",
+    "initFailed": "Initialization failed",
+    "loading": "Loading...",
+    "loadFailed": "Load failed",
+    "noApplications": "No applications available",
+    "searchPlaceholder": "Search applications...",
+    "allCategories": "All Categories",
+    "allTypes": "All Types",
+    "start": "Start",
+    "unknownApp": "Unknown Application",
+    "noDescription": "No description",
+    "version": "Version",
+    "category": "Category",
+    "type": "Type",
+    "backToCenter": "Back to Application Center",
+    "discoverApps": "Discover Apps",
+    "initBioApps": "Initialize Bioinformatics Apps",
+    "bioAppsNotInitialized": "Bioinformatics Applications Not Initialized",
+    "bioAppsNotInitializedDesc": "System contains {total} pre-configured bioinformatics applications (R, Nextflow, GATK, Cloudgene, etc.). Click the initialize button to register these applications.",
+    "loadingApps": "Loading applications...",
+    "noMatchingApps": "No matching applications found",
+    "clearSearch": "Clear Search",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "pageInfo": "Page {current} of {total}",
+    "appsCount": "{count} applications",
+    "selectCategory": "Select category",
+    "selectType": "Select type",
+    "categories": {
+      "SCIENTIFIC_COMPUTING": "Scientific Computing",
+      "MACHINE_LEARNING": "Machine Learning",
+      "DEEP_LEARNING": "Deep Learning",
+      "QUANTUM_CHEMISTRY": "Quantum Chemistry",
+      "COMPUTATIONAL_FLUID_DYNAMICS": "Computational Fluid Dynamics",
+      "BIOINFORMATICS": "Bioinformatics",
+      "CAD_CAE": "CAD/CAE",
+      "VISUALIZATION": "Visualization",
+      "BIG_DATA": "Big Data",
+      "COMPILERS": "Compilers",
+      "DATABASES": "Databases",
+      "WEB_SERVICES": "Web Services",
+      "DEVELOPMENT_TOOLS": "Development Tools",
+      "SYSTEM_UTILITIES": "System Utilities",
+      "STRUCTURAL_ANALYSIS": "Structural Analysis",
+      "CFD": "Computational Fluid Dynamics",
+      "MULTIPHYSICS": "Multiphysics Simulation",
+      "MOLECULAR_SIMULATION": "Molecular Simulation"
+    },
+    "types": {
+      "BATCH": "Batch",
+      "INTERACTIVE": "Interactive",
+      "GUI": "GUI",
+      "WEB": "Web App",
+      "SERVICE": "Service",
+      "MPI": "MPI Parallel",
+      "OPENMP": "OpenMP Parallel",
+      "GPU": "GPU Accelerated",
+      "JUPYTER": "Jupyter",
+      "CONTAINER": "Container",
+      "WORKFLOW": "Workflow"
+    }
+  },
+  "vncApp": {
+    "name": "VNC Desktop",
+    "description": "Full Linux desktop environment with graphical applications",
+    "category": "Desktop",
+    "resolution": "Resolution"
+  },
+  "hpcApps": {
+    "matlab": {
+      "metadata": {
+        "displayName": "MATLAB",
+        "description": "Advanced numerical computing, visualization, and programming environment"
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "Default Configuration"
+          },
+          "interactive": {
+            "description": "Interactive Computing"
+          },
+          "large-memory": {
+            "description": "Large Memory Computing"
+          },
+          "parallel": {
+            "description": "Parallel computing"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "batch": {
+            "description": "Batch Mode"
+          },
+          "interactive": {
+            "description": "Interactive Mode"
+          },
+          "gui": {
+            "description": "GUI Mode"
+          }
+        }
+      },
+      "fields": {
+        "jobName": {
+          "label": "Job Name",
+          "description": "Specify a name for your MATLAB job",
+          "placeholder": "matlab-job"
+        },
+        "executionMode": {
+          "label": "Execution Mode",
+          "options": {
+            "batch": {
+              "label": "Batch Mode",
+              "description": "Submit script to queue"
+            },
+            "interactive": {
+              "label": "Interactive Mode",
+              "description": "Allocate resources and execute interactively"
+            },
+            "gui": {
+              "label": "GUI Mode",
+              "description": "Launch MATLAB GUI"
+            }
+          }
+        },
+        "resourceProfile": {
+          "label": "Resource Profile",
+          "options": {
+            "default": {
+              "label": "Default (4 cores, 16GB)"
+            },
+            "interactive": {
+              "label": "Interactive (2 cores, 8GB)"
+            },
+            "large-memory": {
+              "label": "Large Memory (16 cores, 128GB)"
+            },
+            "parallel": {
+              "label": "Parallel (32 cores, 64GB)"
+            }
+          }
+        },
+        "inputType": {
+          "label": "Input Type",
+          "options": {
+            "code": {
+              "label": "Enter code directly"
+            },
+            "file": {
+              "label": "Upload script file"
+            }
+          }
+        },
+        "matlabCode": {
+          "label": "MATLAB Code",
+          "placeholder": "% Enter your MATLAB code here\n% Example:\nx = linspace(0, 2*pi, 100);\ny = sin(x);\nplot(x, y);\ntitle('Sine Function Plot');\nsaveas(gcf, 'sine_plot.png');",
+          "help": {
+            "text": "Enter the MATLAB code to execute. Code will run in batch mode.",
+            "example": "disp(\"Hello, MATLAB!\");"
+          }
+        },
+        "scriptFile": {
+          "label": "MATLAB Script File",
+          "help": {
+            "text": "Upload .m format MATLAB script file"
+          }
+        },
+        "dataFiles": {
+          "label": "Data Files",
+          "description": "Upload data files if your code needs to read them"
+        },
+        "walltime": {
+          "label": "Maximum Runtime",
+          "options": {
+            "0:30:00": {
+              "label": "30 minutes"
+            },
+            "1:00:00": {
+              "label": "1 hour"
+            },
+            "2:00:00": {
+              "label": "2 hours"
+            },
+            "4:00:00": {
+              "label": "4 hours"
+            },
+            "8:00:00": {
+              "label": "8 hours"
+            },
+            "12:00:00": {
+              "label": "12 hours"
+            },
+            "24:00:00": {
+              "label": "24 hours"
+            }
+          }
+        },
+        "vncGeometry": {
+          "label": "VNC Resolution",
+          "options": {
+            "1024x768": {
+              "label": "1024x768 (XGA)"
+            },
+            "1280x800": {
+              "label": "1280x800 (WXGA)"
+            },
+            "1280x1024": {
+              "label": "1280x1024 (SXGA)"
+            },
+            "1440x900": {
+              "label": "1440x900 (WXGA+)"
+            },
+            "1600x900": {
+              "label": "1600x900 (HD+)"
+            },
+            "1920x1080": {
+              "label": "1920x1080 (Full HD)"
+            },
+            "2560x1440": {
+              "label": "2560x1440 (2K QHD)"
+            },
+            "3840x2160": {
+              "label": "3840x2160 (4K UHD)"
+            }
+          }
+        },
+        "emailNotification": {
+          "label": "Email Notification",
+          "description": "Send email notification when job completes"
+        }
+      },
+      "io": {
+        "inputs": {
+          "script": {
+            "description": "MATLAB script file"
+          },
+          "data": {
+            "description": "Data file"
+          }
+        },
+        "outputs": {
+          "results": {
+            "description": "Computation results directory"
+          },
+          "figures": {
+            "description": "Generated figure files"
+          },
+          "workspace": {
+            "description": "Workspace data"
+          }
+        }
+      }
+    },
+    "gaussian": {
+      "metadata": {
+        "displayName": "Gaussian",
+        "description": "Gaussian quantum chemistry software package for molecular structure optimization and electronic structure calculations"
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "Default configuration"
+          },
+          "small": {
+            "description": "Small molecule calculations"
+          },
+          "large": {
+            "description": "Large molecule calculations"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "batch": {
+            "description": "Batch calculations"
+          }
+        }
+      },
+      "fields": {
+        "jobName": {
+          "label": "Job Name"
+        },
+        "inputFile": {
+          "label": "Input File",
+          "help": {
+            "text": "Upload Gaussian input file (.gjf or .com format)"
+          }
+        },
+        "calculationType": {
+          "label": "Calculation Type",
+          "options": {
+            "opt": {
+              "label": "Geometry Optimization"
+            },
+            "freq": {
+              "label": "Frequency Calculation"
+            },
+            "sp": {
+              "label": "Single Point Energy"
+            },
+            "opt-freq": {
+              "label": "Optimization + Frequency"
+            }
+          }
+        },
+        "method": {
+          "label": "Calculation Method",
+          "options": {
+            "b3lyp": {
+              "label": "B3LYP (DFT)"
+            },
+            "mp2": {
+              "label": "MP2"
+            },
+            "ccsd": {
+              "label": "CCSD"
+            },
+            "hf": {
+              "label": "Hartree-Fock"
+            }
+          }
+        },
+        "basisSet": {
+          "label": "Basis Set",
+          "options": {
+            "6-31g": {
+              "label": "6-31G"
+            },
+            "6-31g*": {
+              "label": "6-31G*"
+            },
+            "6-311g**": {
+              "label": "6-311G**"
+            },
+            "cc-pvdz": {
+              "label": "cc-pVDZ"
+            },
+            "cc-pvtz": {
+              "label": "cc-pVTZ"
+            }
+          }
+        },
+        "nodes": {
+          "label": "Number of Nodes",
+          "description": "Select the number of nodes for the job, up to 64 cores per node",
+          "options": {
+            "1": {
+              "label": "1 Node (max 64 cores)"
+            },
+            "2": {
+              "label": "2 Nodes (max 128 cores)"
+            },
+            "3": {
+              "label": "3 Nodes (max 192 cores)"
+            }
+          }
+        },
+        "partition": {
+          "label": "Compute Partition",
+          "description": "Select an appropriate compute partition, system will fetch available partitions"
+        },
+        "cpus": {
+          "label": "CPU Cores",
+          "description": "Select CPU cores, max 64 cores per node, more available with multiple nodes",
+          "options": {
+            "1": {
+              "label": "1 Core"
+            },
+            "2": {
+              "label": "2 Cores"
+            },
+            "4": {
+              "label": "4 Cores"
+            },
+            "8": {
+              "label": "8 Cores"
+            },
+            "16": {
+              "label": "16 Cores"
+            },
+            "24": {
+              "label": "24 Cores"
+            },
+            "32": {
+              "label": "32 Cores"
+            },
+            "48": {
+              "label": "48 Cores"
+            },
+            "64": {
+              "label": "64 Cores (max per node)"
+            },
+            "96": {
+              "label": "96 Cores (2 nodes)"
+            },
+            "128": {
+              "label": "128 Cores (max 2 nodes)"
+            },
+            "160": {
+              "label": "160 Cores (3 nodes)"
+            },
+            "192": {
+              "label": "192 Cores (max 3 nodes)"
+            }
+          }
+        },
+        "memory": {
+          "label": "Memory Configuration",
+          "description": "Select memory size, system will use node default if not specified",
+          "options": {
+            "default": {
+              "label": "System Default"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (multi-node)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "Time Limit",
+          "description": "Set maximum runtime, partition default will be used if not specified",
+          "options": {
+            "default": {
+              "label": "Partition Default"
+            },
+            "0:30:00": {
+              "label": "30 minutes"
+            },
+            "1:00:00": {
+              "label": "1 hour"
+            },
+            "2:00:00": {
+              "label": "2 hours"
+            },
+            "4:00:00": {
+              "label": "4 hours"
+            },
+            "8:00:00": {
+              "label": "8 hours"
+            },
+            "12:00:00": {
+              "label": "12 hours"
+            },
+            "24:00:00": {
+              "label": "1 day"
+            },
+            "48:00:00": {
+              "label": "2 days"
+            },
+            "72:00:00": {
+              "label": "3 days"
+            },
+            "168:00:00": {
+              "label": "7 days"
+            }
+          }
+        }
+      },
+      "io": {
+        "inputs": {
+          "input": {
+            "description": "Gaussian input file"
+          }
+        },
+        "outputs": {
+          "output": {
+            "description": "Gaussian output file"
+          },
+          "checkpoint": {
+            "description": "Checkpoint file"
+          }
+        }
+      }
+    },
+    "r": {
+      "metadata": {
+        "displayName": "R Statistical Computing",
+        "description": "A programming language and software environment for statistical computing and graphics, widely used in biostatistics and genomic data analysis"
+      },
+      "fields": {
+        "jobName": {
+          "label": "Job Name",
+          "placeholder": "e.g., genomic_analysis"
+        },
+        "analysisType": {
+          "label": "Analysis Type",
+          "options": {
+            "interactive": {
+              "label": "Interactive Analysis"
+            },
+            "batch": {
+              "label": "Batch Script"
+            },
+            "rstudio": {
+              "label": "RStudio Server"
+            }
+          }
+        },
+        "script": {
+          "label": "R Script",
+          "placeholder": "# 输入您的R代码\nlibrary(ggplot2)\ndata(mtcars)\nggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()"
+        },
+        "packages": {
+          "label": "Required R Packages",
+          "placeholder": "e.g., ggplot2,dplyr,BiocGenerics",
+          "help": {
+            "text": "Comma-separated list of package names, system will auto-install"
+          }
+        },
+        "nodes": {
+          "label": "Number of Nodes",
+          "description": "Select the number of nodes for the job, up to 64 cores per node",
+          "options": {
+            "1": {
+              "label": "1 Node (max 64 cores)"
+            },
+            "2": {
+              "label": "2 Nodes (max 128 cores)"
+            },
+            "3": {
+              "label": "3 Nodes (max 192 cores)"
+            }
+          }
+        },
+        "partition": {
+          "label": "Compute Partition",
+          "description": "Select an appropriate compute partition, system will fetch available partitions"
+        },
+        "cpus": {
+          "label": "CPU Cores",
+          "description": "Select CPU cores, max 64 cores per node, more available with multiple nodes",
+          "options": {
+            "1": {
+              "label": "1 Core"
+            },
+            "2": {
+              "label": "2 Cores"
+            },
+            "4": {
+              "label": "4 Cores"
+            },
+            "8": {
+              "label": "8 Cores"
+            },
+            "16": {
+              "label": "16 Cores"
+            },
+            "24": {
+              "label": "24 Cores"
+            },
+            "32": {
+              "label": "32 Cores"
+            },
+            "48": {
+              "label": "48 Cores"
+            },
+            "64": {
+              "label": "64 Cores (max per node)"
+            },
+            "96": {
+              "label": "96 Cores (2 nodes)"
+            },
+            "128": {
+              "label": "128 Cores (max 2 nodes)"
+            },
+            "160": {
+              "label": "160 Cores (3 nodes)"
+            },
+            "192": {
+              "label": "192 Cores (max 3 nodes)"
+            }
+          }
+        },
+        "memory": {
+          "label": "Memory Configuration",
+          "description": "Select memory size, system will use node default if not specified",
+          "options": {
+            "default": {
+              "label": "System Default"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (multi-node)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "Time Limit",
+          "description": "Set maximum runtime, partition default will be used if not specified",
+          "options": {
+            "default": {
+              "label": "Partition Default"
+            },
+            "0:30:00": {
+              "label": "30 minutes"
+            },
+            "1:00:00": {
+              "label": "1 hour"
+            },
+            "2:00:00": {
+              "label": "2 hours"
+            },
+            "4:00:00": {
+              "label": "4 hours"
+            },
+            "8:00:00": {
+              "label": "8 hours"
+            },
+            "12:00:00": {
+              "label": "12 hours"
+            },
+            "24:00:00": {
+              "label": "1 day"
+            },
+            "48:00:00": {
+              "label": "2 days"
+            },
+            "72:00:00": {
+              "label": "3 days"
+            },
+            "168:00:00": {
+              "label": "7 days"
+            }
+          }
+        }
+      },
+      "resources": {
+        "profiles": {
+          "small": {
+            "description": "Small-scale data analysis"
+          },
+          "medium": {
+            "description": "Medium-scale genomic analysis"
+          },
+          "large": {
+            "description": "Large-scale multi-omics analysis"
+          }
+        }
+      }
+    },
+    "cloudgene": {
+      "metadata": {
+        "displayName": "Cloudgene Genomics Platform",
+        "description": "Web-based genomic data analysis platform providing user-friendly interface for complex bioinformatics analysis"
+      },
+      "fields": {
+        "jobName": {
+          "label": "Service Name"
+        },
+        "port": {
+          "label": "Service Port"
+        },
+        "workspace": {
+          "label": "Workspace Directory"
+        },
+        "nodes": {
+          "label": "Number of Nodes",
+          "description": "Select the number of nodes for the job, up to 64 cores per node",
+          "options": {
+            "1": {
+              "label": "1 Node (max 64 cores)"
+            },
+            "2": {
+              "label": "2 Nodes (max 128 cores)"
+            },
+            "3": {
+              "label": "3 Nodes (max 192 cores)"
+            }
+          }
+        },
+        "partition": {
+          "label": "Compute Partition",
+          "description": "Select an appropriate compute partition, system will fetch available partitions"
+        },
+        "cpus": {
+          "label": "CPU Cores",
+          "description": "Select CPU cores, max 64 cores per node, more available with multiple nodes",
+          "options": {
+            "1": {
+              "label": "1 Core"
+            },
+            "2": {
+              "label": "2 Cores"
+            },
+            "4": {
+              "label": "4 Cores"
+            },
+            "8": {
+              "label": "8 Cores"
+            },
+            "16": {
+              "label": "16 Cores"
+            },
+            "24": {
+              "label": "24 Cores"
+            },
+            "32": {
+              "label": "32 Cores"
+            },
+            "48": {
+              "label": "48 Cores"
+            },
+            "64": {
+              "label": "64 Cores (max per node)"
+            },
+            "96": {
+              "label": "96 Cores (2 nodes)"
+            },
+            "128": {
+              "label": "128 Cores (max 2 nodes)"
+            },
+            "160": {
+              "label": "160 Cores (3 nodes)"
+            },
+            "192": {
+              "label": "192 Cores (max 3 nodes)"
+            }
+          }
+        },
+        "memory": {
+          "label": "Memory Configuration",
+          "description": "Select memory size, system will use node default if not specified",
+          "options": {
+            "default": {
+              "label": "System Default"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (multi-node)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "Time Limit",
+          "description": "Set maximum runtime, partition default will be used if not specified",
+          "options": {
+            "default": {
+              "label": "Partition Default"
+            },
+            "0:30:00": {
+              "label": "30 minutes"
+            },
+            "1:00:00": {
+              "label": "1 hour"
+            },
+            "2:00:00": {
+              "label": "2 hours"
+            },
+            "4:00:00": {
+              "label": "4 hours"
+            },
+            "8:00:00": {
+              "label": "8 hours"
+            },
+            "12:00:00": {
+              "label": "12 hours"
+            },
+            "24:00:00": {
+              "label": "1 day"
+            },
+            "48:00:00": {
+              "label": "2 days"
+            },
+            "72:00:00": {
+              "label": "3 days"
+            },
+            "168:00:00": {
+              "label": "7 days"
+            }
+          }
+        }
+      }
+    },
+    "nextflow": {
+      "metadata": {
+        "displayName": "Nextflow Workflow Engine",
+        "description": "Workflow management system for data-driven computational pipelines, especially suitable for bioinformatics analysis workflows"
+      },
+      "fields": {
+        "jobName": {
+          "label": "Job Name",
+          "placeholder": "e.g., rnaseq_analysis"
+        },
+        "pipelineType": {
+          "label": "Pipeline Type",
+          "options": {
+            "nf-core/rnaseq": {
+              "label": "RNA-seq Analysis"
+            },
+            "nf-core/chipseq": {
+              "label": "ChIP-seq Analysis"
+            },
+            "nf-core/atacseq": {
+              "label": "ATAC-seq Analysis"
+            },
+            "nf-core/sarek": {
+              "label": "Variant Calling"
+            },
+            "nf-core/methylseq": {
+              "label": "Methylation Analysis"
+            },
+            "custom": {
+              "label": "Custom Pipeline"
+            }
+          }
+        },
+        "input": {
+          "label": "Input File",
+          "placeholder": "/data/samplesheet.csv",
+          "help": {
+            "text": "Sample sheet file path or input directory"
+          }
+        },
+        "outdir": {
+          "label": "Output Directory",
+          "placeholder": "/data/results"
+        },
+        "genome": {
+          "label": "Reference Genome",
+          "options": {
+            "GRCh38": {
+              "label": "Human GRCh38"
+            },
+            "GRCh37": {
+              "label": "Human GRCh37"
+            },
+            "GRCm39": {
+              "label": "Mouse GRCm39"
+            },
+            "dm6": {
+              "label": "Drosophila dm6"
+            },
+            "ce11": {
+              "label": "C. elegans ce11"
+            }
+          }
+        },
+        "customScript": {
+          "label": "Custom Script Path",
+          "placeholder": "/path/to/main.nf"
+        },
+        "nodes": {
+          "label": "Number of Nodes",
+          "description": "Select the number of nodes for the job, up to 64 cores per node",
+          "options": {
+            "1": {
+              "label": "1 Node (max 64 cores)"
+            },
+            "2": {
+              "label": "2 Nodes (max 128 cores)"
+            },
+            "3": {
+              "label": "3 Nodes (max 192 cores)"
+            }
+          }
+        },
+        "partition": {
+          "label": "Compute Partition",
+          "description": "Select an appropriate compute partition, system will fetch available partitions"
+        },
+        "cpus": {
+          "label": "CPU Cores",
+          "description": "Select CPU cores, max 64 cores per node, more available with multiple nodes",
+          "options": {
+            "1": {
+              "label": "1 Core"
+            },
+            "2": {
+              "label": "2 Cores"
+            },
+            "4": {
+              "label": "4 Cores"
+            },
+            "8": {
+              "label": "8 Cores"
+            },
+            "16": {
+              "label": "16 Cores"
+            },
+            "24": {
+              "label": "24 Cores"
+            },
+            "32": {
+              "label": "32 Cores"
+            },
+            "48": {
+              "label": "48 Cores"
+            },
+            "64": {
+              "label": "64 Cores (max per node)"
+            },
+            "96": {
+              "label": "96 Cores (2 nodes)"
+            },
+            "128": {
+              "label": "128 Cores (max 2 nodes)"
+            },
+            "160": {
+              "label": "160 Cores (3 nodes)"
+            },
+            "192": {
+              "label": "192 Cores (max 3 nodes)"
+            }
+          }
+        },
+        "memory": {
+          "label": "Memory Configuration",
+          "description": "Select memory size, system will use node default if not specified",
+          "options": {
+            "default": {
+              "label": "System Default"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (multi-node)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "Time Limit",
+          "description": "Set maximum runtime, partition default will be used if not specified",
+          "options": {
+            "default": {
+              "label": "Partition Default"
+            },
+            "0:30:00": {
+              "label": "30 minutes"
+            },
+            "1:00:00": {
+              "label": "1 hour"
+            },
+            "2:00:00": {
+              "label": "2 hours"
+            },
+            "4:00:00": {
+              "label": "4 hours"
+            },
+            "8:00:00": {
+              "label": "8 hours"
+            },
+            "12:00:00": {
+              "label": "12 hours"
+            },
+            "24:00:00": {
+              "label": "1 day"
+            },
+            "48:00:00": {
+              "label": "2 days"
+            },
+            "72:00:00": {
+              "label": "3 days"
+            },
+            "168:00:00": {
+              "label": "7 days"
+            }
+          }
+        }
+      },
+      "resources": {
+        "profiles": {
+          "small": {
+            "description": "Small-scale pipeline (single sample)"
+          },
+          "medium": {
+            "description": "Medium-scale pipeline (multiple samples)"
+          },
+          "large": {
+            "description": "Large-scale pipeline (cohort study)"
+          }
+        }
+      }
+    },
+    "abaqus-standard": {
+      "metadata": {
+        "displayName": "ABAQUS Structural Analysis",
+        "description": "ABAQUS is the industry-leading finite element analysis software for structural mechanics, thermal analysis, and other engineering simulations"
+      },
+      "fields": {
+        "jobName": {
+          "label": "Job Name",
+          "description": "Specify a name for your ABAQUS job"
+        },
+        "inputFile": {
+          "label": "Input File",
+          "description": "ABAQUS input file (.inp format)"
+        },
+        "analysisType": {
+          "label": "Analysis Type",
+          "description": "Select ABAQUS analysis type",
+          "options": {
+            "standard": {
+              "label": "Standard Analysis"
+            },
+            "explicit": {
+              "label": "Explicit Analysis"
+            }
+          }
+        },
+        "nodes": {
+          "label": "Number of Nodes",
+          "description": "Select the number of nodes for the job, up to 64 cores per node",
+          "options": {
+            "1": {
+              "label": "1 Node (max 64 cores)"
+            },
+            "2": {
+              "label": "2 Nodes (max 128 cores)"
+            },
+            "3": {
+              "label": "3 Nodes (max 192 cores)"
+            }
+          }
+        },
+        "partition": {
+          "label": "Compute Partition",
+          "description": "Select an appropriate compute partition, system will fetch available partitions"
+        },
+        "cpus": {
+          "label": "CPU Cores",
+          "description": "Select CPU cores, max 64 cores per node, more available with multiple nodes",
+          "options": {
+            "1": {
+              "label": "1 Core"
+            },
+            "2": {
+              "label": "2 Cores"
+            },
+            "4": {
+              "label": "4 Cores"
+            },
+            "8": {
+              "label": "8 Cores"
+            },
+            "16": {
+              "label": "16 Cores"
+            },
+            "24": {
+              "label": "24 Cores"
+            },
+            "32": {
+              "label": "32 Cores"
+            },
+            "48": {
+              "label": "48 Cores"
+            },
+            "64": {
+              "label": "64 Cores (max per node)"
+            },
+            "96": {
+              "label": "96 Cores (2 nodes)"
+            },
+            "128": {
+              "label": "128 Cores (max 2 nodes)"
+            },
+            "160": {
+              "label": "160 Cores (3 nodes)"
+            },
+            "192": {
+              "label": "192 Cores (max 3 nodes)"
+            }
+          }
+        },
+        "memory": {
+          "label": "Memory Configuration",
+          "description": "Select memory size, system will use node default if not specified",
+          "options": {
+            "default": {
+              "label": "System Default"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (multi-node)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "Time Limit",
+          "description": "Set maximum runtime, partition default will be used if not specified",
+          "options": {
+            "default": {
+              "label": "Partition Default"
+            },
+            "0:30:00": {
+              "label": "30 minutes"
+            },
+            "1:00:00": {
+              "label": "1 hour"
+            },
+            "2:00:00": {
+              "label": "2 hours"
+            },
+            "4:00:00": {
+              "label": "4 hours"
+            },
+            "8:00:00": {
+              "label": "8 hours"
+            },
+            "12:00:00": {
+              "label": "12 hours"
+            },
+            "24:00:00": {
+              "label": "1 day"
+            },
+            "48:00:00": {
+              "label": "2 days"
+            },
+            "72:00:00": {
+              "label": "3 days"
+            },
+            "168:00:00": {
+              "label": "7 days"
+            }
+          }
+        }
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "Default structural analysis configuration"
+          },
+          "small": {
+            "description": "Small structural model"
+          },
+          "large": {
+            "description": "Large structural model"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "batch": {
+            "description": "Batch structural analysis"
+          }
+        }
+      }
+    },
+    "testbash": {
+      "metadata": {
+        "displayName": "bash",
+        "description": "Test bash script execution"
+      },
+      "fields": {
+        "jobName": {
+          "label": "Job Name",
+          "description": "Specify a name for this job",
+          "placeholder": "Enter job name"
+        },
+        "test": {
+          "label": "Command",
+          "description": "Enter the command to execute"
+        },
+        "partition": {
+          "label": "Partition",
+          "options": {
+            "compute": {
+              "label": "compute"
+            },
+            "graphics": {
+              "label": "graphics"
+            }
+          }
+        },
+        "nodes": {
+          "label": "Nodes",
+          "options": {
+            "1": {
+              "label": "1"
+            }
+          }
+        },
+        "cpusPerTask": {
+          "label": "Cores",
+          "options": {
+            "1": {
+              "label": "1"
+            },
+            "2": {
+              "label": "2"
+            },
+            "3": {
+              "label": "3"
+            },
+            "4": {
+              "label": "4"
+            },
+            "5": {
+              "label": "5"
+            },
+            "6": {
+              "label": "6"
+            }
+          }
+        }
+      }
+    },
+    "gatk": {
+      "metadata": {
+        "displayName": "GATK (Genome Analysis Toolkit)",
+        "description": "Genome Analysis Toolkit developed by Broad Institute for variant discovery and genotyping"
+      },
+      "fields": {
+        "jobName": {
+          "label": "Job Name"
+        },
+        "analysis_type": {
+          "label": "Analysis Type",
+          "options": {
+            "variant-calling": {
+              "label": "Variant Calling"
+            },
+            "joint-calling": {
+              "label": "Joint Calling"
+            },
+            "annotation": {
+              "label": "Variant Annotation"
+            }
+          }
+        },
+        "reference": {
+          "label": "Reference Genome",
+          "placeholder": "/data/reference/genome.fa"
+        },
+        "input_bam": {
+          "label": "Input BAM File",
+          "placeholder": "/data/sample.bam"
+        },
+        "output_vcf": {
+          "label": "Output VCF File",
+          "placeholder": "/data/output.vcf"
+        },
+        "nodes": {
+          "label": "Number of Nodes",
+          "description": "Select the number of nodes for the job, up to 64 cores per node",
+          "options": {
+            "1": {
+              "label": "1 Node (max 64 cores)"
+            },
+            "2": {
+              "label": "2 Nodes (max 128 cores)"
+            },
+            "3": {
+              "label": "3 Nodes (max 192 cores)"
+            }
+          }
+        },
+        "partition": {
+          "label": "Compute Partition",
+          "description": "Select an appropriate compute partition, system will fetch available partitions"
+        },
+        "cpus": {
+          "label": "CPU Cores",
+          "description": "Select CPU cores, max 64 cores per node, more available with multiple nodes",
+          "options": {
+            "1": {
+              "label": "1 Core"
+            },
+            "2": {
+              "label": "2 Cores"
+            },
+            "4": {
+              "label": "4 Cores"
+            },
+            "8": {
+              "label": "8 Cores"
+            },
+            "16": {
+              "label": "16 Cores"
+            },
+            "24": {
+              "label": "24 Cores"
+            },
+            "32": {
+              "label": "32 Cores"
+            },
+            "48": {
+              "label": "48 Cores"
+            },
+            "64": {
+              "label": "64 Cores (max per node)"
+            },
+            "96": {
+              "label": "96 Cores (2 nodes)"
+            },
+            "128": {
+              "label": "128 Cores (max 2 nodes)"
+            },
+            "160": {
+              "label": "160 Cores (3 nodes)"
+            },
+            "192": {
+              "label": "192 Cores (max 3 nodes)"
+            }
+          }
+        },
+        "memory": {
+          "label": "Memory Configuration",
+          "description": "Select memory size, system will use node default if not specified",
+          "options": {
+            "default": {
+              "label": "System Default"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (multi-node)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "Time Limit",
+          "description": "Set maximum runtime, partition default will be used if not specified",
+          "options": {
+            "default": {
+              "label": "Partition Default"
+            },
+            "0:30:00": {
+              "label": "30 minutes"
+            },
+            "1:00:00": {
+              "label": "1 hour"
+            },
+            "2:00:00": {
+              "label": "2 hours"
+            },
+            "4:00:00": {
+              "label": "4 hours"
+            },
+            "8:00:00": {
+              "label": "8 hours"
+            },
+            "12:00:00": {
+              "label": "12 hours"
+            },
+            "24:00:00": {
+              "label": "1 day"
+            },
+            "48:00:00": {
+              "label": "2 days"
+            },
+            "72:00:00": {
+              "label": "3 days"
+            },
+            "168:00:00": {
+              "label": "7 days"
+            }
+          }
+        }
+      },
+      "resources": {
+        "profiles": {
+          "single-sample": {
+            "description": "Single-sample Analysis"
+          },
+          "cohort": {
+            "description": "Cohort Analysis"
+          }
+        }
+      }
+    },
+    "materials-studio-md": {
+      "metadata": {
+        "displayName": "Materials Studio Molecular Dynamics",
+        "description": "Materials Studio is a professional molecular modeling and simulation software package"
+      },
+      "fields": {
+        "jobName": {
+          "label": "Job Name",
+          "description": "Specify a name for your Materials Studio job"
+        },
+        "inputFile": {
+          "label": "Input File",
+          "description": "Materials Studio input file"
+        },
+        "simulationType": {
+          "label": "Simulation Type",
+          "description": "Select Materials Studio calculation type",
+          "options": {
+            "md": {
+              "label": "Molecular Dynamics (Discover)"
+            },
+            "dft": {
+              "label": "Density Functional Theory (DFT - DMol3)"
+            },
+            "forcite": {
+              "label": "Molecular Mechanics (Forcite)"
+            }
+          }
+        },
+        "nodes": {
+          "label": "Number of Nodes",
+          "description": "Select the number of nodes for the job, up to 64 cores per node",
+          "options": {
+            "1": {
+              "label": "1 Node (max 64 cores)"
+            },
+            "2": {
+              "label": "2 Nodes (max 128 cores)"
+            },
+            "3": {
+              "label": "3 Nodes (max 192 cores)"
+            }
+          }
+        },
+        "cpus": {
+          "label": "CPU Cores",
+          "description": "Select CPU cores, max 64 cores per node, more available with multiple nodes",
+          "options": {
+            "4": {
+              "label": "4 Cores"
+            },
+            "8": {
+              "label": "8 Cores"
+            },
+            "16": {
+              "label": "16 Cores"
+            },
+            "24": {
+              "label": "24 Cores"
+            },
+            "32": {
+              "label": "32 Cores"
+            },
+            "48": {
+              "label": "48 Cores"
+            },
+            "64": {
+              "label": "64 Cores (max per node)"
+            },
+            "96": {
+              "label": "96 Cores (2 nodes)"
+            },
+            "128": {
+              "label": "128 Cores (max 2 nodes)"
+            },
+            "160": {
+              "label": "160 Cores (3 nodes)"
+            },
+            "192": {
+              "label": "192 Cores (max 3 nodes)"
+            }
+          }
+        },
+        "memory": {
+          "label": "Memory Configuration",
+          "description": "Select memory size, multi-node allows larger memory",
+          "options": {
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB (multi-node)"
+            },
+            "1TB": {
+              "label": "1TB (multi-node)"
+            }
+          }
+        },
+        "partition": {
+          "label": "Compute Partition",
+          "description": "Select an appropriate compute partition",
+          "options": {
+            "compute": {
+              "label": "General compute partition"
+            },
+            "graphics": {
+              "label": "Graphics compute partition"
+            }
+          }
+        },
+        "walltime": {
+          "label": "Time Limit",
+          "description": "Set maximum job runtime",
+          "options": {
+            "0:30:00": {
+              "label": "30 minutes"
+            },
+            "1:00:00": {
+              "label": "1 hour"
+            },
+            "2:00:00": {
+              "label": "2 hours"
+            },
+            "4:00:00": {
+              "label": "4 hours"
+            },
+            "8:00:00": {
+              "label": "8 hours"
+            },
+            "12:00:00": {
+              "label": "12 hours"
+            },
+            "24:00:00": {
+              "label": "24 hours"
+            },
+            "48:00:00": {
+              "label": "48 hours"
+            },
+            "72:00:00": {
+              "label": "72 hours"
+            }
+          }
+        }
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "Default molecular dynamics configuration"
+          },
+          "small-molecule": {
+            "description": "Small molecule system"
+          },
+          "polymer": {
+            "description": "Polymer system"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "batch": {
+            "description": "Batch molecular simulation"
+          }
+        }
+      }
+    },
+    "ansys-fluent": {
+      "metadata": {
+        "displayName": "ANSYS Fluent",
+        "description": "ANSYS Fluent is the industry-leading computational fluid dynamics (CFD) software"
+      },
+      "fields": {
+        "jobName": {
+          "label": "Job Name",
+          "description": "Specify a name for your Fluent calculation job"
+        },
+        "caseFile": {
+          "label": "Case File",
+          "description": "Fluent case file (.cas or .cas.gz)"
+        },
+        "inputScript": {
+          "label": "Input Script",
+          "description": "Fluent input script file (.jou or .scm)"
+        },
+        "nodes": {
+          "label": "Number of Nodes",
+          "description": "Select the number of nodes for the job, up to 64 cores per node",
+          "options": {
+            "1": {
+              "label": "1 Node (max 64 cores)"
+            },
+            "2": {
+              "label": "2 Nodes (max 128 cores)"
+            },
+            "3": {
+              "label": "3 Nodes (max 192 cores)"
+            }
+          }
+        },
+        "partition": {
+          "label": "Compute Partition",
+          "description": "Select an appropriate compute partition, system will fetch available partitions",
+          "options": {
+            "compute": {
+              "label": "compute"
+            },
+            "graphics": {
+              "label": "graphics"
+            }
+          }
+        },
+        "cpus": {
+          "label": "CPU Cores",
+          "description": "Select CPU cores, max 64 cores per node, more available with multiple nodes",
+          "options": {
+            "1": {
+              "label": "1 Core"
+            },
+            "2": {
+              "label": "2 Cores"
+            },
+            "4": {
+              "label": "4 Cores"
+            },
+            "8": {
+              "label": "8 Cores"
+            },
+            "16": {
+              "label": "16 Cores"
+            },
+            "24": {
+              "label": "24 Cores"
+            },
+            "32": {
+              "label": "32 Cores"
+            },
+            "48": {
+              "label": "48 Cores"
+            },
+            "64": {
+              "label": "64 Cores (max per node)"
+            },
+            "96": {
+              "label": "96 Cores (2 nodes)"
+            },
+            "128": {
+              "label": "128 Cores (max 2 nodes)"
+            },
+            "160": {
+              "label": "160 Cores (3 nodes)"
+            },
+            "192": {
+              "label": "192 Cores (max 3 nodes)"
+            }
+          }
+        },
+        "memory": {
+          "label": "Memory Configuration",
+          "description": "Select memory size, system will use node default if not specified",
+          "options": {
+            "default": {
+              "label": "System Default"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (multi-node)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "Time Limit",
+          "description": "Set maximum runtime, partition default will be used if not specified",
+          "options": {
+            "default": {
+              "label": "Partition Default"
+            },
+            "0:30:00": {
+              "label": "30 minutes"
+            },
+            "1:00:00": {
+              "label": "1 hour"
+            },
+            "2:00:00": {
+              "label": "2 hours"
+            },
+            "4:00:00": {
+              "label": "4 hours"
+            },
+            "8:00:00": {
+              "label": "8 hours"
+            },
+            "12:00:00": {
+              "label": "12 hours"
+            },
+            "24:00:00": {
+              "label": "1 day"
+            },
+            "48:00:00": {
+              "label": "2 days"
+            },
+            "72:00:00": {
+              "label": "3 days"
+            },
+            "168:00:00": {
+              "label": "7 days"
+            }
+          }
+        }
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "Default CFD calculation configuration"
+          },
+          "small": {
+            "description": "Small CFD model"
+          },
+          "large": {
+            "description": "Large CFD model parallel computation"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "batch": {
+            "description": "Batch CFD calculation"
+          }
+        }
+      }
+    },
+    "comsol-multiphysics": {
+      "metadata": {
+        "displayName": "COMSOL Multiphysics",
+        "description": "COMSOL Multiphysics is the industry-leading multiphysics simulation software"
+      },
+      "fields": {
+        "jobName": {
+          "label": "Job Name",
+          "description": "Specify a name for your COMSOL simulation job"
+        },
+        "modelFile": {
+          "label": "Model File",
+          "description": "COMSOL model file (.mph format)"
+        },
+        "physicsType": {
+          "label": "Physics Type",
+          "description": "Select primary physics analysis type",
+          "options": {
+            "multiphysics": {
+              "label": "Multiphysics Coupling"
+            },
+            "electromagnetic": {
+              "label": "Electromagnetic"
+            },
+            "heat-transfer": {
+              "label": "Heat Transfer"
+            }
+          }
+        },
+        "nodes": {
+          "label": "Number of Nodes",
+          "description": "Select the number of nodes for the job, up to 64 cores per node",
+          "options": {
+            "1": {
+              "label": "1 Node (max 64 cores)"
+            },
+            "2": {
+              "label": "2 Nodes (max 128 cores)"
+            },
+            "3": {
+              "label": "3 Nodes (max 192 cores)"
+            }
+          }
+        },
+        "partition": {
+          "label": "Compute Partition",
+          "description": "Select an appropriate compute partition, system will fetch available partitions"
+        },
+        "cpus": {
+          "label": "CPU Cores",
+          "description": "Select CPU cores, max 64 cores per node, more available with multiple nodes",
+          "options": {
+            "1": {
+              "label": "1 Core"
+            },
+            "2": {
+              "label": "2 Cores"
+            },
+            "4": {
+              "label": "4 Cores"
+            },
+            "8": {
+              "label": "8 Cores"
+            },
+            "16": {
+              "label": "16 Cores"
+            },
+            "24": {
+              "label": "24 Cores"
+            },
+            "32": {
+              "label": "32 Cores"
+            },
+            "48": {
+              "label": "48 Cores"
+            },
+            "64": {
+              "label": "64 Cores (max per node)"
+            },
+            "96": {
+              "label": "96 Cores (2 nodes)"
+            },
+            "128": {
+              "label": "128 Cores (max 2 nodes)"
+            },
+            "160": {
+              "label": "160 Cores (3 nodes)"
+            },
+            "192": {
+              "label": "192 Cores (max 3 nodes)"
+            }
+          }
+        },
+        "memory": {
+          "label": "Memory Configuration",
+          "description": "Select memory size, system will use node default if not specified",
+          "options": {
+            "default": {
+              "label": "System Default"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (multi-node)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "Time Limit",
+          "description": "Set maximum runtime, partition default will be used if not specified",
+          "options": {
+            "default": {
+              "label": "Partition Default"
+            },
+            "0:30:00": {
+              "label": "30 minutes"
+            },
+            "1:00:00": {
+              "label": "1 hour"
+            },
+            "2:00:00": {
+              "label": "2 hours"
+            },
+            "4:00:00": {
+              "label": "4 hours"
+            },
+            "8:00:00": {
+              "label": "8 hours"
+            },
+            "12:00:00": {
+              "label": "12 hours"
+            },
+            "24:00:00": {
+              "label": "1 day"
+            },
+            "48:00:00": {
+              "label": "2 days"
+            },
+            "72:00:00": {
+              "label": "3 days"
+            },
+            "168:00:00": {
+              "label": "7 days"
+            }
+          }
+        }
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "Default multiphysics simulation configuration"
+          },
+          "small": {
+            "description": "Small multiphysics model"
+          },
+          "large": {
+            "description": "Large multiphysics coupling analysis"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "batch": {
+            "description": "Batch multiphysics simulation"
+          }
+        }
+      }
+    },
+    "jupyter": {
+      "metadata": {
+        "displayName": "Jupyter Lab",
+        "description": "Interactive Python development environment"
+      },
+      "resources": {
+        "profiles": {
+          "light": {
+            "description": "Light configuration (2 cores, 8GB, 4 hours)"
+          },
+          "default": {
+            "description": "Standard configuration (4 cores, 16GB, 8 hours)"
+          },
+          "gpu": {
+            "description": "GPU accelerated (8 cores, 32GB, 1xGPU, 8 hours)"
+          },
+          "highMemory": {
+            "description": "High memory configuration (16 cores, 128GB, 12 hours)"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "interactive": {
+            "description": "Interactive Jupyter Lab session"
+          }
+        },
+        "templates": {
+          "jupyterServer": {
+            "description": "Jupyter Lab server"
+          }
+        }
+      },
+      "fields": {
+        "jobName": {
+          "label": "Session Name",
+          "description": "Specify a name for your Jupyter Lab session"
+        },
+        "resourceProfile": {
+          "label": "Resource Profile",
+          "options": {
+            "light": {
+              "label": "Light (2 cores, 8GB)",
+              "description": "Suitable for data exploration and simple calculations"
+            },
+            "default": {
+              "label": "Standard (4 cores, 16GB)",
+              "description": "Suitable for general data analysis and machine learning"
+            },
+            "gpu": {
+              "label": "GPU (8 cores, 32GB, 1xGPU)",
+              "description": "Suitable for deep learning and GPU-accelerated computing"
+            },
+            "highMemory": {
+              "label": "High Memory (16 cores, 128GB)",
+              "description": "Suitable for large-scale data processing"
+            }
+          }
+        },
+        "enableGPU": {
+          "label": "Enable GPU",
+          "description": "Enable GPU acceleration for deep learning and scientific computing"
+        },
+        "gpuCount": {
+          "label": "GPU Count",
+          "options": {
+            "1": {
+              "label": "1 GPU"
+            },
+            "2": {
+              "label": "2 GPUs"
+            },
+            "4": {
+              "label": "4 GPUs"
+            }
+          }
+        },
+        "gpuType": {
+          "label": "GPU Type",
+          "options": {
+            "a100": {
+              "label": "NVIDIA A100 (80GB)"
+            },
+            "v100": {
+              "label": "NVIDIA V100 (32GB)"
+            },
+            "rtx3090": {
+              "label": "NVIDIA RTX 3090 (24GB)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "Duration",
+          "options": {
+            "2hours": {
+              "label": "2 hours"
+            },
+            "4hours": {
+              "label": "4 hours"
+            },
+            "8hours": {
+              "label": "8 hours"
+            },
+            "12hours": {
+              "label": "12 hours"
+            },
+            "24hours": {
+              "label": "24 hours"
+            }
+          }
+        },
+        "workDir": {
+          "label": "Working Directory",
+          "description": "Root directory for Jupyter Lab, defaults to your home directory",
+          "placeholder": "/home/username"
+        },
+        "installPackages": {
+          "label": "Pre-install Packages",
+          "description": "Python packages to install automatically at startup, one per line",
+          "placeholder": "numpy\npandas\nmatplotlib\nscikit-learn\ntorch\ntensorflow",
+          "help": {
+            "text": "Automatically install specified Python packages before starting Jupyter Lab. Enter one package per line, version specification supported, e.g.: numpy==1.24.0",
+            "example": "numpy\npandas\nmatplotlib"
+          }
+        }
+      },
+      "io": {
+        "inputs": {
+          "notebooks": {
+            "description": "Jupyter notebook files directory"
+          },
+          "data": {
+            "description": "Data files directory"
+          }
+        },
+        "outputs": {
+          "notebooks": {
+            "description": "Saved Jupyter notebooks"
+          },
+          "results": {
+            "description": "Computation results and output files"
+          },
+          "connectionInfo": {
+            "description": "Jupyter Lab connection information file"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "sharedStorage": {
+    "name": "集群共享存储",
+    "mountPath": "/home",
+    "description": "集群共享存储空间，供所有用户使用",
+    "quotaEnabled": false,
+    "warningThreshold": 80,
+    "criticalThreshold": 90
+  },
+  "userStorage": {
+    "name": "用户个人存储",
+    "mountPath": "/home",
+    "description": "用户个人存储空间",
+    "quotaEnabled": true,
+    "warningThreshold": 75,
+    "criticalThreshold": 85
+  },
+  "scratchStorage": {
+    "name": "临时存储",
+    "mountPath": "/scratch",
+    "description": "高性能临时存储空间",
+    "quotaEnabled": false,
+    "warningThreshold": 70,
+    "criticalThreshold": 85
+  }
+} 

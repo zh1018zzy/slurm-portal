@@ -1,0 +1,489 @@
+{
+  "aiApplications": {
+    "title": "AI应用中心",
+    "description": "深度学习框架、大模型推理、交互式开发环境",
+    "loadFailed": "加载AI应用失败",
+    "registerSuccess": "AI应用注册成功",
+    "registerFailed": "AI应用注册失败",
+    "cacheCleared": "缓存已清除",
+    "unknownError": "未知错误"
+  },
+  "hpcApps": {
+    "pytorch": {
+      "metadata": {
+        "displayName": "PyTorch 深度学习框架",
+        "description": "强大的深度学习框架，支持GPU加速训练和推理"
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "标准GPU训练配置 (1x A100, 8核, 32GB)"
+          },
+          "smallGpu": {
+            "description": "小规模训练 (1x RTX3090, 4核, 16GB)"
+          },
+          "multiGpu": {
+            "description": "多GPU训练 (4x A100, 16核, 64GB)"
+          },
+          "distributed": {
+            "description": "分布式训练 (4节点, 16x GPU)"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "singleGpu": {
+            "description": "单GPU训练模式"
+          },
+          "multiGpu": {
+            "description": "多GPU DataParallel训练"
+          },
+          "distributedDdp": {
+            "description": "分布式DistributedDataParallel训练"
+          }
+        },
+        "templates": {
+          "singleGpu": {
+            "description": "单GPU训练模板"
+          },
+          "multiGpu": {
+            "description": "多GPU训练模板"
+          },
+          "distributedDdp": {
+            "description": "分布式训练模板"
+          }
+        }
+      },
+      "fields": {
+        "jobName": {
+          "label": "作业名称",
+          "description": "PyTorch训练作业的唯一标识"
+        },
+        "executionMode": {
+          "label": "执行模式",
+          "description": "选择单GPU、多GPU或分布式训练模式",
+          "options": {
+            "singleGpu": {
+              "label": "单GPU训练",
+              "description": "在单个GPU上训练模型"
+            },
+            "multiGpu": {
+              "label": "多GPU训练",
+              "description": "使用DataParallel在多个GPU上训练"
+            },
+            "distributedDdp": {
+              "label": "分布式训练 (DDP)",
+              "description": "使用DistributedDataParallel跨节点训练"
+            }
+          }
+        },
+        "resourceProfile": {
+          "label": "资源配置",
+          "description": "选择预设的资源配置方案",
+          "options": {
+            "default": {
+              "label": "标准配置",
+              "description": "1x A100, 8核CPU, 32GB内存"
+            },
+            "smallGpu": {
+              "label": "小规模配置",
+              "description": "1x RTX3090, 4核CPU, 16GB内存"
+            },
+            "multiGpu": {
+              "label": "多GPU配置",
+              "description": "4x A100, 16核CPU, 64GB内存"
+            },
+            "distributed": {
+              "label": "分布式配置",
+              "description": "4节点, 每节点4x GPU"
+            }
+          }
+        },
+        "inputType": {
+          "label": "输入类型",
+          "description": "选择上传脚本文件或直接输入代码",
+          "options": {
+            "script": {
+              "label": "脚本文件",
+              "description": "上传Python训练脚本"
+            },
+            "code": {
+              "label": "代码片段",
+              "description": "直接输入Python代码"
+            }
+          }
+        },
+        "scriptFile": {
+          "label": "训练脚本",
+          "description": "上传PyTorch训练脚本 (.py文件)"
+        },
+        "scriptArgs": {
+          "label": "脚本参数",
+          "description": "传递给训练脚本的命令行参数",
+          "placeholder": "例如: --lr 0.001 --epochs 100"
+        },
+        "pythonCode": {
+          "label": "Python代码",
+          "description": "直接输入要执行的Python代码",
+          "placeholder": "import torch\\nprint(torch.__version__)"
+        },
+        "dataFiles": {
+          "label": "数据文件",
+          "description": "上传训练数据文件 (可选)"
+        },
+        "gpuType": {
+          "label": "GPU类型",
+          "description": "选择GPU型号",
+          "options": {
+            "a100": {
+              "label": "NVIDIA A100",
+              "description": "80GB HBM2e显存, 适合大模型训练"
+            },
+            "v100": {
+              "label": "NVIDIA V100",
+              "description": "32GB HBM2显存, 通用深度学习"
+            },
+            "rtx3090": {
+              "label": "NVIDIA RTX 3090",
+              "description": "24GB GDDR6X显存, 性价比高"
+            }
+          }
+        },
+        "gpuCount": {
+          "label": "GPU数量",
+          "description": "使用的GPU卡数",
+          "options": {
+            "1": { "label": "1块GPU" },
+            "2": { "label": "2块GPU" },
+            "4": { "label": "4块GPU" },
+            "8": { "label": "8块GPU" }
+          }
+        },
+        "walltime": {
+          "label": "运行时长",
+          "description": "作业最长运行时间",
+          "options": {
+            "1hour": { "label": "1小时" },
+            "2hours": { "label": "2小时" },
+            "4hours": { "label": "4小时" },
+            "8hours": { "label": "8小时" },
+            "12hours": { "label": "12小时" },
+            "24hours": { "label": "24小时" },
+            "48hours": { "label": "48小时" },
+            "72hours": { "label": "72小时" }
+          }
+        }
+      },
+      "layout": {
+        "sections": {
+          "basicConfig": {
+            "title": "基础配置"
+          },
+          "trainingScript": {
+            "title": "训练脚本"
+          },
+          "dataFiles": {
+            "title": "数据文件"
+          },
+          "gpuResources": {
+            "title": "GPU资源"
+          }
+        }
+      },
+      "io": {
+        "inputs": {
+          "trainingScript": {
+            "description": "PyTorch训练脚本"
+          },
+          "dataset": {
+            "description": "训练数据集目录"
+          },
+          "checkpoint": {
+            "description": "预训练模型checkpoint"
+          },
+          "config": {
+            "description": "训练配置文件"
+          }
+        },
+        "outputs": {
+          "model": {
+            "description": "训练完成的模型权重"
+          },
+          "logs": {
+            "description": "训练日志和指标"
+          },
+          "checkpoints": {
+            "description": "训练过程中的checkpoint"
+          },
+          "tensorboard": {
+            "description": "TensorBoard事件文件"
+          }
+        }
+      }
+    },
+    "vllm": {
+      "metadata": {
+        "displayName": "vLLM 大模型推理",
+        "description": "高性能LLM推理引擎，支持LLaMA、Mistral等开源大模型"
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "标准LLM推理配置 (7B-13B模型)"
+          },
+          "smallModel": {
+            "description": "7B模型配置 (1x A100-40GB)"
+          },
+          "mediumModel": {
+            "description": "13B-30B模型配置 (1x A100-80GB)"
+          },
+          "largeModel": {
+            "description": "70B模型配置 (4x A100-80GB)"
+          },
+          "xlargeModel": {
+            "description": "175B+模型配置 (8x A100-80GB)"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "apiServer": {
+            "description": "OpenAI兼容的API服务器"
+          },
+          "offlineInference": {
+            "description": "离线批量推理"
+          }
+        },
+        "templates": {
+          "vllmServer": {
+            "description": "vLLM OpenAI兼容API服务器"
+          },
+          "offlineInference": {
+            "description": "批量离线推理模板"
+          }
+        }
+      },
+      "fields": {
+        "jobName": {
+          "label": "作业名称",
+          "description": "vLLM推理作业的唯一标识"
+        },
+        "mode": {
+          "label": "运行模式",
+          "description": "选择API服务器或离线推理模式",
+          "options": {
+            "apiServer": {
+              "label": "API服务器",
+              "description": "启动OpenAI兼容的API服务"
+            },
+            "offlineInference": {
+              "label": "离线推理",
+              "description": "批量处理prompts文件"
+            }
+          }
+        },
+        "modelPath": {
+          "label": "模型路径",
+          "description": "选择或输入模型路径",
+          "options": {
+            "llama27b": {
+              "label": "LLaMA 2 7B Chat",
+              "description": "Meta的7B参数对话模型"
+            },
+            "llama213b": {
+              "label": "LLaMA 2 13B Chat",
+              "description": "Meta的13B参数对话模型"
+            },
+            "llama270b": {
+              "label": "LLaMA 2 70B Chat",
+              "description": "Meta的70B参数对话模型"
+            },
+            "mistral7b": {
+              "label": "Mistral 7B Instruct",
+              "description": "Mistral AI的7B指令模型"
+            },
+            "qwen7b": {
+              "label": "Qwen 7B Chat",
+              "description": "通义千问7B对话模型"
+            },
+            "qwen14b": {
+              "label": "Qwen 14B Chat",
+              "description": "通义千问14B对话模型"
+            },
+            "chatglm3": {
+              "label": "ChatGLM3 6B",
+              "description": "智谱AI的6B对话模型"
+            }
+          }
+        },
+        "resourceProfile": {
+          "label": "资源配置",
+          "description": "根据模型大小选择资源配置",
+          "options": {
+            "smallModel": {
+              "label": "小模型 (7B)",
+              "description": "1x A100-40GB, 8核CPU, 64GB内存"
+            },
+            "default": {
+              "label": "中等模型 (13B-30B)",
+              "description": "1x A100-80GB, 16核CPU, 128GB内存"
+            },
+            "largeModel": {
+              "label": "大模型 (70B)",
+              "description": "4x A100-80GB, 32核CPU, 256GB内存"
+            },
+            "xlargeModel": {
+              "label": "超大模型 (175B+)",
+              "description": "8x A100-80GB, 64核CPU, 512GB内存"
+            }
+          }
+        },
+        "maxModelLen": {
+          "label": "最大序列长度",
+          "description": "模型支持的最大token数量",
+          "options": {
+            "2048": {
+              "label": "2048 tokens",
+              "description": "短文本处理"
+            },
+            "4096": {
+              "label": "4096 tokens",
+              "description": "标准长度"
+            },
+            "8192": {
+              "label": "8192 tokens",
+              "description": "长文本处理"
+            },
+            "16384": {
+              "label": "16384 tokens",
+              "description": "超长文本"
+            },
+            "32768": {
+              "label": "32768 tokens",
+              "description": "极长文本"
+            }
+          }
+        },
+        "gpuMemUtil": {
+          "label": "GPU显存利用率",
+          "description": "GPU显存使用比例 (0.5-0.95)"
+        },
+        "tensorParallelSize": {
+          "label": "张量并行度",
+          "description": "将模型分片到多个GPU",
+          "options": {
+            "1": { "label": "1 (单GPU)" },
+            "2": { "label": "2 (双GPU并行)" },
+            "4": { "label": "4 (四GPU并行)" },
+            "8": { "label": "8 (八GPU并行)" }
+          }
+        },
+        "quantization": {
+          "label": "量化方法",
+          "description": "模型量化以节省显存",
+          "options": {
+            "none": {
+              "label": "无量化",
+              "description": "使用完整精度"
+            },
+            "awq": {
+              "label": "AWQ量化",
+              "description": "激活感知权重量化"
+            },
+            "gptq": {
+              "label": "GPTQ量化",
+              "description": "生成式预训练Transformer量化"
+            },
+            "squeezellm": {
+              "label": "SqueezeLLM",
+              "description": "SqueezeLLM量化"
+            }
+          }
+        },
+        "dtype": {
+          "label": "数据类型",
+          "description": "模型权重的数据类型",
+          "options": {
+            "auto": {
+              "label": "自动",
+              "description": "自动选择最佳精度"
+            },
+            "float16": {
+              "label": "FP16",
+              "description": "半精度浮点"
+            },
+            "bfloat16": {
+              "label": "BF16",
+              "description": "脑浮点格式"
+            }
+          }
+        },
+        "walltime": {
+          "label": "运行时长",
+          "description": "推理服务最长运行时间",
+          "options": {
+            "2hours": { "label": "2小时" },
+            "4hours": { "label": "4小时" },
+            "8hours": { "label": "8小时" },
+            "12hours": { "label": "12小时" },
+            "24hours": { "label": "24小时" },
+            "48hours": { "label": "48小时" }
+          }
+        },
+        "inputFile": {
+          "label": "输入文件",
+          "description": "包含prompts的文本文件"
+        },
+        "temperature": {
+          "label": "Temperature",
+          "description": "采样温度，控制随机性 (0.0-2.0)"
+        },
+        "topP": {
+          "label": "Top-P",
+          "description": "核采样概率阈值 (0.0-1.0)"
+        },
+        "maxTokens": {
+          "label": "最大生成tokens",
+          "description": "每个prompt生成的最大token数"
+        }
+      },
+      "layout": {
+        "sections": {
+          "basicConfig": {
+            "title": "基础配置"
+          },
+          "modelConfig": {
+            "title": "模型配置"
+          },
+          "inferenceParams": {
+            "title": "推理参数"
+          },
+          "jobSettings": {
+            "title": "作业设置"
+          }
+        }
+      },
+      "io": {
+        "inputs": {
+          "prompts": {
+            "description": "批量推理的输入prompts"
+          },
+          "modelWeights": {
+            "description": "模型权重目录"
+          }
+        },
+        "outputs": {
+          "results": {
+            "description": "推理结果JSON文件"
+          },
+          "connectionInfo": {
+            "description": "API服务器连接信息"
+          },
+          "logs": {
+            "description": "服务器运行日志"
+          }
+        }
+      }
+    }
+  }
+}

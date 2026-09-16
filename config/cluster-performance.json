@@ -1,0 +1,52 @@
+{
+  "cluster": {
+    "name": "HPC-Cluster",
+    "description": "高性能计算集群",
+    "peakComputePower": "500万亿次",
+    "autoCalculate": true,
+    "fallbackValues": {
+      "cpuPerCore": 25,
+      "gpuPerCard": 50
+    }
+  },
+  "nodes": {
+    "compute": {
+      "count": 47,
+      "cpuCores": 3400,
+      "gpuCards": 36,
+      "memoryGB": 17408,
+      "storageTB": 1126
+    },
+    "login": {
+      "count": 2,
+      "cpuCores": 16,
+      "gpuCards": 0,
+      "memoryGB": 64,
+      "storageTB": 2
+    }
+  },
+  "hardware": {
+    "cpuModels": [
+      {
+        "model": "Xeon Gold 6248",
+        "cores": 20,
+        "performance": 44.8
+      },
+      {
+        "model": "Xeon Platinum 8280",
+        "cores": 28,
+        "performance": 56.0
+      }
+    ],
+    "gpuModels": [
+      {
+        "model": "Tesla V100",
+        "performance": 112.0
+      },
+      {
+        "model": "Tesla A100",
+        "performance": 312.0
+      }
+    ]
+  }
+} 
