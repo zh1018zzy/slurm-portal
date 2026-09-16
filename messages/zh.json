@@ -1,0 +1,4854 @@
+{
+  "common": {
+    "submit": "提交",
+    "cancel": "取消",
+    "confirm": "确认",
+    "delete": "删除",
+    "edit": "编辑",
+    "save": "保存",
+    "close": "关闭",
+    "search": "搜索",
+    "filter": "筛选",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "warning": "警告",
+    "info": "信息",
+    "refresh": "刷新",
+    "export": "导出",
+    "import": "导入",
+    "download": "下载",
+    "upload": "上传",
+    "copy": "复制",
+    "back": "返回",
+    "next": "下一步",
+    "previous": "上一步",
+    "finish": "完成",
+    "actions": "操作",
+    "status": "状态",
+    "name": "名称",
+    "description": "描述",
+    "createTime": "创建时间",
+    "updateTime": "更新时间",
+    "select": "请选择...",
+    "submitting": "提交中..."
+  },
+  "login": {
+    "title": "HPC 管理平台",
+    "subtitle": "高性能计算集群管理系统",
+    "username": "用户名",
+    "password": "密码",
+    "rememberMe": "记住我",
+    "forgotPassword": "忘记密码？",
+    "login": "登录",
+    "loading": "登录中...",
+    "loginSuccess": "登录成功",
+    "loginFailed": "登录失败",
+    "invalidCredentials": "用户名或密码错误",
+    "systemOnline": "系统在线",
+    "clusterNormal": "集群正常",
+    "realtimeMonitoring": "实时监控"
+  },
+  "dashboard": {
+    "title": "仪表盘",
+    "overview": "概览",
+    "submitJob": "提交作业",
+    "jobs": "作业",
+    "compute": "计算节点",
+    "storage": "存储",
+    "applications": "应用",
+    "files": "文件管理",
+    "system": "系统管理",
+    "systemDesktop": "系统桌面",
+    "nodeMonitor": "节点监控",
+    "userManagement": "用户管理",
+    "profile": "个人资料",
+    "notifications": "通知",
+    "settings": "设置",
+    "logout": "退出登录",
+    "welcome": "欢迎回来",
+    "pageTitle": "HPC系统仪表盘",
+    "pageSubtitle": "实时监控系统资源、作业状态和集群性能",
+    "loadingData": "正在加载系统数据...",
+    "dataError": "数据加载出现问题",
+    "retry": "重试",
+    "quickActions": "快速操作",
+    "submitNewJob": "提交新作业",
+    "viewAllJobs": "查看所有作业",
+    "fileManagement": "文件管理",
+    "jobTrend": "作业趋势（近30天）",
+    "loadingChart": "准备加载趋势图表...",
+    "jobStats": {
+      "title": "作业统计",
+      "clusterAllJobs": "（集群所有作业）",
+      "yourAllJobs": "（您的所有作业）",
+      "totalJobs": "总作业数",
+      "pending": "等待中",
+      "running": "运行中",
+      "completed": "已完成",
+      "failed": "失败",
+      "cancelled": "已取消",
+      "successRate": "成功率",
+      "viewAllJobs": "查看所有作业 →"
+    },
+    "partitionStatus": {
+      "title": "分区状态监控",
+      "updatedAt": "更新于",
+      "retryIn": "{seconds}s后重试",
+      "cancel": "取消",
+      "refreshing": "刷新中...",
+      "refresh": "刷新",
+      "totalPartitions": "总分区数",
+      "totalNodes": "总节点数",
+      "runningJobs": "运行作业",
+      "avgCpuUtilization": "平均CPU利用率",
+      "connectionFailed": "连接失败",
+      "temporarilyUnavailable": "暂时无法获取数据",
+      "retryAttempt": "重试 {current}/{max} 次",
+      "autoRetryIn": "{seconds}秒后自动重试",
+      "retryNow": "重新尝试",
+      "loadingPartitionInfo": "正在加载分区信息...",
+      "noPartitionData": "暂无分区数据",
+      "partitionName": "分区名称",
+      "status": "状态",
+      "nodeUsage": "节点使用",
+      "cpuUtilization": "CPU利用率",
+      "runningJobsCount": "运行作业",
+      "timeLimit": "时间限制",
+      "nodeList": "节点列表",
+      "defaultPartition": "默认",
+      "partitionState": "分区状态",
+      "availability": "可用性",
+      "allocated": "已分配",
+      "idle": "空闲",
+      "total": "总计",
+      "nodes": "节点",
+      "statusLabels": {
+        "up": "正常",
+        "idle": "空闲",
+        "down": "停机",
+        "drain": "排空",
+        "mixed": "混合",
+        "unknown": "未知",
+        "mix": "混合",
+        "alloc": "已分配",
+        "allocated": "已分配"
+      }
+    },
+    "noAlerts": "当前没有告警",
+    "sampleAlert": "示例告警",
+    "resourceCard": {
+      "totalCores": "总CPU核数",
+      "freeCores": "空闲核数"
+    },
+    "systemResource": {
+      "cpuInfo": "CPU信息",
+      "memoryInfo": "内存信息",
+      "totalCores": "总核数",
+      "usedCores": "当前使用核数",
+      "usageRate": "使用率",
+      "totalMemory": "总内存",
+      "usedMemory": "当前使用"
+    },
+    "jobStatusCard": {
+      "title": "作业状态",
+      "running": "运行中",
+      "queued": "排队中",
+      "paused": "已暂停",
+      "error": "异常"
+    },
+    "storageInfo": {
+      "title": "存储信息",
+      "retry": "重试",
+      "noData": "暂无存储信息",
+      "lastUpdated": "最后更新",
+      "totalCapacity": "总容量",
+      "used": "已使用",
+      "available": "可用空间",
+      "directory": "目录",
+      "quotaLimit": "配额限制",
+      "softLimit": "软限制",
+      "usageRate": "使用率",
+      "unavailable": "不可用",
+      "pathInaccessible": "存储路径不可访问",
+      "userDirInaccessible": "用户目录不可访问",
+      "statusSufficient": "存储空间充足",
+      "statusNormal": "存储空间正常",
+      "statusTight": "存储空间紧张",
+      "statusLow": "存储空间不足",
+      "fetchFailed": "获取存储信息失败",
+      "sharedStorageName": "集群共享存储",
+      "sharedStorageDesc": "集群共享存储空间，供所有用户使用",
+      "userStorageName": "用户个人存储",
+      "userStorageDesc": "用户个人存储空间",
+      "scratchStorageName": "临时存储",
+      "scratchStorageDesc": "高性能临时存储空间"
+    },
+    "announcement": {
+      "title": "系统公告",
+      "loading": "加载公告中...",
+      "noAnnouncements": "暂无公告",
+      "count": "条",
+      "close": "关闭",
+      "pinned": "置顶",
+      "typeMaintenance": "维护",
+      "typeWarning": "警告",
+      "typeSuccess": "成功",
+      "typeError": "错误",
+      "typeInfo": "信息"
+    },
+    "jobTrendChart": {
+      "title": "作业提交趋势",
+      "trendTab": "趋势图",
+      "distributionTab": "状态分布",
+      "summaryTab": "汇总统计",
+      "loading": "加载趋势数据中...",
+      "loadFailed": "加载失败",
+      "noData": "暂无趋势数据",
+      "last7Days": "近7天",
+      "last30Days": "近30天",
+      "last90Days": "近90天",
+      "last180Days": "近180天",
+      "lastYear": "近一年",
+      "days": "天",
+      "lineChart": "折线图",
+      "barChart": "柱状图",
+      "areaChart": "面积图",
+      "submitted": "提交",
+      "completed": "完成",
+      "failed": "失败",
+      "cancelled": "已取消",
+      "distributionDetails": "状态分布详情",
+      "totalJobs": "总作业数",
+      "successRate": "成功率",
+      "failureRate": "失败率",
+      "timeRange": "时间范围",
+      "networkError": "网络错误",
+      "dataFetchFailed": "获取数据失败"
+    },
+    "redirectToHpcCenter": "跳转到应用中心"
+  },
+  "jobs": {
+    "title": "作业管理",
+    "submit": "提交作业",
+    "list": "活跃作业列表",
+    "details": "作业详情",
+    "status": "状态",
+    "statusOptions": {
+      "pending": "等待中",
+      "running": "运行中",
+      "completed": "已完成",
+      "failed": "失败",
+      "cancelled": "已取消"
+    },
+    "history": "作业查询",
+    "historyDescription": "查询作业记录（支持全部状态），支持起止时间与多条件筛选",
+    "resetFilters": "重置筛选",
+    "forceSync": "强制同步",
+    "syncing": "同步中...",
+    "syncComplete": "强制同步完成",
+    "syncDescription": "更新了 {updated} 个作业状态 (总计: {totalJobs})",
+    "syncFailed": "同步失败",
+    "syncError": "同步过程中发生错误",
+    "networkRequestFailed": "网络请求失败",
+    "backToJobList": "返回作业列表",
+    "searchPlaceholder": "搜索作业名称或ID...",
+    "allStatus": "全部状态",
+    "allTypes": "全部类型",
+    "allPartitions": "全部分区",
+    "computeJob": "计算作业",
+    "graphicsJob": "图形作业",
+    "interactiveJob": "交互作业",
+    "last7Days": "最近7天",
+    "last30Days": "最近30天",
+    "last90Days": "最近90天",
+    "allHistory": "全部历史",
+    "itemsPerPage": "条/页",
+    "queryResults": "查询结果",
+    "noHistoryRecords": "暂无历史作业记录",
+    "jobId": "作业ID",
+    "jobName": "作业名称",
+    "user": "用户",
+    "partition": "分区",
+    "submitTime": "提交时间",
+    "startTime": "开始时间",
+    "endTime": "结束时间",
+    "runTime": "运行时间",
+    "nodes": "节点",
+    "actions": "操作",
+    "viewDetails": "查看详情",
+    "viewWorkDir": "查看工作目录",
+    "viewLogs": "查看日志",
+    "showing": "显示 {from} - {to} 条，共 {total} 条记录",
+    "previousPage": "上一页",
+    "nextPage": "下一页",
+    "id": "作业ID",
+    "name": "作业名称",
+    "queue": "队列",
+    "cores": "核心数",
+    "walltime": "运行时间",
+    "output": "输出",
+    "error": "错误输出",
+    "cancel": "取消作业",
+    "delete": "删除作业",
+    "resubmit": "重新提交",
+    "refreshComplete": "状态刷新完成",
+    "refreshDescription": "更新了 {updated} 个作业状态 (总计: {total})",
+    "refreshFailed": "刷新失败",
+    "networkError": "网络错误，请重试",
+    "fetchFailed": "获取作业列表失败",
+    "selectJobsToCancel": "请选择要取消的作业",
+    "batchCancelSuccess": "成功取消 {count} 个作业",
+    "batchCancelFailed": "批量取消失败",
+    "jobNotFound": "作业不存在",
+    "jobNotFoundDesc": "找不到指定的作业，可能已被删除或ID错误",
+    "backToList": "← 返回列表",
+    "cancelling": "取消中...",
+    "efficiency": "作业效率",
+    "jobInfo": "作业信息",
+    "jobLogs": "作业日志",
+    "jobFiles": "作业文件",
+    "jobHistorySameName": "同名作业历史",
+    "detailsTitle": "作业详情",
+    "timeInfo": "时间信息",
+    "failureReason": "失败原因",
+    "scontrolInfo": "scontrol show job 原始信息",
+    "scriptPath": "脚本路径",
+    "stdoutPath": "标准输出路径",
+    "stderrPath": "错误输出路径",
+    "nodesSyncing": "节点信息同步中，请稍后刷新",
+    "stdout": "标准输出",
+    "stderr": "错误输出",
+    "noOutput": "暂无输出",
+    "noErrorOutput": "暂无错误输出",
+    "filesSelected": "已选择 {count} 个文件",
+    "downloading": "下载中...",
+    "selectAll": "全选",
+    "deselectAll": "取消全选",
+    "backToParent": "返回上级",
+    "noFiles": "暂无文件",
+    "directory": "目录",
+    "downloadFile": "下载 {name}",
+    "jobCancelled": "作业已取消",
+    "cancelJobFailed": "取消作业失败",
+    "fetchJobDetailFailed": "获取作业详情失败",
+    "noSameNameHistory": "暂无同名作业历史",
+    "viewJob": "查看",
+    "submittedAt": "提交",
+    "runningFor": "运行",
+    "downloadSuccess": "下载成功",
+    "downloadedFile": "已下载 {name}",
+    "downloadedFiles": "已下载 {count} 个文件",
+    "selectedJobsCount": "已选择 {count} 个作业",
+    "batchCancel": "批量取消",
+    "pause": "暂停",
+    "resume": "继续",
+    "pausing": "暂停中...",
+    "resuming": "继续中...",
+    "jobPaused": "作业已暂停",
+    "jobResumed": "作业已继续",
+    "pauseFailed": "暂停作业失败",
+    "resumeFailed": "继续作业失败",
+    "batchPause": "批量暂停",
+    "batchResume": "批量继续",
+    "selectJobsToPause": "请选择运行中或等待中的作业以暂停",
+    "selectJobsToResume": "请选择已暂停的作业以继续",
+    "batchPauseSuccess": "成功暂停 {count} 个作业",
+    "batchResumeSuccess": "成功继续 {count} 个作业",
+    "batchPauseFailed": "批量暂停失败",
+    "batchResumeFailed": "批量继续失败",
+    "totalRecords": "共 {count} 条记录",
+    "statusTypes": {
+      "pending": "等待中",
+      "running": "运行中",
+      "completed": "已完成",
+      "failed": "失败",
+      "cancelled": "已取消",
+      "timeout": "超时",
+      "nodeFail": "节点失败",
+      "preempted": "被抢占",
+      "suspended": "暂停",
+      "stopped": "停止",
+      "outOfMemory": "内存不足",
+      "unknown": "未知"
+    },
+    "userPartition": "用户/分区",
+    "runtime": "运行时长",
+    "noJobs": "暂无作业",
+    "loading": "加载中...",
+    "graphics": "图形"
+  },
+  "jobsReports": {
+    "title": "历史报表",
+    "subtitle": "作业统计分析和趋势报告",
+    "licenseCheckFailed": "许可证检查失败",
+    "fetchReportDataFailed": "获取报表数据失败",
+    "networkError": "网络错误",
+    "loading": "加载报表数据中...",
+    "timeRanges": {
+      "last7Days": "最近7天",
+      "last30Days": "最近30天",
+      "last90Days": "最近90天",
+      "last180Days": "最近180天",
+      "lastYear": "最近一年",
+      "allTime": "全部时间",
+      "selectTimeRange": "选择时间范围"
+    },
+    "overview": {
+      "title": "概览统计",
+      "totalJobs": "总作业数",
+      "successRate": "成功率",
+      "avgRunTime": "平均运行时间",
+      "totalCpuHours": "总CPU小时"
+    },
+    "statusDistribution": {
+      "title": "作业状态分布",
+      "completed": "已完成",
+      "failed": "失败",
+      "cancelled": "已取消",
+      "timeout": "超时"
+    },
+    "partitionUsage": {
+      "title": "分区使用统计",
+      "partition": "分区",
+      "jobCount": "作业数",
+      "cpuHours": "CPU小时"
+    },
+    "userUsage": {
+      "title": "用户使用统计",
+      "username": "用户名",
+      "jobCount": "作业数",
+      "cpuHours": "CPU小时"
+    },
+    "trendChart": {
+      "title": "作业趋势分析",
+      "date": "日期",
+      "submitted": "提交",
+      "completed": "完成",
+      "failed": "失败"
+    },
+    "noData": "暂无数据",
+    "jobs": "个作业",
+    "hours": "小时",
+    "license": {
+      "backToJobList": "返回作业列表",
+      "limitedFeature": "功能受限",
+      "upgradeToCommercial": "升级到商业版",
+      "alternativesMessage": "您可以使用以下替代功能：",
+      "featureDescription": "升级到商业版解锁详细的作业历史分析、趋势图表和深度报告功能",
+      "trendAnalysis": "• 作业执行趋势分析",
+      "resourceStats": "• 资源使用统计",
+      "userBehavior": "• 用户行为分析",
+      "dataExport": "• 数据导出功能",
+      "verifyingPermissions": "正在验证功能权限..."
+    },
+    "buttons": {
+      "exportReport": "导出报表",
+      "backToJobList": "返回作业列表"
+    },
+    "timeRangeLabel": "报表时间范围:",
+    "partitionNoData": "暂无分区数据",
+    "cannotConnectToServer": "无法连接到服务器",
+    "exportSuccess": "报表导出成功",
+    "exportFailed": "导出失败",
+    "featureTitle": "作业报告功能",
+    "upgradeMessage": "解锁详细的作业历史分析、趋势图表和深度报告功能"
+  },
+  "jobTestSync": {
+    "title": "作业同步测试",
+    "backButton": "返回",
+    "slurmTest": {
+      "title": "Slurm 命令测试",
+      "button": "测试 Slurm 命令",
+      "success": "Slurm 命令测试成功",
+      "failed": "Slurm 命令测试失败"
+    },
+    "jobSync": {
+      "title": "作业同步",
+      "syncButton": "同步作业记录",
+      "syncing": "同步中...",
+      "statusButton": "获取同步状态",
+      "syncSuccess": "同步成功",
+      "syncFailed": "同步失败",
+      "statusSuccess": "获取状态成功",
+      "statusFailed": "获取状态失败"
+    },
+    "syncResult": {
+      "title": "同步结果"
+    },
+    "networkError": "网络错误",
+    "cannotConnect": "无法连接到服务器"
+  },
+  "announcements": {
+    "title": "系统公告管理",
+    "subtitle": "管理系统公告",
+    "loadingForm": "加载表单中...",
+    "loadingList": "加载公告列表中...",
+    "refresh": "刷新",
+    "create": "新建公告",
+    "edit": "编辑公告",
+    "delete": "删除",
+    "confirmDelete": "确认删除",
+    "confirmDeleteDesc": "删除\"{title}\"？不可恢复。",
+    "cancel": "取消",
+    "update": "更新",
+    "loading": "加载中...",
+    "noAnnouncements": "暂无公告",
+    "announcementList": "公告列表",
+    "announcementListCount": "公告列表 ({count})",
+    "form": {
+      "title": "标题",
+      "titlePlaceholder": "输入公告标题",
+      "content": "内容",
+      "contentPlaceholder": "输入公告内容",
+      "type": "类型",
+      "priority": "优先级",
+      "priorityPlaceholder": "0-100",
+      "startTime": "开始时间",
+      "endTime": "结束时间（可选）",
+      "active": "启用",
+      "pinned": "置顶",
+      "emptyError": "标题和内容不能为空"
+    },
+    "types": {
+      "info": "信息",
+      "warning": "警告",
+      "success": "成功",
+      "error": "错误",
+      "maintenance": "维护"
+    },
+    "status": {
+      "active": "启用",
+      "inactive": "禁用",
+      "priority": "优先级"
+    },
+    "toast": {
+      "fetchError": "获取公告列表失败",
+      "createSuccess": "公告创建成功",
+      "updateSuccess": "公告更新成功",
+      "deleteSuccess": "公告删除成功",
+      "operationFailed": "操作失败"
+    }
+  },
+  "submit": {
+    "pageTitle": "计算作业提交",
+    "cardTitle": "提交新作业",
+    "templates": {
+      "label": "常用模板：",
+      "singleNode": "单节点作业",
+      "mpi": "MPI并行",
+      "aiTraining": "AI训练",
+      "gpuCompute": "GPU计算"
+    },
+    "history": {
+      "label": "历史：",
+      "clear": "清空历史",
+      "cleared": "历史记录已清空"
+    },
+    "hints": {
+      "jobName": "作业在调度器中的显示名称，便于识别",
+      "partition": "Slurm分区（partition）。系统会自动处理分区名称中的*字符",
+      "nodes": "需要的物理节点数",
+      "ntasks": "总任务数（如MPI进程数）",
+      "cpusPerTask": "每个任务/进程使用的CPU核数",
+      "gpus": "每个节点需要的GPU数量，0表示不使用GPU",
+      "mem": "单节点内存，如4G、16G。设置为0表示不指定内存参数，使用系统默认值",
+      "time": "最大运行时长，格式如01:00:00。留空表示使用系统默认时长限制",
+      "bodyScript": "只需填写业务部分，系统自动补全调度器头部"
+    },
+    "fields": {
+      "jobName": "作业名称",
+      "partition": "分区",
+      "nodes": "节点数",
+      "cpusPerTask": "每节点CPU",
+      "ntasks": "总任务数",
+      "gpus": "GPU数量",
+      "mem": "内存",
+      "time": "时长",
+      "bodyScript": "作业脚本内容（只需写业务部分）"
+    },
+    "buttons": {
+      "submit": "提交作业",
+      "submitting": "提交中...",
+      "uploadScript": "上传脚本文件"
+    },
+    "preview": "预览完整脚本",
+    "selectPartition": "请选择分区",
+    "loadingPartitions": "正在加载分区...",
+    "noPartitions": "暂无可用分区",
+    "partitionConfigError": "无法获取分区信息，请检查 Slurm 配置",
+    "memPlaceholder": "如 4G 或 0（不指定）",
+    "memUseDefault": "内存设置为0，将使用系统默认内存限制",
+    "memRecommendation": "建议根据分区资源调整内存参数，避免超出分区限制",
+    "timePlaceholder": "如 01:00:00 或留空（使用默认）",
+    "scriptFileSupport": "支持 .sh 或 .bash 文件，自动提取业务部分（去除 Slurm 头部）",
+    "resourceEstimate": {
+      "title": "资源预估",
+      "totalCpu": "总CPU",
+      "totalMem": "总内存",
+      "totalGpu": "总GPU",
+      "cores": "核",
+      "units": "个",
+      "useDefault": "使用系统默认",
+      "notSet": "未设置",
+      "notSpecified": "不指定",
+      "timeDefault": "时长：使用系统默认限制"
+    },
+    "validation": {
+      "jobNameRequired": "作业名称不能为空",
+      "partitionRequired": "请选择有效的分区",
+      "nodesPositive": "节点数需为正整数",
+      "cpusPositive": "每节点CPU需为正整数",
+      "ntasksPositive": "总任务数需为正整数",
+      "gpusNonNegative": "GPU数量不能为负数",
+      "memRequired": "内存不能为空",
+      "memFormat": "内存格式如4G、16G，或设置为0表示不指定内存",
+      "memPositive": "内存值必须大于0（或设置为0表示不指定内存）",
+      "memTooLarge": "内存值过大，请检查单位（G/M）",
+      "timeFormat": "时长格式如01:00:00，或留空使用系统默认",
+      "bodyScriptRequired": "脚本内容不能为空",
+      "partitionPrefix": "分区",
+      "onlyNodes": "只有",
+      "nodesSuffix": "个节点",
+      "maxCpusPerNode": "每节点最多",
+      "cpuSuffix": "个CPU",
+      "onlyGpus": "只有",
+      "gpuSuffix": "个GPU",
+      "ntasksExceed": "任务数不能超过总CPU数"
+    },
+    "toast": {
+      "submitSuccess": "作业提交成功",
+      "submitFailed": "作业提交失败",
+      "networkError": "网络错误或服务器异常",
+      "fileFormatError": "文件格式错误",
+      "fileFormatDesc": "请上传 .sh 或 .bash 文件",
+      "fileUploadSuccess": "文件上传成功",
+      "fileUploadDesc": "脚本内容已加载"
+    },
+    "dataFiles": {
+      "title": "作业数据文件",
+      "uploadButton": "上传数据文件",
+      "uploading": "上传中...",
+      "hint": "支持批量上传，文件将保存到 ~/job-data 目录，可在脚本中直接引用",
+      "uploadSuccess": "数据文件上传成功",
+      "uploadFailed": "数据文件上传失败",
+      "uploaded": "已上传",
+      "files": "个文件",
+      "fileTooLarge": "文件过大，限制500MB",
+      "fileRemoved": "文件已从列表中移除"
+    }
+  },
+  "compute": {
+    "title": "计算节点",
+    "nodes": "节点",
+    "cpuUsage": "CPU使用率",
+    "memoryUsage": "内存使用率",
+    "gpuUsage": "GPU使用率",
+    "networkUsage": "网络使用",
+    "diskUsage": "磁盘使用",
+    "migratedToDashboard": "内容已迁移到仪表盘首页",
+    "status": {
+      "online": "在线",
+      "offline": "离线",
+      "busy": "忙碌",
+      "idle": "空闲",
+      "error": "错误"
+    }
+  },
+  "applications": {
+    "title": "应用管理",
+    "installed": "已安装应用",
+    "available": "可用应用",
+    "install": "安装",
+    "uninstall": "卸载",
+    "update": "更新",
+    "version": "版本",
+    "license": "许可证",
+    "documentation": "文档",
+    "redirecting": "正在跳转...",
+    "redirectToHpcCenter": "跳转到HPC应用中心"
+  },
+  "files": {
+    "title": "文件管理",
+    "subtitle": "管理您的个人文件",
+    "upload": "上传文件",
+    "download": "下载文件",
+    "delete": "删除文件",
+    "rename": "重命名",
+    "move": "移动",
+    "copy": "复制",
+    "newFolder": "新建文件夹",
+    "fileName": "文件名",
+    "fileSize": "文件大小",
+    "fileType": "文件类型",
+    "modifiedTime": "修改时间",
+    "permissions": "权限",
+    "uploading": "上传中...",
+    "uploadSuccess": "上传成功",
+    "uploadFailed": "上传失败",
+    "deleteSuccess": "删除成功",
+    "deleteFailed": "删除失败",
+    "renameSuccess": "重命名成功",
+    "renameFailed": "重命名失败",
+    "createFolderSuccess": "文件夹创建成功",
+    "createFolderFailed": "文件夹创建失败",
+    "noPermission": "无权限执行此操作",
+    "currentPath": "当前路径",
+    "backToParent": "返回上级",
+    "fileList": "文件列表",
+    "searchPlaceholder": "搜索文件...",
+    "showHidden": "显示隐藏文件",
+    "selectAll": "全选",
+    "deselectAll": "取消全选",
+    "downloadSelected": "下载选中",
+    "deleteSelected": "删除选中",
+    "confirmDeleteSelected": "确定要删除选中的 {count} 个文件/目录吗？",
+    "batchDeleteComplete": "批量删除完成",
+    "emptyDirectory": "当前目录为空",
+    "directory": "目录",
+    "downloadFolderZip": "下载文件夹 (ZIP)",
+    "downloadFile": "下载文件",
+    "authError": "认证错误",
+    "authExpired": "认证过期",
+    "pleaseRelogin": "请重新登录",
+    "insufficientPermission": "权限不足",
+    "noDownloadPermission": "您没有下载文件的权限",
+    "noDeletePermission": "您没有删除文件的权限",
+    "noPreviewPermission": "您没有预览文件的权限",
+    "selectFilesFirst": "请先选择要下载的文件或文件夹",
+    "downloadFailed": "下载失败",
+    "batchDownloadFailed": "批量下载失败",
+    "startDownload": "开始下载 {count} 个项目",
+    "downloadSuccess": "文件下载成功",
+    "confirmDelete": "确定要删除 {name} 吗？",
+    "pleaseLogin": "请先登录",
+    "folderName": "文件夹名称",
+    "folderNamePlaceholder": "输入文件夹名称",
+    "creating": "创建中...",
+    "create": "创建",
+    "fileTooLarge": "文件过大，无法预览。请下载后查看。",
+    "fetchContentFailed": "获取文件内容失败",
+    "contentTruncated": "... (内容已截断，请下载查看完整文件)",
+    "copySuccessTitle": "复制成功",
+    "copySuccessDesc": "内容已复制到剪贴板",
+    "copyFailedTitle": "复制失败",
+    "copyFailedDesc": "请手动选择文本进行复制",
+    "copied": "已复制",
+    "retry": "重试",
+    "preview": "预览",
+    "rawContent": "原始内容",
+    "uploadSuccessTitle": "上传成功",
+    "uploadSuccessDesc": "成功上传 {count} 个文件",
+    "uploadFailedTitle": "上传失败",
+    "uploadFailedDesc": "{count} 个文件上传失败",
+    "dragDropHere": "将文件拖放到这里...",
+    "dragDropOrClick": "拖拽文件到此处，或点击选择文件",
+    "multipleFilesSupported": "支持多个文件同时上传",
+    "filesToUpload": "待上传文件",
+    "pendingUpload": "等待上传",
+    "uploadComplete": "上传完成",
+    "startUpload": "开始上传"
+  },
+  "system": {
+    "title": "系统管理",
+    "users": {
+      "page": {
+        "title": "用户管理",
+        "subtitle": "管理系统用户账户和权限",
+        "loadingText": "加载中...",
+        "addUser": "添加用户",
+        "syncUsers": "同步用户",
+        "previewSync": "预览同步",
+        "userList": "用户列表",
+        "searchPlaceholder": "搜索用户...",
+        "totalRecords": "共 {total} 条，第 {page}/{totalPages} 页",
+        "previousPage": "上一页",
+        "nextPage": "下一页"
+      },
+      "form": {
+        "addTitle": "添加用户",
+        "editTitle": "编辑用户",
+        "username": "用户名",
+        "usernamePlaceholder": "输入用户名",
+        "realName": "真实姓名",
+        "realNamePlaceholder": "输入真实姓名",
+        "email": "邮箱",
+        "emailPlaceholder": "输入邮箱地址",
+        "phone": "手机号",
+        "phonePlaceholder": "输入手机号",
+        "department": "部门",
+        "departmentPlaceholder": "输入所属部门",
+        "role": "角色",
+        "roleUser": "普通用户",
+        "roleAdmin": "管理员",
+        "password": "密码",
+        "passwordPlaceholder": "输入初始密码（可选）",
+        "loginShell": "登录Shell",
+        "selectShell": "选择登录Shell",
+        "cancel": "取消",
+        "update": "更新",
+        "add": "添加",
+        "processing": "处理中...",
+        "requiredFields": "请填写所有必填项",
+        "invalidEmail": "邮箱格式不正确"
+      },
+      "table": {
+        "select": "选择",
+        "username": "用户名",
+        "name": "姓名",
+        "email": "邮箱",
+        "department": "部门",
+        "role": "角色",
+        "userGroup": "用户组",
+        "shell": "登录Shell",
+        "webshell": "WebShell",
+        "lastLogin": "上次登录",
+        "status": "状态",
+        "actions": "操作",
+        "admin": "管理员",
+        "user": "普通用户",
+        "gidUnassigned": "未分配",
+        "gidLabel": "GID: {gid}",
+        "webshellEnabled": "已启用",
+        "webshellDisabled": "已禁用",
+        "online": "在线",
+        "offline": "离线",
+        "noUsers": "暂无用户",
+        "edit": "编辑",
+        "resetPassword": "重置密码",
+        "setAsUser": "设为普通用户",
+        "setAsAdmin": "设为管理员",
+        "enableWebShell": "启用WebShell",
+        "disableWebShell": "禁用WebShell",
+        "delete": "删除",
+        "shellMissing": "未配置"
+      },
+      "passwordReset": {
+        "title": "重置密码",
+        "userLabel": "为用户",
+        "resetPasswordFor": "重置密码",
+        "newPassword": "新密码",
+        "newPasswordPlaceholder": "输入新密码",
+        "confirmPassword": "确认密码",
+        "confirmPasswordPlaceholder": "再次输入新密码",
+        "cancel": "取消",
+        "reset": "重置密码",
+        "resetting": "重置中...",
+        "enterNewPassword": "请输入新密码",
+        "minLength": "密码长度至少6位",
+        "passwordMismatch": "两次输入的密码不一致"
+      },
+      "validation": {
+        "requiredFields": "请填写所有必填项",
+        "invalidEmail": "邮箱格式不正确",
+        "enterNewPassword": "请输入新密码",
+        "minLength": "密码长度至少6位",
+        "passwordMismatch": "两次输入的密码不一致"
+      },
+      "actions": {
+        "getUsersFailed": "获取用户列表失败",
+        "addSuccess": "添加成功",
+        "addSuccessDesc": "用户 {username} 已添加",
+        "updateSuccess": "更新成功",
+        "updateSuccessDesc": "用户 {username} 已更新",
+        "operationFailed": "操作失败",
+        "confirmDelete": "删除 {username}?",
+        "deleteSuccess": "删除成功",
+        "deleteSuccessDesc": "用户 {username} 已删除",
+        "deleteFailed": "删除失败",
+        "confirmRoleChange": "设 {username} 为{role}?",
+        "roleAdmin": "管理员",
+        "roleUser": "普通用户",
+        "roleUpdateSuccess": "角色更新成功",
+        "roleUpdateFailed": "角色更新失败",
+        "confirmWebShellChange": "{action} {username} WebShell权限?",
+        "enable": "启用",
+        "disable": "禁用",
+        "webshellUpdateSuccess": "WebShell权限更新成功",
+        "webshellUpdateFailed": "WebShell权限更新失败",
+        "passwordResetSuccess": "密码重置成功",
+        "passwordResetFailed": "密码重置失败"
+      },
+      "sync": {
+        "previewComplete": "同步预览完成",
+        "syncComplete": "同步完成",
+        "syncFailed": "同步失败",
+        "previewSync": "预览同步",
+        "syncUsers": "同步用户",
+        "syncing": "同步中..."
+      }
+    },
+    "groups": {
+      "title": "用户组管理",
+      "subtitle": "管理系统用户组和权限",
+      "page": {
+        "createGroup": "创建用户组",
+        "groupList": "用户组列表",
+        "searchPlaceholder": "搜索用户组...",
+        "previewSync": "预览同步",
+        "syncLdap": "同步LDAP",
+        "totalRecords": "共 {total} 条，第 {page}/{totalPages} 页",
+        "previousPage": "上一页",
+        "nextPage": "下一页"
+      },
+      "form": {
+        "createTitle": "创建用户组",
+        "editTitle": "编辑用户组",
+        "groupName": "组名",
+        "groupNameRequired": "组名 *",
+        "groupNamePlaceholder": "输入组名",
+        "description": "描述",
+        "descriptionPlaceholder": "输入组描述",
+        "members": "组成员",
+        "searchUsers": "搜索用户...",
+        "loadingUsers": "加载用户中...",
+        "noUsersFound": "没有找到用户",
+        "selectedMembers": "已选择 {count} 个成员:",
+        "cancel": "取消",
+        "create": "创建",
+        "update": "更新",
+        "processing": "处理中..."
+      },
+      "table": {
+        "groupName": "组名",
+        "description": "描述",
+        "gid": "GID",
+        "memberCount": "成员数",
+        "createdAt": "创建时间",
+        "actions": "操作",
+        "noDescription": "无描述",
+        "noGroups": "暂无用户组",
+        "updated": "更新",
+        "manageAppPermissions": "管理应用权限",
+        "manageFilePermissions": "管理文件权限"
+      },
+      "sync": {
+        "syncing": "同步中...",
+        "previewComplete": "同步预览完成",
+        "syncComplete": "同步完成",
+        "syncFailed": "同步失败",
+        "willCreate": "创建 {created}，更新 {updated}",
+        "withErrors": "，{errors} 个错误",
+        "successCreate": "创建 {created}，更新 {updated}",
+        "totalProcessed": "，共处理 {total} 个LDAP组",
+        "unknownError": "未知错误"
+      },
+      "actions": {
+        "fetchFailed": "获取用户组列表失败",
+        "fetchUsersFailed": "获取用户列表失败",
+        "createSuccess": "创建成功",
+        "createSuccessDesc": "用户组已创建",
+        "updateSuccess": "更新成功",
+        "updateSuccessDesc": "用户组已更新",
+        "operationFailed": "操作失败",
+        "deleteConfirm": "删除此组？不可恢复。",
+        "deleteSuccess": "删除成功",
+        "deleteSuccessDesc": "用户组已删除",
+        "deleteFailed": "删除失败"
+      },
+      "permissions": {
+        "title": "管理应用权限",
+        "titleWithGroup": "管理应用权限 - {groupName}",
+        "currentTab": "当前权限",
+        "addTab": "添加权限",
+        "currentPermissions": "当前应用权限",
+        "currentPermissionsDesc": "组 \"{groupName}\" 当前权限",
+        "addPermissions": "添加应用权限",
+        "addPermissionsDesc": "为 \"{groupName}\" 添加权限",
+        "loading": "加载中...",
+        "noPermissions": "该用户组暂无应用权限",
+        "permissionType": "权限类型",
+        "accessPermission": "访问权限",
+        "submitPermission": "提交权限",
+        "managePermission": "管理权限",
+        "appsCount": "({count} 个应用)",
+        "batchRemove": "批量移除",
+        "searchApps": "搜索应用",
+        "searchPlaceholder": "搜索应用...",
+        "availableApps": "可用应用",
+        "selected": "已选择 {count} 个",
+        "noAvailableApps": "没有可添加的应用",
+        "noMatchingApps": "没有找到匹配的应用",
+        "selectedApps": "已选择的应用:",
+        "close": "关闭",
+        "addPermissionsButton": "添加 ({count})",
+        "adding": "添加中...",
+        "selectAppsFirst": "请选择应用",
+        "selectAppsFirstDesc": "请至少选择一个应用",
+        "addSuccess": "添加成功",
+        "addSuccessDesc": "为 \"{groupName}\" 添加 {count} 个权限",
+        "addFailed": "添加失败",
+        "removeSuccess": "移除成功",
+        "removeSuccessDesc": "移除 {count} 个权限",
+        "removeFailed": "移除失败",
+        "fetchPermissionsFailed": "获取权限失败",
+        "fetchAppsFailed": "获取应用失败",
+        "unknownError": "未知错误"
+      }
+    },
+    "queues": "队列管理",
+    "licenses": "许可证管理",
+    "maintenance": "系统维护",
+    "logs": {
+      "title": "系统日志",
+      "subtitle": "查看和监控系统运行状态和应用程序日志",
+      "systemLog": "系统日志",
+      "appLog": "应用日志",
+      "refresh": "刷新",
+      "loading": "正在加载日志...",
+      "noLogs": "暂无日志",
+      "noLogsOrError": "无法获取日志内容",
+      "fetchFailed": "日志获取失败",
+      "file": "文件",
+      "totalLines": "总行数",
+      "showing": "显示最新 {count} 行"
+    },
+    "settings": "系统设置",
+    "subtitle": "管理系统配置、用户权限、应用设置和系统监控",
+    "systemSettingsCard": "系统设置",
+    "systemSettingsDesc": "配置平台基本信息、Logo、主题等系统参数",
+    "userManagementCard": "用户管理",
+    "userManagementDesc": "管理系统用户账户、权限分配和用户状态",
+    "manageUsers": "管理用户",
+    "hpcAppManagement": "HPC应用管理",
+    "hpcAppManagementDesc": "管理HPC应用配置、表单设置和提交权限",
+    "manageHpcApps": "管理HPC应用",
+    "filePermissionsCard": "文件权限管理",
+    "filePermissions": {
+      "title": "文件权限管理",
+      "subtitle": "管理用户文件权限",
+      "groupPermissionManagement": "组权限管理",
+      "userPermissions": "用户权限",
+      "groupPermissions": "用户组权限",
+      "selectUser": "选择用户",
+      "batchManagement": "批量管理",
+      "exitBatchMode": "退出批量模式",
+      "loadingUserList": "加载用户列表...",
+      "selectAll": "全选",
+      "deselectAll": "取消全选",
+      "selectedCount": "已选择 {count} 个用户",
+      "selectUserPlaceholder": "选择要管理权限的用户",
+      "permissionConfig": "文件权限配置",
+      "batchManageUsers": "批量管理 {count} 用户",
+      "loadingPermissions": "加载权限配置...",
+      "batchOperating": "批量操作中...",
+      "applyToUsers": "将应用到 {count} 个用户",
+      "enabled": "已启用",
+      "disabled": "已禁用",
+      "groupFilePermissions": "用户组文件权限管理",
+      "groupPermissionHint": "到组管理页面配置",
+      "goToGroupManagement": "前往用户组管理",
+      "error": "错误",
+      "success": "成功",
+      "hint": "提示",
+      "fetchUsersFailed": "获取用户列表失败",
+      "fetchPermissionsFailed": "获取用户权限失败",
+      "enableSuccess": "启用权限成功",
+      "disableSuccess": "禁用权限成功",
+      "operationFailed": "操作失败",
+      "selectUsersFirst": "请先选择要管理的用户",
+      "batchOperationSuccess": "为 {count} 用户{action}{permission}权限",
+      "enable": "启用",
+      "disable": "禁用",
+      "partialSuccess": "部分成功",
+      "batchOperationPartial": "成功: {success}, 失败: {failed}",
+      "batchOperationFailed": "批量操作失败"
+    },
+    "filePermissionsDesc": "管理用户文件操作权限，包括上传、下载、预览、删除、分享、导出和复制权限",
+    "manageFilePermissions": "管理文件权限",
+    "announcements": "公告管理",
+    "announcementsDesc": "发布和管理系统公告、通知信息",
+    "manageAnnouncements": "管理公告",
+    "systemLogsCard": "系统日志",
+    "systemLogsDesc": "查看系统运行日志、错误信息和审计记录",
+    "viewLogs": "查看日志",
+    "quickActions": "快速操作",
+    "refreshPage": "刷新页面",
+    "clearCache": "清理缓存",
+    "securityCheck": "安全检查",
+    "systemOptimization": "系统优化",
+    "systemMonitor": "系统监控",
+    "settingsPage": {
+      "title": "系统设置",
+      "subtitle": "配置平台和安全",
+      "autoSaving": "自动保存中...",
+      "saved": "已保存",
+      "basicInfo": "基本信息",
+      "platformName": "平台名称",
+      "platformNamePlaceholder": "请输入平台名称",
+      "platformNameHint": "页面标题中的平台名",
+      "websiteTitle": "网站标题",
+      "websiteTitlePlaceholder": "请输入网站标题",
+      "websiteTitleHint": "显示在浏览器标签页中的网站标题",
+      "websiteDescription": "网站描述",
+      "websiteDescriptionPlaceholder": "请输入网站描述",
+      "websiteDescriptionHint": "网站的简要描述，用于SEO和分享时显示",
+      "systemLogo": "系统 Logo",
+      "currentLogo": "当前 Logo",
+      "uploading": "上传中...",
+      "selectNewLogo": "选择新 Logo",
+      "restoreDefaultLogo": "恢复默认 Logo",
+      "logoUploadSuccess": "Logo 上传成功",
+      "logoAutoSaved": "新的 Logo 已自动保存",
+      "uploadFailed": "上传失败",
+      "uploadFailedRetry": "上传失败，请重试",
+      "logoRestored": "Logo 已恢复",
+      "logoRestoredDefault": "已恢复为默认 Logo",
+      "logoHintSize": "建议尺寸：120×120 像素",
+      "logoHintFormat": "支持格式：PNG、JPG、WebP、GIF",
+      "logoHintMaxSize": "最大文件：5MB",
+      "saveBasicInfo": "保存基本信息",
+      "basicInfoHint": "需手动保存",
+      "saving": "保存中...",
+      "basicInfoSaveSuccess": "基本信息保存成功",
+      "basicInfoSaved": "基本信息已保存",
+      "basicInfoSaveSuccessShort": "基本信息保存成功！",
+      "systemConfig": "系统配置",
+      "systemConfigHint": "影响所有用户数据路径",
+      "userHomeDirectoryPrefix": "用户家目录前缀",
+      "userHomeDirectoryPlaceholder": "请输入用户家目录前缀路径",
+      "userHomeDirectoryHint": "用户家目录根路径前缀",
+      "importantNotice": "重要提示：",
+      "homeDirectoryNotice1": "此设置会影响所有用户的家目录路径",
+      "homeDirectoryNotice2": "需手动保存，同步数据库",
+      "homeDirectoryNotice3": "建议在系统维护期间进行修改",
+      "homeDirectoryNotice4": "确保新的路径在服务器上实际存在",
+      "homeDirectoryHint": "用户家目录前缀修改后需要手动保存",
+      "saveHomeDirectory": "保存家目录设置",
+      "homeDirectorySaveSuccess": "用户家目录前缀保存成功",
+      "homeDirectorySynced": "所有用户的家目录路径已同步更新",
+      "securitySettings": "安全设置",
+      "filePreviewWatermark": "文件预览水印",
+      "watermarkHint": "在文件预览中显示水印，防止内容泄露",
+      "watermarkText": "水印文本",
+      "watermarkTextPlaceholder": "留空则显示用户名，或输入自定义文本",
+      "watermarkTextHint": "留空显示用户名或自定义",
+      "previewEffect": "预览效果",
+      "previewContent": "这是文件预览内容示例...",
+      "watermarkPreviewHint": "水印将在实际预览中显示在文件内容上方",
+      "watermarkUsername": "用户名",
+      "webshellCopyPaste": "WebShell复制粘贴权限",
+      "webshellCopyPasteHint": "控制终端复制粘贴",
+      "webshellEnabled": "启用：用户可以在WebShell中复制粘贴文本",
+      "webshellDisabled": "禁用：用户无法在WebShell中复制粘贴，提高安全性",
+      "applicationsCenter": "应用中心",
+      "applicationsCenterHint": "显示/隐藏应用中心",
+      "applicationsCenterEnabled": "启用：在导航栏中显示应用中心入口",
+      "applicationsCenterDisabled": "禁用：隐藏应用中心入口，用户无法访问",
+      "bigScreenButton": "大屏按钮",
+      "bigScreenButtonHint": "显示/隐藏大屏按钮",
+      "bigScreenEnabled": "启用：在导航栏中显示大屏按钮，用户可进入全屏监控模式",
+      "bigScreenDisabled": "禁用：隐藏大屏按钮，用户无法进入全屏监控模式",
+      "copyrightConfig": "版权信息配置",
+      "companyCopyright": "公司版权信息",
+      "companyName": "公司名称",
+      "companyNamePlaceholder": "请输入公司名称",
+      "companyUrl": "公司网址",
+      "companyUrlPlaceholder": "https://yourcompany.com",
+      "copyrightText": "版权文本",
+      "copyrightTextPlaceholder": "© 2024 您的公司名称. 保留所有权利.",
+      "poweredBy": "Powered by 文本",
+      "poweredByPlaceholder": "Powered by HPC Platform",
+      "showPoweredBy": "显示 Powered by",
+      "showPoweredByHint": "在页脚显示 Powered by 信息",
+      "channelInfo": "渠道信息",
+      "channelInfoHint": "渠道信息，优先于公司",
+      "channelName": "渠道商名称",
+      "channelNamePlaceholder": "请输入渠道商名称",
+      "channelUrl": "渠道商网址",
+      "channelUrlPlaceholder": "https://channel.com",
+      "channelCopyright": "渠道商版权信息",
+      "channelCopyrightPlaceholder": "© 2024 渠道商名称. 保留所有权利.",
+      "clientInfo": "客户信息",
+      "clientInfoHint": "客户信息，最高优先级",
+      "clientName": "客户名称",
+      "clientNamePlaceholder": "请输入客户名称",
+      "clientUrl": "客户网址",
+      "clientUrlPlaceholder": "https://client.com",
+      "clientCopyright": "客户版权信息",
+      "clientCopyrightPlaceholder": "© 2024 客户名称. 保留所有权利.",
+      "brandingSettings": "品牌显示设置",
+      "showFooter": "显示页脚",
+      "showFooterHint": "在页面底部显示版权信息页脚",
+      "footerAdditionalText": "页脚附加文本",
+      "footerAdditionalTextPlaceholder": "可选的页脚附加信息",
+      "loginPageBranding": "登录页面品牌",
+      "loginPageBrandingHint": "在登录页面显示品牌信息",
+      "dashboardBranding": "仪表板品牌",
+      "dashboardBrandingHint": "在仪表板页面显示品牌信息",
+      "copyrightConfigSave": "版权信息配置",
+      "copyrightConfigHint": "点击保存应用更改",
+      "saveSettings": "保存设置",
+      "copyrightSaveSuccess": "版权信息设置已成功保存",
+      "autoSaveNotice": "自动保存说明",
+      "copyrightAutoSave": "版权信息配置自动保存",
+      "systemConfigAutoSave": "系统配置自动保存",
+      "securityAutoSave": "安全设置自动保存",
+      "autoSaveTip": "💡 提示：所有配置项都会在修改后1秒内自动保存，您也可以使用\"保存设置\"按钮手动保存。",
+      "settingsAutoSaved": "设置已自动保存",
+      "configSavedSuccess": "配置已成功保存",
+      "autoSaveFailed": "自动保存失败",
+      "autoSaveFailedHint": "保存失败，请手动保存",
+      "networkErrorSaveManually": "网络错误，请手动保存"
+    },
+    "backup": {
+      "title": "备份与恢复",
+      "createBackup": "创建备份",
+      "restoreSystem": "恢复系统"
+    },
+    "overview": "系统概览",
+    "usersManagement": "用户管理",
+    "groupsManagement": "用户组管理",
+    "hpcAppsManagement": "HPC应用管理",
+    "filePermissionsManagement": "文件权限管理",
+    "licenseManagement": "许可证管理",
+    "announcementsManagement": "公告管理",
+    "systemLogs": "系统日志",
+    "bioinformatics": {
+      "title": "生物信息学应用管理",
+      "subtitle": "管理和部署生物信息学分析工具",
+      "accessRestricted": "访问受限",
+      "adminOnly": "只有管理员可以访问此页面",
+      "registerApps": "注册应用",
+      "installedApps": "已安装应用",
+      "statistics": "统计信息",
+      "predefinedApps": "预定义生物信息学应用",
+      "predefinedAppsDesc": "系统包含 {count} 个预配置的生物信息学应用",
+      "batchRegisterApps": "批量注册应用",
+      "batchRegisterAppsDesc": "将预定义的生物信息学应用注册到系统中",
+      "registerAllApps": "注册所有应用",
+      "registering": "注册中...",
+      "registrationResults": "注册结果",
+      "registrationComplete": "注册完成",
+      "registrationFailed": "注册失败",
+      "unknownError": "未知错误",
+      "installedBioApps": "已安装的生物信息学应用",
+      "installedBioAppsDesc": "当前系统中可用的生物信息学工具",
+      "refresh": "刷新",
+      "loading": "加载中...",
+      "noInstalledApps": "暂无已安装应用",
+      "pleaseRegisterApps": "请先注册生物信息学应用",
+      "registerPredefinedApps": "注册预定义应用",
+      "installed": "已安装",
+      "use": "使用",
+      "predefinedAppsCount": "预定义应用",
+      "installedAppsCount": "已安装应用",
+      "batchApps": "批处理应用",
+      "interactiveApps": "交互式应用",
+      "appDistribution": "应用分布"
+    },
+    "license": {
+      "title": "许可证管理",
+      "loading": "加载许可证信息...",
+      "loadFailed": "无法加载许可证信息",
+      "checkConfig": "请检查许可证配置或联系管理员",
+      "refreshStatus": "刷新状态",
+      "licenseStatus": "许可证状态",
+      "trial": "试用版",
+      "commercial": "商业版",
+      "valid": "有效",
+      "invalid": "无效",
+      "remainingDays": "剩余天数",
+      "userUsage": "用户使用情况",
+      "unlimited": "无限制",
+      "usageRate": "使用率",
+      "nodeUsage": "节点使用情况",
+      "availableFeatures": "可用功能",
+      "userLimitAlert": "用户数量限制",
+      "currentUsers": "当前用户数",
+      "maxUsers": "最大用户数",
+      "overLimit": "超出限制",
+      "users": "个用户",
+      "upgradeToCommercial": "升级到商业版",
+      "trialExpired": "试用已结束，请升级",
+      "trialRemaining": "剩 {days} 天，请升级",
+      "trialLimitation": "试用版：最多{limit}用户，功能受限",
+      "commercialBenefits": "商业版：无限用户，完整功能",
+      "applyCommercial": "申请商业版许可证",
+      "licenseDetails": "许可证详情",
+      "licenseType": "许可证类型",
+      "status": "状态",
+      "userUsageInfo": "用户使用情况",
+      "currentUserCount": "当前用户数",
+      "userLimit": "用户限制",
+      "nodeUsageInfo": "节点使用情况",
+      "currentNodeCount": "当前节点数",
+      "nodeLimit": "节点限制",
+      "authorizationControl": "授权控制方式",
+      "trialMaxUsers": "最多{limit}个用户",
+      "trialMaxNodes": "最多{limit}个计算节点",
+      "trialAllFeaturesExceptReports": "除报表外的所有功能",
+      "trialBasicFeatures": "作业提交、文件、VNC",
+      "trialMonitoringApi": "系统监控、API",
+      "trialReportsRestricted": "历史报表(商业版)",
+      "trialAdvancedReportsRestricted": "高级报告(商业版)",
+      "commercialUnlimitedUsers": "无限用户",
+      "commercialUnlimitedNodes": "无限节点",
+      "commercialAllFeatures": "所有功能无限制",
+      "commercialHistoricalReports": "历史报表分析",
+      "commercialAdvancedReports": "高级分析报告",
+      "commercialEnterpriseSupport": "企业级支持",
+      "featureAnalysis": "功能分析",
+      "availableFeaturesLabel": "可用功能",
+      "trialRestrictedFeatures": "试用版受限功能",
+      "noFeatureRestrictions": "当前无功能限制",
+      "requiresCommercial": "需要商业版",
+      "allFeaturesAvailable": "所有功能均可使用",
+      "featureNote1": "试用版开放所有基础功能",
+      "featureNote2": "商业版提供完整访问",
+      "featureNote3": "通过用户/节点数控制",
+      "installationInfo": "安装信息",
+      "installId": "安装ID",
+      "installDate": "安装时间",
+      "systemVersion": "系统版本",
+      "realtimeMonitoring": "实时监控",
+      "licenseVerification": "许可证验证",
+      "normal": "正常",
+      "abnormal": "异常",
+      "userLimitCheck": "用户限制检查",
+      "warning": "警告",
+      "exceeded": "超限",
+      "nodeLimitCheck": "节点限制检查",
+      "lastUpdate": "最后更新",
+      "monitoringStatus": "监控状态",
+      "normalOperation": "正常运行",
+      "generateRequest": "申请许可",
+      "installLicense": "安装许可",
+      "generateActivationRequest": "生成激活申请",
+      "activationRequestDescription": "填写联系信息和许可配置，生成激活申请文件",
+      "company": "单位或公司名称",
+      "companyPlaceholder": "请输入单位或公司名称",
+      "contactPerson": "联系人",
+      "contactPersonPlaceholder": "请输入联系人姓名",
+      "department": "部门",
+      "departmentPlaceholder": "请输入部门",
+      "email": "邮箱",
+      "emailPlaceholder": "请输入邮箱地址",
+      "phone": "电话",
+      "phonePlaceholder": "请输入联系电话",
+      "licenseConfiguration": "许可配置",
+      "duration": "有效期（天）",
+      "notes": "备注",
+      "notesPlaceholder": "请输入备注信息",
+      "cancel": "取消",
+      "generating": "生成中...",
+      "generateAndDownload": "生成并下载",
+      "requestGenerated": "激活申请已生成",
+      "requestGenerateFailed": "生成激活申请失败",
+      "installLicenseTitle": "安装许可证",
+      "installLicenseDescription": "上传从授权人员处获得的许可证文件",
+      "installing": "安装中...",
+      "install": "安装",
+      "licenseInstalled": "许可证安装成功",
+      "licenseInstallFailed": "许可证安装失败",
+      "selectLicenseFile": "选择许可证文件",
+      "uploadFileHint": "支持 .json 格式文件",
+      "fileContentPreview": "文件内容预览",
+      "fileReadFailed": "文件读取失败",
+      "upgradeProcessTitle": "商业版许可证申请流程",
+      "upgradeProcessDescription": "了解如何申请和激活商业版许可证",
+      "upgradeSteps": "申请步骤",
+      "step1Title": "生成激活申请",
+      "step1Description": "点击\"申请许可\"按钮，填写单位信息和联系方式，系统将生成激活申请文件",
+      "step2Title": "提交申请文件",
+      "step2Description": "将生成的申请文件发送给我们的销售团队或技术支持，我们将在1个工作日内处理",
+      "step3Title": "获取许可证文件",
+      "step3Description": "审核通过后，您将收到正式的商业版许可证文件",
+      "step4Title": "安装许可证",
+      "step4Description": "返回本页面，点击\"安装许可\"按钮，上传收到的许可证文件即可完成激活",
+      "commercialBenefitsTitle": "商业版优势",
+      "benefit1": "无限用户数",
+      "benefit2": "无限计算节点",
+      "benefit3": "完整功能访问",
+      "benefit4": "历史报表分析",
+      "benefit5": "高级分析报告",
+      "benefit6": "企业级技术支持",
+      "contactInfo": "联系方式",
+      "contactInfoDescription": "如需帮助，请通过以下方式联系我们：",
+      "contactEmail": "电子邮箱",
+      "contactPhone": "联系电话",
+      "workingHours": "工作时间",
+      "workingHoursValue": "周一至周五 9:00-18:00",
+      "generateRequestNow": "立即生成申请"
+    },
+    "applications": {
+      "title": "应用管理",
+      "subtitle": "管理传统应用配置和表单",
+      "list": {
+        "title": "应用列表",
+        "searchPlaceholder": "搜索应用名称或描述...",
+        "allCategories": "全部分类",
+        "allStatus": "全部状态",
+        "allPublished": "全部发布",
+        "published": "已发布",
+        "unpublished": "未发布",
+        "draft": "草稿",
+        "active": "启用",
+        "inactive": "禁用",
+        "everyone": "所有人",
+        "restricted": "受限",
+        "application": "应用",
+        "category": "分类",
+        "status": "状态",
+        "permission": "权限",
+        "fieldCount": "字段数",
+        "createTime": "创建时间",
+        "actions": "操作",
+        "edit": "编辑",
+        "publish": "发布",
+        "unpublish": "下线",
+        "delete": "删除",
+        "view": "查看",
+        "noApps": "暂无应用",
+        "appList": "应用列表",
+        "hpcManagement": "HPC应用管理",
+        "createApp": "创建应用",
+        "fetchFailed": "获取应用列表失败",
+        "networkError": "网络错误",
+        "cannotConnect": "无法连接到服务器",
+        "createSuccess": "创建成功",
+        "createSuccessDesc": "应用已创建",
+        "createFailed": "创建失败",
+        "updateSuccess": "更新成功",
+        "updateSuccessDesc": "应用已更新",
+        "updateFailed": "更新失败",
+        "deleteSuccess": "删除成功",
+        "deleteSuccessDesc": "应用已删除",
+        "deleteFailed": "删除失败",
+        "confirmDelete": "确定要删除这个应用吗？此操作不可恢复。",
+        "fieldIncomplete": "字段信息不完整",
+        "fieldIncompleteDesc": "请填写字段名称和标签",
+        "insufficientPermission": "权限不足",
+        "adminOnly": "只有管理员可以访问应用管理功能",
+        "operationFailed": "操作失败",
+        "togglePublishDesc": "应用\"{name}\"{status}",
+        "permissionManagement": "权限管理",
+        "permissionInDevelopment": "权限管理功能正在开发中"
+      },
+      "detail": {
+        "title": "应用详情",
+        "permissionManagement": "权限管理",
+        "unpublish": "下线",
+        "publish": "发布",
+        "back": "返回",
+        "appInfo": "应用信息",
+        "formConfig": "表单配置",
+        "appName": "应用名称",
+        "version": "版本",
+        "category": "分类",
+        "status": "状态",
+        "draft": "草稿",
+        "active": "启用",
+        "inactive": "禁用",
+        "description": "描述",
+        "save": "保存",
+        "saveForm": "保存表单",
+        "scriptTemplate": "脚本模板",
+        "scriptTemplateHint": "可用 {{字段名}} 语法引用表单字段，如 {{nodes}} {{cpus}}。",
+        "visibleToAll": "所有人可见",
+        "roleIds": "角色ID（逗号分隔）",
+        "departmentIds": "部门ID（逗号分隔）",
+        "userIds": "用户ID（逗号分隔）",
+        "cancel": "取消",
+        "loadFailed": "加载失败",
+        "saveSuccess": "保存成功",
+        "saveFailed": "保存失败",
+        "formSaved": "表单已保存",
+        "published": "已发布",
+        "unpublished": "已下线",
+        "operationFailed": "操作失败",
+        "permissionUpdated": "权限已更新",
+        "fieldTypeText": "文本框",
+        "fieldTypeNumber": "数字输入",
+        "fieldTypeSelect": "下拉选择",
+        "fieldTypeCheckbox": "勾选框",
+        "fieldTypeTextarea": "多行文本",
+        "fieldTypeFile": "文件上传",
+        "fieldTypeDate": "日期选择",
+        "fieldTypeDivider": "分割线",
+        "fieldNamePlaceholder": "字段名",
+        "fieldLabelPlaceholder": "显示名",
+        "required": "必填",
+        "delete": "删除",
+        "addField": "添加字段"
+      },
+      "management": {
+        "title": "应用管理",
+        "subtitle": "管理应用配置和权限",
+        "addNewApp": "添加应用",
+        "refresh": "刷新",
+        "searchPlaceholder": "搜索...",
+        "loadingApps": "加载中...",
+        "noApps": "暂无应用",
+        "noMatchingApps": "无匹配结果",
+        "clearSearch": "清除",
+        "publicApp": "公开",
+        "restrictedAccess": "受限",
+        "author": "作者",
+        "view": "查看",
+        "edit": "编辑",
+        "permission": "权限",
+        "delete": "删除",
+        "backToList": "← 返回",
+        "versionManagement": "版本",
+        "loadFailed": "加载失败",
+        "cannotLoadList": "无法加载",
+        "networkError": "网络错误",
+        "cannotConnect": "无法连接",
+        "saveFailed": "保存失败",
+        "unknownError": "错误",
+        "confirmDelete": "删除\"{name}\"?",
+        "deleteSuccess": "已删除",
+        "deleteSuccessDesc": "应用已删除",
+        "deleteFailed": "删除失败",
+        "saveBlocked": "无法保存",
+        "saveBlockedDesc": "已发布应用不可编辑",
+        "saveAsSuccess": "另存成功",
+        "newAppCreated": "应用已创建",
+        "updateSuccess": "已更新",
+        "appConfigUpdated": "应用已更新",
+        "createSuccess": "已创建",
+        "operationFailed": "操作失败",
+        "fieldEditor": {
+          "fieldName": "字段名",
+          "displayLabel": "显示标签",
+          "fieldType": "字段类型",
+          "defaultValue": "默认值",
+          "placeholder": "占位符",
+          "fieldDescription": "字段描述",
+          "required": "必填",
+          "minValue": "最小值",
+          "maxValue": "最大值"
+        }
+      }
+    }
+  },
+  "assets": {
+    "title": "集群资产管理",
+    "clusterStatus": "集群机器状态",
+    "totalMachines": "总机器数量",
+    "onlineMachines": "在线机器数量",
+    "online": "在线",
+    "offline": "离线",
+    "alerts": "告警信息",
+    "noAlerts": "当前没有告警信息",
+    "deviceList": "设备列表",
+    "ibmcIp": "iBMC IP地址",
+    "managementStatus": "管理状态",
+    "healthStatus": "健康状态",
+    "model": "型号",
+    "serialNumber": "序列号",
+    "vendor": "厂商",
+    "group": "所属组",
+    "scope": "所属作用域",
+    "deviceTags": "设备标签",
+    "itemsPerPage": "条/页",
+    "previousPage": "上一页",
+    "nextPage": "下一页",
+    "pageInfo": "第 {current} 页，共 {total} 页",
+    "normal": "正常",
+    "good": "良好",
+    "hardwareFailure": "硬件故障",
+    "networkAbnormal": "网络异常",
+    "cpuOverheat": "CPU温度过高",
+    "networkDisconnected": "网络连接中断"
+  },
+  "partitions": {
+    "title": "分区管理"
+  },
+  "profile": {
+    "title": "个人资料",
+    "username": "用户名",
+    "email": "邮箱",
+    "phone": "电话",
+    "department": "部门",
+    "role": "角色",
+    "changePassword": "修改密码",
+    "oldPassword": "旧密码",
+    "newPassword": "新密码",
+    "confirmPassword": "确认密码",
+    "updateProfile": "更新资料",
+    "updateSuccess": "更新成功",
+    "updateFailed": "更新失败",
+    "basicInfo": "基本资料",
+    "realName": "姓名",
+    "loginShell": "登录Shell",
+    "selectShell": "选择登录Shell",
+    "saving": "保存中...",
+    "saveSuccess": "保存成功",
+    "saveFailed": "保存失败",
+    "profileUpdated": "个人信息已更新",
+    "retryLater": "请重试",
+    "passwordChangeSuccess": "密码修改成功",
+    "passwordChangeFailed": "密码修改失败",
+    "reloginWithNewPassword": "请使用新密码重新登录",
+    "preferences": "界面偏好",
+    "themeMode": "主题模式",
+    "selectTheme": "选择主题",
+    "lightMode": "浅色",
+    "darkMode": "深色",
+    "autoMode": "跟随系统",
+    "language": "语言",
+    "selectLanguage": "选择语言",
+    "simplifiedChinese": "简体中文",
+    "english": "English",
+    "timezone": "时区",
+    "selectTimezone": "选择时区",
+    "accountStatus": "账户状态",
+    "enabled": "已启用",
+    "disabled": "已禁用",
+    "loginInfo": "登录信息",
+    "lastLogin": "上次登录",
+    "never": "从未",
+    "accountCreated": "账户创建",
+    "unknown": "未知",
+    "quickActions": "快捷操作",
+    "saveSettings": "保存设置",
+    "passwordChangeDescription": "请输入旧密码和新密码来更改您的登录密码"
+  },
+  "notifications": {
+    "title": "消息通知",
+    "markAsRead": "标记为已读",
+    "markAllAsRead": "全部标记为已读",
+    "deleteNotification": "删除通知",
+    "noNotifications": "暂无通知",
+    "jobCompleted": "作业已完成",
+    "jobFailed": "作业失败",
+    "systemMaintenance": "系统维护",
+    "storageWarning": "存储空间不足",
+    "createTest": "创建测试通知",
+    "notificationSettings": "通知设置",
+    "totalNotifications": "总通知",
+    "unread": "未读",
+    "highPriority": "高优先级",
+    "recent24h": "最近24小时",
+    "searchPlaceholder": "搜索通知内容...",
+    "allStatus": "全部状态",
+    "statusRead": "已读",
+    "statusUnread": "未读",
+    "statusArchived": "已归档",
+    "allPriority": "全部优先级",
+    "priorityUrgent": "紧急",
+    "priorityHigh": "高",
+    "priorityMedium": "中",
+    "priorityLow": "低",
+    "allTypes": "全部类型",
+    "typeJobStatus": "作业状态",
+    "typeSystemResource": "系统资源",
+    "typeScheduledMaintenance": "系统维护",
+    "typeSecurityAlert": "安全警告",
+    "markAllRead": "全部已读",
+    "markAllUnread": "全部未读",
+    "clearAll": "清空所有",
+    "selected": "已选择 {count} 条通知",
+    "markRead": "标记已读",
+    "markUnread": "标记未读",
+    "archive": "归档",
+    "cancelSelection": "取消选择",
+    "notificationList": "通知列表",
+    "selectAll": "全选",
+    "shortcuts": "快捷键:",
+    "shortcutSelectAll": "全选",
+    "shortcutRefresh": "刷新",
+    "shortcutMarkAllRead": "全部已读",
+    "shortcutDelete": "删除选中",
+    "totalCount": "共 {count} 条通知",
+    "loading": "加载中...",
+    "emptyState": "暂无通知",
+    "clickToMarkRead": "点击已读",
+    "alreadyRead": "已读",
+    "daysAgo": "{days}天前",
+    "hoursAgo": "{hours}小时前",
+    "minutesAgo": "{minutes}分钟前",
+    "justNow": "刚刚",
+    "fetchFailed": "获取通知失败",
+    "networkError": "网络错误",
+    "cannotConnect": "无法连接到服务器",
+    "fetchStatsFailed": "获取通知统计失败",
+    "selectToOperate": "请选择要操作的通知",
+    "operationSuccess": "操作成功",
+    "operationFailed": "操作失败",
+    "markedAsRead": "通知已标记为已读",
+    "noUnreadNotifications": "没有未读通知",
+    "markedCount": "已标记 {count} 条通知为已读",
+    "noReadNotifications": "没有已读通知",
+    "markedCountUnread": "已标记 {count} 条通知为未读",
+    "refreshSuccess": "刷新成功",
+    "listUpdated": "通知列表已更新",
+    "selectToDelete": "请选择要删除的通知",
+    "confirmDeleteMultiple": "确定要删除选中的 {count} 条通知吗？此操作不可撤销。",
+    "confirmDeleteSingle": "确定要删除通知\"{title}\"吗？此操作不可撤销。",
+    "deleteSuccess": "删除成功",
+    "deleteFailed": "删除失败",
+    "noNotificationsToClear": "没有通知可清空",
+    "confirmClearAll": "确定要清空所有 {count} 条通知吗？此操作不可撤销。",
+    "clearSuccess": "清空成功",
+    "clearFailed": "清空失败",
+    "testNotificationCreated": "测试通知创建成功",
+    "createTestFailed": "创建测试通知失败",
+    "typeJobStatusChange": "作业状态变化",
+    "typeJobQueueUpdate": "队列状态更新",
+    "typeJobResourceAllocated": "资源分配",
+    "typeJobExecutionError": "执行错误",
+    "typeJobTimeLimit": "时间限制",
+    "typeSystemResourceAlert": "系统资源警告",
+    "typeStorageQuotaWarning": "存储配额警告",
+    "typeNodeStatusChange": "节点状态变化",
+    "typePartitionUnavailable": "分区不可用",
+    "typeScheduledMaintenanceFull": "计划维护",
+    "typeEmergencyMaintenance": "紧急维护",
+    "typeSystemUpdate": "系统更新",
+    "typeServiceInterruption": "服务中断",
+    "typeSecurityAlertFull": "安全警告",
+    "typePolicyUpdate": "政策更新",
+    "typeAccountWarning": "账户警告",
+    "typePermissionChange": "权限变更",
+    "typeProjectUpdate": "项目更新",
+    "typeFileOperation": "文件操作",
+    "typeUsageReport": "使用报告",
+    "typeBillingNotification": "账单通知",
+    "typeSystemAnnouncement": "系统公告",
+    "page": "第 {page} 页",
+    "totalPages": "共 {total} 页",
+    "totalItems": "总计 {total} 条",
+    "itemsPerPage": "每页显示",
+    "items": "条",
+    "previousPage": "上一页",
+    "nextPage": "下一页",
+    "deleteNotificationAction": "删除通知"
+  },
+  "webshell": {
+    "checkingPermission": "权限检查中...",
+    "insufficientPermission": "权限不足，正在跳转...",
+    "checkAccessFailed": "检查WebShell权限失败"
+  },
+  "errors": {
+    "general": "发生错误，请稍后重试",
+    "network": "网络连接错误",
+    "unauthorized": "未授权访问",
+    "forbidden": "禁止访问",
+    "notFound": "未找到资源",
+    "serverError": "服务器错误",
+    "timeout": "请求超时",
+    "invalidInput": "输入无效"
+  },
+  "vnc": {
+    "title": "桌面会话管理",
+    "subtitle": "启动和管理远程桌面",
+    "availableApps": "可用桌面应用",
+    "sessionList": "会话列表",
+    "loadingApps": "加载应用中...",
+    "loadingSessions": "加载会话中...",
+    "noSessions": "暂无桌面会话",
+    "noSessionsHint": "点击上方应用启动新会话",
+    "desktopSession": "桌面会话",
+    "display": "Display",
+    "port": "端口",
+    "startTime": "启动时间",
+    "logs": "日志",
+    "openDesktop": "打开桌面",
+    "copyUrl": "复制桌面会话 URL",
+    "urlCopied": "已复制",
+    "urlCopiedDesc": "会话 URL 已复制",
+    "desktopStarting": "桌面启动中...",
+    "close": "关闭",
+    "submitSuccess": "桌面会话提交成功",
+    "submitSuccessDesc": "作业ID: {jobId}，正在启动...",
+    "submitFailed": "提交失败",
+    "submitFailedDesc": "您已有运行中的会话",
+    "submitFailedGeneric": "作业提交失败，请重试",
+    "networkError": "网络错误",
+    "jobCancelled": "作业已取消",
+    "sessionStopped": "桌面会话已停止",
+    "cancelFailed": "取消失败",
+    "cancelFailedDesc": "无法取消作业",
+    "configureSession": "配置并启动桌面会话",
+    "partition": "分区 (partition)",
+    "partitionPlaceholder": "graphics",
+    "cpusPerTask": "CPU核数 (cpusPerTask)",
+    "timeLimit": "运行时长 (time)",
+    "selectTimeLimit": "选择运行时长",
+    "timeLimitHint": "选择会话最大运行时长",
+    "oneHour": "1小时",
+    "twoHours": "2小时",
+    "fourHours": "4小时",
+    "eightHours": "8小时",
+    "twentyFourHours": "24小时",
+    "sevenDays": "7天",
+    "desktopConfig": "桌面会话配置",
+    "startSession": "启动桌面会话",
+    "sessionLogs": "桌面会话日志",
+    "sessionLogsDesc": "查看会话日志输出",
+    "stdout": "输出",
+    "stderr": "错误",
+    "logsLoading": "日志加载中...",
+    "noOutput": "无输出",
+    "noError": "无错误",
+    "realtimeConnected": "实时连接已建立",
+    "connecting": "连接中...",
+    "realtimeUpdate": "实时更新",
+    "manualRefresh": "手动刷新桌面会话列表",
+    "user": "用户",
+    "statusLabels": {
+      "PENDING": "等待中",
+      "RUNNING": "运行中",
+      "COMPLETED": "已完成",
+      "FAILED": "失败",
+      "CANCELLED": "已取消"
+    },
+    "apps": {
+      "vnc-desktop": {
+        "name": "VNC 桌面",
+        "description": "完整的Linux桌面环境，支持图形化应用",
+        "category": "桌面"
+      }
+    }
+  },
+  "nodes": {
+    "title": "节点管理",
+    "totalNodes": "总节点数",
+    "healthyNodes": "健康节点",
+    "nodeAvailability": "节点可用率",
+    "clusterHealth": "集群健康度指标",
+    "cpuUtilization": "CPU 利用率",
+    "cores": "核心",
+    "runningJobs": "运行作业",
+    "usedCpuCores": "使用 {count} CPU 核心",
+    "refresh": "刷新",
+    "refreshing": "刷新中...",
+    "loadingNodes": "加载节点数据中...",
+    "loadFailed": "加载失败",
+    "retry": "重试",
+    "searchPlaceholder": "搜索节点名称...",
+    "allStatus": "全部",
+    "nodeName": "节点名",
+    "status": "状态",
+    "cpuUsage": "CPU 使用",
+    "cpuLoad": "CPU 负载",
+    "memory": "内存",
+    "features": "特性",
+    "gpu": "GPU",
+    "actions": "操作",
+    "drain": "排空",
+    "resume": "恢复",
+    "down": "下线",
+    "selectedNodes": "已选择 {count} 个节点:",
+    "noMatchingNodes": "没有找到匹配的节点",
+    "partitionOverview": "分区概览",
+    "partitionName": "分区名",
+    "nodeCount": "节点数",
+    "cpuTotal": "CPU 总数",
+    "gpuResources": "GPU 资源",
+    "timeLimit": "时间限制",
+    "noLimit": "无限制",
+    "dataUpdatedAt": "数据更新时间: {time}",
+    "notLoggedIn": "未登录",
+    "fetchNodeDataFailed": "获取节点数据失败",
+    "statusLabels": {
+      "idle": "空闲",
+      "alloc": "分配",
+      "mix": "混合",
+      "down": "停机",
+      "drain": "排空",
+      "unknown": "未知"
+    },
+    "partitionStatusLabels": {
+      "up": "正常",
+      "idle": "空闲",
+      "down": "停机",
+      "drain": "排空",
+      "mix": "混合",
+      "alloc": "已分配",
+      "allocated": "已分配"
+    }
+  },
+  "bigScreen": {
+    "title": "HPC高性能计算平台",
+    "loading": {
+      "systemData": "正在加载系统数据...",
+      "systemDataMessage": "请稍候，正在获取实时信息",
+      "auth": "正在初始化认证状态...",
+      "authMessage": "请稍候，正在验证用户身份",
+      "data": "正在加载大屏数据...",
+      "dataMessage": "请稍候，正在获取最新数据",
+      "initializing": "初始化中...",
+      "retryData": "重试获取数据",
+      "rankingData": "加载排行数据中..."
+    },
+    "error": {
+      "dataError": "数据加载失败",
+      "retryButton": "重试获取数据",
+      "continueButton": "继续显示"
+    },
+    "system": {
+      "hostname": "主机",
+      "uptime": "运行",
+      "loadAverage": "负载",
+      "updateTime": "更新",
+      "running": "运行中"
+    },
+    "status": {
+      "systemNormal": "系统正常",
+      "systemBusy": "系统繁忙",
+      "systemOverload": "系统过载",
+      "running": "运行中",
+      "queued": "排队中",
+      "resourceStatus": "资源状态",
+      "good": "资源充足",
+      "warning": "资源紧张",
+      "critical": "资源告急",
+      "currentStatus": "当前状态"
+    },
+    "buttons": {
+      "refresh": "刷新",
+      "refreshing": "刷新中...",
+      "forceRefresh": "强制刷新数据",
+      "jobData": "作业数据",
+      "forceJobRefresh": "强制刷新作业数据",
+      "fullscreen": "全屏",
+      "fullscreenTitle": "全屏显示",
+      "fullscreenMode": "全屏模式 - 按ESC退出"
+    },
+    "hardware": {
+      "title": "集群系统资源",
+      "computeNodes": "计算节点",
+      "cpuCores": "CPU核心",
+      "totalMemory": "内存总量",
+      "memory": "内存",
+      "gpuCards": "GPU卡",
+      "sharedStorage": "共享存储",
+      "storage": "存储",
+      "peakPower": "峰值算力"
+    },
+    "health": {
+      "title": "系统健康状态"
+    },
+    "resourceUsage": {
+      "title": "系统资源使用率",
+      "cpuUsage": "CPU使用率",
+      "memoryUsage": "内存使用率",
+      "gpuUsage": "GPU使用率",
+      "storageUsage": "存储使用率",
+      "nodeUsage": "节点使用率"
+    },
+    "operations": {
+      "title": "集群运行情况",
+      "submittedJobs": "累计提交作业",
+      "completedJobs": "已完成作业",
+      "cpuRunTime": "CPU运行时长",
+      "gpuRunTime": "GPU运行时长",
+      "currentStatus": "当前状态",
+      "runningJobs": "运行作业",
+      "queuedJobs": "排队作业",
+      "avgComputeTime": "平均计算时间",
+      "avgQueueTime": "平均排队时间"
+    },
+    "jobStats": {
+      "title": "作业状态分布",
+      "running": "运行中",
+      "queued": "排队中",
+      "completed": "已完成",
+      "failed": "失败",
+      "runningJobs": "运行中",
+      "queuedJobs": "排队中",
+      "submittedJobs": "累计提交",
+      "avgComputeTime": "平均计算时间",
+      "cumulativeSuccessRate": "累计成功率"
+    },
+    "userDistribution": {
+      "title": "用户分布情况",
+      "registeredUsers": "注册用户",
+      "onlineUsers": "当前在线",
+      "jobSubmitRanking": "作业提交排行 TOP8",
+      "totalJobs": "总计",
+      "jobsLabel": "作业",
+      "unknownUser": "未知用户"
+    },
+    "softwareUsage": {
+      "title": "软件使用情况",
+      "sharedSoftware": "共享计算软件",
+      "usageRanking": "使用排行榜 TOP10",
+      "top3": "软件使用TOP3"
+    },
+    "chart": {
+      "jobCount": "作业数",
+      "userLabel": "用户"
+    },
+    "button": "大屏",
+    "buttonTitle": "大屏显示",
+    "common": {
+      "times": "次",
+      "jobs": "作业",
+      "department": "个部门",
+      "noData": "暂无数据",
+      "noRankingData": "暂无排行数据",
+      "noSoftwareData": "暂无软件使用数据",
+      "noDepartmentData": "暂无部门数据",
+      "loadingRankingData": "加载排行数据中...",
+      "refreshData": "刷新数据",
+      "refresh": "刷新",
+      "total": "总计",
+      "used": "已用",
+      "usageRate": "使用率",
+      "showLast7Days": "显示最近7天的作业趋势数据",
+      "noTrendData": "暂无趋势数据"
+    },
+    "consoleLog": {
+      "systemDataReceived": "获取到系统数据:",
+      "systemInfoFetchFailed": "获取系统信息失败，使用默认值",
+      "systemDataFetchFailed": "获取系统数据失败:",
+      "dataFetchFailed": "获取数据失败:",
+      "dataFetchFailedNetwork": "获取数据失败，请检查网络连接",
+      "fullscreenToggleFailed": "全屏切换失败:",
+      "dataValidationSubmittedLessThanRunningQueued": "提交作业数小于运行中+排队中数",
+      "dataValidationResourceUsageOver100": "资源使用率超过100%",
+      "dataValidationHardwareAbnormal": "硬件资源数据异常",
+      "dataStatusAuth": "认证",
+      "dataStatusUser": "用户",
+      "dataStatusClient": "客户端",
+      "dataStatusLoading": "加载",
+      "dataStatusError": "错误",
+      "dataStatusCompleted": "完成",
+      "dataStatusLoading2": "中",
+      "dataStatusNotLoggedIn": "未登录",
+      "dataStatusYes": "是",
+      "dataStatusNo": "否",
+      "dataStatusNone": "无",
+      "dataAbnormalPrefix": "数据异常:",
+      "dataNormal": "数据正常"
+    },
+    "labels": {
+      "cpuUsage": "CPU使用率",
+      "memoryUsage": "内存使用率",
+      "gpuUsage": "GPU使用率",
+      "storageUsage": "存储使用率",
+      "nodeUsage": "节点使用率",
+      "clusterResourceUsage": "集群资源使用率",
+      "jobStatistics": "作业统计",
+      "runningJobs": "运行中",
+      "queuedJobs": "排队中",
+      "submittedJobsTotal": "累计提交",
+      "cpuRunTime": "CPU运行时长",
+      "gpuRunTime": "GPU运行时长",
+      "completedJobs": "已完成作业",
+      "avgQueueTime": "平均排队时间",
+      "jobSuccessRate": "作业成功率",
+      "softwareUsageStatus": "软件使用情况",
+      "sharedSoftware": "共享计算软件",
+      "usageRankingTop10": "使用排行榜 TOP10",
+      "last7DaysJobTrend": "近7天作业趋势分析",
+      "jobStatusDistribution": "作业状态分布",
+      "departmentDistribution": "部门分布",
+      "totalDepartments": "个部门",
+      "departmentDetails": "部门详情",
+      "activeUsers": "活跃用户",
+      "usersCount": "用户数",
+      "submittedJobs": "提交作业",
+      "completedJobs2": "完成作业",
+      "failedJobs": "失败作业",
+      "totalSubmitted": "总提交",
+      "totalCompleted": "总完成",
+      "totalFailed": "总失败",
+      "successRate": "成功率",
+      "running": "运行中",
+      "queued": "排队中",
+      "completed": "已完成",
+      "failed": "失败",
+      "cancelled": "已取消",
+      "jobsUnit": "作业",
+      "departmentLabel": "部门:",
+      "dateLabel": "日期:",
+      "used": "已用"
+    },
+    "units": {
+      "coreHours": "核时",
+      "cardHours": "卡时",
+      "hours": "小时"
+    }
+  },
+  "hpcApplications": {
+    "title": "应用中心",
+    "description": "浏览和启动高性能计算应用",
+    "loadingForm": "加载应用表单中...",
+    "accessDenied": "访问被拒绝",
+    "centerDisabled": "应用中心功能已被管理员禁用",
+    "submitSuccess": "作业提交成功",
+    "submitFailed": "提交失败",
+    "jobId": "作业ID",
+    "redirecting": "正在跳转到作业管理页面...",
+    "discovering": "发现应用中...",
+    "discoverComplete": "应用发现完成",
+    "discovered": "发现 {count} 个模块",
+    "initializing": "初始化中...",
+    "initSuccess": "应用初始化完成",
+    "initFailed": "初始化失败",
+    "loading": "加载中...",
+    "loadFailed": "加载失败",
+    "noApplications": "暂无可用应用",
+    "searchPlaceholder": "搜索应用...",
+    "allCategories": "全部分类",
+    "allTypes": "全部类型",
+    "start": "启动",
+    "unknownApp": "未知应用",
+    "noDescription": "暂无描述",
+    "version": "版本",
+    "category": "分类",
+    "type": "类型",
+    "backToCenter": "返回应用中心",
+    "discoverApps": "发现应用",
+    "initBioApps": "初始化生信应用",
+    "bioAppsNotInitialized": "生物信息学应用未初始化",
+    "bioAppsNotInitializedDesc": "系统包含 {total} 个预配置的生信应用（R、Nextflow、GATK、Cloudgene等），点击初始化按钮将这些应用注册到系统中。",
+    "loadingApps": "加载应用中...",
+    "noMatchingApps": "没有找到匹配的应用",
+    "clearSearch": "清除搜索",
+    "previousPage": "上一页",
+    "nextPage": "下一页",
+    "pageInfo": "第 {current} 页，共 {total} 页",
+    "appsCount": "{count} 个应用",
+    "selectCategory": "选择分类",
+    "selectType": "选择类型",
+    "aiTools": "AI开发工具",
+    "bioTools": "生物信息学工具",
+    "hpcApps": "HPC应用",
+    "totalAppsCount": "共加载 {total} 个应用: AI工具 {ai} 个, HPC应用 {hpc} 个",
+    "categories": {
+      "SCIENTIFIC_COMPUTING": "科学计算",
+      "MACHINE_LEARNING": "机器学习",
+      "DEEP_LEARNING": "深度学习",
+      "QUANTUM_CHEMISTRY": "量子化学",
+      "COMPUTATIONAL_FLUID_DYNAMICS": "计算流体动力学",
+      "BIOINFORMATICS": "生物信息学",
+      "CAD_CAE": "CAD/CAE",
+      "VISUALIZATION": "数据可视化",
+      "BIG_DATA": "大数据",
+      "COMPILERS": "编译器",
+      "DATABASES": "数据库",
+      "WEB_SERVICES": "Web服务",
+      "DEVELOPMENT_TOOLS": "开发工具",
+      "SYSTEM_UTILITIES": "系统工具",
+      "STRUCTURAL_ANALYSIS": "结构分析",
+      "CFD": "计算流体力学",
+      "MULTIPHYSICS": "多物理场仿真",
+      "MOLECULAR_SIMULATION": "分子模拟"
+    },
+    "types": {
+      "BATCH": "批处理",
+      "INTERACTIVE": "交互式",
+      "GUI": "图形界面",
+      "WEB": "Web应用",
+      "SERVICE": "服务",
+      "MPI": "MPI并行",
+      "OPENMP": "OpenMP并行",
+      "GPU": "GPU加速",
+      "JUPYTER": "Jupyter",
+      "CONTAINER": "容器",
+      "WORKFLOW": "工作流"
+    }
+  },
+  "vncApp": {
+    "name": "系统桌面",
+    "description": "完整的Linux桌面环境，支持多种图形应用",
+    "category": "桌面环境",
+    "resolution": "分辨率"
+  },
+  "hpcApps": {
+    "matlab": {
+      "metadata": {
+        "displayName": "MATLAB",
+        "description": "Advanced numerical computing, visualization, and programming environment"
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "默认配置"
+          },
+          "interactive": {
+            "description": "交互式计算"
+          },
+          "large-memory": {
+            "description": "大内存计算"
+          },
+          "parallel": {
+            "description": "并行计算"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "batch": {
+            "description": "批处理模式"
+          },
+          "interactive": {
+            "description": "交互式模式"
+          },
+          "gui": {
+            "description": "图形界面模式"
+          }
+        }
+      },
+      "fields": {
+        "jobName": {
+          "label": "Job Name",
+          "description": "Specify a name for your MATLAB job",
+          "placeholder": "matlab-job"
+        },
+        "executionMode": {
+          "label": "Execution Mode",
+          "options": {
+            "batch": {
+              "label": "Batch Mode",
+              "description": "Submit script to queue"
+            },
+            "interactive": {
+              "label": "Interactive Mode",
+              "description": "Allocate resources and execute interactively"
+            },
+            "gui": {
+              "label": "GUI Mode",
+              "description": "Launch MATLAB GUI"
+            }
+          }
+        },
+        "resourceProfile": {
+          "label": "Resource Profile",
+          "options": {
+            "default": {
+              "label": "Default (4 cores, 16GB)"
+            },
+            "interactive": {
+              "label": "Interactive (2 cores, 8GB)"
+            },
+            "large-memory": {
+              "label": "Large Memory (16 cores, 128GB)"
+            },
+            "parallel": {
+              "label": "Parallel (32 cores, 64GB)"
+            }
+          }
+        },
+        "inputType": {
+          "label": "Input Type",
+          "options": {
+            "code": {
+              "label": "Enter code directly"
+            },
+            "file": {
+              "label": "Upload script file"
+            }
+          }
+        },
+        "matlabCode": {
+          "label": "MATLAB Code",
+          "placeholder": "% Enter your MATLAB code here\n% Example:\nx = linspace(0, 2*pi, 100);\ny = sin(x);\nplot(x, y);\ntitle('Sine Function Plot');\nsaveas(gcf, 'sine_plot.png');",
+          "help": {
+            "text": "Enter the MATLAB code to execute. Code will run in batch mode.",
+            "example": "disp(\"Hello, MATLAB!\");"
+          }
+        },
+        "scriptFile": {
+          "label": "MATLAB Script File",
+          "help": {
+            "text": "Upload .m format MATLAB script file"
+          }
+        },
+        "dataFiles": {
+          "label": "Data Files",
+          "description": "Upload data files if your code needs to read them"
+        },
+        "walltime": {
+          "label": "Maximum Runtime",
+          "options": {
+            "0:30:00": {
+              "label": "30 minutes"
+            },
+            "1:00:00": {
+              "label": "1 hour"
+            },
+            "2:00:00": {
+              "label": "2 hours"
+            },
+            "4:00:00": {
+              "label": "4 hours"
+            },
+            "8:00:00": {
+              "label": "8 hours"
+            },
+            "12:00:00": {
+              "label": "12 hours"
+            },
+            "24:00:00": {
+              "label": "24 hours"
+            }
+          }
+        },
+        "vncGeometry": {
+          "label": "VNC Resolution",
+          "options": {
+            "1024x768": {
+              "label": "1024x768 (XGA)"
+            },
+            "1280x800": {
+              "label": "1280x800 (WXGA)"
+            },
+            "1280x1024": {
+              "label": "1280x1024 (SXGA)"
+            },
+            "1440x900": {
+              "label": "1440x900 (WXGA+)"
+            },
+            "1600x900": {
+              "label": "1600x900 (HD+)"
+            },
+            "1920x1080": {
+              "label": "1920x1080 (Full HD)"
+            },
+            "2560x1440": {
+              "label": "2560x1440 (2K QHD)"
+            },
+            "3840x2160": {
+              "label": "3840x2160 (4K UHD)"
+            }
+          }
+        },
+        "emailNotification": {
+          "label": "Email Notification",
+          "description": "Send email notification when job completes"
+        }
+      },
+      "io": {
+        "inputs": {
+          "script": {
+            "description": "MATLAB脚本文件"
+          },
+          "data": {
+            "description": "数据文件"
+          }
+        },
+        "outputs": {
+          "results": {
+            "description": "计算结果目录"
+          },
+          "figures": {
+            "description": "生成的图形文件"
+          },
+          "workspace": {
+            "description": "工作区数据"
+          }
+        }
+      }
+    },
+    "gaussian": {
+      "metadata": {
+        "displayName": "Gaussian",
+        "description": "Gaussian量子化学计算软件包，用于分子结构优化和电子结构计算"
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "默认配置"
+          },
+          "small": {
+            "description": "小分子计算"
+          },
+          "large": {
+            "description": "大分子计算"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "batch": {
+            "description": "批处理计算"
+          }
+        }
+      },
+      "fields": {
+        "jobName": {
+          "label": "作业名称"
+        },
+        "inputFile": {
+          "label": "输入文件",
+          "help": {
+            "text": "上传Gaussian输入文件(.gjf或.com格式)"
+          }
+        },
+        "calculationType": {
+          "label": "计算类型",
+          "options": {
+            "opt": {
+              "label": "几何优化"
+            },
+            "freq": {
+              "label": "频率计算"
+            },
+            "sp": {
+              "label": "单点能量"
+            },
+            "opt-freq": {
+              "label": "优化+频率"
+            }
+          }
+        },
+        "method": {
+          "label": "计算方法",
+          "options": {
+            "b3lyp": {
+              "label": "B3LYP (DFT)"
+            },
+            "mp2": {
+              "label": "MP2"
+            },
+            "ccsd": {
+              "label": "CCSD"
+            },
+            "hf": {
+              "label": "Hartree-Fock"
+            }
+          }
+        },
+        "basisSet": {
+          "label": "基组",
+          "options": {
+            "6-31g": {
+              "label": "6-31G"
+            },
+            "6-31g*": {
+              "label": "6-31G*"
+            },
+            "6-311g**": {
+              "label": "6-311G**"
+            },
+            "cc-pvdz": {
+              "label": "cc-pVDZ"
+            },
+            "cc-pvtz": {
+              "label": "cc-pVTZ"
+            }
+          }
+        },
+        "nodes": {
+          "label": "节点数量",
+          "description": "选择作业使用的节点数量，每个节点最多64核",
+          "options": {
+            "1": {
+              "label": "1个节点 (最多64核)"
+            },
+            "2": {
+              "label": "2个节点 (最多128核)"
+            },
+            "3": {
+              "label": "3个节点 (最多192核)"
+            }
+          }
+        },
+        "partition": {
+          "label": "计算分区",
+          "description": "选择适合的计算分区，系统将自动获取可用分区"
+        },
+        "cpus": {
+          "label": "CPU核数",
+          "description": "选择CPU核数，单节点最多64核，多节点可选更多核数",
+          "options": {
+            "1": {
+              "label": "1核"
+            },
+            "2": {
+              "label": "2核"
+            },
+            "4": {
+              "label": "4核"
+            },
+            "8": {
+              "label": "8核"
+            },
+            "16": {
+              "label": "16核"
+            },
+            "24": {
+              "label": "24核"
+            },
+            "32": {
+              "label": "32核"
+            },
+            "48": {
+              "label": "48核"
+            },
+            "64": {
+              "label": "64核 (单节点最大)"
+            },
+            "96": {
+              "label": "96核 (2节点)"
+            },
+            "128": {
+              "label": "128核 (2节点最大)"
+            },
+            "160": {
+              "label": "160核 (3节点)"
+            },
+            "192": {
+              "label": "192核 (3节点最大)"
+            }
+          }
+        },
+        "memory": {
+          "label": "内存配置",
+          "description": "选择内存大小，系统默认将使用节点默认内存配置",
+          "options": {
+            "default": {
+              "label": "系统默认"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (多节点)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "运行时限",
+          "description": "设置作业最大运行时间，分区默认将使用分区默认时间限制",
+          "options": {
+            "default": {
+              "label": "分区默认"
+            },
+            "0:30:00": {
+              "label": "30分钟"
+            },
+            "1:00:00": {
+              "label": "1小时"
+            },
+            "2:00:00": {
+              "label": "2小时"
+            },
+            "4:00:00": {
+              "label": "4小时"
+            },
+            "8:00:00": {
+              "label": "8小时"
+            },
+            "12:00:00": {
+              "label": "12小时"
+            },
+            "24:00:00": {
+              "label": "1天"
+            },
+            "48:00:00": {
+              "label": "2天"
+            },
+            "72:00:00": {
+              "label": "3天"
+            },
+            "168:00:00": {
+              "label": "7天"
+            }
+          }
+        }
+      },
+      "io": {
+        "inputs": {
+          "input": {
+            "description": "Gaussian输入文件"
+          }
+        },
+        "outputs": {
+          "output": {
+            "description": "Gaussian输出文件"
+          },
+          "checkpoint": {
+            "description": "检查点文件"
+          }
+        }
+      }
+    },
+    "r": {
+      "metadata": {
+        "displayName": "R Statistical Computing",
+        "description": "用于统计计算和图形的编程语言和软件环境，广泛用于生物统计学和基因组数据分析"
+      },
+      "fields": {
+        "jobName": {
+          "label": "作业名称",
+          "placeholder": "例如: genomic_analysis"
+        },
+        "analysisType": {
+          "label": "分析类型",
+          "options": {
+            "interactive": {
+              "label": "交互式分析"
+            },
+            "batch": {
+              "label": "批处理脚本"
+            },
+            "rstudio": {
+              "label": "RStudio Server"
+            }
+          }
+        },
+        "script": {
+          "label": "R脚本",
+          "placeholder": "# 输入您的R代码\nlibrary(ggplot2)\ndata(mtcars)\nggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()"
+        },
+        "packages": {
+          "label": "需要的R包",
+          "placeholder": "例如: ggplot2,dplyr,BiocGenerics",
+          "help": {
+            "text": "逗号分隔的包名列表，系统会自动安装"
+          }
+        },
+        "nodes": {
+          "label": "节点数量",
+          "description": "选择作业使用的节点数量，每个节点最多64核",
+          "options": {
+            "1": {
+              "label": "1个节点 (最多64核)"
+            },
+            "2": {
+              "label": "2个节点 (最多128核)"
+            },
+            "3": {
+              "label": "3个节点 (最多192核)"
+            }
+          }
+        },
+        "partition": {
+          "label": "计算分区",
+          "description": "选择适合的计算分区，系统将自动获取可用分区"
+        },
+        "cpus": {
+          "label": "CPU核数",
+          "description": "选择CPU核数，单节点最多64核，多节点可选更多核数",
+          "options": {
+            "1": {
+              "label": "1核"
+            },
+            "2": {
+              "label": "2核"
+            },
+            "4": {
+              "label": "4核"
+            },
+            "8": {
+              "label": "8核"
+            },
+            "16": {
+              "label": "16核"
+            },
+            "24": {
+              "label": "24核"
+            },
+            "32": {
+              "label": "32核"
+            },
+            "48": {
+              "label": "48核"
+            },
+            "64": {
+              "label": "64核 (单节点最大)"
+            },
+            "96": {
+              "label": "96核 (2节点)"
+            },
+            "128": {
+              "label": "128核 (2节点最大)"
+            },
+            "160": {
+              "label": "160核 (3节点)"
+            },
+            "192": {
+              "label": "192核 (3节点最大)"
+            }
+          }
+        },
+        "memory": {
+          "label": "内存配置",
+          "description": "选择内存大小，系统默认将使用节点默认内存配置",
+          "options": {
+            "default": {
+              "label": "系统默认"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (多节点)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "运行时限",
+          "description": "设置作业最大运行时间，分区默认将使用分区默认时间限制",
+          "options": {
+            "default": {
+              "label": "分区默认"
+            },
+            "0:30:00": {
+              "label": "30分钟"
+            },
+            "1:00:00": {
+              "label": "1小时"
+            },
+            "2:00:00": {
+              "label": "2小时"
+            },
+            "4:00:00": {
+              "label": "4小时"
+            },
+            "8:00:00": {
+              "label": "8小时"
+            },
+            "12:00:00": {
+              "label": "12小时"
+            },
+            "24:00:00": {
+              "label": "1天"
+            },
+            "48:00:00": {
+              "label": "2天"
+            },
+            "72:00:00": {
+              "label": "3天"
+            },
+            "168:00:00": {
+              "label": "7天"
+            }
+          }
+        }
+      },
+      "resources": {
+        "profiles": {
+          "small": {
+            "description": "小规模数据分析"
+          },
+          "medium": {
+            "description": "中等规模基因组分析"
+          },
+          "large": {
+            "description": "大规模多组学分析"
+          }
+        }
+      }
+    },
+    "cloudgene": {
+      "metadata": {
+        "displayName": "Cloudgene Genomics Platform",
+        "description": "基于Web的基因组数据分析平台，提供用户友好的界面执行复杂的生物信息学分析"
+      },
+      "fields": {
+        "jobName": {
+          "label": "服务名称"
+        },
+        "port": {
+          "label": "服务端口"
+        },
+        "workspace": {
+          "label": "工作空间目录"
+        },
+        "nodes": {
+          "label": "节点数量",
+          "description": "选择作业使用的节点数量，每个节点最多64核",
+          "options": {
+            "1": {
+              "label": "1个节点 (最多64核)"
+            },
+            "2": {
+              "label": "2个节点 (最多128核)"
+            },
+            "3": {
+              "label": "3个节点 (最多192核)"
+            }
+          }
+        },
+        "partition": {
+          "label": "计算分区",
+          "description": "选择适合的计算分区，系统将自动获取可用分区"
+        },
+        "cpus": {
+          "label": "CPU核数",
+          "description": "选择CPU核数，单节点最多64核，多节点可选更多核数",
+          "options": {
+            "1": {
+              "label": "1核"
+            },
+            "2": {
+              "label": "2核"
+            },
+            "4": {
+              "label": "4核"
+            },
+            "8": {
+              "label": "8核"
+            },
+            "16": {
+              "label": "16核"
+            },
+            "24": {
+              "label": "24核"
+            },
+            "32": {
+              "label": "32核"
+            },
+            "48": {
+              "label": "48核"
+            },
+            "64": {
+              "label": "64核 (单节点最大)"
+            },
+            "96": {
+              "label": "96核 (2节点)"
+            },
+            "128": {
+              "label": "128核 (2节点最大)"
+            },
+            "160": {
+              "label": "160核 (3节点)"
+            },
+            "192": {
+              "label": "192核 (3节点最大)"
+            }
+          }
+        },
+        "memory": {
+          "label": "内存配置",
+          "description": "选择内存大小，系统默认将使用节点默认内存配置",
+          "options": {
+            "default": {
+              "label": "系统默认"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (多节点)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "运行时限",
+          "description": "设置作业最大运行时间，分区默认将使用分区默认时间限制",
+          "options": {
+            "default": {
+              "label": "分区默认"
+            },
+            "0:30:00": {
+              "label": "30分钟"
+            },
+            "1:00:00": {
+              "label": "1小时"
+            },
+            "2:00:00": {
+              "label": "2小时"
+            },
+            "4:00:00": {
+              "label": "4小时"
+            },
+            "8:00:00": {
+              "label": "8小时"
+            },
+            "12:00:00": {
+              "label": "12小时"
+            },
+            "24:00:00": {
+              "label": "1天"
+            },
+            "48:00:00": {
+              "label": "2天"
+            },
+            "72:00:00": {
+              "label": "3天"
+            },
+            "168:00:00": {
+              "label": "7天"
+            }
+          }
+        }
+      }
+    },
+    "nextflow": {
+      "metadata": {
+        "displayName": "Nextflow Workflow Engine",
+        "description": "用于数据驱动计算管道的工作流管理系统，特别适用于生物信息学分析流程"
+      },
+      "fields": {
+        "jobName": {
+          "label": "作业名称",
+          "placeholder": "例如: rnaseq_analysis"
+        },
+        "pipelineType": {
+          "label": "流程类型",
+          "options": {
+            "nf-core/rnaseq": {
+              "label": "RNA-seq分析"
+            },
+            "nf-core/chipseq": {
+              "label": "ChIP-seq分析"
+            },
+            "nf-core/atacseq": {
+              "label": "ATAC-seq分析"
+            },
+            "nf-core/sarek": {
+              "label": "变异检测"
+            },
+            "nf-core/methylseq": {
+              "label": "甲基化分析"
+            },
+            "custom": {
+              "label": "自定义流程"
+            }
+          }
+        },
+        "input": {
+          "label": "输入文件",
+          "placeholder": "/data/samplesheet.csv",
+          "help": {
+            "text": "样本表文件路径或输入目录"
+          }
+        },
+        "outdir": {
+          "label": "输出目录",
+          "placeholder": "/data/results"
+        },
+        "genome": {
+          "label": "参考基因组",
+          "options": {
+            "GRCh38": {
+              "label": "人类 GRCh38"
+            },
+            "GRCh37": {
+              "label": "人类 GRCh37"
+            },
+            "GRCm39": {
+              "label": "小鼠 GRCm39"
+            },
+            "dm6": {
+              "label": "果蝇 dm6"
+            },
+            "ce11": {
+              "label": "线虫 ce11"
+            }
+          }
+        },
+        "customScript": {
+          "label": "自定义脚本路径",
+          "placeholder": "/path/to/main.nf"
+        },
+        "nodes": {
+          "label": "节点数量",
+          "description": "选择作业使用的节点数量，每个节点最多64核",
+          "options": {
+            "1": {
+              "label": "1个节点 (最多64核)"
+            },
+            "2": {
+              "label": "2个节点 (最多128核)"
+            },
+            "3": {
+              "label": "3个节点 (最多192核)"
+            }
+          }
+        },
+        "partition": {
+          "label": "计算分区",
+          "description": "选择适合的计算分区，系统将自动获取可用分区"
+        },
+        "cpus": {
+          "label": "CPU核数",
+          "description": "选择CPU核数，单节点最多64核，多节点可选更多核数",
+          "options": {
+            "1": {
+              "label": "1核"
+            },
+            "2": {
+              "label": "2核"
+            },
+            "4": {
+              "label": "4核"
+            },
+            "8": {
+              "label": "8核"
+            },
+            "16": {
+              "label": "16核"
+            },
+            "24": {
+              "label": "24核"
+            },
+            "32": {
+              "label": "32核"
+            },
+            "48": {
+              "label": "48核"
+            },
+            "64": {
+              "label": "64核 (单节点最大)"
+            },
+            "96": {
+              "label": "96核 (2节点)"
+            },
+            "128": {
+              "label": "128核 (2节点最大)"
+            },
+            "160": {
+              "label": "160核 (3节点)"
+            },
+            "192": {
+              "label": "192核 (3节点最大)"
+            }
+          }
+        },
+        "memory": {
+          "label": "内存配置",
+          "description": "选择内存大小，系统默认将使用节点默认内存配置",
+          "options": {
+            "default": {
+              "label": "系统默认"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (多节点)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "运行时限",
+          "description": "设置作业最大运行时间，分区默认将使用分区默认时间限制",
+          "options": {
+            "default": {
+              "label": "分区默认"
+            },
+            "0:30:00": {
+              "label": "30分钟"
+            },
+            "1:00:00": {
+              "label": "1小时"
+            },
+            "2:00:00": {
+              "label": "2小时"
+            },
+            "4:00:00": {
+              "label": "4小时"
+            },
+            "8:00:00": {
+              "label": "8小时"
+            },
+            "12:00:00": {
+              "label": "12小时"
+            },
+            "24:00:00": {
+              "label": "1天"
+            },
+            "48:00:00": {
+              "label": "2天"
+            },
+            "72:00:00": {
+              "label": "3天"
+            },
+            "168:00:00": {
+              "label": "7天"
+            }
+          }
+        }
+      },
+      "resources": {
+        "profiles": {
+          "small": {
+            "description": "小规模流程（单样本）"
+          },
+          "medium": {
+            "description": "中等规模流程（多样本）"
+          },
+          "large": {
+            "description": "大规模流程（队列研究）"
+          }
+        }
+      }
+    },
+    "abaqus-standard": {
+      "metadata": {
+        "displayName": "ABAQUS 结构分析",
+        "description": "ABAQUS是业界领先的有限元分析软件，专用于结构力学、热分析等工程仿真"
+      },
+      "fields": {
+        "jobName": {
+          "label": "作业名称",
+          "description": "为你的ABAQUS作业指定名称"
+        },
+        "inputFile": {
+          "label": "输入文件",
+          "description": "ABAQUS输入文件(.inp格式)"
+        },
+        "analysisType": {
+          "label": "分析类型",
+          "description": "选择ABAQUS分析类型",
+          "options": {
+            "standard": {
+              "label": "标准分析"
+            },
+            "explicit": {
+              "label": "显式分析"
+            }
+          }
+        },
+        "nodes": {
+          "label": "节点数量",
+          "description": "选择作业使用的节点数量，每个节点最多64核",
+          "options": {
+            "1": {
+              "label": "1个节点 (最多64核)"
+            },
+            "2": {
+              "label": "2个节点 (最多128核)"
+            },
+            "3": {
+              "label": "3个节点 (最多192核)"
+            }
+          }
+        },
+        "partition": {
+          "label": "计算分区",
+          "description": "选择适合的计算分区，系统将自动获取可用分区"
+        },
+        "cpus": {
+          "label": "CPU核数",
+          "description": "选择CPU核数，单节点最多64核，多节点可选更多核数",
+          "options": {
+            "1": {
+              "label": "1核"
+            },
+            "2": {
+              "label": "2核"
+            },
+            "4": {
+              "label": "4核"
+            },
+            "8": {
+              "label": "8核"
+            },
+            "16": {
+              "label": "16核"
+            },
+            "24": {
+              "label": "24核"
+            },
+            "32": {
+              "label": "32核"
+            },
+            "48": {
+              "label": "48核"
+            },
+            "64": {
+              "label": "64核 (单节点最大)"
+            },
+            "96": {
+              "label": "96核 (2节点)"
+            },
+            "128": {
+              "label": "128核 (2节点最大)"
+            },
+            "160": {
+              "label": "160核 (3节点)"
+            },
+            "192": {
+              "label": "192核 (3节点最大)"
+            }
+          }
+        },
+        "memory": {
+          "label": "内存配置",
+          "description": "选择内存大小，系统默认将使用节点默认内存配置",
+          "options": {
+            "default": {
+              "label": "系统默认"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (多节点)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "运行时限",
+          "description": "设置作业最大运行时间，分区默认将使用分区默认时间限制",
+          "options": {
+            "default": {
+              "label": "分区默认"
+            },
+            "0:30:00": {
+              "label": "30分钟"
+            },
+            "1:00:00": {
+              "label": "1小时"
+            },
+            "2:00:00": {
+              "label": "2小时"
+            },
+            "4:00:00": {
+              "label": "4小时"
+            },
+            "8:00:00": {
+              "label": "8小时"
+            },
+            "12:00:00": {
+              "label": "12小时"
+            },
+            "24:00:00": {
+              "label": "1天"
+            },
+            "48:00:00": {
+              "label": "2天"
+            },
+            "72:00:00": {
+              "label": "3天"
+            },
+            "168:00:00": {
+              "label": "7天"
+            }
+          }
+        }
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "默认结构分析配置"
+          },
+          "small": {
+            "description": "小型结构模型"
+          },
+          "large": {
+            "description": "大型结构模型"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "batch": {
+            "description": "批处理结构分析"
+          }
+        }
+      }
+    },
+    "testbash": {
+      "metadata": {
+        "displayName": "bash",
+        "description": "test bash"
+      },
+      "fields": {
+        "jobName": {
+          "label": "作业名称",
+          "description": "为此作业指定一个名称",
+          "placeholder": "请输入作业名称"
+        },
+        "test": {
+          "label": "命令",
+          "description": "请输入您要执行的指令"
+        },
+        "partition": {
+          "label": "分区",
+          "options": {
+            "compute": {
+              "label": "compute"
+            },
+            "graphics": {
+              "label": "graphics"
+            }
+          }
+        },
+        "nodes": {
+          "label": "节点",
+          "options": {
+            "1": {
+              "label": "1"
+            }
+          }
+        },
+        "cpusPerTask": {
+          "label": "核数",
+          "options": {
+            "1": {
+              "label": "1"
+            },
+            "2": {
+              "label": "2"
+            },
+            "3": {
+              "label": "3"
+            },
+            "4": {
+              "label": "4"
+            },
+            "5": {
+              "label": "5"
+            },
+            "6": {
+              "label": "6"
+            }
+          }
+        }
+      }
+    },
+    "gatk": {
+      "metadata": {
+        "displayName": "GATK (Genome Analysis Toolkit)",
+        "description": "由Broad Institute开发的基因组分析工具包，用于变异发现和基因分型"
+      },
+      "fields": {
+        "jobName": {
+          "label": "作业名称"
+        },
+        "analysis_type": {
+          "label": "分析类型",
+          "options": {
+            "variant-calling": {
+              "label": "变异检测"
+            },
+            "joint-calling": {
+              "label": "联合检测"
+            },
+            "annotation": {
+              "label": "变异注释"
+            }
+          }
+        },
+        "reference": {
+          "label": "参考基因组",
+          "placeholder": "/data/reference/genome.fa"
+        },
+        "input_bam": {
+          "label": "输入BAM文件",
+          "placeholder": "/data/sample.bam"
+        },
+        "output_vcf": {
+          "label": "输出VCF文件",
+          "placeholder": "/data/output.vcf"
+        },
+        "nodes": {
+          "label": "节点数量",
+          "description": "选择作业使用的节点数量，每个节点最多64核",
+          "options": {
+            "1": {
+              "label": "1个节点 (最多64核)"
+            },
+            "2": {
+              "label": "2个节点 (最多128核)"
+            },
+            "3": {
+              "label": "3个节点 (最多192核)"
+            }
+          }
+        },
+        "partition": {
+          "label": "计算分区",
+          "description": "选择适合的计算分区，系统将自动获取可用分区"
+        },
+        "cpus": {
+          "label": "CPU核数",
+          "description": "选择CPU核数，单节点最多64核，多节点可选更多核数",
+          "options": {
+            "1": {
+              "label": "1核"
+            },
+            "2": {
+              "label": "2核"
+            },
+            "4": {
+              "label": "4核"
+            },
+            "8": {
+              "label": "8核"
+            },
+            "16": {
+              "label": "16核"
+            },
+            "24": {
+              "label": "24核"
+            },
+            "32": {
+              "label": "32核"
+            },
+            "48": {
+              "label": "48核"
+            },
+            "64": {
+              "label": "64核 (单节点最大)"
+            },
+            "96": {
+              "label": "96核 (2节点)"
+            },
+            "128": {
+              "label": "128核 (2节点最大)"
+            },
+            "160": {
+              "label": "160核 (3节点)"
+            },
+            "192": {
+              "label": "192核 (3节点最大)"
+            }
+          }
+        },
+        "memory": {
+          "label": "内存配置",
+          "description": "选择内存大小，系统默认将使用节点默认内存配置",
+          "options": {
+            "default": {
+              "label": "系统默认"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (多节点)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "运行时限",
+          "description": "设置作业最大运行时间，分区默认将使用分区默认时间限制",
+          "options": {
+            "default": {
+              "label": "分区默认"
+            },
+            "0:30:00": {
+              "label": "30分钟"
+            },
+            "1:00:00": {
+              "label": "1小时"
+            },
+            "2:00:00": {
+              "label": "2小时"
+            },
+            "4:00:00": {
+              "label": "4小时"
+            },
+            "8:00:00": {
+              "label": "8小时"
+            },
+            "12:00:00": {
+              "label": "12小时"
+            },
+            "24:00:00": {
+              "label": "1天"
+            },
+            "48:00:00": {
+              "label": "2天"
+            },
+            "72:00:00": {
+              "label": "3天"
+            },
+            "168:00:00": {
+              "label": "7天"
+            }
+          }
+        }
+      },
+      "resources": {
+        "profiles": {
+          "single-sample": {
+            "description": "单样本分析"
+          },
+          "cohort": {
+            "description": "队列分析"
+          }
+        }
+      }
+    },
+    "materials-studio-md": {
+      "metadata": {
+        "displayName": "Materials Studio 分子动力学",
+        "description": "Materials Studio是专业的分子建模和仿真软件包"
+      },
+      "fields": {
+        "jobName": {
+          "label": "作业名称",
+          "description": "为你的Materials Studio作业指定名称"
+        },
+        "inputFile": {
+          "label": "输入文件",
+          "description": "Materials Studio输入文件"
+        },
+        "simulationType": {
+          "label": "模拟类型",
+          "description": "选择Materials Studio计算类型",
+          "options": {
+            "md": {
+              "label": "分子动力学 (Discover)"
+            },
+            "dft": {
+              "label": "密度泛函理论 (DMol3)"
+            },
+            "forcite": {
+              "label": "分子力学 (Forcite)"
+            }
+          }
+        },
+        "nodes": {
+          "label": "节点数量",
+          "description": "选择作业使用的节点数量，每个节点最多64核",
+          "options": {
+            "1": {
+              "label": "1个节点 (最多64核)"
+            },
+            "2": {
+              "label": "2个节点 (最多128核)"
+            },
+            "3": {
+              "label": "3个节点 (最多192核)"
+            }
+          }
+        },
+        "cpus": {
+          "label": "CPU核数",
+          "description": "选择CPU核数，单节点最多64核，多节点可选更多核数",
+          "options": {
+            "4": {
+              "label": "4核"
+            },
+            "8": {
+              "label": "8核"
+            },
+            "16": {
+              "label": "16核"
+            },
+            "24": {
+              "label": "24核"
+            },
+            "32": {
+              "label": "32核"
+            },
+            "48": {
+              "label": "48核"
+            },
+            "64": {
+              "label": "64核 (单节点最大)"
+            },
+            "96": {
+              "label": "96核 (2节点)"
+            },
+            "128": {
+              "label": "128核 (2节点最大)"
+            },
+            "160": {
+              "label": "160核 (3节点)"
+            },
+            "192": {
+              "label": "192核 (3节点最大)"
+            }
+          }
+        },
+        "memory": {
+          "label": "内存配置",
+          "description": "选择内存大小，多节点可使用更大内存",
+          "options": {
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB (多节点)"
+            },
+            "1TB": {
+              "label": "1TB (多节点)"
+            }
+          }
+        },
+        "partition": {
+          "label": "计算分区",
+          "description": "选择适合的计算分区",
+          "options": {
+            "compute": {
+              "label": "通用计算分区"
+            },
+            "graphics": {
+              "label": "图形计算分区"
+            }
+          }
+        },
+        "walltime": {
+          "label": "运行时限",
+          "description": "设置作业最大运行时间",
+          "options": {
+            "0:30:00": {
+              "label": "30分钟"
+            },
+            "1:00:00": {
+              "label": "1小时"
+            },
+            "2:00:00": {
+              "label": "2小时"
+            },
+            "4:00:00": {
+              "label": "4小时"
+            },
+            "8:00:00": {
+              "label": "8小时"
+            },
+            "12:00:00": {
+              "label": "12小时"
+            },
+            "24:00:00": {
+              "label": "24小时"
+            },
+            "48:00:00": {
+              "label": "48小时"
+            },
+            "72:00:00": {
+              "label": "72小时"
+            }
+          }
+        }
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "默认分子动力学配置"
+          },
+          "small-molecule": {
+            "description": "小分子体系"
+          },
+          "polymer": {
+            "description": "聚合物体系"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "batch": {
+            "description": "批处理分子模拟"
+          }
+        }
+      }
+    },
+    "ansys-fluent": {
+      "metadata": {
+        "displayName": "ANSYS Fluent",
+        "description": "ANSYS Fluent是业界领先的计算流体力学(CFD)软件"
+      },
+      "fields": {
+        "jobName": {
+          "label": "作业名称",
+          "description": "为你的Fluent计算作业指定名称"
+        },
+        "caseFile": {
+          "label": "案例文件",
+          "description": "Fluent案例文件(.cas或.cas.gz)"
+        },
+        "inputScript": {
+          "label": "计算文件",
+          "description": "Fluent计算脚本文件(.jou或.scm)"
+        },
+        "nodes": {
+          "label": "节点数量",
+          "description": "选择作业使用的节点数量，每个节点最多64核",
+          "options": {
+            "1": {
+              "label": "1个节点 (最多64核)"
+            },
+            "2": {
+              "label": "2个节点 (最多128核)"
+            },
+            "3": {
+              "label": "3个节点 (最多192核)"
+            }
+          }
+        },
+        "partition": {
+          "label": "计算分区",
+          "description": "选择适合的计算分区，系统将自动获取可用分区",
+          "options": {
+            "compute": {
+              "label": "compute"
+            },
+            "graphics": {
+              "label": "graphics"
+            }
+          }
+        },
+        "cpus": {
+          "label": "CPU核数",
+          "description": "选择CPU核数，单节点最多64核，多节点可选更多核数",
+          "options": {
+            "1": {
+              "label": "1核"
+            },
+            "2": {
+              "label": "2核"
+            },
+            "4": {
+              "label": "4核"
+            },
+            "8": {
+              "label": "8核"
+            },
+            "16": {
+              "label": "16核"
+            },
+            "24": {
+              "label": "24核"
+            },
+            "32": {
+              "label": "32核"
+            },
+            "48": {
+              "label": "48核"
+            },
+            "64": {
+              "label": "64核 (单节点最大)"
+            },
+            "96": {
+              "label": "96核 (2节点)"
+            },
+            "128": {
+              "label": "128核 (2节点最大)"
+            },
+            "160": {
+              "label": "160核 (3节点)"
+            },
+            "192": {
+              "label": "192核 (3节点最大)"
+            }
+          }
+        },
+        "memory": {
+          "label": "内存配置",
+          "description": "选择内存大小，系统默认将使用节点默认内存配置",
+          "options": {
+            "default": {
+              "label": "系统默认"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (多节点)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "运行时限",
+          "description": "设置作业最大运行时间，分区默认将使用分区默认时间限制",
+          "options": {
+            "default": {
+              "label": "分区默认"
+            },
+            "0:30:00": {
+              "label": "30分钟"
+            },
+            "1:00:00": {
+              "label": "1小时"
+            },
+            "2:00:00": {
+              "label": "2小时"
+            },
+            "4:00:00": {
+              "label": "4小时"
+            },
+            "8:00:00": {
+              "label": "8小时"
+            },
+            "12:00:00": {
+              "label": "12小时"
+            },
+            "24:00:00": {
+              "label": "1天"
+            },
+            "48:00:00": {
+              "label": "2天"
+            },
+            "72:00:00": {
+              "label": "3天"
+            },
+            "168:00:00": {
+              "label": "7天"
+            }
+          }
+        }
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "默认CFD计算配置"
+          },
+          "small": {
+            "description": "小型CFD模型"
+          },
+          "large": {
+            "description": "大型CFD模型并行计算"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "batch": {
+            "description": "批处理CFD计算"
+          }
+        }
+      }
+    },
+    "comsol-multiphysics": {
+      "metadata": {
+        "displayName": "COMSOL Multiphysics",
+        "description": "COMSOL Multiphysics是业界领先的多物理场仿真软件"
+      },
+      "fields": {
+        "jobName": {
+          "label": "作业名称",
+          "description": "为你的COMSOL仿真作业指定名称"
+        },
+        "modelFile": {
+          "label": "模型文件",
+          "description": "COMSOL模型文件(.mph格式)"
+        },
+        "physicsType": {
+          "label": "物理场类型",
+          "description": "选择主要的物理场分析类型",
+          "options": {
+            "multiphysics": {
+              "label": "多物理场耦合"
+            },
+            "electromagnetic": {
+              "label": "电磁场"
+            },
+            "heat-transfer": {
+              "label": "传热分析"
+            }
+          }
+        },
+        "nodes": {
+          "label": "节点数量",
+          "description": "选择作业使用的节点数量，每个节点最多64核",
+          "options": {
+            "1": {
+              "label": "1个节点 (最多64核)"
+            },
+            "2": {
+              "label": "2个节点 (最多128核)"
+            },
+            "3": {
+              "label": "3个节点 (最多192核)"
+            }
+          }
+        },
+        "partition": {
+          "label": "计算分区",
+          "description": "选择适合的计算分区，系统将自动获取可用分区"
+        },
+        "cpus": {
+          "label": "CPU核数",
+          "description": "选择CPU核数，单节点最多64核，多节点可选更多核数",
+          "options": {
+            "1": {
+              "label": "1核"
+            },
+            "2": {
+              "label": "2核"
+            },
+            "4": {
+              "label": "4核"
+            },
+            "8": {
+              "label": "8核"
+            },
+            "16": {
+              "label": "16核"
+            },
+            "24": {
+              "label": "24核"
+            },
+            "32": {
+              "label": "32核"
+            },
+            "48": {
+              "label": "48核"
+            },
+            "64": {
+              "label": "64核 (单节点最大)"
+            },
+            "96": {
+              "label": "96核 (2节点)"
+            },
+            "128": {
+              "label": "128核 (2节点最大)"
+            },
+            "160": {
+              "label": "160核 (3节点)"
+            },
+            "192": {
+              "label": "192核 (3节点最大)"
+            }
+          }
+        },
+        "memory": {
+          "label": "内存配置",
+          "description": "选择内存大小，系统默认将使用节点默认内存配置",
+          "options": {
+            "default": {
+              "label": "系统默认"
+            },
+            "2GB": {
+              "label": "2GB"
+            },
+            "4GB": {
+              "label": "4GB"
+            },
+            "8GB": {
+              "label": "8GB"
+            },
+            "16GB": {
+              "label": "16GB"
+            },
+            "32GB": {
+              "label": "32GB"
+            },
+            "64GB": {
+              "label": "64GB"
+            },
+            "128GB": {
+              "label": "128GB"
+            },
+            "256GB": {
+              "label": "256GB"
+            },
+            "512GB": {
+              "label": "512GB"
+            },
+            "1TB": {
+              "label": "1TB (多节点)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "运行时限",
+          "description": "设置作业最大运行时间，分区默认将使用分区默认时间限制",
+          "options": {
+            "default": {
+              "label": "分区默认"
+            },
+            "0:30:00": {
+              "label": "30分钟"
+            },
+            "1:00:00": {
+              "label": "1小时"
+            },
+            "2:00:00": {
+              "label": "2小时"
+            },
+            "4:00:00": {
+              "label": "4小时"
+            },
+            "8:00:00": {
+              "label": "8小时"
+            },
+            "12:00:00": {
+              "label": "12小时"
+            },
+            "24:00:00": {
+              "label": "1天"
+            },
+            "48:00:00": {
+              "label": "2天"
+            },
+            "72:00:00": {
+              "label": "3天"
+            },
+            "168:00:00": {
+              "label": "7天"
+            }
+          }
+        }
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "默认多物理场仿真配置"
+          },
+          "small": {
+            "description": "小型多物理场模型"
+          },
+          "large": {
+            "description": "大型多物理场耦合分析"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "batch": {
+            "description": "批处理多物理场仿真"
+          }
+        }
+      }
+    },
+    "jupyter": {
+      "metadata": {
+        "displayName": "Jupyter Lab",
+        "description": "交互式Python开发环境"
+      },
+      "resources": {
+        "profiles": {
+          "light": {
+            "description": "轻量级配置 (2核, 8GB, 4小时)"
+          },
+          "default": {
+            "description": "标准配置 (4核, 16GB, 8小时)"
+          },
+          "gpu": {
+            "description": "GPU加速 (8核, 32GB, 1xGPU, 8小时)"
+          },
+          "highMemory": {
+            "description": "大内存配置 (16核, 128GB, 12小时)"
+          },
+          "standard": {
+            "description": "标准增强配置，适合中等规模计算任务"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "interactive": {
+            "description": "交互式Jupyter Lab会话"
+          }
+        },
+        "templates": {
+          "jupyterServer": {
+            "description": "Jupyter Lab服务器"
+          }
+        }
+      },
+      "fields": {
+        "jobName": {
+          "label": "会话名称",
+          "description": "为您的Jupyter Lab会话指定一个名称"
+        },
+        "resourceProfile": {
+          "label": "资源配置",
+          "options": {
+            "light": {
+              "label": "轻量级 (2核心, 8GB)",
+              "description": "适合数据探索和简单计算"
+            },
+            "default": {
+              "label": "标准 (4核心, 16GB)",
+              "description": "适合一般数据分析和机器学习"
+            },
+            "gpu": {
+              "label": "GPU (8核心, 32GB, 1xGPU)",
+              "description": "适合深度学习和GPU加速计算"
+            },
+            "highMemory": {
+              "label": "大内存 (16核心, 128GB)",
+              "description": "适合大规模数据处理"
+            },
+            "standard": {
+              "label": "标准增强 (8核心, 32GB)",
+              "description": "适合中等规模数据分析和计算"
+            }
+          }
+        },
+        "enableGPU": {
+          "label": "启用GPU",
+          "description": "启用GPU加速,适用于深度学习和科学计算"
+        },
+        "gpuCount": {
+          "label": "GPU数量",
+          "options": {
+            "1": {
+              "label": "1个GPU"
+            },
+            "2": {
+              "label": "2个GPU"
+            },
+            "4": {
+              "label": "4个GPU"
+            }
+          }
+        },
+        "gpuType": {
+          "label": "GPU类型",
+          "options": {
+            "a100": {
+              "label": "NVIDIA A100 (80GB)"
+            },
+            "v100": {
+              "label": "NVIDIA V100 (32GB)"
+            },
+            "rtx3090": {
+              "label": "NVIDIA RTX 3090 (24GB)"
+            }
+          }
+        },
+        "walltime": {
+          "label": "运行时长",
+          "options": {
+            "2hours": {
+              "label": "2小时"
+            },
+            "4hours": {
+              "label": "4小时"
+            },
+            "8hours": {
+              "label": "8小时"
+            },
+            "12hours": {
+              "label": "12小时"
+            },
+            "24hours": {
+              "label": "24小时"
+            }
+          }
+        },
+        "workDir": {
+          "label": "工作目录",
+          "description": "Jupyter Lab的根目录,默认为您的家目录",
+          "placeholder": "/home/username"
+        },
+        "installPackages": {
+          "label": "预安装软件包",
+          "description": "启动时自动安装的Python包,每行一个",
+          "placeholder": "numpy\npandas\nmatplotlib\nscikit-learn\ntorch\ntensorflow",
+          "help": {
+            "text": "在启动Jupyter Lab前自动安装指定的Python包。每行输入一个包名,支持版本指定,如: numpy==1.24.0",
+            "example": "numpy\npandas\nmatplotlib"
+          }
+        }
+      },
+      "io": {
+        "inputs": {
+          "notebooks": {
+            "description": "Jupyter笔记本文件目录"
+          },
+          "data": {
+            "description": "数据文件目录"
+          }
+        },
+        "outputs": {
+          "notebooks": {
+            "description": "保存的Jupyter笔记本"
+          },
+          "results": {
+            "description": "计算结果和输出文件"
+          },
+          "connectionInfo": {
+            "description": "Jupyter Lab连接信息文件"
+          }
+        }
+      }
+    },
+    "pytorch": {
+      "metadata": {
+        "displayName": "PyTorch 深度学习框架",
+        "description": "强大的深度学习框架，支持GPU加速训练和推理"
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "标准GPU训练配置 (1x A100, 8核, 32GB)"
+          },
+          "smallGpu": {
+            "description": "小规模训练 (1x RTX3090, 4核, 16GB)"
+          },
+          "multiGpu": {
+            "description": "多GPU训练 (4x A100, 16核, 64GB)"
+          },
+          "distributed": {
+            "description": "分布式训练 (4节点, 16x GPU)"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "singleGpu": {
+            "description": "单GPU训练模式"
+          },
+          "multiGpu": {
+            "description": "多GPU DataParallel训练"
+          },
+          "distributedDdp": {
+            "description": "分布式DistributedDataParallel训练"
+          }
+        },
+        "templates": {
+          "singleGpu": {
+            "description": "单GPU训练模板"
+          },
+          "multiGpu": {
+            "description": "多GPU训练模板"
+          },
+          "distributedDdp": {
+            "description": "分布式训练模板"
+          }
+        }
+      },
+      "fields": {
+        "jobName": {
+          "label": "作业名称",
+          "description": "PyTorch训练作业的唯一标识"
+        },
+        "executionMode": {
+          "label": "执行模式",
+          "description": "选择单GPU、多GPU或分布式训练模式",
+          "options": {
+            "singleGpu": {
+              "label": "单GPU训练",
+              "description": "在单个GPU上训练模型"
+            },
+            "multiGpu": {
+              "label": "多GPU训练",
+              "description": "使用DataParallel在多个GPU上训练"
+            },
+            "distributedDdp": {
+              "label": "分布式训练 (DDP)",
+              "description": "使用DistributedDataParallel跨节点训练"
+            }
+          }
+        },
+        "resourceProfile": {
+          "label": "资源配置",
+          "description": "选择预设的资源配置方案",
+          "options": {
+            "default": {
+              "label": "标准配置",
+              "description": "1x A100, 8核CPU, 32GB内存"
+            },
+            "smallGpu": {
+              "label": "小规模配置",
+              "description": "1x RTX3090, 4核CPU, 16GB内存"
+            },
+            "multiGpu": {
+              "label": "多GPU配置",
+              "description": "4x A100, 16核CPU, 64GB内存"
+            },
+            "distributed": {
+              "label": "分布式配置",
+              "description": "4节点, 每节点4x GPU"
+            }
+          }
+        },
+        "inputType": {
+          "label": "输入类型",
+          "description": "选择上传脚本文件或直接输入代码",
+          "options": {
+            "script": {
+              "label": "脚本文件",
+              "description": "上传Python训练脚本"
+            },
+            "code": {
+              "label": "代码片段",
+              "description": "直接输入Python代码"
+            }
+          }
+        },
+        "scriptFile": {
+          "label": "训练脚本",
+          "description": "上传PyTorch训练脚本 (.py文件)"
+        },
+        "scriptArgs": {
+          "label": "脚本参数",
+          "description": "传递给训练脚本的命令行参数",
+          "placeholder": "例如: --lr 0.001 --epochs 100"
+        },
+        "pythonCode": {
+          "label": "Python代码",
+          "description": "直接输入要执行的Python代码",
+          "placeholder": "import torch\\nprint(torch.__version__)"
+        },
+        "dataFiles": {
+          "label": "数据文件",
+          "description": "上传训练数据文件 (可选)"
+        },
+        "gpuType": {
+          "label": "GPU类型",
+          "description": "选择GPU型号",
+          "options": {
+            "a100": {
+              "label": "NVIDIA A100",
+              "description": "80GB HBM2e显存, 适合大模型训练"
+            },
+            "v100": {
+              "label": "NVIDIA V100",
+              "description": "32GB HBM2显存, 通用深度学习"
+            },
+            "rtx3090": {
+              "label": "NVIDIA RTX 3090",
+              "description": "24GB GDDR6X显存, 性价比高"
+            }
+          }
+        },
+        "gpuCount": {
+          "label": "GPU数量",
+          "description": "使用的GPU卡数",
+          "options": {
+            "1": {
+              "label": "1块GPU"
+            },
+            "2": {
+              "label": "2块GPU"
+            },
+            "4": {
+              "label": "4块GPU"
+            },
+            "8": {
+              "label": "8块GPU"
+            }
+          }
+        },
+        "walltime": {
+          "label": "运行时长",
+          "description": "作业最长运行时间",
+          "options": {
+            "1hour": {
+              "label": "1小时"
+            },
+            "2hours": {
+              "label": "2小时"
+            },
+            "4hours": {
+              "label": "4小时"
+            },
+            "8hours": {
+              "label": "8小时"
+            },
+            "12hours": {
+              "label": "12小时"
+            },
+            "24hours": {
+              "label": "24小时"
+            },
+            "48hours": {
+              "label": "48小时"
+            },
+            "72hours": {
+              "label": "72小时"
+            }
+          }
+        }
+      },
+      "layout": {
+        "sections": {
+          "basicConfig": {
+            "title": "基础配置"
+          },
+          "trainingScript": {
+            "title": "训练脚本"
+          },
+          "dataFiles": {
+            "title": "数据文件"
+          },
+          "gpuResources": {
+            "title": "GPU资源"
+          }
+        }
+      },
+      "io": {
+        "inputs": {
+          "trainingScript": {
+            "description": "PyTorch训练脚本"
+          },
+          "dataset": {
+            "description": "训练数据集目录"
+          },
+          "checkpoint": {
+            "description": "预训练模型checkpoint"
+          },
+          "config": {
+            "description": "训练配置文件"
+          }
+        },
+        "outputs": {
+          "model": {
+            "description": "训练完成的模型权重"
+          },
+          "logs": {
+            "description": "训练日志和指标"
+          },
+          "checkpoints": {
+            "description": "训练过程中的checkpoint"
+          },
+          "tensorboard": {
+            "description": "TensorBoard事件文件"
+          }
+        }
+      }
+    },
+    "vllm": {
+      "metadata": {
+        "displayName": "vLLM 大模型推理",
+        "description": "高性能LLM推理引擎，支持LLaMA、Mistral等开源大模型"
+      },
+      "resources": {
+        "profiles": {
+          "default": {
+            "description": "标准LLM推理配置 (7B-13B模型)"
+          },
+          "smallModel": {
+            "description": "7B模型配置 (1x A100-40GB)"
+          },
+          "mediumModel": {
+            "description": "13B-30B模型配置 (1x A100-80GB)"
+          },
+          "largeModel": {
+            "description": "70B模型配置 (4x A100-80GB)"
+          },
+          "xlargeModel": {
+            "description": "175B+模型配置 (8x A100-80GB)"
+          }
+        }
+      },
+      "execution": {
+        "modes": {
+          "apiServer": {
+            "description": "OpenAI兼容的API服务器"
+          },
+          "offlineInference": {
+            "description": "离线批量推理"
+          }
+        },
+        "templates": {
+          "vllmServer": {
+            "description": "vLLM OpenAI兼容API服务器"
+          },
+          "offlineInference": {
+            "description": "批量离线推理模板"
+          }
+        }
+      },
+      "fields": {
+        "jobName": {
+          "label": "作业名称",
+          "description": "vLLM推理作业的唯一标识"
+        },
+        "mode": {
+          "label": "运行模式",
+          "description": "选择API服务器或离线推理模式",
+          "options": {
+            "apiServer": {
+              "label": "API服务器",
+              "description": "启动OpenAI兼容的API服务"
+            },
+            "offlineInference": {
+              "label": "离线推理",
+              "description": "批量处理prompts文件"
+            }
+          }
+        },
+        "modelPath": {
+          "label": "模型路径",
+          "description": "选择或输入模型路径",
+          "options": {
+            "llama27b": {
+              "label": "LLaMA 2 7B Chat",
+              "description": "Meta的7B参数对话模型"
+            },
+            "llama213b": {
+              "label": "LLaMA 2 13B Chat",
+              "description": "Meta的13B参数对话模型"
+            },
+            "llama270b": {
+              "label": "LLaMA 2 70B Chat",
+              "description": "Meta的70B参数对话模型"
+            },
+            "mistral7b": {
+              "label": "Mistral 7B Instruct",
+              "description": "Mistral AI的7B指令模型"
+            },
+            "qwen7b": {
+              "label": "Qwen 7B Chat",
+              "description": "通义千问7B对话模型"
+            },
+            "qwen14b": {
+              "label": "Qwen 14B Chat",
+              "description": "通义千问14B对话模型"
+            },
+            "chatglm3": {
+              "label": "ChatGLM3 6B",
+              "description": "智谱AI的6B对话模型"
+            }
+          }
+        },
+        "resourceProfile": {
+          "label": "资源配置",
+          "description": "根据模型大小选择资源配置",
+          "options": {
+            "smallModel": {
+              "label": "小模型 (7B)",
+              "description": "1x A100-40GB, 8核CPU, 64GB内存"
+            },
+            "default": {
+              "label": "中等模型 (13B-30B)",
+              "description": "1x A100-80GB, 16核CPU, 128GB内存"
+            },
+            "largeModel": {
+              "label": "大模型 (70B)",
+              "description": "4x A100-80GB, 32核CPU, 256GB内存"
+            },
+            "xlargeModel": {
+              "label": "超大模型 (175B+)",
+              "description": "8x A100-80GB, 64核CPU, 512GB内存"
+            }
+          }
+        },
+        "maxModelLen": {
+          "label": "最大序列长度",
+          "description": "模型支持的最大token数量",
+          "options": {
+            "2048": {
+              "label": "2048 tokens",
+              "description": "短文本处理"
+            },
+            "4096": {
+              "label": "4096 tokens",
+              "description": "标准长度"
+            },
+            "8192": {
+              "label": "8192 tokens",
+              "description": "长文本处理"
+            },
+            "16384": {
+              "label": "16384 tokens",
+              "description": "超长文本"
+            },
+            "32768": {
+              "label": "32768 tokens",
+              "description": "极长文本"
+            }
+          }
+        },
+        "gpuMemUtil": {
+          "label": "GPU显存利用率",
+          "description": "GPU显存使用比例 (0.5-0.95)"
+        },
+        "tensorParallelSize": {
+          "label": "张量并行度",
+          "description": "将模型分片到多个GPU",
+          "options": {
+            "1": {
+              "label": "1 (单GPU)"
+            },
+            "2": {
+              "label": "2 (双GPU并行)"
+            },
+            "4": {
+              "label": "4 (四GPU并行)"
+            },
+            "8": {
+              "label": "8 (八GPU并行)"
+            }
+          }
+        },
+        "quantization": {
+          "label": "量化方法",
+          "description": "模型量化以节省显存",
+          "options": {
+            "none": {
+              "label": "无量化",
+              "description": "使用完整精度"
+            },
+            "awq": {
+              "label": "AWQ量化",
+              "description": "激活感知权重量化"
+            },
+            "gptq": {
+              "label": "GPTQ量化",
+              "description": "生成式预训练Transformer量化"
+            },
+            "squeezellm": {
+              "label": "SqueezeLLM",
+              "description": "SqueezeLLM量化"
+            }
+          }
+        },
+        "dtype": {
+          "label": "数据类型",
+          "description": "模型权重的数据类型",
+          "options": {
+            "auto": {
+              "label": "自动",
+              "description": "自动选择最佳精度"
+            },
+            "float16": {
+              "label": "FP16",
+              "description": "半精度浮点"
+            },
+            "bfloat16": {
+              "label": "BF16",
+              "description": "脑浮点格式"
+            }
+          }
+        },
+        "walltime": {
+          "label": "运行时长",
+          "description": "推理服务最长运行时间",
+          "options": {
+            "2hours": {
+              "label": "2小时"
+            },
+            "4hours": {
+              "label": "4小时"
+            },
+            "8hours": {
+              "label": "8小时"
+            },
+            "12hours": {
+              "label": "12小时"
+            },
+            "24hours": {
+              "label": "24小时"
+            },
+            "48hours": {
+              "label": "48小时"
+            }
+          }
+        },
+        "inputFile": {
+          "label": "输入文件",
+          "description": "包含prompts的文本文件"
+        },
+        "temperature": {
+          "label": "Temperature",
+          "description": "采样温度，控制随机性 (0.0-2.0)"
+        },
+        "topP": {
+          "label": "Top-P",
+          "description": "核采样概率阈值 (0.0-1.0)"
+        },
+        "maxTokens": {
+          "label": "最大生成tokens",
+          "description": "每个prompt生成的最大token数"
+        }
+      },
+      "layout": {
+        "sections": {
+          "basicConfig": {
+            "title": "基础配置"
+          },
+          "modelConfig": {
+            "title": "模型配置"
+          },
+          "inferenceParams": {
+            "title": "推理参数"
+          },
+          "jobSettings": {
+            "title": "作业设置"
+          }
+        }
+      },
+      "io": {
+        "inputs": {
+          "prompts": {
+            "description": "批量推理的输入prompts"
+          },
+          "modelWeights": {
+            "description": "模型权重目录"
+          }
+        },
+        "outputs": {
+          "results": {
+            "description": "推理结果JSON文件"
+          },
+          "connectionInfo": {
+            "description": "API服务器连接信息"
+          },
+          "logs": {
+            "description": "服务器运行日志"
+          }
+        }
+      }
+    }
+  },
+  "aiApplications": {
+    "title": "AI应用中心",
+    "description": "深度学习框架、大模型推理、交互式开发环境",
+    "loadFailed": "加载AI应用失败",
+    "registerSuccess": "AI应用注册成功",
+    "registerFailed": "AI应用注册失败",
+    "cacheCleared": "缓存已清除",
+    "unknownError": "未知错误"
+  }
+}

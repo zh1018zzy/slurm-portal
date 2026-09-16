@@ -1,0 +1,114 @@
+{
+  "enabled": true,
+  "defaultPermissions": {
+    "allowedUsers": ["*"],
+    "allowedGroups": ["*"],
+    "allowedDepartments": ["*"],
+    "maxSessions": 5,
+    "sessionTimeout": 3600,
+    "allowedCommands": [
+      "ls", "pwd", "cd", "cat", "less", "more", "head", "tail",
+      "grep", "find", "ps", "top", "htop", "df", "du", "free",
+      "who", "w", "uptime", "date", "cal", "echo", "mkdir",
+      "rmdir", "touch", "cp", "mv", "rm", "chmod", "chown",
+      "tar", "gzip", "gunzip", "zip", "unzip", "scp", "rsync",
+      "ssh", "sftp", "wget", "curl", "git", "svn", "make",
+      "gcc", "g++", "python", "python3", "perl", "java",
+      "sbatch", "squeue", "scancel", "sinfo", "scontrol",
+      "sacct", "sstat", "srun", "salloc", "sattach"
+    ],
+    "restrictedCommands": [
+      "sudo", "su", "passwd", "useradd", "userdel", "usermod",
+      "groupadd", "groupdel", "groupmod", "visudo", "chroot",
+      "mount", "umount", "fdisk", "parted", "mkfs", "fsck",
+      "iptables", "firewall-cmd", "systemctl", "service",
+      "init", "telinit", "reboot", "shutdown", "halt",
+      "poweroff", "wall", "write", "mesg", "talk", "finger"
+    ],
+    "environment": {
+      "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+      "HOME": "/home/$USER",
+      "SHELL": "/bin/bash",
+      "TERM": "xterm-256color",
+      "LANG": "en_US.UTF-8",
+      "LC_ALL": "en_US.UTF-8"
+    }
+  },
+  "userPermissions": {
+    "admin": {
+      "allowedCommands": ["*"],
+      "restrictedCommands": [],
+      "maxSessions": 10,
+      "sessionTimeout": 7200
+    },
+    "super_admin": {
+      "allowedCommands": ["*"],
+      "restrictedCommands": [],
+      "maxSessions": 20,
+      "sessionTimeout": 14400
+    }
+  },
+  "groupPermissions": {
+    "developers": {
+      "allowedCommands": [
+        "ls", "pwd", "cd", "cat", "less", "more", "head", "tail",
+        "grep", "find", "ps", "top", "htop", "df", "du", "free",
+        "who", "w", "uptime", "date", "cal", "echo", "mkdir",
+        "rmdir", "touch", "cp", "mv", "rm", "chmod", "chown",
+        "tar", "gzip", "gunzip", "zip", "unzip", "scp", "rsync",
+        "ssh", "sftp", "wget", "curl", "git", "svn", "make",
+        "gcc", "g++", "python", "python3", "perl", "java",
+        "sbatch", "squeue", "scancel", "sinfo", "scontrol",
+        "sacct", "sstat", "srun", "salloc", "sattach",
+        "docker", "docker-compose", "kubectl", "helm"
+      ],
+      "maxSessions": 8,
+      "sessionTimeout": 5400
+    }
+  },
+  "departmentPermissions": {
+    "research": {
+      "allowedCommands": [
+        "ls", "pwd", "cd", "cat", "less", "more", "head", "tail",
+        "grep", "find", "ps", "top", "htop", "df", "du", "free",
+        "who", "w", "uptime", "date", "cal", "echo", "mkdir",
+        "rmdir", "touch", "cp", "mv", "rm", "chmod", "chown",
+        "tar", "gzip", "gunzip", "zip", "unzip", "scp", "rsync",
+        "ssh", "sftp", "wget", "curl", "git", "svn", "make",
+        "gcc", "g++", "python", "python3", "perl", "java",
+        "sbatch", "squeue", "scancel", "sinfo", "scontrol",
+        "sacct", "sstat", "srun", "salloc", "sattach",
+        "matlab", "r", "R", "julia", "octave", "stata", "spss"
+      ],
+      "maxSessions": 6,
+      "sessionTimeout": 4800
+    }
+  },
+  "security": {
+    "auditLog": true,
+    "commandLog": true,
+    "sessionRecording": false,
+    "maxFailedAttempts": 3,
+    "lockoutDuration": 300,
+    "ipWhitelist": [],
+    "ipBlacklist": [],
+    "timeRestrictions": {
+      "enabled": false,
+      "allowedHours": {
+        "start": "00:00",
+        "end": "23:59"
+      },
+      "allowedDays": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+    }
+  },
+  "features": {
+    "fileUpload": true,
+    "fileDownload": true,
+    "terminalHistory": true,
+    "autoCompletion": true,
+    "syntaxHighlighting": true,
+    "sessionPersistence": true,
+    "multiTab": true,
+    "theme": "dark"
+  }
+} 

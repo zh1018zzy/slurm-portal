@@ -1,0 +1,11 @@
+services/
+backup/
+tmp/
+logs/
+docker/
+docs/
+scripts/
+devdep/
+init-scripts/
+*.tar
+*.backup 

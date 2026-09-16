@@ -1,0 +1,39 @@
+{
+  "platformName": "ABC HPC平台",
+  "logoUrl": "/uploads/system-logo.png?v=1764663011556",
+  "watermarkText": "",
+  "watermarkEnabled": true,
+  "webshellCopyPasteEnabled": true,
+  "websiteTitle": "ABC HPC平台",
+  "websiteDescription": "ABC HPC平台",
+  "applicationsCenterEnabled": false,
+  "bigScreenButtonEnabled": true,
+  "userHomeDirectoryPrefix": "/home",
+  "copyright": {
+    "companyName": "郑州市维通科技有限公司",
+    "companyUrl": "https://vthpc.com",
+    "copyrightText": "© 2025 vthpc.com. 保留所有权利",
+    "poweredBy": "Powered by VTHPC",
+    "showPoweredBy": true
+  },
+  "channel": {
+    "enabled": false,
+    "channelName": "",
+    "channelLogo": "",
+    "channelUrl": "",
+    "channelCopyright": ""
+  },
+  "client": {
+    "enabled": false,
+    "clientName": "",
+    "clientLogo": "",
+    "clientUrl": "",
+    "clientCopyright": ""
+  },
+  "branding": {
+    "showFooter": true,
+    "footerText": "",
+    "showLoginBranding": true,
+    "showDashboardBranding": true
+  }
+}

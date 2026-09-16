@@ -1,0 +1,44 @@
+{
+  "api": {
+    "jobs": {
+      "defaultAutoRefresh": false,
+      "cacheEnabled": true,
+      "cacheTTL": 30000,
+      "maxResponseTime": 1000
+    },
+    "jobsActive": {
+      "cacheEnabled": true,
+      "cacheTTL": 10000,
+      "maxResponseTime": 500
+    },
+    "dashboard": {
+      "cacheEnabled": true,
+      "cacheTTL": 60000,
+      "maxResponseTime": 1000
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "interval": 60000,
+    "alerts": {
+      "responseTime": 5000,
+      "memoryUsage": 80,
+      "cpuUsage": 80
+    }
+  },
+  "optimization": {
+    "autoRefresh": {
+      "enabled": false,
+      "interval": 30000
+    },
+    "caching": {
+      "enabled": true,
+      "strategy": "memory",
+      "maxSize": 100
+    },
+    "database": {
+      "connectionPool": 10,
+      "queryTimeout": 30000
+    }
+  }
+} 
