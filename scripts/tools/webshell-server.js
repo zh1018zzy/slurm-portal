@@ -7,7 +7,6 @@ require('dotenv').config({ path: '.env.local' })
 const { createServer } = require('http')
 const { Server } = require('socket.io')
 const pty = require('node-pty')
-const os = require('os')
 const jwt = require('jsonwebtoken')
 
 // 配置
@@ -20,12 +19,14 @@ const activeSessions = new Map()
 // 创建 HTTP 服务器
 const server = createServer()
 
-// 创建 Socket.IO 服务器
+// 创建 Socket.IO 服务器（允许同源反代与多入口域名）
 const io = new Server(server, {
   cors: {
-    origin: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-    methods: ['GET', 'POST']
-  }
+    origin: (origin, callback) => callback(null, true),
+    methods: ['GET', 'POST'],
+    credentials: true
+  },
+  allowEIO3: true
 })
 
 // JWT 验证函数
@@ -64,50 +65,75 @@ io.on('connection', (socket) => {
   const sessionId = `${user.username}-${Date.now()}`
   
 
-  // 创建伪终端 - 使用 su 命令切换到正确的用户
-  const shell = os.platform() === 'win32' ? 'powershell.exe' : 'bash'
-  
-  // 动态获取用户主目录
-  let userHome = `/home/${user.username}` // 默认值
+  // 创建伪终端：以登录会话切入目标用户（走 PAM，继承 LDAP/NSS 身份）
+  // 动态获取用户主目录（优先 NSS/LDAP）
+  let userHome = `/home/${user.username}`
   try {
     const { execSync } = require('child_process')
-    userHome = execSync(`eval echo ~${user.username}`).toString().trim()
+    const pwHome = execSync(`getent passwd ${user.username} | cut -d: -f6`, {
+      encoding: 'utf8',
+      timeout: 5000
+    }).trim()
+    if (pwHome) userHome = pwHome
   } catch (error) {
-    console.warn(`无法获取用户 ${user.username} 主目录，使用默认值:`, error)
+    try {
+      const { execSync } = require('child_process')
+      userHome = execSync(`eval echo ~${user.username}`).toString().trim()
+    } catch (e) {
+      console.warn(`无法获取用户 ${user.username} 主目录，使用默认值:`, e)
+    }
+  }
+
+  // 解析用户登录 shell
+  let userShell = '/bin/bash'
+  try {
+    const { execSync } = require('child_process')
+    const sh = execSync(`getent passwd ${user.username} | cut -d: -f7`, {
+      encoding: 'utf8',
+      timeout: 5000
+    }).trim()
+    if (sh) userShell = sh
+  } catch (_) {
+    // keep default
   }
   
-  // 设置用户特定的环境变量
+  // 保留 PATH，否则 node-pty/execvp 找不到 runuser
   const env = { ...process.env }
+  env.TERM = 'xterm-256color'
   env.USER = user.username
-  env.USERNAME = user.username
-  env.HOME = userHome
-  env.PWD = userHome
   env.LOGNAME = user.username
-  env.SHELL = '/bin/bash'
-  env.TERM = 'xterm-color'
-  env.PATH = '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
-  env.LANG = 'en_US.UTF-8'
-  env.LC_ALL = 'en_US.UTF-8'
+  env.HOME = userHome
+  env.SHELL = userShell
+  env.PATH = process.env.PATH || '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+  env.LANG = process.env.LANG || 'en_US.UTF-8'
+  env.LC_ALL = process.env.LC_ALL || env.LANG
   
   // 尝试切换到用户目录
   let cwd = userHome
   try {
     const fs = require('fs')
     if (!fs.existsSync(cwd)) {
-      cwd = process.env.HOME || process.env.USERPROFILE || '/tmp'
+      cwd = '/tmp'
     }
   } catch (error) {
-    cwd = process.env.HOME || process.env.USERPROFILE || '/tmp'
+    cwd = '/tmp'
   }
+
+  // 使用绝对路径，避免 PATH 异常时 execvp 失败
+  const runuserBin = ['/sbin/runuser', '/usr/sbin/runuser'].find((p) => {
+    try { return require('fs').existsSync(p) } catch { return false }
+  }) || 'runuser'
   
-  // 使用 runuser 切换到正确的用户（不需要密码）
-  const ptyProcess = pty.spawn('runuser', ['-u', user.username, '--', 'bash', '--login'], {
-    name: 'xterm-color',
+  // -u + login shell：不依赖 runuser -l 的参数组合，兼容性更好
+  const ptyProcess = pty.spawn(runuserBin, ['-u', user.username, '--', userShell, '-l'], {
+    name: 'xterm-256color',
     cols: 80,
     rows: 30,
     cwd: cwd,
     env: env
   })
+
+  console.log(`[WebShell] session ${sessionId} user=${user.username} home=${userHome} shell=${userShell}`)
 
   // 存储会话信息
   activeSessions.set(sessionId, {
@@ -190,9 +216,10 @@ setInterval(() => {
   }
 }, 60000) // 每分钟检查一次
 
-// 启动服务器
-server.listen(PORT, () => {
-  console.log(`WebShell 服务器已启动，监听端口 ${PORT}`)
+// 启动服务器（显式绑定 0.0.0.0，避免仅本地可达）
+const HOST = process.env.WEBSHELL_HOST || '0.0.0.0'
+server.listen(PORT, HOST, () => {
+  console.log(`WebShell 服务器已启动，监听 ${HOST}:${PORT}`)
 })
 
 // 优雅关闭

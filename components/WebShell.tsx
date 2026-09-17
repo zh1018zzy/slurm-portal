@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { useAuth } from '@/hooks/use-auth'
 import { Terminal as TerminalIcon } from 'lucide-react'
 import { toast } from '@/hooks/use-toast'
+import { useCurrentLocale } from '@/lib/i18n-client-utils'
 
 interface WebShellProps {
   className?: string
@@ -12,6 +13,7 @@ interface WebShellProps {
 
 export default function WebShell({ className = '' }: WebShellProps) {
   const { user } = useAuth()
+  const currentLocale = useCurrentLocale()
   const [hasWebShellAccess, setHasWebShellAccess] = useState(false)
   const [loading, setLoading] = useState(true)
 
@@ -63,7 +65,7 @@ export default function WebShell({ className = '' }: WebShellProps) {
       })
       return
     }
-    window.open('/dashboard/webshell', '_blank')
+    window.open(`/${currentLocale}/dashboard/webshell`, '_blank')
   }
 
   // 如果没有权限，不显示按钮

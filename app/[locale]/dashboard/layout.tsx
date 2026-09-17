@@ -423,6 +423,9 @@ export default function DashboardLayout({
   const currentLocale = useCurrentLocale()
   const t = useT('common')
   const tDashboard = useT('dashboard')
+
+  // WebShell 全屏页：不渲染侧栏/顶栏，避免页内 DOM 隐藏与 React 协调冲突
+  const isWebShellPage = pathname.includes('/dashboard/webshell')
   
   // 身份验证检查
   useEffect(() => {
@@ -446,6 +449,15 @@ export default function DashboardLayout({
   // 如果未登录，不渲染内容（会被useEffect重定向）
   if (!isAuthenticated) {
     return null
+  }
+
+  if (isWebShellPage) {
+    return (
+      <>
+        <SystemFavicon />
+        {children}
+      </>
+    )
   }
   
   // 获取导航项，根据系统设置过滤

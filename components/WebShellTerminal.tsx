@@ -319,10 +319,13 @@ export default function WebShellTerminal() {
       // @ts-ignore
       const { io } = await import('socket.io-client')
 
-      const webshellServer = process.env.NEXT_PUBLIC_WEBSHELL_SERVER || 'http://localhost:3001'
+      // 优先环境变量；未配置时走同源（由 nginx 反代 /socket.io → 3001）
+      const configured = process.env.NEXT_PUBLIC_WEBSHELL_SERVER?.trim()
+      const webshellServer = configured
+        || (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3001')
       const socket = io(webshellServer, {
         auth: { token },
-        transports: ['websocket', 'polling'], // 添加polling作为备选
+        transports: ['polling', 'websocket'], // polling 优先，反代场景更稳
         timeout: 15000, // 增加超时时间
         forceNew: true, // 强制新连接
         reconnection: true, // 启用重连

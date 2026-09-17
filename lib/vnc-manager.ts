@@ -404,8 +404,8 @@ get_node_ip() {
   fi
   
   # 方法4: 从配置文件获取（路径由 Node 侧注入项目根目录）
-  if [ -f "${APP_ROOT}/config/node-ip-map.json" ]; then
-    local node_ip=$(grep -o '"default"[[:space:]]*:[[:space:]]*"[^"]*"' "${APP_ROOT}/config/node-ip-map.json" | cut -d'"' -f4)
+  if [ -f "\${APP_ROOT}/config/node-ip-map.json" ]; then
+    local node_ip=$(grep -o '"default"[[:space:]]*:[[:space:]]*"[^"]*"' "\${APP_ROOT}/config/node-ip-map.json" | cut -d'"' -f4)
     if [ -n "$node_ip" ] && [ "$node_ip" != "null" ]; then
       echo "$node_ip"
       return

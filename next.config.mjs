@@ -35,6 +35,9 @@ const nextConfig = {
   // 输出配置 - 使用standalone模式用于生产部署
   output: 'standalone',
 
+  // 避免 /socket.io/?... 被自动 308 成无尾斜杠，打断 WebShell 握手
+  skipTrailingSlashRedirect: true,
+
   // 跳过构建时的静态优化，避免API routes在构建时执行
   generateBuildId: async () => {
     return 'build-' + Date.now()
@@ -50,6 +53,30 @@ const nextConfig = {
       //   permanent: false,
       // },
     ]
+  },
+
+  // 将 WebShell Socket.IO 反代到独立服务（同源连接，避免浏览器直连 3001 超时）
+  // beforeFiles：优先于尾斜杠 308，否则 /socket.io/?... 会被重写成死循环式跳转
+  async rewrites() {
+    const webshellPort = process.env.WEBSHELL_PORT || '3001'
+    return {
+      beforeFiles: [
+        {
+          source: '/socket.io',
+          destination: `http://127.0.0.1:${webshellPort}/socket.io/`,
+        },
+        {
+          source: '/socket.io/:path*',
+          destination: `http://127.0.0.1:${webshellPort}/socket.io/:path*`,
+        },
+      ],
+      afterFiles: [
+        {
+          source: '/api/:path*',
+          destination: '/api/:path*',
+        },
+      ],
+    }
   },
 
   // 错误页面配置
@@ -124,16 +151,6 @@ const nextConfig = {
     }
 
     return config
-  },
-
-  // 客户端路由优化
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: '/api/:path*',
-      },
-    ]
   },
 };
 

@@ -12,9 +12,10 @@ const intlMiddleware = createIntlMiddleware({
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
-  // 跳过 API 路由、静态文件等，这些不需要国际化
+  // 跳过 API 路由、静态文件、WebShell Socket.IO 等，这些不需要国际化
   const shouldSkipI18n =
     pathname.startsWith('/api/') ||
+    pathname.startsWith('/socket.io') ||
     pathname.startsWith('/_next/') ||
     pathname.startsWith('/favicon.ico') ||
     pathname.match(/\.(png|jpg|jpeg|gif|svg|ico|webp)$/);
@@ -43,7 +44,8 @@ export const config = {
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
+     * - socket.io (WebShell)
      */
-    '/((?!_next/static|_next/image|favicon.ico).*)',
+    '/((?!_next/static|_next/image|favicon.ico|socket\\.io).*)',
   ],
 }
