@@ -1,29 +1,38 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { generateVncUrl } from '@/lib/vnc-manager'
+import {
+  generateVncUrl,
+  getVncNodeHost,
+  getNovncGateway,
+  getNovncPort,
+} from '@/lib/vnc-manager'
 export const dynamic = 'force-dynamic'
 
-
 // GET /api/vnc-config - 检查 noVNC 配置
-export async function GET(req: NextRequest) {
+export async function GET(_req: NextRequest) {
   try {
-    // 使用DEFAULT_VNC_NODE_IP环境变量
-    const testHostname = process.env.DEFAULT_VNC_NODE_IP || 'localhost'
+    const testHostname = await getVncNodeHost()
     const testPort = 5901
-    const testUrl = generateVncUrl(testHostname, testPort)
-    
+    const testUrl = await generateVncUrl(testHostname, testPort)
+    const gateway = await getNovncGateway()
+
     return NextResponse.json({
       success: true,
       config: {
-        gateway: process.env.NOVNC_GATEWAY || 'localhost',
+        gateway,
+        novncPort: getNovncPort(),
+        vncNode: testHostname,
         testUrl,
         testHostname,
-        testPort
-      }
+        testPort,
+      },
     })
   } catch (error: any) {
-    return NextResponse.json({
-      success: false,
-      error: error.message
-    }, { status: 500 })
+    return NextResponse.json(
+      {
+        success: false,
+        error: error.message,
+      },
+      { status: 500 }
+    )
   }
-} 
+}

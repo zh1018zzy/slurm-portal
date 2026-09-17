@@ -1,160 +1,238 @@
 import { createClient } from '@supabase/supabase-js'
 import { execFile } from 'child_process'
 import { promisify } from 'util'
+import { lookup as dnsLookup } from 'dns/promises'
 
 const execFileAsync = promisify(execFile)
+
+/** SSH 公共参数：短超时，避免 VNC 节点不可达时提交一直卡住 */
+const SSH_OPTS = [
+  '-o', 'BatchMode=yes',
+  '-o', 'ConnectTimeout=3',
+  '-o', 'StrictHostKeyChecking=no',
+  '-o', 'UserKnownHostsFile=/dev/null',
+]
+
+async function sshExec(host: string, remoteCommand: string): Promise<string> {
+  const { stdout } = await execFileAsync(
+    'ssh',
+    [...SSH_OPTS, host, remoteCommand],
+    { timeout: 8000, maxBuffer: 2 * 1024 * 1024 }
+  )
+  return typeof stdout === 'string' ? stdout : String(stdout)
+}
 
 // Supabase 客户端
 const supabaseUrl = process.env.SUPABASE_URL || ''
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_KEY || ''
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-// 获取动态的noVNC网关地址
-function getNovncGateway(): string {
-  // 1. 优先使用环境变量
-  if (process.env.NOVNC_GATEWAY && process.env.NOVNC_GATEWAY !== 'localhost') {
-    return process.env.NOVNC_GATEWAY
+let cachedGraphicsNode: string | null | undefined
+
+/** 从 sinfo 发现 graphics 分区首个节点（失败返回 null） */
+async function discoverGraphicsNode(): Promise<string | null> {
+  if (cachedGraphicsNode !== undefined) return cachedGraphicsNode
+  try {
+    const { stdout } = await execFileAsync(
+      'sinfo',
+      ['-p', 'graphics', '-h', '-o', '%N'],
+      { timeout: 5000 }
+    )
+    const first = stdout
+      .trim()
+      .split(/[\s,]+/)
+      .map((s) => s.trim())
+      .find(Boolean)
+    cachedGraphicsNode = first || null
+  } catch {
+    cachedGraphicsNode = null
   }
-  
-  // 2. 使用默认VNC节点IP
-  if (process.env.DEFAULT_VNC_NODE_IP) {
-    return process.env.DEFAULT_VNC_NODE_IP
+  return cachedGraphicsNode
+}
+
+/**
+ * 图形节点主机名（SSH / 探测用）
+ * 优先级：VNC_NODE → DEFAULT_VNC_NODE_IP → sinfo graphics → localhost
+ */
+export function getVncNodeHostSync(): string {
+  return (
+    process.env.VNC_NODE?.trim() ||
+    process.env.DEFAULT_VNC_NODE_IP?.trim() ||
+    'localhost'
+  )
+}
+
+export async function getVncNodeHost(): Promise<string> {
+  const fromEnv =
+    process.env.VNC_NODE?.trim() ||
+    process.env.DEFAULT_VNC_NODE_IP?.trim() ||
+    ''
+  if (fromEnv) return fromEnv
+  const discovered = await discoverGraphicsNode()
+  return discovered || 'localhost'
+}
+
+/** 将主机名解析为 IP；失败则返回主机名本身 */
+export async function resolveHostAddress(host: string): Promise<string> {
+  if (!host || host === 'localhost' || host === '127.0.0.1') return host
+  // 已是 IPv4 字面量则原样返回
+  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(host)) return host
+  try {
+    const { stdout } = await execFileAsync('getent', ['hosts', host], { timeout: 3000 })
+    const ip = stdout.trim().split(/\s+/)[0]
+    if (ip) return ip
+  } catch {
+    // fall through
   }
-  
-  // 3. 回退到配置文件中的默认值
+  try {
+    const result = await dnsLookup(host)
+    if (result?.address) return result.address
+  } catch {
+    // fall through
+  }
+  return host
+}
+
+/**
+ * 浏览器访问 noVNC 的主机（惰性读取，不在模块加载时固化）
+ * 优先级：NOVNC_GATEWAY → 解析 VNC_NODE → NEXT_PUBLIC_BASE_URL hostname → localhost
+ */
+export async function getNovncGateway(): Promise<string> {
+  const explicit = process.env.NOVNC_GATEWAY?.trim()
+  if (explicit && explicit !== 'localhost') return explicit
+
+  const node = await getVncNodeHost()
+  if (node && node !== 'localhost') {
+    return resolveHostAddress(node)
+  }
+
+  const base = process.env.NEXT_PUBLIC_BASE_URL?.trim()
+  if (base) {
+    try {
+      return new URL(base).hostname || 'localhost'
+    } catch {
+      // ignore
+    }
+  }
+
   try {
     const fs = require('fs')
     const path = require('path')
     const configPath = path.join(process.cwd(), 'config', 'node-ip-map.json')
-    
     if (fs.existsSync(configPath)) {
       const config = JSON.parse(fs.readFileSync(configPath, 'utf8'))
-      if (config.default) {
-        return config.default
-      }
-      if (config.nodes && config.nodes['*']) {
-        return config.nodes['*']
-      }
+      if (config.default) return config.default
+      if (config.nodes?.['*']) return config.nodes['*']
     }
   } catch (error) {
-    console.warn('[VNC Manager] 获取默认网关失败:', error)
+    console.warn('[VNC Manager] 读取 node-ip-map.json 失败:', error)
   }
-  
-  // 4. 最后回退到localhost（仅用于开发环境）
+
   return 'localhost'
 }
 
-// VNC 配置
+export function getNovncPort(): string {
+  return process.env.NOVNC_PORT || '6080'
+}
+
+/** noVNC 的 host= 参数：单节点本机 websockify 默认 localhost，可用 VNC_URL_HOST 覆盖 */
+export function getVncUrlHost(): string {
+  return process.env.VNC_URL_HOST?.trim() || 'localhost'
+}
+
+// VNC 配置（gateway 请用 getNovncGateway()，勿依赖模块加载时快照）
 const VNC_CONFIG = {
   DEFAULT_GEOMETRY: '1920x1080',
   SECURITY_TYPE: 'None',
-  DISPLAY_RANGE: [101, 999],
-  NOVNC_GATEWAY: getNovncGateway(),
+  DISPLAY_RANGE: [101, 999] as [number, number],
+  get NOVNC_GATEWAY(): string {
+    return (
+      process.env.NOVNC_GATEWAY?.trim() ||
+      process.env.VNC_NODE?.trim() ||
+      process.env.DEFAULT_VNC_NODE_IP?.trim() ||
+      'localhost'
+    )
+  },
   TURBO_VNC_PATH: process.env.TURBO_VNC_PATH || '/opt/TurboVNC/bin/',
-  NOVNC_PORT: process.env.NOVNC_PORT || '6080'
+  get NOVNC_PORT(): string {
+    return getNovncPort()
+  },
 }
 
-// 动态获取节点IP映射
-async function getNodeIpMap(): Promise<Record<string, string>> {
-  // 只使用环境变量，简化IP映射逻辑
+/**
+ * 可选 NODE_IP_MAP 覆盖；未配置时不再伪造映射，直接用主机名/DNS
+ */
+async function getNodeIpMap(): Promise<Record<string, string> | null> {
   const nodeIpEnv = process.env.NODE_IP_MAP
-  if (nodeIpEnv) {
-    try {
-      return JSON.parse(nodeIpEnv)
-    } catch (error) {
-      console.warn('[VNC Manager] 解析NODE_IP_MAP环境变量失败:', error)
-    }
-  }
-  
-  // 如果没有配置NODE_IP_MAP，使用DEFAULT_VNC_NODE_IP作为默认值
-  const defaultVncNodeIpEnv = process.env.DEFAULT_VNC_NODE_IP
-  if (defaultVncNodeIpEnv) {
-    return {
-      'localhost': defaultVncNodeIpEnv,
-      '*': defaultVncNodeIpEnv
-    }
-  }
-  
-  // 最后的回退：使用localhost
-  console.warn('[VNC Manager] 未配置NODE_IP_MAP或DEFAULT_VNC_NODE_IP，使用localhost')
-  return {
-    'localhost': 'localhost',
-    '*': 'localhost'
-  }
-}
-
-// 获取节点IP地址
-async function getNodeIp(hostname: string): Promise<string> {
-  const nodeMap = await getNodeIpMap()
-  
-  // 直接匹配
-  if (nodeMap[hostname]) {
-    return nodeMap[hostname]
-  }
-  
-  // 通配符匹配
-  if (nodeMap['*']) {
-    return nodeMap['*']
-  }
-  
-  // 最后回退到hostname本身
-  return hostname
-}
-
-// 调试：输出 noVNC 配置信息
-
-// 获取下一个可用的 display 号 - 改进版本，支持端口回收、实时检查和冲突重试
-export async function getNextDisplay(): Promise<number> {
+  if (!nodeIpEnv?.trim()) return null
   try {
-    // 1. 获取活跃作业使用的display号
-    const { data: activeJobs } = await supabase
-      .from('jobs')
-      .select('params')
-      .in('status', ['PENDING', 'RUNNING'])
-      .eq('scheduler_type', 'slurm')
-    
-    const activeDisplays: number[] = []
-    if (activeJobs) {
-      for (const job of activeJobs) {
-        if (job.params && job.params.vncDisplay) {
-          activeDisplays.push(job.params.vncDisplay)
-        }
-      }
-    }
-    
-    // 2. 清理已结束作业的VNC记录
-    await cleanupFinishedVncSessions()
-    
-    // 3. 实时检查compute-node-01节点上的端口占用情况
-    const occupiedDisplays = await checkVtdevOccupiedDisplays()
-    
-    // 4. 合并所有被占用的display号
-    const allOccupiedDisplays = Array.from(new Set([...activeDisplays, ...occupiedDisplays]))
-    
-    // 5. 寻找最小可用的display号（优先复用低号码）
-    for (let display = VNC_CONFIG.DISPLAY_RANGE[0]; display <= VNC_CONFIG.DISPLAY_RANGE[1]; display++) {
-      if (!allOccupiedDisplays.includes(display)) {
-        // 额外检查：验证端口是否真的可用（避免非VNC程序占用）
-        const isPortAvailable = await verifyPortAvailability(display)
-        if (isPortAvailable) {
-          return display
-        } else {
-          console.log(`[getNextDisplay] Display ${display} 端口被非VNC程序占用，跳过`)
-          // 标记为占用，继续寻找下一个
-          allOccupiedDisplays.push(display)
-        }
-      }
-    }
-    
-    // 6. 如果没有可用display，说明系统负载过高
-    console.error('[getNextDisplay] 没有可用的Display号，当前被占用:', allOccupiedDisplays.length)
-    throw new Error(`VNC Display号已耗尽，当前有${allOccupiedDisplays.length}个被占用的VNC会话，请稍后重试`)
-    
+    return JSON.parse(nodeIpEnv)
   } catch (error) {
-    console.error('获取display失败:', error)
-    // 在出错时仍返回一个相对安全的display号
-    return VNC_CONFIG.DISPLAY_RANGE[0]
+    console.warn('[VNC Manager] 解析 NODE_IP_MAP 失败:', error)
+    return null
   }
+}
+
+/** 解析节点对外地址；优先 NODE_IP_MAP，否则 DNS/hosts */
+export async function getNodeIp(hostname: string): Promise<string> {
+  const nodeMap = await getNodeIpMap()
+  if (nodeMap) {
+    if (nodeMap[hostname]) return nodeMap[hostname]
+    if (nodeMap['*']) return nodeMap['*']
+  }
+  return resolveHostAddress(hostname)
+}
+
+// 获取下一个可用的 display 号
+export async function getNextDisplay(): Promise<number> {
+  // 1. 获取活跃作业使用的display号
+  const { data: activeJobs } = await supabase
+    .from('jobs')
+    .select('params')
+    .in('status', ['PENDING', 'RUNNING'])
+    .eq('scheduler_type', 'slurm')
+
+  const activeDisplays: number[] = []
+  if (activeJobs) {
+    for (const job of activeJobs) {
+      if (job.params && job.params.vncDisplay) {
+        activeDisplays.push(job.params.vncDisplay)
+      }
+    }
+  }
+
+  // 2. 清理已结束作业的VNC记录（异步尽力而为，不阻塞选号）
+  void cleanupFinishedVncSessions()
+
+  // 3. 一次 SSH：只认 X 锁 / socket（不扫全端口，避免把 Slurm/Redis 等误判为占用）
+  const occupiedDisplays = await checkVtdevOccupiedDisplays()
+
+  // 4. 合并所有被占用的display号
+  const allOccupied = new Set<number>([...activeDisplays, ...occupiedDisplays])
+
+  // 5. 寻找最小可用 display（最多再 SSH 校验前几个候选，避免 899 次远程调用卡死提交）
+  const novncPort = Number(getNovncPort())
+  let checked = 0
+  for (let display = VNC_CONFIG.DISPLAY_RANGE[0]; display <= VNC_CONFIG.DISPLAY_RANGE[1]; display++) {
+    if (allOccupied.has(display)) continue
+    const port = displayToVncPort(display)
+    if (port === novncPort) continue
+
+    checked += 1
+    if (checked <= 5) {
+      const ok = await verifyPortAvailability(display)
+      if (!ok) {
+        allOccupied.add(display)
+        continue
+      }
+    }
+
+    console.log(`[getNextDisplay] 选用 Display ${display} (port ${port})`)
+    return display
+  }
+
+  console.error('[getNextDisplay] 没有可用的Display号，当前被占用:', allOccupied.size)
+  throw new Error(`VNC Display号已耗尽，当前有${allOccupied.size}个被占用的VNC会话，请稍后重试`)
 }
 
 // 清理已结束作业的VNC记录
@@ -321,8 +399,7 @@ cleanup_existing_vnc() {
   fi
 }
 
-# 执行端口预检查
-local check_result
+# 执行端口预检查（顶层脚本不能用 local）
 check_port_availability ${display}
 check_result=\$?
 
@@ -361,246 +438,185 @@ cleanup_vnc() {
 # 设置信号处理，确保作业取消时清理VNC
 trap cleanup_vnc SIGTERM SIGINT
 
-# 启动 TurboVNC Server
+# 启动 TurboVNC Server（xstartup.turbovnc 已会拉起桌面会话）
 ${VNC_CONFIG.TURBO_VNC_PATH}vncserver :${display} -geometry ${geometry} -SecurityTypes ${VNC_CONFIG.SECURITY_TYPE}
 
 # 等待 VNC 服务器启动
 sleep 5
 
-# 启动应用程序
-if [ -n "${appCommand}" ]; then
-  export DISPLAY=:${display}
-  # 延迟启动应用，确保VNC服务器完全启动
-  sleep 2
-  ${appCommand} &
-fi
+# 启动应用程序：桌面会话由 xstartup 负责，勿再起一份（否则会刷 WM/xsettings 冲突日志）
+APP_CMD="${appCommand}"
+case "\$APP_CMD" in
+  ''|mate-session|gnome-session|startxfce4|xfce4-session|startplasma*|cinnamon-session|lxsession|openbox-session)
+    echo "Desktop session handled by TurboVNC xstartup; skip duplicate: \${APP_CMD:-none}"
+    ;;
+  *)
+    export DISPLAY=:${display}
+    sleep 2
+    \$APP_CMD &
+    ;;
+esac
 
 echo "VNC Server started on $HOSTNAME:$VNC_PORT (display :${display})"
 
-# 动态获取节点IP地址
-get_node_ip() {
-  # 方法1: 优先使用DEFAULT_VNC_NODE_IP环境变量（VNC运行节点的IP）
-  if [ -n "$DEFAULT_VNC_NODE_IP" ]; then
-    echo "$DEFAULT_VNC_NODE_IP"
-    return
+# 浏览器访问地址：连 noVNC 网关；RFB 由网关侧 websockify 转发到本机 VNC_PORT
+GATEWAY="\${NOVNC_GATEWAY:-}"
+if [ -z "\$GATEWAY" ] || [ "\$GATEWAY" = "localhost" ]; then
+  # 优先 Tailscale/非局域网段，避免选到失效的 192.168.x
+  for ip in \$(hostname -I 2>/dev/null); do
+    case "\$ip" in
+      127.*|::1*) ;;
+      192.168.*|10.*|172.1[6-9].*|172.2[0-9].*|172.3[0-1].*) ;;
+      *) GATEWAY="\$ip"; break ;;
+    esac
+  done
+  if [ -z "\$GATEWAY" ]; then
+    GATEWAY=\$(hostname -I 2>/dev/null | awk '{print \$1}')
   fi
-  
-  # 方法2: 从环境变量获取
-  if [ -n "$NODE_IP" ]; then
-    echo "$NODE_IP"
-    return
-  fi
-  
-  # 方法3: 从hostname获取（当前节点的IP）
-  local hostname_ips=$(hostname -I 2>/dev/null)
-  if [ -n "$hostname_ips" ]; then
-    # 选择第一个非回环IP
-    for ip in $hostname_ips; do
-      if [[ ! "$ip" =~ ^127\. ]] && [[ ! "$ip" =~ ^::1 ]]; then
-        echo "$ip"
-        return
-      fi
-    done
-  fi
-  
-  # 方法4: 从配置文件获取（路径由 Node 侧注入项目根目录）
-  if [ -f "\${APP_ROOT}/config/node-ip-map.json" ]; then
-    local node_ip=$(grep -o '"default"[[:space:]]*:[[:space:]]*"[^"]*"' "\${APP_ROOT}/config/node-ip-map.json" | cut -d'"' -f4)
-    if [ -n "$node_ip" ] && [ "$node_ip" != "null" ]; then
-      echo "$node_ip"
-      return
-    fi
-  fi
-  
-  # 方法5: 使用NOVNC_GATEWAY作为最后回退（不推荐，但保持兼容性）
-  if [ -n "$NOVNC_GATEWAY" ] && [ "$NOVNC_GATEWAY" != "localhost" ]; then
-    echo "$NOVNC_GATEWAY"
-    return
-  fi
-  
-  # 方法6: 使用默认回退IP
-  echo "localhost"
-}
-
-NODE_IP=$(get_node_ip)
-echo "Node IP: $NODE_IP"
-echo "Web access: http://$NODE_IP:\${NOVNC_PORT}/vnc.html?host=$NODE_IP&port=$VNC_PORT"
+  GATEWAY=\${GATEWAY:-localhost}
+fi
+echo "Node: \$HOSTNAME  VNC: localhost:\$VNC_PORT"
+echo "Web access: http://\$GATEWAY:\${NOVNC_PORT}/vnc.html?host=\$GATEWAY&port=\${NOVNC_PORT}&path=websockify&autoconnect=true&resize=remote"
 
 # 保持脚本运行
 tail -f /dev/null
 `
 }
 
-// 生成 VNC 访问 URL - 动态获取IP地址
-export async function generateVncUrl(hostname: string, port: number): Promise<string> {
+// 生成 VNC 访问 URL
+// 浏览器应连到 noVNC/websockify 网关；RFB 目标由网关侧 websockify 配置（见 ensureNovncProxy）
+export async function generateVncUrl(_hostname: string, port: number): Promise<string> {
   try {
-    // 动态获取节点IP地址
-    const nodeIp = await getNodeIp(hostname)
-    const url = `http://${VNC_CONFIG.NOVNC_GATEWAY}:${VNC_CONFIG.NOVNC_PORT}/vnc.html?host=${nodeIp}&port=${port}`
-    return url
+    const gateway = await getNovncGateway()
+    const novncPort = getNovncPort()
+    // host/port 指向网关自身，供 noVNC 建立 WebSocket；不要填 VNC RFB 端口
+    return `http://${gateway}:${novncPort}/vnc.html?host=${gateway}&port=${novncPort}&path=websockify&autoconnect=true&resize=remote`
   } catch (error) {
     console.error(`[VNC Manager] 生成VNC URL失败:`, error)
-    // 回退到使用hostname
-    return `http://${VNC_CONFIG.NOVNC_GATEWAY}:${VNC_CONFIG.NOVNC_PORT}/vnc.html?host=${hostname}&port=${port}`
+    const gateway =
+      process.env.NOVNC_GATEWAY?.trim() ||
+      process.env.VNC_NODE?.trim() ||
+      'localhost'
+    const novncPort = getNovncPort()
+    return `http://${gateway}:${novncPort}/vnc.html?host=${gateway}&port=${novncPort}&path=websockify&autoconnect=true&resize=remote`
+  }
+}
+
+/**
+ * 将 noVNC 容器内 websockify 的固定目标切到当前会话 RFB 端口。
+ * 必须用 --network host：bridge 模式下容器 localhost 到不了宿主机上的 TurboVNC。
+ */
+export async function ensureNovncProxy(vncPort: number): Promise<void> {
+  const vncNode = await getVncNodeHost()
+  const container = process.env.NOVNC_CONTAINER?.trim() || 'novnc-full'
+  const image = process.env.NOVNC_IMAGE?.trim() || 'novnc_novnc-full'
+  const novncPort = getNovncPort()
+  const remote = [
+    `PORT=${vncPort}`,
+    `NOVNC_PORT=${novncPort}`,
+    `CID=$(docker ps -q -f name=^/${container}$ 2>/dev/null || docker ps -q -f name=${container} | head -1)`,
+    `IMG=$(docker inspect --format '{{.Config.Image}}' "$CID" 2>/dev/null || echo ${image})`,
+    `docker rm -f ${container} >/dev/null 2>&1 || true`,
+    `docker run -d --name ${container} --restart=unless-stopped --network host "$IMG" ` +
+      `python3 -m websockify --web /usr/share/novnc "$NOVNC_PORT" localhost:"$PORT" >/dev/null`,
+    `echo NOVNC_PROXY_OK:$PORT`,
+  ].join('; ')
+
+  try {
+    const out = await sshExec(vncNode, remote)
+    console.log(`[ensureNovncProxy] ${out.trim()}`)
+  } catch (error) {
+    console.warn(`[ensureNovncProxy] 切换 noVNC 代理到 ${vncPort} 失败:`, error)
   }
 }
 
 // 清理 VNC 会话 - 简化版本，主要清理由VNC脚本的信号处理完成
 export async function cleanupVncSession(userId: string, display: number, nodeName?: string): Promise<void> {
   try {
-    if (!nodeName) {
-      return
-    }
-    
-    // 通过 SSH 在指定节点上执行清理命令（备用方案）
-    const { execFile } = await import('child_process')
-    const { promisify } = await import('util')
-    const execFileAsync = promisify(execFile)
-    
+    const target = nodeName || (await getVncNodeHost())
+    if (!target) return
+
     const cleanupCommand = `export PATH=$PATH:${VNC_CONFIG.TURBO_VNC_PATH}; ${VNC_CONFIG.TURBO_VNC_PATH}vncserver -kill :${display} 2>/dev/null || true; rm -rf /tmp/.X11-unix/X${display} 2>/dev/null || true; rm -rf /tmp/.X${display}-lock 2>/dev/null || true; echo "VNC会话清理完成: display :${display}"`
-    
-    await execFileAsync('ssh', [
-      nodeName,
-      cleanupCommand
-    ])
-    
+
+    await sshExec(target, cleanupCommand)
   } catch (error) {
     // 忽略清理失败，主要的清理工作由VNC脚本的信号处理完成
   }
 }
 
-// 检查VNC节点上实际占用的display号
+// 检查VNC节点上实际占用的display号（单次 SSH）
 async function checkVtdevOccupiedDisplays(): Promise<number[]> {
   try {
-    const { execFile } = await import('child_process')
-    const { promisify } = await import('util')
-    const execFileAsync = promisify(execFile)
-    
-    // 使用DEFAULT_VNC_NODE_IP环境变量获取VNC节点IP
-    const vncNodeIp = process.env.DEFAULT_VNC_NODE_IP || 'localhost'
-    console.log(`[checkVtdevOccupiedDisplays] 检查VNC节点: ${vncNodeIp}`)
-    
-    // 检查X锁文件
-    const { stdout: lockFiles } = await execFileAsync('ssh', [vncNodeIp, 'ls', '/tmp/.X*-lock', '2>/dev/null || true'])
-    
+    const vncNode = await getVncNodeHost()
+    const [lo, hi] = VNC_CONFIG.DISPLAY_RANGE
+    console.log(`[checkVtdevOccupiedDisplays] 检查VNC节点: ${vncNode}`)
+
     const occupiedDisplays: number[] = []
-    
-    if (lockFiles.trim()) {
-      const lines = lockFiles.trim().split('\n')
-      for (const line of lines) {
-        const match = line.match(/\/tmp\/\.X(\d+)-lock/)
-        if (match) {
-          const display = parseInt(match[1])
-          // 跳过系统显示X0
-          if (display !== 0) {
-            occupiedDisplays.push(display)
-          }
+
+    // 只认 X 锁与 socket；全量扫监听端口会把 6443/6379/6818 等误判成 display
+    const remoteOut = await sshExec(
+      vncNode,
+      `ls -1 /tmp/.X[0-9]*-lock /tmp/.X11-unix/X[0-9]* 2>/dev/null || true`
+    )
+
+    for (const line of remoteOut.split('\n')) {
+      const lockMatch = line.match(/\/tmp\/\.X(\d+)-lock/)
+      if (lockMatch) {
+        const display = parseInt(lockMatch[1], 10)
+        if (
+          display >= lo &&
+          display <= hi &&
+          !occupiedDisplays.includes(display)
+        ) {
+          occupiedDisplays.push(display)
+        }
+        continue
+      }
+      const sockMatch = line.match(/\/tmp\/\.X11-unix\/X(\d+)$/)
+      if (sockMatch) {
+        const display = parseInt(sockMatch[1], 10)
+        if (
+          display >= lo &&
+          display <= hi &&
+          !occupiedDisplays.includes(display)
+        ) {
+          occupiedDisplays.push(display)
         }
       }
     }
-    
-    // 检查X11 socket文件
-    const { stdout: socketFiles } = await execFileAsync('ssh', [vncNodeIp, 'ls', '/tmp/.X11-unix/X*', '2>/dev/null || true'])
-    
-    if (socketFiles.trim()) {
-      const lines = socketFiles.trim().split('\n')
-      for (const line of lines) {
-        const match = line.match(/\/tmp\/\.X11-unix\/X(\d+)/)
-        if (match) {
-          const display = parseInt(match[1])
-          // 跳过系统显示X0
-          if (display !== 0 && !occupiedDisplays.includes(display)) {
-            occupiedDisplays.push(display)
-          }
-        }
-      }
-    }
-    
-    // 检查VNC端口占用
-    const { stdout: vncPorts } = await execFileAsync('ssh', [vncNodeIp, 'netstat', '-tlnp', '2>/dev/null | grep ":59" || true'])
-    
-    if (vncPorts.trim()) {
-      const lines = vncPorts.trim().split('\n')
-      for (const line of lines) {
-        const match = line.match(/:59(\d+)/)
-        if (match) {
-          const port = parseInt(match[1])
-          const display = port - 5900
-          if (display >= VNC_CONFIG.DISPLAY_RANGE[0] && display <= VNC_CONFIG.DISPLAY_RANGE[1] && !occupiedDisplays.includes(display)) {
-            occupiedDisplays.push(display)
-          }
-        }
-      }
-    }
-    
+
+    console.log(`[checkVtdevOccupiedDisplays] 占用 display 数: ${occupiedDisplays.length}`)
     return occupiedDisplays
-    
   } catch (error) {
-    const vncNodeIp = process.env.DEFAULT_VNC_NODE_IP || 'localhost'
-    console.warn(`[checkVtdevOccupiedDisplays] 检查VNC节点 ${vncNodeIp} 端口占用失败:`, error)
+    console.warn(`[checkVtdevOccupiedDisplays] 检查VNC节点端口占用失败:`, error)
     return []
   }
 }
 
-// 验证端口是否可用
+// 验证单个 display 是否可用（仅必要时调用；避免 pgrep 自匹配）
 async function verifyPortAvailability(display: number): Promise<boolean> {
   try {
-    const { execFile } = await import('child_process')
-    const { promisify } = await import('util')
-    const execFileAsync = promisify(execFile)
-    
     const port = displayToVncPort(display)
-    const vncNodeIp = process.env.DEFAULT_VNC_NODE_IP || 'localhost'
-    
-    // 检查X锁文件
-    try {
-      await execFileAsync('ssh', [vncNodeIp, 'test', '-f', `/tmp/.X${display}-lock`])
-      console.log(`[verifyPortAvailability] Display ${display} 锁文件存在`)
+    const vncNode = await getVncNodeHost()
+
+    const remoteOut = await sshExec(
+      vncNode,
+      `if [ -f /tmp/.X${display}-lock ] || [ -S /tmp/.X11-unix/X${display} ]; then echo BUSY_LOCK; fi; ` +
+      `(ss -tlnH 2>/dev/null || netstat -tln 2>/dev/null || true) | grep -E ':${port}([^0-9]|$)' >/dev/null && echo BUSY_PORT; true`
+    )
+
+    if (remoteOut.includes('BUSY_LOCK') || remoteOut.includes('BUSY_PORT')) {
+      console.log(`[verifyPortAvailability] Display ${display} 不可用`)
       return false
-    } catch {
-      // 锁文件不存在，继续检查
-    }
-
-    // 检查X11 socket文件
-    try {
-      await execFileAsync('ssh', [vncNodeIp, 'test', '-S', `/tmp/.X11-unix/X${display}`])
-      console.log(`[verifyPortAvailability] Display ${display} socket文件存在`)
-      return false
-    } catch {
-      // socket文件不存在，继续检查
-    }
-
-    // 检查端口占用
-    try {
-      const { stdout: portCheck } = await execFileAsync('ssh', [vncNodeIp, 'netstat', '-tlnp', '2>/dev/null', '|', 'grep', `:${port} `])
-      if (portCheck.trim() !== '') {
-        console.log(`[verifyPortAvailability] Display ${display} 端口 ${port} 被占用`)
-        return false
-      }
-    } catch {
-      // 端口检查失败，假设端口可用
-    }
-
-    // 检查VNC进程
-    try {
-      const { stdout: vncCheck } = await execFileAsync('ssh', [vncNodeIp, 'pgrep', '-f', `vncserver.*:${display}`])
-      if (vncCheck.trim() !== '') {
-        console.log(`[verifyPortAvailability] Display ${display} VNC进程正在运行`)
-        return false
-      }
-    } catch {
-      // 进程检查失败，假设没有VNC进程
     }
 
     console.log(`[verifyPortAvailability] Display ${display} 端口可用`)
     return true
-    
   } catch (error) {
     console.warn(`[verifyPortAvailability] 验证端口 ${display} 可用性失败:`, error)
-    // 检查失败时，保守地返回false，避免端口冲突
-    return false
+    return true
   }
 }
 
 // 导出配置信息，供其他模块使用
-export { VNC_CONFIG, getNodeIp, getNodeIpMap }
+export { VNC_CONFIG }

@@ -8,15 +8,16 @@
 const requiredEnvVars = {
   'SUPABASE_URL': { default: 'http://localhost:8000', desc: 'Supabase项目URL' },
   'SUPABASE_SERVICE_ROLE_KEY': { default: '', desc: 'Supabase服务角色密钥' },
-  'NOVNC_GATEWAY': { default: 'localhost', desc: 'noVNC网关地址' },
-  'DEFAULT_VNC_NODE_IP': { default: 'localhost', desc: '默认VNC节点IP地址' }
 }
 
 // 可选的环境变量（带默认值）
 const OPTIONAL_CONFIG = {
   'NEXT_PUBLIC_APP_URL': { default: 'http://localhost:3000', desc: '应用服务器URL' },
   'NEXT_PUBLIC_WEBSHELL_SERVER': { default: 'http://localhost:3001', desc: 'WebShell服务器地址' },
+  'VNC_NODE': { default: '(sinfo graphics / localhost)', desc: '图形节点主机名（可自动发现）' },
+  'NOVNC_GATEWAY': { default: '(解析 VNC_NODE)', desc: '浏览器访问 noVNC 的主机（可选）' },
   'NOVNC_PORT': { default: '6080', desc: 'noVNC网关端口' },
+  'DEFAULT_VNC_NODE_IP': { default: '(兼容 VNC_NODE)', desc: '兼容旧变量，等同 VNC_NODE' },
   'JWT_SECRET': { default: 'your-secret-key', desc: 'JWT密钥' }
 }
 
@@ -55,7 +56,7 @@ function validateConfig() {
   console.log('')
   
   if (missing.length > 0) {
-    console.log('❌ 缺少的环境变量:')
+    console.log('ℹ️  未设置（可选）或缺少的环境变量:')
     missing.forEach(({ key, desc, default: defaultValue, type }) => {
       const typeLabel = type === 'required' ? '必需' : '可选'
       console.log(`  ${key}: ${desc} [${typeLabel}]`)
@@ -77,4 +78,4 @@ if (require.main === module) {
   process.exit(isValid ? 0 : 1)
 }
 
-module.exports = { validateConfig } 
+module.exports = { validateConfig }

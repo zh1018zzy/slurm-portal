@@ -448,11 +448,13 @@ async function handleVncAppSubmission(vncApp: any, formData: any, request: NextR
     }
     
     // 导入VNC管理器
-    const { getNextDisplay, displayToVncPort, generateVncScript, generateVncUrl } = await import('@/lib/vnc-manager')
+    const { getNextDisplay, displayToVncPort, generateVncScript, generateVncUrl, ensureNovncProxy } = await import('@/lib/vnc-manager')
     
     // 获取可用的display号
     const display = await getNextDisplay()
     const vncPort = displayToVncPort(display)
+    // 将 noVNC websockify 指到本会话端口（容器为单目标模式）
+    await ensureNovncProxy(vncPort)
     
     // 生成VNC脚本
     const vncScript = generateVncScript({
@@ -560,7 +562,8 @@ async function handleVncAppSubmission(vncApp: any, formData: any, request: NextR
         jobName: `vnc-desktop-${display}`,
         applicationName: vncApp.name,
         vncDisplay: display,
-        vncPort: vncPort
+        vncPort: vncPort,
+        vncUrl: await generateVncUrl('vnc', vncPort),
       }
     })
     

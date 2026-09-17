@@ -140,7 +140,7 @@ export async function GET(req: NextRequest) {
               .in('job_id', runningJobIds)
             
             // 为每个运行中的图形作业生成VNC URL
-            freshJobs = freshJobs.map((job: any) => {
+            freshJobs = await Promise.all(freshJobs.map(async (job: any) => {
               if (job.status === 'RUNNING') {
                 const dbJob = dbJobs?.find((dj: any) => dj.job_id === job.jobId)
                 if (dbJob) {
@@ -152,26 +152,24 @@ export async function GET(req: NextRequest) {
                     job.vncDisplay = dbJob.params.vncDisplay
                     job.vncPort = dbJob.params.vncPort
                     
-                    // 生成VNC URL - 使用同步方式
+                    // 生成VNC URL
                     if (dbJob.nodes) {
                       const nodeList = dbJob.nodes.split(',').filter(Boolean)
                       if (nodeList.length > 0) {
-                        // 使用DEFAULT_VNC_NODE_IP作为VNC节点IP
-                        const gatewayIp = process.env.NOVNC_GATEWAY || 'localhost'
-                        const gatewayPort = process.env.NOVNC_PORT || '6080'
-                        const vncNodeIp = process.env.DEFAULT_VNC_NODE_IP || 'localhost'
-                        
-                        // 直接使用DEFAULT_VNC_NODE_IP作为VNC节点IP
-                        const nodeIp = vncNodeIp
-                        
-                        job.vncUrl = `http://${gatewayIp}:${gatewayPort}/vnc.html?host=${nodeIp}&port=${job.vncPort}`
+                        try {
+                          const { generateVncUrl, getVncNodeHost } = await import('@/lib/vnc-manager')
+                          const vncNodeHostname = await getVncNodeHost()
+                          job.vncUrl = await generateVncUrl(vncNodeHostname, job.vncPort)
+                        } catch {
+                          job.vncUrl = null
+                        }
                       }
                     }
                   }
                 }
               }
               return job
-            })
+            }))
           }
         } catch (dbError) {
           console.error('[状态检查-快速] 数据库查询VNC信息失败:', dbError)
@@ -254,19 +252,14 @@ export async function GET(req: NextRequest) {
                     job.vncDisplay = dbJob.params.vncDisplay
                     job.vncPort = dbJob.params.vncPort
                     
-                    // 生成VNC URL - 使用vnc-manager获取正确的IP地址
+                    // 生成VNC URL
                     try {
-                      const { generateVncUrl } = await import('@/lib/vnc-manager')
-                      const vncNodeHostname = process.env.DEFAULT_VNC_NODE_IP || 'localhost'
-                      
+                      const { generateVncUrl, getVncNodeHost } = await import('@/lib/vnc-manager')
+                      const vncNodeHostname = await getVncNodeHost()
                       job.vncUrl = await generateVncUrl(vncNodeHostname, job.vncPort)
                     } catch (error) {
                       console.warn(`[状态检查] 生成VNC URL失败 (job ${job.jobId}):`, error)
-                      // 回退到使用环境变量
-                      const gatewayIp = process.env.NOVNC_GATEWAY || 'localhost'
-                      const gatewayPort = process.env.NOVNC_PORT || '6080'
-                      const nodeIp = process.env.DEFAULT_VNC_NODE_IP || 'localhost'
-                      job.vncUrl = `http://${gatewayIp}:${gatewayPort}/vnc.html?host=${nodeIp}&port=${job.vncPort}`
+                      job.vncUrl = null
                     }
                   }
                 }

@@ -130,8 +130,8 @@ export async function GET(req: NextRequest) {
       }
     }
 
-    const { generateVncUrl } = await import('@/lib/vnc-manager')
-    const vncNodeHostname = process.env.DEFAULT_VNC_NODE_IP || 'localhost'
+    const { generateVncUrl, getVncNodeHost } = await import('@/lib/vnc-manager')
+    const vncNodeHostname = await getVncNodeHost()
 
     const enriched = await Promise.all(
       slurmJobs.map(async (job: any) => {

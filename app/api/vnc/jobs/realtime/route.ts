@@ -52,13 +52,6 @@ function isVncJob(scriptContent: string): { isVnc: boolean, display?: number, po
   return { isVnc: true }
 }
 
-// 生成VNC URL
-function generateVncUrl(nodeIp: string, port: number): string {
-  const gatewayIp = process.env.NOVNC_GATEWAY || 'localhost'
-  const gatewayPort = process.env.NOVNC_PORT || '6080'
-  return `http://${gatewayIp}:${gatewayPort}/vnc.html?host=${nodeIp}&port=${port}`
-}
-
 // 批量获取作业信息 - 修复版本
 async function getJobsInfo(jobIds: string[]): Promise<Map<string, any>> {
   const jobsInfo = new Map<string, any>()
@@ -211,19 +204,14 @@ export async function GET(req: NextRequest) {
           
           // 为运行中的作业生成VNC URL
           if (job.status === 'RUNNING' && vncInfo.port && job.nodes.length > 0) {
-            // 使用vnc-manager中的getNodeIp函数获取正确的IP地址
-            const { generateVncUrl } = await import('@/lib/vnc-manager')
-            const vncNodeHostname = process.env.DEFAULT_VNC_NODE_IP || 'localhost'
-            
+            const { generateVncUrl, getVncNodeHost } = await import('@/lib/vnc-manager')
+            const vncNodeHostname = await getVncNodeHost()
+
             try {
               vncJob.vncUrl = await generateVncUrl(vncNodeHostname, vncInfo.port)
             } catch (error) {
               console.warn(`[VNC实时状态] 生成VNC URL失败:`, error)
-              // 回退到使用环境变量
-              const gatewayIp = process.env.NOVNC_GATEWAY || 'localhost'
-              const gatewayPort = process.env.NOVNC_PORT || '6080'
-              const nodeIp = process.env.DEFAULT_VNC_NODE_IP || 'localhost'
-              vncJob.vncUrl = `http://${gatewayIp}:${gatewayPort}/vnc.html?host=${nodeIp}&port=${vncInfo.port}`
+              vncJob.vncUrl = null
             }
           }
           

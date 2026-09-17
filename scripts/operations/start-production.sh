@@ -24,12 +24,27 @@ export PORT=3000
 export NODE_OPTIONS="--max-old-space-size=4096"
 
 # 检查端口是否被占用
-if netstat -tlnp | grep -q ":3000"; then
+if netstat -tlnp 2>/dev/null | grep -q ":3000"; then
     echo -e "${YELLOW}⚠️  端口3000已被占用，正在停止现有进程...${NC}"
     pkill -f "next-server" || true
     sleep 3
 fi
 
-# 启动应用
+# 启动应用（优先 standalone，避免 next start 与 output:standalone 冲突告警）
 echo -e "${GREEN}✅ 启动应用...${NC}"
-exec npm start 
+if [ -f ".next/standalone/server.js" ]; then
+  mkdir -p .next/standalone/.next
+  if [ -d ".next/static" ]; then
+    rm -rf .next/standalone/.next/static
+    cp -a .next/static .next/standalone/.next/static
+  fi
+  if [ -d "public" ]; then
+    rm -rf .next/standalone/public
+    cp -a public .next/standalone/public
+  fi
+  # standalone 需能读到项目根的 .env*
+  export HOSTNAME=0.0.0.0
+  cd .next/standalone
+  exec node server.js
+fi
+exec npm start
