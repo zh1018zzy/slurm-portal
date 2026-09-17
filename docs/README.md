@@ -62,9 +62,11 @@
 - 性能优化：
   - `docs/performance/optimization/`
 - 部署：
+  - **集群依赖与部署前检查清单（开源部署推荐入口）**：`docs/deployment/cluster-prerequisites.md`
   - `docs/deployment/`（含从仓库根目录迁入的 `root-deployment-guide.md`、`deployment-pm2-docker.md`、`deployment-quick-start.md` 等；与 `deployment-guide.md` 并存）
   - **上线前安全与环境变量（Phase 1 API）**：`docs/deployment/security-api-deployment-notes.md`
   - 作业同步 Cron 快速步骤：`docs/deployment/QUICK-START-CRON.md`
+  - 环境校验命令：仓库根目录执行 `npm run verify:env`
 
 ## 仓库根目录说明
 

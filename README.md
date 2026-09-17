@@ -28,25 +28,36 @@
 
 ## 🚀 快速开始
 
+> **部署前请先阅读**：[集群依赖与检查清单](docs/deployment/cluster-prerequisites.md)。  
+> 本平台依赖现有的 Slurm / 认证 / 数据库 /（可选）VNC 等集群服务，不会自动安装整套 HPC 环境。
+
 ### 环境要求
 
 - Node.js ≥ 18，npm ≥ 9
-- 一台 **Slurm 集群管理节点**（`sinfo`/`squeue`/`sacct` 可用，或使用测试模式）
-- Supabase 项目（或任意 PostgreSQL 实例，需提供 REST/服务角色密钥）
-- （可选）LDAP / NIS 服务器用于用户目录认证
+- 一台 **Slurm 集群管理节点或登录节点**（本机可执行 `sinfo` / `squeue` / `sbatch` / `sacct`）
+- Supabase 项目（或兼容的 PostgreSQL + API，需服务角色密钥）
+- （可选）LDAP / NIS；WebShell；TurboVNC + noVNC
 
 ### 1. 配置环境变量
 
 ```bash
 cp .env.example .env
-# 按需填写 SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY / AUTH_MODE / LDAP_* 等
+# 按现场填写 SUPABASE_* / JWT_SECRET / AUTH_MODE / LDAP_* / VNC_* 等
 ```
 
 ### 2. 初始化数据库
 
 在 Supabase SQL Editor 执行推荐脚本 [`db/install/init-complete-simplified.sql`](db/install/init-complete-simplified.sql)（或完整版 [`db/install/init-complete.sql`](db/install/init-complete.sql)）。仅需建表，种子数据可自行裁剪。说明见 [`db/install/README.md`](db/install/README.md)。
 
-### 3. 安装与启动
+### 3. 校验集群与配置
+
+```bash
+npm run verify:env
+```
+
+将检查 `.env` 必填项、Node 版本、Slurm 命令、超级管理员凭证，并对 WebShell/VNC 等可选项给出警告。详情见 [cluster-prerequisites.md](docs/deployment/cluster-prerequisites.md)。
+
+### 4. 安装与启动
 
 ```bash
 npm install
@@ -59,9 +70,9 @@ npm run build
 npm run start
 ```
 
-或使用仓库根目录的 PM2 脚本：`./start-pm2.sh` / `./stop-pm2.sh`。
+或使用仓库根目录的 PM2 脚本：`./start-pm2.sh` / `./stop-pm2.sh`。也可用 `./install.sh`（会装 Node/PM2 并构建）。
 
-### 4. 配置超级管理员（必做）
+### 5. 配置超级管理员（必做）
 
 确保 `.env` 中已设置强随机 `JWT_SECRET`，然后：
 
@@ -77,9 +88,9 @@ npm run setup:super-admin
 SUPER_ADMIN_USERNAME=admin SUPER_ADMIN_PASSWORD='your-strong-password' npm run setup:super-admin -- --yes
 ```
 
-### 5. 登录
+### 6. 登录
 
-使用上一步设置的超级管理员，或系统用户（`AUTH_MODE=linux`）登录。
+使用上一步设置的超级管理员，或系统用户（`AUTH_MODE=linux`）登录。建议登录后先确认「节点/分区」与提交测试作业。
 
 ## 📁 目录结构
 
@@ -96,6 +107,7 @@ docs/           # 项目文档
 
 ## 📖 文档
 
+- [docs/deployment/cluster-prerequisites.md](docs/deployment/cluster-prerequisites.md) — **部署前集群依赖与检查清单（推荐先读）**
 - [docs/README.md](docs/README.md) — 文档主入口
 - [docs/project-overview.md](docs/project-overview.md) — 项目速览
 - [docs/operations/troubleshooting.md](docs/operations/troubleshooting.md) — 排障手册

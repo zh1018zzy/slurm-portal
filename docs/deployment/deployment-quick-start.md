@@ -3,7 +3,9 @@
 > 适用范围：快速了解服务架构与常用部署命令  
 > 主入口链接：`docs/README.md`  
 > 文档状态：`active`  
-> 最后验证日期：`2026-03-28`
+> 最后验证日期：`2026-09-17`
+
+> **先看集群依赖**：[`cluster-prerequisites.md`](./cluster-prerequisites.md)，并用 `npm run verify:env` 做部署前校验。
 
 ## 服务架构
 
