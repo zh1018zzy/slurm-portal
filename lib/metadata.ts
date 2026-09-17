@@ -54,15 +54,15 @@ export async function getSystemSettings(): Promise<SystemSettings> {
   } catch (error) {
     // 如果配置文件不存在或读取失败，返回默认配置
     return {
-      platformName: 'HPC平台',
-      websiteTitle: '高性能计算管理平台',
-      websiteDescription: '基于Next.js开发的高性能计算环境管理与监控平台',
+      platformName: 'slurm-portal',
+      websiteTitle: 'slurm-portal',
+      websiteDescription: 'HPC cluster web management platform (Slurm)',
       copyright: {
-        companyName: '您的公司名称',
-        companyUrl: 'https://yourcompany.com',
-        copyrightText: '© 2024 您的公司名称. 保留所有权利.',
-        poweredBy: 'Powered by HPC Platform',
-        showPoweredBy: true
+        companyName: '',
+        companyUrl: '',
+        copyrightText: '© slurm-portal contributors',
+        poweredBy: 'Powered by slurm-portal',
+        showPoweredBy: false
       },
       channel: {
         enabled: false,
@@ -99,7 +99,7 @@ export async function generateMetadata(): Promise<Metadata> {
     if (settings.channel?.enabled && settings.channel.channelCopyright) {
       return settings.channel.channelCopyright;
     }
-    return settings.copyright?.copyrightText || '© 2024 HPC Platform. 保留所有权利.';
+    return settings.copyright?.copyrightText || '© slurm-portal contributors';
   };
 
   // 确定公司名称
@@ -110,12 +110,12 @@ export async function generateMetadata(): Promise<Metadata> {
     if (settings.channel?.enabled && settings.channel.channelName) {
       return settings.channel.channelName;
     }
-    return settings.copyright?.companyName || 'HPC Platform';
+    return settings.copyright?.companyName || 'slurm-portal';
   };
   
   return {
-    title: settings.websiteTitle || settings.platformName || '高性能计算管理平台',
-    description: settings.websiteDescription || '基于Next.js开发的高性能计算环境管理与监控平台',
+    title: settings.websiteTitle || settings.platformName || 'slurm-portal',
+    description: settings.websiteDescription || 'HPC cluster web management platform (Slurm)',
     keywords: ['HPC', '高性能计算', '集群管理', '作业调度', '文件管理'],
     authors: [{ name: getCompanyName() }],
     creator: getCompanyName(),

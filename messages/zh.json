@@ -1148,7 +1148,7 @@
       "copyrightText": "版权文本",
       "copyrightTextPlaceholder": "© 2024 您的公司名称. 保留所有权利.",
       "poweredBy": "Powered by 文本",
-      "poweredByPlaceholder": "Powered by HPC Platform",
+      "poweredByPlaceholder": "Powered by slurm-portal",
       "showPoweredBy": "显示 Powered by",
       "showPoweredByHint": "在页脚显示 Powered by 信息",
       "channelInfo": "渠道信息",

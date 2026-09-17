@@ -82,8 +82,8 @@ export default function LoginBranding({ className }: LoginBrandingProps) {
       }
     }
     return {
-      text: settings.copyright?.copyrightText || '© 2024 HPC Platform. 保留所有权利.',
-      name: settings.copyright?.companyName || 'HPC Platform',
+      text: settings.copyright?.copyrightText || '© slurm-portal contributors',
+      name: settings.copyright?.companyName || 'slurm-portal',
       url: settings.copyright?.companyUrl
     }
   }
@@ -114,7 +114,7 @@ export default function LoginBranding({ className }: LoginBrandingProps) {
       {/* Powered by 信息 */}
       {settings.copyright?.showPoweredBy && (
         <div className="text-xs text-gray-400/80">
-          {settings.copyright.poweredBy || 'Powered by HPC Platform'}
+          {settings.copyright.poweredBy || 'Powered by slurm-portal'}
         </div>
       )}
 

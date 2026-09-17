@@ -1146,7 +1146,7 @@
       "copyrightText": "Copyright Text",
       "copyrightTextPlaceholder": "© 2024 Your Company Name. All rights reserved.",
       "poweredBy": "Powered by Text",
-      "poweredByPlaceholder": "Powered by HPC Platform",
+      "poweredByPlaceholder": "Powered by slurm-portal",
       "showPoweredBy": "Show Powered by",
       "showPoweredByHint": "Display Powered by info in footer",
       "channelInfo": "Channel Information",

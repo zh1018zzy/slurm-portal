@@ -96,7 +96,7 @@ export default function SystemSettingsPage() {
   const [companyUrl, setCompanyUrl] = useState('')
   const [copyrightText, setCopyrightText] = useState('')
   const [poweredBy, setPoweredBy] = useState('')
-  const [showPoweredBy, setShowPoweredBy] = useState(true)
+  const [showPoweredBy, setShowPoweredBy] = useState(false)
 
   // 渠道信息设置
   const [channelEnabled, setChannelEnabled] = useState(false)
@@ -145,12 +145,12 @@ export default function SystemSettingsPage() {
       setWebsiteDescription(data.websiteDescription || '')
       setUserHomeDirectoryPrefix(data.userHomeDirectoryPrefix || '/home')
 
-      // 版权信息设置 - 固定公司名称和URL
-      setCompanyName('郑州市维通科技有限公司')
-      setCompanyUrl('https://vthpc.com')
+      // 版权信息（可配置，无厂商硬编码）
+      setCompanyName(data.copyright?.companyName || '')
+      setCompanyUrl(data.copyright?.companyUrl || '')
       setCopyrightText(data.copyright?.copyrightText || '')
       setPoweredBy(data.copyright?.poweredBy || '')
-      setShowPoweredBy(data.copyright?.showPoweredBy !== false)
+      setShowPoweredBy(data.copyright?.showPoweredBy === true)
 
       // 渠道信息设置
       setChannelEnabled(data.channel?.enabled || false)
@@ -430,9 +430,8 @@ export default function SystemSettingsPage() {
             applicationsCenterEnabled: currentState.applicationsCenterEnabled,
             bigScreenButtonEnabled: currentState.bigScreenButtonEnabled,
             copyright: {
-              // 固定公司名称和URL
-              companyName: '郑州市维通科技有限公司',
-              companyUrl: 'https://vthpc.com',
+              companyName: currentState.companyName,
+              companyUrl: currentState.companyUrl,
               copyrightText: currentState.copyrightText,
               poweredBy: currentState.poweredBy,
               showPoweredBy: currentState.showPoweredBy
@@ -531,9 +530,8 @@ export default function SystemSettingsPage() {
           applicationsCenterEnabled,
           bigScreenButtonEnabled,
           copyright: {
-            // 固定公司名称和URL为维通科技
-            companyName: '郑州市维通科技有限公司',
-            companyUrl: 'https://vthpc.com',
+            companyName,
+            companyUrl,
             copyrightText,
             poweredBy,
             showPoweredBy
@@ -861,9 +859,8 @@ export default function SystemSettingsPage() {
                           applicationsCenterEnabled,
                           bigScreenButtonEnabled,
                           copyright: {
-                            // 固定公司名称和URL为维通科技
-                            companyName: '郑州市维通科技有限公司',
-                            companyUrl: 'https://vthpc.com',
+                            companyName,
+                            companyUrl,
                             copyrightText,
                             poweredBy,
                             showPoweredBy
@@ -1173,34 +1170,27 @@ export default function SystemSettingsPage() {
             </p>
           </CardHeader>
           <CardContent className="space-y-6">
-            {/* 公司版权信息 - 固定为维通科技 */}
+            {/* 公司版权信息 */}
             <div className="space-y-4">
               <h3 className="text-lg font-medium">{t('companyCopyright')}</h3>
-              <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg mb-4">
-                <p className="text-xs text-blue-800">
-                  <strong>注意：</strong>公司名称和网站地址为固定值，不可修改。仅可编辑渠道和客户信息。
-                </p>
-              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block mb-2 font-medium text-sm">{t('companyName')}</label>
                   <Input
-                    value="郑州市维通科技有限公司"
-                    disabled
-                    className="text-sm bg-gray-100 cursor-not-allowed"
-                    readOnly
+                    value={companyName}
+                    onChange={e => setCompanyName(e.target.value)}
+                    placeholder={t('companyNamePlaceholder')}
+                    className="text-sm"
                   />
-                  <p className="text-xs text-muted-foreground mt-1">固定值，不可修改</p>
                 </div>
                 <div>
                   <label className="block mb-2 font-medium text-sm">{t('companyUrl')}</label>
                   <Input
-                    value="https://vthpc.com"
-                    disabled
-                    className="text-sm bg-gray-100 cursor-not-allowed"
-                    readOnly
+                    value={companyUrl}
+                    onChange={e => setCompanyUrl(e.target.value)}
+                    placeholder={t('companyUrlPlaceholder')}
+                    className="text-sm"
                   />
-                  <p className="text-xs text-muted-foreground mt-1">固定值，不可修改</p>
                 </div>
                 <div className="md:col-span-2">
                   <label className="block mb-2 font-medium text-sm">{t('copyrightText')}</label>
@@ -1237,8 +1227,7 @@ export default function SystemSettingsPage() {
                     checked={showPoweredBy}
                     onCheckedChange={(checked) => {
                       setShowPoweredBy(checked)
-                      // 固定公司名称和URL
-                      autoSave({ copyright: { companyName: '郑州市维通科技有限公司', companyUrl: 'https://vthpc.com', copyrightText, poweredBy, showPoweredBy: checked } })
+                      autoSave({ copyright: { companyName, companyUrl, copyrightText, poweredBy, showPoweredBy: checked } })
                     }}
                   />
                 </div>

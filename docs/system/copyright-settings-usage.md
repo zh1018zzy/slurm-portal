@@ -15,10 +15,10 @@
 ### 2. 配置公司版权信息
 在 `公司版权信息` 区域配置您的基础版权信息：
 
-- **公司名称**：输入您的公司名称（如：郑州市维通科技有限公司）
-- **公司网址**：输入公司官网地址（如：https://vthpc.com）
-- **版权文本**：输入版权声明（如：© 2025 郑州市维通科技有限公司. 保留所有权利.）
-- **Powered by 文本**：输入技术平台标识（如：Powered by VTHPC Platform）
+- **公司名称**：输入您的公司名称（如：Your Organization）
+- **公司网址**：输入公司官网地址（如：https://example.com）
+- **版权文本**：输入版权声明（如：© slurm-portal contributors）
+- **Powered by 文本**：输入技术平台标识（如：Powered by slurm-portal）
 - **显示 Powered by**：选择是否在页脚显示技术平台信息
 
 ### 3. 配置渠道信息（可选）
@@ -61,10 +61,10 @@
 ```json
 {
   "copyright": {
-    "companyName": "郑州市维通科技有限公司",
-    "companyUrl": "https://vthpc.com",
-    "copyrightText": "© 2025 郑州市维通科技有限公司. 保留所有权利.",
-    "poweredBy": "Powered by VTHPC Platform",
+    "companyName": "Your Organization",
+    "companyUrl": "https://example.com",
+    "copyrightText": "© slurm-portal contributors",
+    "poweredBy": "Powered by slurm-portal",
     "showPoweredBy": true
   },
   "channel": { "enabled": false },
@@ -76,10 +76,10 @@
 ```json
 {
   "copyright": {
-    "companyName": "郑州市维通科技有限公司",
-    "companyUrl": "https://vthpc.com",
-    "copyrightText": "© 2025 郑州市维通科技有限公司. 保留所有权利.",
-    "poweredBy": "Powered by VTHPC Platform",
+    "companyName": "Your Organization",
+    "companyUrl": "https://example.com",
+    "copyrightText": "© slurm-portal contributors",
+    "poweredBy": "Powered by slurm-portal",
     "showPoweredBy": true
   },
   "channel": {
@@ -96,10 +96,10 @@
 ```json
 {
   "copyright": {
-    "companyName": "郑州市维通科技有限公司",
-    "companyUrl": "https://vthpc.com",
-    "copyrightText": "© 2025 郑州市维通科技有限公司. 保留所有权利.",
-    "poweredBy": "Powered by VTHPC Platform",
+    "companyName": "Your Organization",
+    "companyUrl": "https://example.com",
+    "copyrightText": "© slurm-portal contributors",
+    "poweredBy": "Powered by slurm-portal",
     "showPoweredBy": false
   },
   "channel": { "enabled": false },
@@ -173,7 +173,7 @@
 
 如果在配置过程中遇到问题，请联系技术支持：
 
-- **邮箱**：support@vthpc.com
+- **邮箱**：security@example.com
 - **文档**：查看相关技术文档
 - **社区**：访问技术社区论坛
 

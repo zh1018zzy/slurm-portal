@@ -40,21 +40,7 @@ export default function LoginForm() {
         // 跳转到仪表板（使用 useCurrentLocale 确保使用当前语言）
         router.push(`/${currentLocale}/dashboard`)
       } else {
-        // 检查是否为许可证过期错误
-        if (data.code === 'LICENSE_EXPIRED' && data.details) {
-          // 显示详细的许可证过期信息
-          const details = data.details
-          if (details.isTrialExpired) {
-            setError(`${data.error}\n\n试用期已结束，请联系管理员申请商业版许可证以继续使用系统。`)
-          } else {
-            setError(`${data.error}\n\n请联系管理员续费或更新许可证。`)
-          }
-        } else if (data.code === 'LICENSE_LIMIT') {
-          // 并发用户限制
-          setError(data.error || t('loginFailed'))
-        } else {
-          setError(data.error || t('loginFailed'))
-        }
+        setError(data.error || t('loginFailed'))
       }
     } catch (err) {
       setError(t('loginFailed'))

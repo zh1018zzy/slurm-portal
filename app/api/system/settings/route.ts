@@ -102,22 +102,22 @@ export async function GET(req: NextRequest) {
   } catch (e) {
     // 默认值
     return NextResponse.json({
-      platformName: 'HPC平台',
+      platformName: 'slurm-portal',
       logoUrl: '/logo.png',
       watermarkText: '',
-      watermarkEnabled: true,
+      watermarkEnabled: false,
       webshellCopyPasteEnabled: true,
-      websiteTitle: '高性能计算管理平台',
-      websiteDescription: '基于Next.js开发的高性能计算环境管理与监控平台',
+      websiteTitle: 'slurm-portal',
+      websiteDescription: 'HPC cluster web management platform (Slurm)',
       applicationsCenterEnabled: true,
       bigScreenButtonEnabled: true,
       userHomeDirectoryPrefix: '/home',
       copyright: {
-        companyName: '您的公司名称',
-        companyUrl: 'https://yourcompany.com',
-        copyrightText: '© 2024 您的公司名称. 保留所有权利.',
-        poweredBy: 'Powered by HPC Platform',
-        showPoweredBy: true
+        companyName: '',
+        companyUrl: '',
+        copyrightText: '© slurm-portal contributors',
+        poweredBy: 'Powered by slurm-portal',
+        showPoweredBy: false
       },
       channel: {
         enabled: false,
@@ -203,22 +203,22 @@ export async function POST(req: NextRequest) {
     
     // 如果是家目录前缀更新，需要先读取当前配置
     let currentSettings: SystemSettings = {
-      platformName: 'HPC平台',
+      platformName: 'slurm-portal',
       logoUrl: '/logo.png',
       watermarkText: '',
-      watermarkEnabled: true,
+      watermarkEnabled: false,
       webshellCopyPasteEnabled: true,
-      websiteTitle: '高性能计算管理平台',
-      websiteDescription: '基于Next.js开发的高性能计算环境管理与监控平台',
+      websiteTitle: 'slurm-portal',
+      websiteDescription: 'HPC cluster web management platform (Slurm)',
       applicationsCenterEnabled: true,
       bigScreenButtonEnabled: true,
       userHomeDirectoryPrefix: '/home',
       copyright: {
-        companyName: '您的公司名称',
-        companyUrl: 'https://yourcompany.com',
-        copyrightText: '© 2024 您的公司名称. 保留所有权利.',
-        poweredBy: 'Powered by HPC Platform',
-        showPoweredBy: true
+        companyName: '',
+        companyUrl: '',
+        copyrightText: '© slurm-portal contributors',
+        poweredBy: 'Powered by slurm-portal',
+        showPoweredBy: false
       },
       channel: {
         enabled: false,
@@ -263,12 +263,11 @@ export async function POST(req: NextRequest) {
       bigScreenButtonEnabled: body.bigScreenButtonEnabled !== false, // 默认启用
       userHomeDirectoryPrefix: body.userHomeDirectoryPrefix || '/home',
       copyright: {
-        // 固定公司名称和URL为维通科技
-        companyName: '郑州市维通科技有限公司',
-        companyUrl: 'https://vthpc.com',
-        copyrightText: body.copyright?.copyrightText || '© 2025 vthpc.com. 保留所有权利',
-        poweredBy: body.copyright?.poweredBy || 'Powered by VTHPC',
-        showPoweredBy: body.copyright?.showPoweredBy !== false
+        companyName: body.copyright?.companyName || '',
+        companyUrl: body.copyright?.companyUrl || '',
+        copyrightText: body.copyright?.copyrightText || '© slurm-portal contributors',
+        poweredBy: body.copyright?.poweredBy || 'Powered by slurm-portal',
+        showPoweredBy: body.copyright?.showPoweredBy === true
       },
       channel: {
         enabled: body.channel?.enabled || false,
