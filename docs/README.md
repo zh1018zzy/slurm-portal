@@ -49,6 +49,7 @@
   - `docs/system/permissions/`
 - License 与授权：
   - `docs/system/licensing/`
+  - 公开安全说明：`docs/system/licensing/SECURITY-NOTES.md`（不含漏洞利用细节）
 - WebShell：
   - `docs/features/webshell/`
 - VNC：

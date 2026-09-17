@@ -242,7 +242,7 @@ License system environment variables:
 - `LICENSE_FILE_PATH` - Path to license file (default: config/license.json)
 - `LICENSE_PUBLIC_KEY_PATH` - Path to public key (default: config/license-public.pem)
 - `STRICT_LICENSE_VALIDATION` - Enable strict validation (default: true in production)
-- `SKIP_HARDWARE_BINDING` - Skip hardware binding (development only)
+- ~~`SKIP_HARDWARE_BINDING`~~ — removed; do not document or rely on bypass flags
 - `NODE_ENV` - Environment mode affecting license validation
 
 ## Application Management System

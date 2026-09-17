@@ -138,10 +138,10 @@ node scripts/test-browser-file-upload.js
 **目录结构：**
 ```bash
 $ ls -la /home/unknown/my-jobs/
-drwxr-xr-x 2 hao hao 4096 Jul 28 18:42 job_1753699378134_90d09973a501
+drwxr-xr-x 2 demo_user demo_user 4096 Jul 28 18:42 job_1753699378134_90d09973a501
 
 $ ls -la /home/unknown/my-jobs/job_1753699378134_90d09973a501/
--rw-r--r-- 1 hao hao 248 Jul 28 18:42 test_browser.gjf
+-rw-r--r-- 1 demo_user demo_user 248 Jul 28 18:42 test_browser.gjf
 ```
 
 ### 3. 同步验证 ✅

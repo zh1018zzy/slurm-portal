@@ -22,15 +22,23 @@
   - `docs/archive/repo-root/README-CRON-SETUP.md`
   - `docs/archive/repo-root/DOCS-INDEX.md`
 
+### 2026-09-17（开源前敏感文档清理）
+
+- **触发条件/适用范围**：开源发布前审查文档，移除不宜公开内容并脱敏真实环境信息。
+- **最终结论**：已删除许可证漏洞/破解类文档、营销方案与内部需求草稿；其余文档中的内网 IP、主机名、演示账号与默认密钥已替换为占位符。
+- **已删除**：
+  - `docs/marketing/`（整目录）
+  - `docs/need/`（整目录）
+- **公开替代**：`docs/system/licensing/SECURITY-NOTES.md`
+- **仍保留的 guides**：
+  - `docs/guides/README.md`
+  - `docs/guides/README-ENVIRONMENT.md`
+
 ### 2026-03-27（目录筛选清理）
 
 - **触发条件/适用范围**：按项目现状进行文档筛选，识别草稿类与历史索引类文档，避免干扰主阅读路径。
-- **最终结论**：`docs/need/`、`docs/marketing/` 及部分旧 guides 索引文档调整为归档状态，主入口仍统一走 `docs/archive/root-legacy/README.md`。
+- **最终结论**：原 `docs/need/`、`docs/marketing/` 已于 2026-09-17 从仓库移除（见上节）；主入口仍统一走 `docs/archive/root-legacy/README.md`。
 - **关联文档**：
-  - `docs/need/sc_suggest.md`
-  - `docs/need/qustion_check.md`
-  - `docs/need/viewer.md`
-  - `docs/marketing/hpc-platform-marketing-strategy.md`
   - `docs/guides/README.md`
   - `docs/guides/README-ENVIRONMENT.md`
 
@@ -131,13 +139,11 @@
   - `docs/features/vnc/vnc-sse-implementation.md`
   - `docs/features/vnc/vnc-url-fix.md`
   - `docs/features/webshell/webshell-permission-summary.md`
-  - `docs/need/sc_suggest.md`
   - `docs/performance/optimization/performance-optimization-summary.md`
   - `docs/performance/optimization/performance-optimization.md`
   - `docs/performance/optimization/trend-api-optimization.md`
   - `docs/system/copyright-implementation-summary.md`
   - `docs/system/database-integration.md`
-  - `docs/system/licensing/LICENSE-SECURITY-SUMMARY.md`
   - `docs/system/licensing/README.md`
   - `docs/system/licensing/archive/LICENSE-CLEANUP-PLAN.md`
   - `docs/system/licensing/archive/LICENSE-CLEANUP-SUMMARY.md`

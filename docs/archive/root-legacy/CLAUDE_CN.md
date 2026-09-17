@@ -253,7 +253,7 @@ GET  /api/license/stats               # 许可证统计
 - `LICENSE_FILE_PATH` - 许可证文件路径（默认：config/license.json）
 - `LICENSE_PUBLIC_KEY_PATH` - 公钥路径（默认：config/license-public.pem）
 - `STRICT_LICENSE_VALIDATION` - 启用严格验证（生产环境默认：true）
-- `SKIP_HARDWARE_BINDING` - 跳过硬件绑定（仅开发环境）
+- ~~`SKIP_HARDWARE_BINDING`~~ — 已移除；请勿依赖任何绕过开关
 - `NODE_ENV` - 环境模式，影响许可证验证
 
 ## 系统管理功能

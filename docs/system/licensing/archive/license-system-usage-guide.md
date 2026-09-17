@@ -400,7 +400,7 @@ curl http://localhost:3000/api/license/hardware
 
 # 联系供应商重新生成许可证文件
 # 或临时跳过硬件验证（开发环境）
-export SKIP_HARDWARE_BINDING=true
+# SKIP_HARDWARE_BINDING 已废弃，生产环境请勿依赖此类开关
 ```
 
 ### 5. 功能访问被拒绝
