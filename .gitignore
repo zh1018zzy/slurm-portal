@@ -117,6 +117,8 @@ config/.integrity_log
 config/license/
 config/license-requests/
 config/license.json*
+config/super-admin.enc
+config/super-admin.enc.tmp-*
 scripts/license/
 scripts/config/license/
 scripts/config/licenses/

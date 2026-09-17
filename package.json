@@ -17,6 +17,7 @@
     "start": "next start",
     "lint": "next lint",
     "verify:i18n": "node scripts/verify-i18n.js",
+    "setup:super-admin": "node scripts/setup/init-super-admin.js",
     "monitor": "node scripts/operations/performance-monitor.js",
     "monitor:continuous": "node scripts/operations/performance-monitor.js --continuous",
     "diagnose": "node scripts/operations/performance-diagnosis.js",

@@ -61,9 +61,25 @@ npm run start
 
 或使用仓库根目录的 PM2 脚本：`./start-pm2.sh` / `./stop-pm2.sh`。
 
-### 4. 登录
+### 4. 配置超级管理员（必做）
 
-使用系统用户（AUTH_MODE=linux 时）或超级管理员（配置在环境变量 / 超级管理员表中）登录。
+确保 `.env` 中已设置强随机 `JWT_SECRET`，然后：
+
+```bash
+npm run setup:super-admin
+```
+
+将交互设置用户名/密码，并写入加密文件 `config/super-admin.enc`（密码 scrypt 哈希 + AES-256-GCM，权限 0600，已加入 `.gitignore`）。
+
+非交互示例：
+
+```bash
+SUPER_ADMIN_USERNAME=admin SUPER_ADMIN_PASSWORD='your-strong-password' npm run setup:super-admin -- --yes
+```
+
+### 5. 登录
+
+使用上一步设置的超级管理员，或系统用户（`AUTH_MODE=linux`）登录。
 
 ## 📁 目录结构
 

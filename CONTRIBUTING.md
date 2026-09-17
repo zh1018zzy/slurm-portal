@@ -14,7 +14,8 @@
 - `npm run lint`
 - `npm run verify:i18n`
 - 涉及 UI 文案时同步更新 `messages/zh.json` 与 `messages/en.json`
-- 不要提交 `.env`、密钥、许可证私钥、客户环境数据
+- 不要提交 `.env`、密钥、`config/super-admin.enc`、客户环境数据
+- 本地首次运行需 `npm run setup:super-admin` 配置超级管理员
 
 ## Pull Request
 

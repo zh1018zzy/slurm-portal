@@ -105,10 +105,27 @@ npm install
 echo "正在构建项目..."
 npm run build
 
+# 初始化超级管理员（若尚未配置）
+if [ ! -f config/super-admin.enc ]; then
+    echo ""
+    echo "配置超级管理员账户..."
+    if [ -f .env ]; then
+        npm run setup:super-admin || {
+            echo "提示: 可稍后执行 npm run setup:super-admin"
+        }
+    else
+        echo "未检测到 .env，请先 cp .env.example .env 并设置 JWT_SECRET，然后执行:"
+        echo "  npm run setup:super-admin"
+    fi
+fi
+
 echo ""
 echo "====================================="
 echo "安装完成！"
 echo "====================================="
+echo ""
+echo "若尚未配置超级管理员:"
+echo "  npm run setup:super-admin"
 echo ""
 echo "启动应用:"
 echo "  npm run start:prod"
