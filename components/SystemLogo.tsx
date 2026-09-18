@@ -16,7 +16,7 @@ interface SystemLogoProps {
 
 export function SystemLogo({ collapsed = false }: SystemLogoProps) {
   const [settings, setSettings] = useState<SystemSettings>({
-    platformName: 'HPC平台',
+    platformName: 'Slurm 门户',
     logoUrl: '/logo.png'
   })
   const [loading, setLoading] = useState(true)
@@ -68,7 +68,7 @@ export function SystemLogo({ collapsed = false }: SystemLogoProps) {
         </div>
         {!collapsed && (
           <span className="font-bold text-xl bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
-            HPC平台
+            Slurm 门户
           </span>
         )}
       </Link>

@@ -2,7 +2,7 @@
   "name": "slurm-portal",
   "version": "0.1.0",
   "private": true,
-  "description": "HPC cluster web management platform (Next.js + Slurm + LDAP/NIS + WebShell)",
+  "description": "Slurm web portal for small-to-medium clusters (Next.js + Slurm + LDAP/NIS + WebShell). Slurm-only.",
   "license": "AGPL-3.0-only",
   "engines": {
     "node": ">=18"

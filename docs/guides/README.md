@@ -1,4 +1,6 @@
-# my-hpcapp 高性能计算管理平台
+# slurm-portal 使用指南
+
+面向 **中小规模 SchedMD Slurm** 集群的 Web 门户文档入口（当前仅支持该调度器）。
 
 > 适用范围：用户使用与操作指南
 > 主入口链接：`docs/README.md`
@@ -6,7 +8,7 @@
 > 最后验证日期：`2026-03-27`
 
 ## 项目简介
-本项目基于 Next.js（App Router）开发，结合 Shadcn UI、Radix UI、Tailwind CSS，旨在为高性能计算（HPC）环境提供现代化、响应式的管理与监控界面。
+本项目基于 Next.js（App Router）开发，结合 Shadcn UI、Radix UI、Tailwind CSS，为 **中小规模 SchedMD Slurm** 集群提供现代化、响应式的 Web 管理与监控界面（当前仅支持该调度器；推荐单门户实例部署在管理/登录节点）。
 
 ## 🚀 功能特性
 

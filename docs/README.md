@@ -2,13 +2,14 @@
 
 > 适用范围：项目长期有效知识（模块说明、流程、部署或运维）
 > 主入口链接：`docs/README.md`
-> 文档状态：`active`
-> 最后验证日期：`2026-03-28`
+> 文档状态：`active`  
+> 最后验证日期：`2026-09-18`
 
-本页是项目文档唯一主入口，面向新同学与 AI 协作场景。  
+本页是项目文档唯一主入口，面向新同学与 AI 协作场景。
 阅读顺序建议：先看 `docs/project-overview.md`，再按「开发过程」或「模块」进入。  
 若你在排障，请直接进入 `docs/operations/troubleshooting.md`。  
-一次性记录与阶段性报告统一归档到 `docs/archive/README.md`。
+一次性记录与阶段性报告统一归档到 `docs/archive/README.md`。  
+**产品定位**：面向 **中小规模 Slurm 集群** 的 Web 门户（Slurm-only）；部署前请读 `docs/deployment/cluster-prerequisites.md`。
 
 ## 快速入口
 

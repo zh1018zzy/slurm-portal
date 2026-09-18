@@ -34,8 +34,8 @@
     "submitting": "Submitting..."
   },
   "login": {
-    "title": "HPC Management Platform",
-    "subtitle": "High Performance Computing Cluster Management System",
+    "title": "Slurm Portal",
+    "subtitle": "Web management for Slurm clusters",
     "username": "Username",
     "password": "Password",
     "rememberMe": "Remember me",
@@ -67,8 +67,8 @@
     "settings": "Settings",
     "logout": "Logout",
     "welcome": "Welcome back",
-    "pageTitle": "HPC System Dashboard",
-    "pageSubtitle": "Real-time monitoring of system resources, job status, and cluster performance",
+    "pageTitle": "Slurm Cluster Dashboard",
+    "pageSubtitle": "Real-time nodes, partitions, jobs, and cluster load",
     "loadingData": "Loading system data...",
     "dataError": "Data loading error",
     "retry": "Retry",
@@ -1723,7 +1723,7 @@
     }
   },
   "bigScreen": {
-    "title": "HPC High Performance Computing Platform",
+    "title": "Slurm Cluster Overview",
     "loading": {
       "systemData": "Loading system data...",
       "systemDataMessage": "Please wait, fetching real-time information",

@@ -108,7 +108,7 @@ export async function GET(req: NextRequest) {
       watermarkEnabled: false,
       webshellCopyPasteEnabled: true,
       websiteTitle: 'slurm-portal',
-      websiteDescription: 'HPC cluster web management platform (Slurm)',
+      websiteDescription: 'Web portal for SchedMD Slurm clusters (Slurm-only)',
       applicationsCenterEnabled: true,
       bigScreenButtonEnabled: true,
       userHomeDirectoryPrefix: '/home',
@@ -209,7 +209,7 @@ export async function POST(req: NextRequest) {
       watermarkEnabled: false,
       webshellCopyPasteEnabled: true,
       websiteTitle: 'slurm-portal',
-      websiteDescription: 'HPC cluster web management platform (Slurm)',
+      websiteDescription: 'Web portal for SchedMD Slurm clusters (Slurm-only)',
       applicationsCenterEnabled: true,
       bigScreenButtonEnabled: true,
       userHomeDirectoryPrefix: '/home',
@@ -252,13 +252,13 @@ export async function POST(req: NextRequest) {
     }
     
     const settings: SystemSettings = {
-      platformName: body.platformName || 'HPC平台',
+      platformName: body.platformName || 'Slurm 门户',
       logoUrl: body.logoUrl || '/logo.png',
       watermarkText: body.watermarkText || '',
       watermarkEnabled: body.watermarkEnabled !== false, // 默认启用
       webshellCopyPasteEnabled: body.webshellCopyPasteEnabled !== false, // 默认启用
-      websiteTitle: body.websiteTitle || '高性能计算管理平台',
-      websiteDescription: body.websiteDescription || '基于Next.js开发的高性能计算环境管理与监控平台',
+      websiteTitle: body.websiteTitle || 'Slurm 门户',
+      websiteDescription: body.websiteDescription || '面向 SchedMD Slurm 集群的 Web 作业与资源管理门户',
       applicationsCenterEnabled: body.applicationsCenterEnabled !== false, // 默认启用
       bigScreenButtonEnabled: body.bigScreenButtonEnabled !== false, // 默认启用
       userHomeDirectoryPrefix: body.userHomeDirectoryPrefix || '/home',

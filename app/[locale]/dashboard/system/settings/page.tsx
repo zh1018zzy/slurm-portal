@@ -206,7 +206,7 @@ export default function SystemSettingsPage() {
   useEffect(() => {
     // 更新页面标题
     if (websiteTitle || platformName) {
-      document.title = websiteTitle || platformName || '高性能计算管理平台'
+      document.title = websiteTitle || platformName || 'Slurm 门户'
     }
 
     // 更新meta描述
@@ -227,7 +227,7 @@ export default function SystemSettingsPage() {
       ogTitle.setAttribute('property', 'og:title')
       document.head.appendChild(ogTitle)
     }
-    ogTitle.setAttribute('content', websiteTitle || platformName || '高性能计算管理平台')
+    ogTitle.setAttribute('content', websiteTitle || platformName || 'Slurm 门户')
 
     // 更新Open Graph描述
     if (websiteDescription) {
@@ -247,7 +247,7 @@ export default function SystemSettingsPage() {
       twitterTitle.setAttribute('name', 'twitter:title')
       document.head.appendChild(twitterTitle)
     }
-    twitterTitle.setAttribute('content', websiteTitle || platformName || '高性能计算管理平台')
+    twitterTitle.setAttribute('content', websiteTitle || platformName || 'Slurm 门户')
 
     // 更新Twitter卡片描述
     if (websiteDescription) {

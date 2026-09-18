@@ -1,8 +1,10 @@
 # slurm-portal
 
-**HPC 集群 Web 管理平台** — 基于 Next.js 14 + Slurm + LDAP/NIS + WebShell 的全栈集群管理工具。
+**Slurm 集群 Web 门户** — 基于 Next.js 14 + Slurm + LDAP/NIS + WebShell 的全栈管理工具。
 
-> 面向高校/科研机构/企业的 Slurm 集群提供浏览器端一站式管理：用户管理、作业监控、应用商店、VNC 远程桌面、WebShell、报表分析等。
+> 面向高校实验室、院系机房与中小规模企业 **Slurm** 集群，提供浏览器端一站式管理：用户管理、作业监控、应用商店、VNC 远程桌面、WebShell、报表分析等。  
+> **当前仅支持 [SchedMD Slurm](https://slurm.schedmd.com/)**，未适配 PBS / LSF 等其他调度器。  
+> **规模定位**：设计与推荐部署面向**中小集群**（常见为数十至约一两百节点量级、单门户实例跑在管理/登录节点）。超大规模多中心、极高并发门户场景不在当前优先目标内。
 
 ## ✨ 功能特性
 
@@ -11,7 +13,7 @@
 | **作业管理** | 作业提交/监控/取消、历史作业检索、作业趋势与报表（图表可视化） |
 | **集群监控** | 节点状态（sinfo/scontrol）、分区与负载、性能看板（big-screen） |
 | **用户管理** | 支持 Linux 本地用户 / LDAP / NIS 三种认证模式，用户增删改、并发登录控制 |
-| **应用中心** | 常见 HPC 软件（ABAQUS、ANSYS、MATLAB、Materials Studio、COMSOL 等）一键提交配置 |
+| **应用中心** | 常见计算软件（ABAQUS、ANSYS、MATLAB、Materials Studio、COMSOL 等）一键提交到 Slurm |
 | **WebShell** | 浏览器内终端（xterm.js），支持文件上传下载、剪贴板权限控制 |
 | **VNC 桌面** | 远程图形桌面接入（web-vnc） |
 | **消息与公告** | 站内通知、公告管理、审计日志 |
@@ -29,7 +31,7 @@
 ## 🚀 快速开始
 
 > **部署前请先阅读**：[集群依赖与检查清单](docs/deployment/cluster-prerequisites.md)。  
-> 本平台依赖现有的 Slurm / 认证 / 数据库 /（可选）VNC 等集群服务，不会自动安装整套 HPC 环境。
+> 本平台依赖现有的 Slurm / 认证 / 数据库 /（可选）VNC 等集群服务，不会自动安装或改造整套集群。
 
 ### 环境要求
 

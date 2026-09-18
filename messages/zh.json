@@ -34,8 +34,8 @@
     "submitting": "提交中..."
   },
   "login": {
-    "title": "HPC 管理平台",
-    "subtitle": "高性能计算集群管理系统",
+    "title": "Slurm 门户",
+    "subtitle": "Slurm 集群 Web 管理系统",
     "username": "用户名",
     "password": "密码",
     "rememberMe": "记住我",
@@ -67,8 +67,8 @@
     "settings": "设置",
     "logout": "退出登录",
     "welcome": "欢迎回来",
-    "pageTitle": "HPC系统仪表盘",
-    "pageSubtitle": "实时监控系统资源、作业状态和集群性能",
+    "pageTitle": "Slurm 集群仪表盘",
+    "pageSubtitle": "实时监控节点、分区、作业状态与集群负载",
     "loadingData": "正在加载系统数据...",
     "dataError": "数据加载出现问题",
     "retry": "重试",
@@ -1863,7 +1863,7 @@
     }
   },
   "bigScreen": {
-    "title": "HPC高性能计算平台",
+    "title": "Slurm 集群监控大屏",
     "loading": {
       "systemData": "正在加载系统数据...",
       "systemDataMessage": "请稍候，正在获取实时信息",

@@ -116,7 +116,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: settings.websiteTitle || settings.platformName || 'slurm-portal',
     description: settings.websiteDescription || 'HPC cluster web management platform (Slurm)',
-    keywords: ['HPC', '高性能计算', '集群管理', '作业调度', '文件管理'],
+    keywords: ['Slurm', '集群管理', '作业调度', 'WebShell', 'VNC'],
     authors: [{ name: getCompanyName() }],
     creator: getCompanyName(),
     publisher: getCompanyName(),
@@ -128,27 +128,27 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
     icons: getFaviconConfig(settings),
     openGraph: {
-      title: settings.websiteTitle || settings.platformName || '高性能计算管理平台',
-      description: settings.websiteDescription || '基于Next.js开发的高性能计算环境管理与监控平台',
+      title: settings.websiteTitle || settings.platformName || 'Slurm 门户',
+      description: settings.websiteDescription || '面向 SchedMD Slurm 集群的 Web 作业与资源管理门户',
       type: 'website',
       locale: 'zh_CN',
-      siteName: settings.platformName || 'HPC平台',
+      siteName: settings.platformName || 'Slurm 门户',
       images: settings.logoUrl && settings.logoUrl !== '/logo.png' ? [{
         url: settings.logoUrl,
         width: 1200,
         height: 630,
-        alt: settings.platformName || 'HPC平台',
+        alt: settings.platformName || 'Slurm 门户',
       }] : undefined,
     },
     twitter: {
       card: 'summary_large_image',
-      title: settings.websiteTitle || settings.platformName || '高性能计算管理平台',
-      description: settings.websiteDescription || '基于Next.js开发的高性能计算环境管理与监控平台',
+      title: settings.websiteTitle || settings.platformName || 'Slurm 门户',
+      description: settings.websiteDescription || '面向 SchedMD Slurm 集群的 Web 作业与资源管理门户',
       images: settings.logoUrl && settings.logoUrl !== '/logo.png' ? [{
         url: settings.logoUrl,
         width: 1200,
         height: 630,
-        alt: settings.platformName || 'HPC平台',
+        alt: settings.platformName || 'Slurm 门户',
       }] : undefined,
     },
     robots: {
