@@ -132,3 +132,12 @@ scripts/config/licenses/
 # leftover local junk
 *.old
 *.pid
+
+# local deploy probes / dumps (keep intentional nginx helpers if tracked)
+/deploy/*.out
+/deploy/host-probe*
+/deploy/host-fix*
+/deploy/probe-vnc*
+/deploy/verify-nss*
+/deploy/verify-runuser*
+/deploy/*.bak
