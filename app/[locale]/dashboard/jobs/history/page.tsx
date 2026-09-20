@@ -545,7 +545,13 @@ export default function JobsHistoryPage() {
                     {jobs.map((job, index) => (
                       <tr key={job.jobId} className={`border-b hover:bg-muted/30 ${index % 2 === 0 ? '' : 'bg-muted/10'}`}>
                         <td className="p-3">
-                          <div className="font-mono text-sm">{job.jobId}</div>
+                          <Link
+                            href={`/${locale}/dashboard/jobs/${job.jobId}`}
+                            className="font-mono text-sm text-primary hover:underline"
+                            title={t('viewDetails')}
+                          >
+                            {job.jobId}
+                          </Link>
                         </td>
                         <td className="p-3">
                           <div className="max-w-xs truncate" title={job.jobName}>
