@@ -24,12 +24,7 @@ const nextConfig = {
   
   // 实验性功能
   experimental: {
-    // optimizeCss: true, // 暂时禁用，避免critters问题
     optimizePackageImports: ['@radix-ui/react-icons', 'lucide-react'],
-    // 优化客户端路由
-    optimizeServerReact: true,
-    // 禁用 instrumentation hook 避免构建时连接LDAP
-    instrumentationHook: false,
   },
 
   // 输出配置 - 使用standalone模式用于生产部署

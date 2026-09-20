@@ -73,7 +73,7 @@ function getClientIP(req: NextRequest): string {
   }
 
   // 如果都没有，返回默认值
-  return req.ip || 'unknown'
+  return 'unknown'
 }
 
 /**

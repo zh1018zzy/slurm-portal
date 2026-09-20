@@ -9,7 +9,7 @@ const intlMiddleware = createIntlMiddleware({
   localePrefix: 'always', // 总是在URL中显示语言前缀
 })
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
   // 跳过 API 路由、静态文件、WebShell Socket.IO 等，这些不需要国际化

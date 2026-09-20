@@ -1,6 +1,6 @@
 # slurm-portal
 
-**Slurm 集群 Web 门户** — 基于 Next.js 14 + Slurm + LDAP/NIS + WebShell 的全栈管理工具。
+**Slurm 集群 Web 门户** — 基于 Next.js 16 + Slurm + LDAP/NIS + WebShell 的全栈管理工具。
 
 > 面向高校实验室、院系机房与中小规模企业 **Slurm** 集群，提供浏览器端一站式管理：用户管理、作业监控、应用商店、VNC 远程桌面、WebShell、报表分析等。  
 > **当前仅支持 [SchedMD Slurm](https://slurm.schedmd.com/)**，未适配 PBS / LSF 等其他调度器。  
@@ -21,7 +21,7 @@
 
 ## 🏗️ 技术栈
 
-- **前端/后端框架**: Next.js 14 (App Router) + React 18 + TypeScript
+- **前端/后端框架**: Next.js 16 (App Router) + React 19 + TypeScript
 - **UI**: TailwindCSS + shadcn/ui + Recharts
 - **认证**: Linux PAM / LDAP / NIS，JWT（jsonwebtoken）
 - **数据库**: Supabase (PostgreSQL) — 用户、作业快照、权限等业务数据
@@ -35,7 +35,7 @@
 
 ### 环境要求
 
-- Node.js ≥ 18，npm ≥ 9
+- Node.js ≥ 20.9，npm ≥ 9
 - 一台 **Slurm 集群管理节点或登录节点**（本机可执行 `sinfo` / `squeue` / `sbatch` / `sacct`）
 - Supabase 项目（或兼容的 PostgreSQL + API，需服务角色密钥）
 - （可选）LDAP / NIS；WebShell；TurboVNC + noVNC

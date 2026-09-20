@@ -10,8 +10,9 @@ const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABAS
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 // PUT /api/users/[id]/password 修改用户密码 (兼容前端调用)
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
-  const id = params.id
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params
+  const id = resolvedParams.id
   const body = await req.json()
   const { password: newPassword } = body
 
@@ -48,8 +49,9 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
 }
 
 // PATCH /api/users/[id]/password 修改用户密码
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
-  const id = params.id
+export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params
+  const id = resolvedParams.id
   const { newPassword } = await req.json()
 
   if (!newPassword) {

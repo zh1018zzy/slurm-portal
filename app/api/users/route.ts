@@ -158,8 +158,9 @@ export async function POST(req: NextRequest) {
 }
 
 // PATCH /api/users/[id]/password 修改用户密码
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
-  const id = params.id
+export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params
+  const id = resolvedParams.id
   const { newPassword } = await req.json()
   if (!newPassword) {
     return Response.json({ success: false, error: '新密码不能为空' }, { status: 400 })

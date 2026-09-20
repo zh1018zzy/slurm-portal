@@ -13,8 +13,9 @@ const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABAS
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 // PUT /api/users/[id] 编辑用户
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
-  const id = params.id
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params
+  const id = resolvedParams.id
   const body = await req.json()
   const { username, real_name, email, phone, department, role, webshell_access, login_shell, gid_number } = body
   
@@ -139,8 +140,9 @@ async function updateLdapUserShell(username: string, loginShell: string): Promis
 }
 
 // DELETE /api/users/[id] 删除用户（同步删除LDAP和Supabase Auth，并记录黑名单）
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
-  const id = params.id
+export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params
+  const id = resolvedParams.id
   
   try {
     // 1. 查找数据库用户信息
@@ -469,8 +471,9 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
 }
 
 // GET /api/users/[id] 获取用户详细信息
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
-  const id = params.id
+export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params
+  const id = resolvedParams.id
   // 先尝试用 id 查
   let { data: user, error } = await supabase.from('users').select('*').eq('id', id).single()
   // 如果没查到，再用 username 查

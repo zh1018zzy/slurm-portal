@@ -10,13 +10,14 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 // GET /api/applications/[id] - 获取单个应用详情
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const resolvedParams = await params
   try {
     const { data, error } = await supabase
       .from('applications')
       .select('*')
-      .eq('id', params.id)
+      .eq('id', resolvedParams.id)
       .single()
     
     if (error) {
@@ -36,8 +37,9 @@ export async function GET(
 // PUT /api/applications/[id] - 更新应用
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const resolvedParams = await params
   try {
     const body = await req.json()
     const {
@@ -59,7 +61,7 @@ export async function PUT(
         visible_to_all: visible_to_all ?? false, user_ids: user_ids ?? [],
         updated_at: new Date().toISOString()
       })
-      .eq('id', params.id)
+      .eq('id', resolvedParams.id)
       .select()
       .single()
     
@@ -76,13 +78,14 @@ export async function PUT(
 // DELETE /api/applications/[id] - 删除应用
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const resolvedParams = await params
   try {
     const { error } = await supabase
       .from('applications')
       .delete()
-      .eq('id', params.id)
+      .eq('id', resolvedParams.id)
     
     if (error) {
       return NextResponse.json({ success: false, message: error.message }, { status: 500 })

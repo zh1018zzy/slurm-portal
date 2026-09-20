@@ -7,10 +7,11 @@ export const dynamic = 'force-dynamic'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { filename: string } }
+  { params }: { params: Promise<{ filename: string }> }
 ) {
+  const resolvedParams = await params
   try {
-    const filename = params.filename
+    const filename = resolvedParams.filename
     
     // 安全检查：确保文件名不包含路径遍历字符
     if (filename.includes('..') || filename.includes('/') || filename.includes('\\')) {

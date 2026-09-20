@@ -25,8 +25,9 @@ const announcementsCache = {
 
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const resolvedParams = await params
   try {
     // 验证用户身份
     const userInfo = getCurrentUser(req)
@@ -39,7 +40,7 @@ export async function PUT(
       return Response.json({ success: false, error: '权限不足' }, { status: 403 })
     }
 
-    const id = parseInt(params.id)
+    const id = parseInt(resolvedParams.id)
     if (isNaN(id)) {
       return Response.json({ success: false, error: '无效的公告ID' })
     }
@@ -111,8 +112,9 @@ export async function PUT(
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const resolvedParams = await params
   try {
     // 验证用户身份
     const userInfo = getCurrentUser(req)
@@ -125,7 +127,7 @@ export async function DELETE(
       return Response.json({ success: false, error: '权限不足' }, { status: 403 })
     }
 
-    const id = parseInt(params.id)
+    const id = parseInt(resolvedParams.id)
     if (isNaN(id)) {
       return Response.json({ success: false, error: '无效的公告ID' })
     }

@@ -5,6 +5,16 @@ import path from 'path'
 import { promisify } from 'util'
 export const dynamic = 'force-dynamic'
 
+function getClientIP(req: NextRequest): string {
+  const forwardedFor = req.headers.get('x-forwarded-for')
+  if (forwardedFor) return forwardedFor.split(',')[0].trim()
+  const realIP = req.headers.get('x-real-ip')
+  if (realIP) return realIP
+  const cfConnectingIP = req.headers.get('cf-connecting-ip')
+  if (cfConnectingIP) return cfConnectingIP
+  return 'unknown'
+}
+
 
 const execAsync = promisify(exec)
 
@@ -150,12 +160,13 @@ export async function GET(req: NextRequest) {
     // 验证用户身份
     const userInfo = getCurrentUser(req)
     if (!userInfo?.username) {
-      console.warn('[节点API] 未授权访问尝试:', { ip: req.ip, userAgent: req.headers.get('user-agent') })
+      console.warn('[节点API] 未授权访问尝试:', { ip: getClientIP(req), userAgent: req.headers.get('user-agent') })
       return Response.json({ success: false, error: '未登录或登录已过期' }, { status: 401 })
     }
     
     // 限流检查
-    const clientId = req.ip || userInfo.username
+    const clientIP = getClientIP(req)
+    const clientId = clientIP !== 'unknown' ? clientIP : userInfo.username
     if (!checkRateLimit(clientId)) {
       console.warn('[节点API] 请求频率超限:', { clientId, user: userInfo.username })
       return Response.json({ 

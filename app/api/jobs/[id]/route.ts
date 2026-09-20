@@ -51,7 +51,8 @@ async function smartSync(jobId: string, jobStatus: string) {
 }
 
 // GET /api/jobs/{id} 查询作业状态
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params
   try {
     
     // 验证用户权限
@@ -65,7 +66,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     const { data: dbJobs, error: dbError } = await supabase
       .from('jobs')
       .select('*')
-      .eq('job_id', params.id)
+      .eq('job_id', resolvedParams.id)
       .limit(1)
     if (dbError) {
       console.error('查询数据库作业失败:', dbError)
@@ -106,7 +107,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     }
 
     // 2. 查 Slurm
-    const job = await slurmAdapter.getJobStatus(params.id)
+    const job = await slurmAdapter.getJobStatus(resolvedParams.id)
     
     // 检查权限：只有作业所有者或管理员可以查看作业详情
     if (userInfo.role !== 'admin' && job.user !== userInfo.username) {
@@ -156,7 +157,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     // 进入 autofill 逻辑前日志
     // 使用智能同步替代全量同步，避免频繁的全量同步
     if (mergedJob.status === 'RUNNING') {
-      await smartSync(params.id, mergedJob.status)
+      await smartSync(resolvedParams.id, mergedJob.status)
     }
     
     // 优化：节点为空时自动重试2次，每次延迟1秒，最大化补全节点
@@ -164,7 +165,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
       try {
         let detail = null
         for (let i = 0; i < 2; i++) {
-          detail = await slurmAdapter.getJobStatus(params.id)
+          detail = await slurmAdapter.getJobStatus(resolvedParams.id)
         if (detail.nodes && detail.nodes.length > 0) {
           mergedJob.nodes = detail.nodes
           autofilled = true
@@ -186,7 +187,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     }
     // --- 强制 getJobStatus 日志 ---
     try {
-      const detail = await slurmAdapter.getJobStatus(params.id)
+      const detail = await slurmAdapter.getJobStatus(resolvedParams.id)
     } catch (e) {
       console.error('[debug] 强制 getJobStatus error:', e)
     }
@@ -198,12 +199,13 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
 } 
 
 // PATCH /api/jobs/[id] 暂停/继续作业
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params
   const userInfo = getCurrentUser(req)
   if (!userInfo?.username) {
     return Response.json({ success: false, error: '未登录或登录已过期' }, { status: 401 })
   }
-  const jobId = params.id
+  const jobId = resolvedParams.id
   try {
     const body = await req.json().catch(() => ({}))
     const action = body?.action
@@ -243,12 +245,13 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
 }
 
 // DELETE /api/jobs/[id] 取消作业
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params
   const userInfo = getCurrentUser(req)
   if (!userInfo?.username) {
     return Response.json({ success: false, error: '未登录或登录已过期' }, { status: 401 })
   }
-  const jobId = params.id
+  const jobId = resolvedParams.id
   try {
     // 可加权限校验：只有作业所有者或管理员可取消
     // 这里简单实现，生产环境建议校验作业归属

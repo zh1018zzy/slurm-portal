@@ -1075,7 +1075,7 @@ function ApplicationDetailView({
   isSaveAs?: boolean
   onSaveAs?: (app: HpcApplicationSpec) => void
   isNewApplication?: boolean
-}): JSX.Element {
+}): React.ReactElement {
   const [editedApp, setEditedApp] = useState<HpcApplicationSpec>(application)
   const [isSaving, setIsSaving] = useState(false)
 

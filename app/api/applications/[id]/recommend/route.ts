@@ -7,10 +7,11 @@ export const dynamic = 'force-dynamic'
 // POST /api/applications/[id]/recommend - 获取资源推荐
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const resolvedParams = await params
   try {
-    const { id } = params
+    const { id } = resolvedParams
     const userInput = await request.json()
 
     // 获取应用规范 - 支持应用名称或ID
@@ -81,10 +82,11 @@ export async function POST(
 // GET /api/applications/[id]/recommend - 获取预设推荐配置
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const resolvedParams = await params
   try {
-    const { id } = params
+    const { id } = resolvedParams
     const { searchParams } = new URL(request.url)
     const profileName = searchParams.get('profile')
 

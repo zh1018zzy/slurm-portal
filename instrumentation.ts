@@ -6,6 +6,9 @@
  */
 
 export async function register() {
+  // 构建阶段跳过，避免 next build 时连 LDAP / 启动 cron
+  if (process.env.NEXT_PHASE === 'phase-production-build') return
+
   // 只在 Node.js 运行时初始化（服务端）
   if (process.env.NEXT_RUNTIME === 'nodejs') {
     console.log('[Instrumentation] 初始化服务器组件...')

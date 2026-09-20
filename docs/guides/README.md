@@ -63,9 +63,9 @@ npm run dev
 - [WebShell功能完整说明](../features/webshell/webshell-feature-guide.md)
 
 ## 技术栈
-- Next.js 14（App Router，React Server Components 优先）
+- Next.js 16（App Router，React Server Components 优先）
 - TypeScript
-- React 18
+- React 19
 - Shadcn UI + Radix UI（现代无障碍组件）
 - Tailwind CSS（移动端优先，原子化样式）
 - nuqs（URL参数状态管理）

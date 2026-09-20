@@ -72,7 +72,7 @@ if (translations.zh && translations.en) {
 console.log('\n4️⃣ 检查配置文件...');
 const requiredFiles = [
   'i18n.ts',
-  'middleware.ts',
+  'proxy.ts',
   'next.config.mjs',
   'app/[locale]/layout.tsx',
   'components/LanguageSwitcher.tsx',

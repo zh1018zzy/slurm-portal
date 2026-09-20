@@ -10,10 +10,11 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 // GET /api/groups/[id]/applications - 获取用户组的应用权限列表
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const resolvedParams = await params
   try {
-    const groupId = params.id
+    const groupId = resolvedParams.id
 
     // 获取组的应用权限
     const { data: permissions, error } = await supabase
@@ -53,10 +54,11 @@ export async function GET(
 // POST /api/groups/[id]/applications - 为用户组添加应用权限
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const resolvedParams = await params
   try {
-    const groupId = params.id
+    const groupId = resolvedParams.id
     const body = await request.json()
     const { applications, permissionType = 'access', createdBy } = body
 
@@ -110,10 +112,11 @@ export async function POST(
 // DELETE /api/groups/[id]/applications - 移除用户组的应用权限
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const resolvedParams = await params
   try {
-    const groupId = params.id
+    const groupId = resolvedParams.id
     const body = await request.json()
     const { applications, permissionType } = body
 
