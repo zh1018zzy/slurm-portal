@@ -1,6 +1,6 @@
 {
   "name": "slurm-portal",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Slurm web portal for small-to-medium clusters (Next.js 16 + React 19 + Slurm + LDAP/NIS + WebShell). Slurm-only.",
   "license": "AGPL-3.0-only",
